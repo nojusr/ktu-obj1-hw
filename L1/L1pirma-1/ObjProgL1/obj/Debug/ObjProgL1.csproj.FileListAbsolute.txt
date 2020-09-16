@@ -1,0 +1,7 @@
+C:\Users\nojras\Desktop\labs\ObjProgL1\ObjProgL1\bin\Debug\ObjProgL1.exe.config
+C:\Users\nojras\Desktop\labs\ObjProgL1\ObjProgL1\bin\Debug\ObjProgL1.exe
+C:\Users\nojras\Desktop\labs\ObjProgL1\ObjProgL1\bin\Debug\ObjProgL1.pdb
+C:\Users\nojras\Desktop\labs\ObjProgL1\ObjProgL1\obj\Debug\ObjProgL1.csprojAssemblyReference.cache
+C:\Users\nojras\Desktop\labs\ObjProgL1\ObjProgL1\obj\Debug\ObjProgL1.csproj.CoreCompileInputs.cache
+C:\Users\nojras\Desktop\labs\ObjProgL1\ObjProgL1\obj\Debug\ObjProgL1.exe
+C:\Users\nojras\Desktop\labs\ObjProgL1\ObjProgL1\obj\Debug\ObjProgL1.pdb

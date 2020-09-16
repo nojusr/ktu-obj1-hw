@@ -1,0 +1,11 @@
+/home/nojus/programming/ktu-stuff/ktu-obj1/L1/Lab1.Exercise.Regular/obj/Debug/netcoreapp3.1/Lab1.Exercise.Regular.csprojAssemblyReference.cache
+/home/nojus/programming/ktu-stuff/ktu-obj1/L1/Lab1.Exercise.Regular/obj/Debug/netcoreapp3.1/Lab1.Exercise.Regular.AssemblyInfoInputs.cache
+/home/nojus/programming/ktu-stuff/ktu-obj1/L1/Lab1.Exercise.Regular/obj/Debug/netcoreapp3.1/Lab1.Exercise.Regular.AssemblyInfo.cs
+/home/nojus/programming/ktu-stuff/ktu-obj1/L1/Lab1.Exercise.Regular/bin/Debug/netcoreapp3.1/Lab1.Exercise.Regular
+/home/nojus/programming/ktu-stuff/ktu-obj1/L1/Lab1.Exercise.Regular/bin/Debug/netcoreapp3.1/Lab1.Exercise.Regular.deps.json
+/home/nojus/programming/ktu-stuff/ktu-obj1/L1/Lab1.Exercise.Regular/bin/Debug/netcoreapp3.1/Lab1.Exercise.Regular.runtimeconfig.json
+/home/nojus/programming/ktu-stuff/ktu-obj1/L1/Lab1.Exercise.Regular/bin/Debug/netcoreapp3.1/Lab1.Exercise.Regular.runtimeconfig.dev.json
+/home/nojus/programming/ktu-stuff/ktu-obj1/L1/Lab1.Exercise.Regular/bin/Debug/netcoreapp3.1/Lab1.Exercise.Regular.dll
+/home/nojus/programming/ktu-stuff/ktu-obj1/L1/Lab1.Exercise.Regular/bin/Debug/netcoreapp3.1/Lab1.Exercise.Regular.pdb
+/home/nojus/programming/ktu-stuff/ktu-obj1/L1/Lab1.Exercise.Regular/obj/Debug/netcoreapp3.1/Lab1.Exercise.Regular.dll
+/home/nojus/programming/ktu-stuff/ktu-obj1/L1/Lab1.Exercise.Regular/obj/Debug/netcoreapp3.1/Lab1.Exercise.Regular.pdb

@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "U1-24-NR-ND/1.0.0": {
+        "runtime": {
+          "U1-24-NR-ND.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "U1-24-NR-ND/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
