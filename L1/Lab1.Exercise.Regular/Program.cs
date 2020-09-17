@@ -49,6 +49,21 @@ namespace Lab1.Exercises.Register
             string fileName = selectedBreed + ".csv";
             IOUtils.PrintDogsToCSV(fileName, filteredDogs);
 
+            // output the oldest dog from [filteredDogs]
+            Dog oldestBreed = TaskUtils.FindOldestDog(filteredDogs);
+            Console.WriteLine("Seniausias šuo kuris priklauso \"{0}\" veislėi:", selectedBreed);
+            Console.WriteLine(
+                "Vardas: {0}, Veislė: {1}, Amžius: {2}",
+                oldestBreed.Name,
+                oldestBreed.Breed,
+                oldestBreed.CalculateAge()
+            );
+
+            string mostPopBreed = TaskUtils.FindMostPopularBreed(dogs);
+
+            Console.WriteLine("Populiariausia šūnų veislė: {0}", mostPopBreed);
+
+
         }
     }
 }

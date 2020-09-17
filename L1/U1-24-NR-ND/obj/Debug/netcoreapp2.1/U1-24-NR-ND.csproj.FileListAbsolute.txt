@@ -1,0 +1,10 @@
+C:\Users\nojras\Desktop\ktu-obj1-hw\L1\U1-24-NR-ND\obj\Debug\netcoreapp2.1\U1-24-NR-ND.csproj.CoreCompileInputs.cache
+C:\Users\nojras\Desktop\ktu-obj1-hw\L1\U1-24-NR-ND\obj\Debug\netcoreapp2.1\U1-24-NR-ND.AssemblyInfoInputs.cache
+C:\Users\nojras\Desktop\ktu-obj1-hw\L1\U1-24-NR-ND\obj\Debug\netcoreapp2.1\U1-24-NR-ND.AssemblyInfo.cs
+C:\Users\nojras\Desktop\ktu-obj1-hw\L1\U1-24-NR-ND\bin\Debug\netcoreapp2.1\U1-24-NR-ND.deps.json
+C:\Users\nojras\Desktop\ktu-obj1-hw\L1\U1-24-NR-ND\bin\Debug\netcoreapp2.1\U1-24-NR-ND.runtimeconfig.json
+C:\Users\nojras\Desktop\ktu-obj1-hw\L1\U1-24-NR-ND\bin\Debug\netcoreapp2.1\U1-24-NR-ND.runtimeconfig.dev.json
+C:\Users\nojras\Desktop\ktu-obj1-hw\L1\U1-24-NR-ND\bin\Debug\netcoreapp2.1\U1-24-NR-ND.dll
+C:\Users\nojras\Desktop\ktu-obj1-hw\L1\U1-24-NR-ND\bin\Debug\netcoreapp2.1\U1-24-NR-ND.pdb
+C:\Users\nojras\Desktop\ktu-obj1-hw\L1\U1-24-NR-ND\obj\Debug\netcoreapp2.1\U1-24-NR-ND.dll
+C:\Users\nojras\Desktop\ktu-obj1-hw\L1\U1-24-NR-ND\obj\Debug\netcoreapp2.1\U1-24-NR-ND.pdb

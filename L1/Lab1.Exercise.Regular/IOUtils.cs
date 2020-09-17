@@ -14,8 +14,24 @@ namespace Lab1.Exercises.Register
 
             List<Dog> output = new List<Dog>();
 
-            string[] lines = File.ReadAllLines(fileName, Encoding.UTF8);
+            string[] lines = new string[100];
 
+            // file error handling
+            if (System.IO.File.Exists(fileName))
+            {
+                lines = File.ReadAllLines(fileName, Encoding.UTF8);
+            }
+            else
+            {
+                Console.WriteLine("Failas nerastas. Programa negali veikti.");
+                System.Environment.Exit(1); // exit code 1 means that the program did not run successfuly
+            }
+
+            if (lines.Length <= 0)
+            {
+                Console.WriteLine("Pateiktas tuščias failas. Programa negali veikti.");
+                System.Environment.Exit(1); // exit code 1 means that the program did not run successfuly
+            }
 
 
             foreach (string line in lines)

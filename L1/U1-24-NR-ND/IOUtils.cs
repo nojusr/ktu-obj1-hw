@@ -14,7 +14,24 @@ namespace U1_24_NR_ND
         {
             List<Hero> output = new List<Hero>();
 
-            string[] lines = File.ReadAllLines(fileName, Encoding.UTF8);
+            string[] lines = new string[100];
+
+            // file error handling
+            if (System.IO.File.Exists(fileName))
+            {
+                lines = File.ReadAllLines(fileName, Encoding.UTF8);
+            }
+            else
+            {
+                Console.WriteLine("Failas nerastas. Programa negali veikti.");
+                System.Environment.Exit(1); // exit code 1 means that the program did not run successfuly
+            }
+
+            if (lines.Length <= 0)
+            {
+                Console.WriteLine("Pateiktas tuščias failas. Programa negali veikti.");
+                System.Environment.Exit(1); // exit code 1 means that the program did not run successfuly
+            }
 
             foreach (string line in lines)
             {
@@ -55,10 +72,10 @@ namespace U1_24_NR_ND
 
         public static void PrintHeroes(List<Hero> input)
         {
-            PrintIndexedTableLine(21, 11, '┌', '┬', '┐', '─');
+            PrintIndexedTableLine(18, 11, '┌', '┬', '┐', '─');
 
             Console.WriteLine(
-                "│ {0,-19} │ {1,-19} │ {2,-19} │ {3,-19} │ {4,-19} │ {5, -19} │ {6, -19} │ {7, -19} │ {9, -19} │ {9, -19} │ {10, -19} │",
+                "│ {0,-16} │ {1,-16} │ {2,-16} │ {3,-16} │ {4,-16} │ {5, -16} │ {6, -16} │ {7, -16} │ {8, -16} │ {9, -16} │ {10, -16} │",
                 "Vardas",
                 "Rasė",
                 "Klasė",
@@ -72,13 +89,13 @@ namespace U1_24_NR_ND
                 "Ypat. galia"
             );
 
-            PrintIndexedTableLine(21, 11, '├', '┼', '┤', '─');
+            PrintIndexedTableLine(18, 11, '├', '┼', '┤', '─');
 
             for (int i = 0; i < input.Count; i++)
             {
                 Hero hero = input[i];
                 Console.WriteLine(
-                    "│ {0,-19} │ {1,-19} │ {2,-19} │ {3,-19} │ {4,-19} │ {5, -19} │ {6, -19} │ {7, -19} │ {9, -19} │ {9, -19} │ {10, -19} │",
+                    "│ {0,-16} │ {1,-16} │ {2,-16} │ {3,-16} │ {4,-16} │ {5, -16} │ {6, -16} │ {7, -16} │ {8, -16} │ {9, -16} │ {10, -16} │",
                     hero.Name,
                     hero.Race,
                     hero.Class,
@@ -89,19 +106,26 @@ namespace U1_24_NR_ND
                     hero.StrPoints,
                     hero.SpdPoints,
                     hero.IntPoints,
-                    hero.Special
+                    Truncate(hero.Special, 12)
                 );
 
                 if (i == input.Count - 1)
                 {
-                    PrintIndexedTableLine(21, 11, '└', '┴', '┘', '─');
+                    PrintIndexedTableLine(18, 11, '└', '┴', '┘', '─');
                 }
                 else
                 {
-                    PrintIndexedTableLine(21, 11, '├', '┼', '┤', '─');
+                    PrintIndexedTableLine(18, 11, '├', '┼', '┤', '─');
                 }
             }
 
+        }
+
+
+        // a method to truncate strings that are too long
+        private static string Truncate(string value, int maxChars)
+        {
+            return value.Length <= maxChars ? value : value.Substring(0, maxChars) + "...";
         }
 
         // a simple method to assist in creating text character based tables
@@ -125,6 +149,13 @@ namespace U1_24_NR_ND
             }
         }
 
+        // not sure what is wanted here exactly
+        public static void OutputClassesToCSV(string fileName, List<String> classes)
+        {
+            string[] lines = classes.ToArray();
+
+            File.WriteAllLines(fileName, lines, Encoding.UTF8);
+        }
 
     }
 }

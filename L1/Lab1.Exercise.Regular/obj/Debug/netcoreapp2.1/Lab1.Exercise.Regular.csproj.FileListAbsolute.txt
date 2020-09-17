@@ -1,0 +1,11 @@
+C:\Users\nojras\Desktop\ktu-obj1-hw\L1\Lab1.Exercise.Regular\bin\Debug\netcoreapp2.1\Lab1.Exercise.Regular.deps.json
+C:\Users\nojras\Desktop\ktu-obj1-hw\L1\Lab1.Exercise.Regular\bin\Debug\netcoreapp2.1\Lab1.Exercise.Regular.runtimeconfig.json
+C:\Users\nojras\Desktop\ktu-obj1-hw\L1\Lab1.Exercise.Regular\bin\Debug\netcoreapp2.1\Lab1.Exercise.Regular.runtimeconfig.dev.json
+C:\Users\nojras\Desktop\ktu-obj1-hw\L1\Lab1.Exercise.Regular\bin\Debug\netcoreapp2.1\Lab1.Exercise.Regular.dll
+C:\Users\nojras\Desktop\ktu-obj1-hw\L1\Lab1.Exercise.Regular\bin\Debug\netcoreapp2.1\Lab1.Exercise.Regular.pdb
+C:\Users\nojras\Desktop\ktu-obj1-hw\L1\Lab1.Exercise.Regular\obj\Debug\netcoreapp2.1\Lab1.Exercise.Regular.csprojAssemblyReference.cache
+C:\Users\nojras\Desktop\ktu-obj1-hw\L1\Lab1.Exercise.Regular\obj\Debug\netcoreapp2.1\Lab1.Exercise.Regular.csproj.CoreCompileInputs.cache
+C:\Users\nojras\Desktop\ktu-obj1-hw\L1\Lab1.Exercise.Regular\obj\Debug\netcoreapp2.1\Lab1.Exercise.Regular.AssemblyInfoInputs.cache
+C:\Users\nojras\Desktop\ktu-obj1-hw\L1\Lab1.Exercise.Regular\obj\Debug\netcoreapp2.1\Lab1.Exercise.Regular.AssemblyInfo.cs
+C:\Users\nojras\Desktop\ktu-obj1-hw\L1\Lab1.Exercise.Regular\obj\Debug\netcoreapp2.1\Lab1.Exercise.Regular.dll
+C:\Users\nojras\Desktop\ktu-obj1-hw\L1\Lab1.Exercise.Regular\obj\Debug\netcoreapp2.1\Lab1.Exercise.Regular.pdb

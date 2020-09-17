@@ -9,13 +9,23 @@ namespace U1_24_NR_ND
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-
+            // read from file
             List<Hero> allHeroes = IOUtils.ReadHeroes("herojai.csv");
 
-            IOUtils.PrintHeroes(allHeroes);
+            // print out heroes with highest [LifePoints]
+            Console.WriteLine("Herojai su didžiausiu kiekiu gyvybės taškų:");
+            IOUtils.PrintHeroes(TaskUtils.FindHeroesWithHighestHealth(allHeroes));
+
+            // print out all heroes with the smallest difference between
+            // [AtkPoints] and [DefPoints]
+            Console.WriteLine("Herojai su mažiausiu skirtumu tarp žalos ir gynybos taškų:");
+            IOUtils.PrintHeroes(TaskUtils.FindHeroesWithSmallestDifference(allHeroes));
+
+            List<String> uniqueClasses = TaskUtils.FindUniqueClasses(allHeroes);
+            IOUtils.OutputClassesToCSV("Klasės.csv", uniqueClasses);
+
         }
     }
 }

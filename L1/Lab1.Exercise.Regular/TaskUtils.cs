@@ -71,5 +71,39 @@ namespace Lab1.Exercises.Register
             return output;
         }
 
+        public static string FindMostPopularBreed(List<Dog> input)
+        {
+            // a dictionary is a list whose index and stored value can be an arbitrary type
+            IDictionary<string, int> dogCountByBreed = new Dictionary<string, int>();
+
+            // get the amount of dogs by breed
+            foreach (Dog dog in input)
+            {
+                if (dogCountByBreed.ContainsKey(dog.Breed))
+                {
+                    dogCountByBreed[dog.Breed] += 1;
+                }
+                else
+                {
+                    dogCountByBreed[dog.Breed] = 1;
+                }
+            }
+
+
+            // search for the item with the biggest number in the dict
+            string breed = "";
+            int count = -1;
+
+            foreach (string key in dogCountByBreed.Keys)
+            {
+                if (dogCountByBreed[key] > count)
+                {
+                    breed = key;
+                    count = dogCountByBreed[key];
+                }
+            }
+
+            return breed;
+        }
     }
 }
