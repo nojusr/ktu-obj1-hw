@@ -73,10 +73,14 @@ namespace U1_24_NR_ND
 
         public static void PrintHeroes(List<Hero> input)
         {
-            PrintIndexedTableLine(18, 11, '┌', '┬', '┐', '─');
+            // the amount of empty characters given for every value in the table
+            List<int> tableSpacing = new List<int> {10, 14, 11, 4, 4, 4, 5, 2, 2, 2, 16};
+
+
+            PrintIndexedTableLine(tableSpacing, 11, '┌', '┬', '┐', '─');
 
             Console.WriteLine(
-                "│ {0,-16} │ {1,-16} │ {2,-16} │ {3,-4} │ {4,-4} │ {5, -4} │ {6, -5} │ {7, -2} │ {8, -2} │ {9, -2} │ {10, -16} │",
+                "│{0,-10}│{1,-14}│{2,-11}│{3,-4}│{4,-4}│{5, -4}│{6, -5}│{7, -2}│{8, -2}│{9, -2}│{10, -16}│",
                 "Vardas",
                 "Rasė",
                 "Klasė",
@@ -90,13 +94,13 @@ namespace U1_24_NR_ND
                 "Ypat. galia"
             );
 
-            PrintIndexedTableLine(18, 11, '├', '┼', '┤', '─');
+            PrintIndexedTableLine(tableSpacing, 11, '├', '┼', '┤', '─');
 
             for (int i = 0; i < input.Count; i++)
             {
                 Hero hero = input[i];
                 Console.WriteLine(
-                    "│ {0,-16} │ {1,-16} │ {2,-16} │ {3,-4} │ {4,-4} │ {5, -4} │ {6, -5} │ {7, -2} │ {8, -2} │ {9, -2} │ {10, -16} │",
+                    "│{0,-10}│{1,-14}│{2,-11}│{3,-4}│{4,-4}│{5, -4}│{6, -5}│{7, -2}│{8, -2}│{9, -2}│{10, -16}│",
                     hero.Name,
                     hero.Race,
                     hero.Class,
@@ -112,11 +116,11 @@ namespace U1_24_NR_ND
 
                 if (i == input.Count - 1)
                 {
-                    PrintIndexedTableLine(18, 11, '└', '┴', '┘', '─');
+                    PrintIndexedTableLine(tableSpacing, 11, '└', '┴', '┘', '─');
                 }
                 else
                 {
-                    Console.WriteLine("├──────────────────┼──────────────────┼──────────────────┼──────┼──────┼──────┼───────┼────┼────┼────┼──────────────────┤");
+                    PrintIndexedTableLine(tableSpacing, 11, '├', '┼', '┤', '─');
                 }
             }
 
@@ -125,7 +129,11 @@ namespace U1_24_NR_ND
         // prints out a list of heroes with some of their info not shown
         public static void PrintHeroesCompressed(List<Hero> input)
         {
-            PrintIndexedTableLine(18, 4, '┌', '┬', '┐', '─');
+            // the amount of empty characters given for every value in the table
+            List<int> tableSpacing = new List<int> {18, 18, 18, 18};
+
+
+            PrintIndexedTableLine(tableSpacing, 4, '┌', '┬', '┐', '─');
 
             Console.WriteLine(
                 "│ {0,-16} │ {1,-16} │ {2,-16} │ {3,-16} │",
@@ -135,7 +143,7 @@ namespace U1_24_NR_ND
                 "Gyvybės t."
             );
 
-            PrintIndexedTableLine(18, 4, '├', '┼', '┤', '─');
+            PrintIndexedTableLine(tableSpacing, 4, '├', '┼', '┤', '─');
 
             for (int i = 0; i < input.Count; i++)
             {
@@ -150,11 +158,11 @@ namespace U1_24_NR_ND
 
                 if (i == input.Count - 1)
                 {
-                    PrintIndexedTableLine(18, 4, '└', '┴', '┘', '─');
+                    PrintIndexedTableLine(tableSpacing, 4, '└', '┴', '┘', '─');
                 }
                 else
                 {
-                    PrintIndexedTableLine(18, 4, '├', '┼', '┤', '─');
+                    PrintIndexedTableLine(tableSpacing, 4, '├', '┼', '┤', '─');
                 }
             }
 
@@ -167,14 +175,15 @@ namespace U1_24_NR_ND
         }
 
         // a simple method to assist in creating text character based tables
-        private static void PrintIndexedTableLine(int spacing, int columnCount, char leftEdge, char middleEdge, char rightEdge, char line)
+        // [spacing] -- defines the amount of [line] chars to be put inbetween any of the other chars
+        private static void PrintIndexedTableLine(List<int> spacing, int columnCount, char leftEdge, char middleEdge, char rightEdge, char line)
         {
 
             Console.Write(leftEdge);
 
             for (int i = 0; i < columnCount; i++) {
 
-                Console.Write(new string(line, spacing));
+                Console.Write(new string(line, spacing[i]));
 
                 if (i == columnCount - 1)
                 {
