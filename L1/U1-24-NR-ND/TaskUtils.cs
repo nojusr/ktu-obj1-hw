@@ -1,3 +1,4 @@
+//TaskUtils.cs
 using System;
 using System.IO;
 using System.Collections.Generic;
@@ -40,7 +41,7 @@ namespace U1_24_NR_ND
         }
 
         // a method that finds all heroes with the smallest difference between
-        // theri atkPoints and defPoints
+        // their atkPoints and defPoints
         public static List<Hero> FindHeroesWithSmallestDifference(List<Hero> input)
         {
             List<Hero> output = new List<Hero>();

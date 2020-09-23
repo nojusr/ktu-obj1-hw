@@ -1,3 +1,4 @@
+//IOUtils.cs
 using System;
 using System.IO;
 using System.Collections.Generic;
@@ -121,7 +122,44 @@ namespace U1_24_NR_ND
 
         }
 
+        // prints out a list of heroes with some of their info not shown
+        public static void PrintHeroesCompressed(List<Hero> input)
+        {
+            PrintIndexedTableLine(18, 4, '┌', '┬', '┐', '─');
 
+            Console.WriteLine(
+                "│ {0,-16} │ {1,-16} │ {2,-16} │ {3,-16} │",
+                "Vardas",
+                "Rasė",
+                "Klasė",
+                "Gyvybės t."
+            );
+
+            PrintIndexedTableLine(18, 4, '├', '┼', '┤', '─');
+
+            for (int i = 0; i < input.Count; i++)
+            {
+                Hero hero = input[i];
+                Console.WriteLine(
+                    "│ {0,-16} │ {1,-16} │ {2,-16} │ {3,-16} │",
+                    hero.Name,
+                    hero.Race,
+                    hero.Class,
+                    hero.LifePoints
+                );
+
+                if (i == input.Count - 1)
+                {
+                    PrintIndexedTableLine(18, 4, '└', '┴', '┘', '─');
+                }
+                else
+                {
+                    PrintIndexedTableLine(18, 4, '├', '┼', '┤', '─');
+                }
+            }
+
+        }
+             
         // a method to truncate strings that are too long
         private static string Truncate(string value, int maxChars)
         {
@@ -149,7 +187,6 @@ namespace U1_24_NR_ND
             }
         }
 
-        // not sure what is wanted here exactly
         public static void OutputClassesToCSV(string fileName, List<String> classes)
         {
             string[] lines = classes.ToArray();

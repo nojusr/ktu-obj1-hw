@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Program.cs
+using System;
 using System.IO;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,9 +15,13 @@ namespace U1_24_NR_ND
             // read from file
             List<Hero> allHeroes = IOUtils.ReadHeroes("herojai.csv");
 
+            // print out all heroes
+            Console.WriteLine("Visi herojai:");
+            IOUtils.PrintHeroes(allHeroes);
+
             // print out heroes with highest [LifePoints]
             Console.WriteLine("Herojai su didžiausiu kiekiu gyvybės taškų:");
-            IOUtils.PrintHeroes(TaskUtils.FindHeroesWithHighestHealth(allHeroes));
+            IOUtils.PrintHeroesCompressed(TaskUtils.FindHeroesWithHighestHealth(allHeroes));
 
             // print out all heroes with the smallest difference between
             // [AtkPoints] and [DefPoints]
