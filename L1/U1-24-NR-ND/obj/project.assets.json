@@ -688,24 +688,30 @@
     ]
   },
   "packageFolders": {
-    "/home/nojus/.nuget/packages/": {}
+    "C:\\Users\\nojras\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/nojus/programming/ktu-stuff/ktu-obj1-hw/L1/U1-24-NR-ND/U1-24-NR-ND.csproj",
+      "projectUniqueName": "C:\\Users\\nojras\\Desktop\\ktu-obj1-hw\\L1\\U1-24-NR-ND\\U1-24-NR-ND.csproj",
       "projectName": "U1-24-NR-ND",
-      "projectPath": "/home/nojus/programming/ktu-stuff/ktu-obj1-hw/L1/U1-24-NR-ND/U1-24-NR-ND.csproj",
-      "packagesPath": "/home/nojus/.nuget/packages/",
-      "outputPath": "/home/nojus/programming/ktu-stuff/ktu-obj1-hw/L1/U1-24-NR-ND/obj/",
+      "projectPath": "C:\\Users\\nojras\\Desktop\\ktu-obj1-hw\\L1\\U1-24-NR-ND\\U1-24-NR-ND.csproj",
+      "packagesPath": "C:\\Users\\nojras\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\nojras\\Desktop\\ktu-obj1-hw\\L1\\U1-24-NR-ND\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "/home/nojus/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\nojras\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -723,23 +729,16 @@
       "netcoreapp2.1": {
         "dependencies": {
           "Microsoft.NETCore.App": {
-            "suppressParent": "All",
             "target": "Package",
             "version": "[2.1.0, )",
             "autoReferenced": true
           }
         },
         "imports": [
-          "net461",
-          "net462",
-          "net47",
-          "net471",
-          "net472",
-          "net48"
+          "net461"
         ],
         "assetTargetFallback": true,
-        "warn": true,
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.108/RuntimeIdentifierGraph.json"
+        "warn": true
       }
     }
   }

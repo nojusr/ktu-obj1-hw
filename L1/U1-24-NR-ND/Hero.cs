@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace U1_24_NR_ND
 {
+    /// <summary>
+    /// the main hero class that is used throughout the program
+    /// </summary>
     class Hero
     {
         public string Name { get; set; }
@@ -21,6 +24,9 @@ namespace U1_24_NR_ND
         public int IntPoints { get; set; }
         public string Special { get; set; }
 
+        /// <summary>
+        /// the constructor method for this class
+        /// </summary>
         public Hero(string name, string race, string _class, int lifePoints, int manaPoints, int atkPoints, int defPoints, int strPoints, int spdPoints, int intPoints, string special)
         {
             this.Name = name;

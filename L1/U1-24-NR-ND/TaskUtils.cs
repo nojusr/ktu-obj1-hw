@@ -10,6 +10,11 @@ namespace U1_24_NR_ND
 {
     class TaskUtils
     {
+        /// <summary>
+        /// finds all heroes with the highest amount of health.
+        /// </summary>
+        /// <param name="input">a list of heroes</param>
+        /// <returns>a list of heroes who have the highest amount of health</returns>
         public static List<Hero> FindHeroesWithHighestHealth(List<Hero> input)
         {
             List<Hero> output = new List<Hero>();
@@ -40,8 +45,12 @@ namespace U1_24_NR_ND
             return output;
         }
 
-        // a method that finds all heroes with the smallest difference between
-        // their atkPoints and defPoints
+        /// <summary>
+        /// a method to find the heroes who have the smallest difference
+        /// between their attack and defence points
+        /// </summary>
+        /// <param name="input">a list of heroes</param>
+        /// <returns>the heroes who have the smallest difference between atk and def</returns>
         public static List<Hero> FindHeroesWithSmallestDifference(List<Hero> input)
         {
             List<Hero> output = new List<Hero>();
@@ -74,6 +83,11 @@ namespace U1_24_NR_ND
             return output;
         }
 
+        /// <summary>
+        /// finds all unique hero classes when given a list of them as input
+        /// </summary>
+        /// <param name="input">the list of heroes</param>
+        /// <returns>the unique classes</returns>
         public static List<String> FindUniqueClasses(List<Hero> input)
         {
             List<String> output = new List<String>();

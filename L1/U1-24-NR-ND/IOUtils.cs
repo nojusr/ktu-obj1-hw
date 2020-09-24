@@ -10,7 +10,11 @@ namespace U1_24_NR_ND
 {
     static class IOUtils
     {
-
+        /// <summary>
+        /// reads heroes in from a filename
+        /// </summary>
+        /// <param name="fileName">the filename from which to read</param>
+        /// <returns>a list of heroes</returns>
         public static List<Hero> ReadHeroes(string fileName)
         {
             List<Hero> output = new List<Hero>();
@@ -71,6 +75,11 @@ namespace U1_24_NR_ND
             return output;
         }
 
+
+        /// <summary>
+        /// prints out a table of heroes when give a list of them as input
+        /// </summary>
+        /// <param name="input">the list of heroes to be used as input</param>
         public static void PrintHeroes(List<Hero> input)
         {
             // the amount of empty characters given for every value in the table
@@ -126,7 +135,10 @@ namespace U1_24_NR_ND
 
         }
 
-        // prints out a list of heroes with some of their info not shown
+        /// <summary>
+        /// prints out a list of heroes with some of their info omitted
+        /// </summary>
+        /// <param name="input">a list of heroes to be used as input</param>
         public static void PrintHeroesCompressed(List<Hero> input)
         {
             // the amount of empty characters given for every value in the table
@@ -167,15 +179,28 @@ namespace U1_24_NR_ND
             }
 
         }
-             
-        // a method to truncate strings that are too long
+
+        /// <summary>
+        /// a method to truncate strings that are too long
+        /// </summary>
+        /// <param name="value">the string to truncate</param>
+        /// <param name="maxChars">the maximum amount of chars to use before truncating</param>
+        /// <returns></returns>
         private static string Truncate(string value, int maxChars)
         {
             return value.Length <= maxChars ? value : value.Substring(0, maxChars) + "...";
         }
 
-        // a simple method to assist in creating text character based tables
-        // [spacing] -- defines the amount of [line] chars to be put inbetween any of the other chars
+
+        /// <summary>
+        ///  a simple method to assist in creating text character based tables
+        /// </summary>
+        /// <param name="spacing">a list of ints which defines the amount of <paramref name="line"/> chars to put in between any of the other chars</param>
+        /// <param name="columnCount">the amount of columns in the</param>
+        /// <param name="leftEdge">the char used at the left edge of the table</param>
+        /// <param name="middleEdge">the char used inbetween lines</param>
+        /// <param name="rightEdge">the char used at the right edge or end of the line</param>
+        /// <param name="line">the char used inbetween any and all other chars</param>
         private static void PrintIndexedTableLine(List<int> spacing, int columnCount, char leftEdge, char middleEdge, char rightEdge, char line)
         {
 
@@ -196,6 +221,11 @@ namespace U1_24_NR_ND
             }
         }
 
+        /// <summary>
+        /// outputs a list of classes to a csv file
+        /// </summary>
+        /// <param name="fileName">the filename to which to output</param>
+        /// <param name="classes">the list of classes</param>
         public static void OutputClassesToCSV(string fileName, List<String> classes)
         {
             string[] lines = classes.ToArray();

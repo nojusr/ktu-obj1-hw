@@ -10,6 +10,9 @@ namespace U1_24_NR_ND
 {
     class Program
     {
+        /// <summary>
+        /// the main method for this program
+        /// </summary>
         public static void Main(string[] args)
         {
             // read from file
@@ -28,6 +31,7 @@ namespace U1_24_NR_ND
             Console.WriteLine("Herojai su mažiausiu skirtumu tarp žalos ir gynybos taškų:");
             IOUtils.PrintHeroes(TaskUtils.FindHeroesWithSmallestDifference(allHeroes));
 
+            // find and output all unique classes
             List<String> uniqueClasses = TaskUtils.FindUniqueClasses(allHeroes);
             IOUtils.OutputClassesToCSV("Klasės.csv", uniqueClasses);
 
