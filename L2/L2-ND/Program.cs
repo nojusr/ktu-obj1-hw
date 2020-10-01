@@ -12,21 +12,26 @@ namespace L2_ND
     {
         static void Main(string[] args)
         {
-            List<Player> allPlayers = IOUtils.ReadPlayers(@"krepsininkai.csv");
+            List<Player> allPlayers = new List<Player>();
 
-            IOUtils.PrintPlayers(allPlayers);
+            allPlayers.AddRange(IOUtils.ReadPlayersFromFile("2020-krepsininkai.csv"));
+            allPlayers.AddRange(IOUtils.ReadPlayersFromFile("2019-krepsininkai.csv"));
 
-            List<Player> oldestPlayers = TaskUtils.FindOldestPlayers(allPlayers);
-            Console.WriteLine("Seniausi žaidėjai:");
-            IOUtils.PrintCondensedPlayersWithAge(oldestPlayers);
+            PlayerRegister reg = new PlayerRegister(allPlayers);
+            
 
 
-            List<Player> allAttackers = TaskUtils.FindAllAttackers(allPlayers);
+            List<Player> allAttackers = reg.GetAllAttackers();
             Console.WriteLine("Visi puolėjai:");
             IOUtils.PrintCondensedPlayersWithHeight(allAttackers);
 
-            List<Player> invitedPlayers = TaskUtils.FindAllInvitedPlayers(allPlayers);
-            IOUtils.OutputPlayersToCSV(@"Rinktine.csv", invitedPlayers);
+
+            List<Player> tallestPlayers = reg.GetTallestPlayers();
+            Console.WriteLine("Aukščiausi žaidėjai:");
+            IOUtils.PrintCondensedPlayersWithHeight(tallestPlayers);
+
+            List<string> uniqueClubs = reg.GetUniqueInvitedClubs();
+            IOUtils.OutputStringListToCSV("Klubai.csv", uniqueClubs);
         }
     }
 }

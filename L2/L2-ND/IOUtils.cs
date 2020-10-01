@@ -15,11 +15,14 @@ namespace L2_ND
         /// </summary>
         /// <param name="fileName">the filename from which to read</param>
         /// <returns>a list of players</returns>
-        public static List<Player> ReadPlayers(string fileName)
+        public static List<Player> ReadPlayersFromFile(string fileName)
         {
             List<Player> output = new List<Player>();
 
             string[] lines = new string[150];
+
+            DateTime startDate = new DateTime();
+            DateTime endDate = new DateTime();
 
             // file error handling
             if (System.IO.File.Exists(fileName))
@@ -38,9 +41,13 @@ namespace L2_ND
                 System.Environment.Exit(1); // exit code 1 means that the program did not run successfuly
             }
 
+            startDate = DateTime.Parse(lines[0]);
+            endDate = DateTime.Parse(lines[1]);
 
-            foreach (string line in lines)
+
+            for (int i = 2; i < lines.Length; i++)
             {
+                string line = lines[i];
                 string[] values = line.Split(';');
 
                 string name = values[0];
@@ -48,8 +55,9 @@ namespace L2_ND
                 int age = int.Parse(values[2]);
                 int height = int.Parse(values[3]);
                 string position = values[4];
-                bool isPicked = bool.Parse(values[5]);
-                bool isCaptain = bool.Parse(values[6]);
+                string club = values[5];
+                bool isPicked = bool.Parse(values[6]);
+                bool isCaptain = bool.Parse(values[7]);
 
                 Player PlayerToAdd = new Player(
                     name,
@@ -57,8 +65,11 @@ namespace L2_ND
                     age,
                     height,
                     position,
+                    club,
                     isPicked,
-                    isCaptain
+                    isCaptain,
+                    startDate,
+                    endDate
                 );
 
                 output.Add(PlayerToAdd);
@@ -76,45 +87,49 @@ namespace L2_ND
         public static void PrintPlayers(List<Player> input)
         {
             // the amount of empty characters given for every value in the table
-            List<int> tableSpacing = new List<int> {10, 14, 3, 3, 10, 10, 10};
+            List<int> tableSpacing = new List<int> {10, 14, 3, 3, 10, 10, 10, 10};
 
 
-            PrintIndexedTableLine(tableSpacing, 7, '┌', '┬', '┐', '─');
+
+            PrintIndexedTableLine(tableSpacing, 8, '┌', '┬', '┐', '─');
 
             Console.WriteLine(
-                "│{0,-10}│{1,-14}│{2,-3}│{3,-3}│{4,-10}│{5, -10}│{6, -10}│",
+                "│{0,-10}│{1,-14}│{2,-3}│{3,-3}│{4,-10}│{5, -10}│{6, -10}│{7, -10}|",
                 "Vardas",
                 "Pavardė",
                 "Amž",
                 "Au.",
                 "Pozicija",
+                "Klubas",
                 "Išrinktas",
                 "Kapitonas"
             );
 
-            PrintIndexedTableLine(tableSpacing, 7, '├', '┼', '┤', '─');
+            PrintIndexedTableLine(tableSpacing, 8, '├', '┼', '┤', '─');
 
             for (int i = 0; i < input.Count; i++)
             {
                 Player player = input[i];
+                
                 Console.WriteLine(
-                    "│{0,-10}│{1,-14}│{2,-3}│{3,-3}│{4,-10}│{5, -10}│{6, -10}│",
+                    "│{0,-10}│{1,-14}│{2,-3}│{3,-3}│{4,-10}│{5, -10}│{6, -10}│{7, -10}|",
                     player.Name,
                     player.Surname,
                     player.Age,
                     player.Height,
                     player.Position,
+                    player.Club,
                     player.IsPicked,
                     player.IsCaptain
                 );
 
                 if (i == input.Count - 1)
                 {
-                    PrintIndexedTableLine(tableSpacing, 7, '└', '┴', '┘', '─');
+                    PrintIndexedTableLine(tableSpacing, 8, '└', '┴', '┘', '─');
                 }
                 else
                 {
-                    PrintIndexedTableLine(tableSpacing, 7, '├', '┼', '┤', '─');
+                    PrintIndexedTableLine(tableSpacing, 8, '├', '┼', '┤', '─');
                 }
             }
 
@@ -203,54 +218,7 @@ namespace L2_ND
                 }
             }
         }
-
-        /*
-
-        /// <summary>
-        /// prints out a list of heroes with some of their info omitted
-        /// </summary>
-        /// <param name="input">a list of heroes to be used as input</param>
-        public static void PrintHeroesCompressed(List<Hero> input)
-        {
-            // the amount of empty characters given for every value in the table
-            List<int> tableSpacing = new List<int> {18, 18, 18, 18};
-
-
-            PrintIndexedTableLine(tableSpacing, 4, '┌', '┬', '┐', '─');
-
-            Console.WriteLine(
-                "│ {0,-16} │ {1,-16} │ {2,-16} │ {3,-16} │",
-                "Vardas",
-                "Rasė",
-                "Klasė",
-                "Gyvybės t."
-            );
-
-            PrintIndexedTableLine(tableSpacing, 4, '├', '┼', '┤', '─');
-
-            for (int i = 0; i < input.Count; i++)
-            {
-                Hero hero = input[i];
-                Console.WriteLine(
-                    "│ {0,-16} │ {1,-16} │ {2,-16} │ {3,-16} │",
-                    hero.Name,
-                    hero.Race,
-                    hero.Class,
-                    hero.LifePoints
-                );
-
-                if (i == input.Count - 1)
-                {
-                    PrintIndexedTableLine(tableSpacing, 4, '└', '┴', '┘', '─');
-                }
-                else
-                {
-                    PrintIndexedTableLine(tableSpacing, 4, '├', '┼', '┤', '─');
-                }
-            }
-
-        }*/
-
+ 
         /// <summary>
         /// a method to truncate strings that are too long
         /// </summary>
@@ -292,18 +260,19 @@ namespace L2_ND
             }
         }
 
-        /*
+        
         /// <summary>
-        /// outputs a list of classes to a csv file
+        /// outputs a list of strings to a csv file
         /// </summary>
         /// <param name="fileName">the filename to which to output</param>
-        /// <param name="classes">the list of classes</param>
-        public static void OutputClassesToCSV(string fileName, List<String> classes)
+        /// <param name="classes">the list of string</param>
+        public static void OutputStringListToCSV(string fileName, List<String> input)
         {
-            string[] lines = classes.ToArray();
+            string[] lines = input.ToArray();
 
             File.WriteAllLines(fileName, lines, Encoding.UTF8);
-        }*/
+        }
+
 
         /// <summary>
         /// outputs a list of players into a csv file

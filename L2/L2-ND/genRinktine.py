@@ -9,9 +9,10 @@ generateAmount = 100
 possibleNames = ["Antanas", "Vardėnis", "Petras", "Aloyzas", "Juozas", "Motiejus"]
 possibleSurnames = ["Pavardėnis", "Žukauskas", "Sabonis", "Jasikevičius", "Valančiūnas"]
 possiblePositions = ["Attacker", "Defender", "Striker", "Sniper"]
+possibleClubs = ["Šaulys", "Žalgiris", "L. Rytas", "Kruojos"]
 
 
-f = open("krepsininkai.csv", "w")
+f = open("tst-krepsininkai.csv", "w")
 
 
 captainFound = False
@@ -25,6 +26,8 @@ for i in range(generateAmount):
 
     position = choice(possiblePositions)
 
+    club = choice(possibleClubs)
+
     invited = bool(random.getrandbits(1))
     captain = bool(random.getrandbits(1))
 
@@ -36,7 +39,7 @@ for i in range(generateAmount):
             captain = False
         
 
-    line = f"{name};{surname};{age};{height};{position};{invited};{captain}\n"
+    line = f"{name};{surname};{age};{height};{position};{club};{invited};{captain}\n"
     print(line)
     f.write(line)
 
