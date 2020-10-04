@@ -14,8 +14,83 @@ namespace L2_ND
         public bool IsCaptain { get; set; }
         public DateTime startDate { get; set; }
         public DateTime endDate { get; set; }
-        
 
+        /// <summary>
+        /// a method to represent a player object with a string
+        /// </summary>
+        /// <returns>a string that describes a player</returns>
+        public override string ToString()
+        {
+            return String.Format(
+                "Žaidėjas: {0} {1}, Metai: {2}, Aukštis: {3}, Pozicija: {4}, Klubas: {5}, Ar parinktas: {6}, Ar kapitonas: {7}, Stovyklos pradžia: {8}, Stovyklos pabaiga: {9}",
+                this.Name,
+                this.Surname,
+                this.Age,
+                this.Height,
+                this.Position,
+                this.Club,
+                this.IsPicked,
+                this.IsPicked,
+                this.startDate.ToShortDateString(),
+                this.endDate.ToShortDateString()
+            );
+        }
+
+        /// <summary>
+        /// compares this object to any other object
+        /// </summary>
+        /// <param name="other">object to compare against</param>
+        /// <returns>True if other is equal to this object; False if object isn't equal.</returns>
+        public override bool Equals(object other)
+        {
+            if (other == null || other.GetType() != this.GetType())
+            {
+                return false;
+            }
+
+            if (((Player)other).GetHashCode() != this.GetHashCode())
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        /// <summary>
+        /// a rudimentary hashing method of this class
+        /// </summary>
+        /// <returns>an integer hash of this class</returns>
+        public override int GetHashCode()
+        {
+            int hash = 0;
+
+            string hString = String.Format(
+                "{0}{1}{2}{3}{4}{5}",
+                this.Name,
+                this.Surname,
+                this.Position,
+                this.Club,
+                this.startDate.ToShortDateString(),
+                this.endDate.ToShortDateString()
+            ); 
+
+
+            foreach (char c in hString)
+            {
+                hash += (int)c;
+            }
+
+            hash += this.Age + this.Height;
+
+            if (this.IsPicked) {
+                hash += 5;
+            }
+            if (this.IsCaptain) {
+                hash += 7;
+            }
+
+            return hash;
+        }
 
         public Player(string name, string surname, int age, int height, string position, string club, bool isPicked, bool isCaptain, DateTime start, DateTime end) {
             this.Name = name;

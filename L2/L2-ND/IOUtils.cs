@@ -2,9 +2,7 @@
 using System;
 using System.IO;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace L2_ND
 {
@@ -41,13 +39,25 @@ namespace L2_ND
                 System.Environment.Exit(1); // exit code 1 means that the program did not run successfuly
             }
 
-            startDate = DateTime.Parse(lines[0]);
-            endDate = DateTime.Parse(lines[1]);
+
+            string year = lines[0];
+
+            startDate = DateTime.Parse(String.Format("{0}-{1}", year, lines[1]));
+            endDate = DateTime.Parse(String.Format("{0}-{1}", year, lines[2]));
 
 
-            for (int i = 2; i < lines.Length; i++)
+            for (int i = 3; i < lines.Length; i++)
             {
                 string line = lines[i];
+
+                // basic support for comments
+                // if a line in the input file starts with
+                // '//', then ignore it
+                if (line.StartsWith("//"))
+                {
+                    continue;
+                }
+
                 string[] values = line.Split(';');
 
                 string name = values[0];
@@ -94,7 +104,7 @@ namespace L2_ND
             PrintIndexedTableLine(tableSpacing, 8, '┌', '┬', '┐', '─');
 
             Console.WriteLine(
-                "│{0,-10}│{1,-14}│{2,-3}│{3,-3}│{4,-10}│{5, -10}│{6, -10}│{7, -10}|",
+                "│{0,-10}│{1,-14}│{2,-3}│{3,-3}│{4,-10}│{5, -10}│{6, -10}│{7, -10}│",
                 "Vardas",
                 "Pavardė",
                 "Amž",
@@ -112,7 +122,7 @@ namespace L2_ND
                 Player player = input[i];
                 
                 Console.WriteLine(
-                    "│{0,-10}│{1,-14}│{2,-3}│{3,-3}│{4,-10}│{5, -10}│{6, -10}│{7, -10}|",
+                    "│{0,-10}│{1,-14}│{2,-3}│{3,-3}│{4,-10}│{5, -10}│{6, -10}│{7, -10}│",
                     player.Name,
                     player.Surname,
                     player.Age,
@@ -224,7 +234,7 @@ namespace L2_ND
         /// </summary>
         /// <param name="value">the string to truncate</param>
         /// <param name="maxChars">the maximum amount of chars to use before truncating</param>
-        /// <returns></returns>
+        /// <returns>a truncated string</returns>
         private static string Truncate(string value, int maxChars)
         {
             return value.Length <= maxChars ? value : value.Substring(0, maxChars) + "...";
@@ -265,7 +275,7 @@ namespace L2_ND
         /// outputs a list of strings to a csv file
         /// </summary>
         /// <param name="fileName">the filename to which to output</param>
-        /// <param name="classes">the list of string</param>
+        /// <param name="input">a list of strings</param>
         public static void OutputStringListToCSV(string fileName, List<String> input)
         {
             string[] lines = input.ToArray();

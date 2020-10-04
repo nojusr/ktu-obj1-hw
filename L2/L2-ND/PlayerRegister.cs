@@ -1,9 +1,7 @@
+//PlayerRegister.cs
 using System;
-using System.IO;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace L2_ND
 {
@@ -16,15 +14,55 @@ namespace L2_ND
             this.allPlayers = players;
         }
 
+
+        /// <summary>
+        /// turns the register to a string
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            string output = "";
+
+            output += String.Format(
+                "Žaidėjų registras: Žaidėjų kiekis: {0}\n",
+                this.PlayerCount()
+            );
+
+            output += "Visi Žaidėjai: \n";
+
+            foreach (Player p in this.allPlayers)
+            {
+                output += String.Format(
+                    "{0}\n",
+                    p.ToString()
+                );
+            }
+
+            return output;
+        }
+
         /// <summary>
         /// gets the amount of players in the register
         /// </summary>
-        /// <returns>a number lol</returns>
+        /// <returns>the player count</returns>
         public int PlayerCount()
         {
             return this.allPlayers.Count();
         }
 
+        /// <summary>
+        /// gets all players that are stored in the register
+        /// </summary>
+        /// <returns>a list of all players</returns>
+        public List<Player> GetAllPlayers()
+        {
+            return this.allPlayers;
+        }
+
+        /// <summary>
+        /// get a list of all players who have been invited
+        /// </summary>
+        /// <returns>a list of players who have been invited</returns>
         public List<Player> GetInvitedPlayers()
         {
             List<Player> output = new List<Player>();
@@ -37,12 +75,10 @@ namespace L2_ND
                 }
             }
             return output;
-
-
         }
 
         /// <summary>
-        /// gets a list of the tallest players in the team
+        /// get the tallest player(s) in the register
         /// </summary>
         /// <returns>a list of the tallest players</returns>
         public List<Player> GetTallestPlayers()
@@ -93,7 +129,7 @@ namespace L2_ND
         }
 
         /// <summary>
-        /// gets a list of all unique clubs from invited players
+        /// gets a list of all unique clubs from every invited player
         /// </summary>
         /// <returns>a list of strings</returns>
         public List<String> GetUniqueInvitedClubs()

@@ -1,4 +1,4 @@
-﻿//IOUtils.cs
+﻿//Program.cs
 using System;
 using System.IO;
 using System.Collections.Generic;
@@ -19,17 +19,21 @@ namespace L2_ND
 
             PlayerRegister reg = new PlayerRegister(allPlayers);
             
+            // print out all players
+            Console.WriteLine("Visi Žaidėjai: ");
+            Console.Write(reg.ToString());
 
-
+            // get and print out all attackers
             List<Player> allAttackers = reg.GetAllAttackers();
             Console.WriteLine("Visi puolėjai:");
             IOUtils.PrintCondensedPlayersWithHeight(allAttackers);
 
-
+            // get and print out the tallest player(s)
             List<Player> tallestPlayers = reg.GetTallestPlayers();
             Console.WriteLine("Aukščiausi žaidėjai:");
             IOUtils.PrintCondensedPlayersWithHeight(tallestPlayers);
 
+            // write all unique clubs to a file
             List<string> uniqueClubs = reg.GetUniqueInvitedClubs();
             IOUtils.OutputStringListToCSV("Klubai.csv", uniqueClubs);
         }
