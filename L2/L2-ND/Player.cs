@@ -92,6 +92,62 @@ namespace L2_ND
             return hash;
         }
 
+
+
+        // overloading the operators below in such a manner (making them compare by only a single class attribute)
+        // is, in my opinion, terrible practice. Now, every time someone tries to compare two
+        // Player classes directly, they will get weird, undocumented behaviour that
+        // will be really confusing to debug. I only did this because it was explicitly stated that the program
+        // required operator overloading.
+
+        /// <summary>
+        /// overwritten > operator to use this class's height as the attribute to compare against
+        /// </summary>
+        public static bool operator >(Player p1, Player p2)
+        {
+            if (p1.Height > p2.Height) {
+                return true;
+            }
+            return false;
+        }
+
+
+        /// <summary>
+        /// overwritten < operator to use this class's height as the attribute to compare against
+        /// </summary>
+        public static bool operator <(Player p1, Player p2)
+        {
+            if (p1.Height < p2.Height) {
+                return true;
+            }
+            return false;
+        }
+
+
+        /// <summary>
+        /// overwritten equality operator to use this class's height as the attribute to compare against
+        /// </summary>
+        public static bool operator ==(Player p1, Player p2)
+        {
+            if (p1.Height == p2.Height) {
+                return true;
+            }
+            return false;
+        }
+        
+
+        /// <summary>
+        /// overwritten != operator to use this class's height as the attribute to compare against
+        /// </summary>
+        public static bool operator !=(Player p1, Player p2)
+        {
+            if (p1.Height != p2.Height) {
+                return true;
+            }
+            return false;
+        }
+
+
         public Player(string name, string surname, int age, int height, string position, string club, bool isPicked, bool isCaptain, DateTime start, DateTime end) {
             this.Name = name;
             this.Surname = surname;

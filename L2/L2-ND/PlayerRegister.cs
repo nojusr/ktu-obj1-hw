@@ -7,18 +7,57 @@ namespace L2_ND
 {
     class PlayerRegister
     {
+        /// <summary>
+        /// the main list of players to be manipulated in the register
+        /// </summary>
         private List<Player> allPlayers;
 
+        /// <summary>
+        /// constructor method with a player list as an argument
+        /// creates a new list of players and adds the argument to the register's list
+        /// </summary>
+        /// <param name="players">a list of players</param>
         public PlayerRegister(List<Player> players)
         {
-            this.allPlayers = players;
+            if (this.allPlayers == null)
+            {
+                this.allPlayers = new List<Player>();
+            }
+
+            this.allPlayers.AddRange(players);
+        }
+
+        /// <summary>
+        /// constructor method without any arguments -- creates an empty list of players in the register
+        /// </summary>
+        public PlayerRegister()
+        {
+            this.allPlayers = new List<Player>();
+        }
+
+        /// <summary>
+        /// adds a list of players to this register's player list
+        /// </summary>
+        /// <param name="playersToAdd">a list of players</param>
+        public void AddRange(List<Player> playersToAdd)
+        {
+            this.allPlayers.AddRange(playersToAdd);
+        }
+
+        /// <summary>
+        /// adds a player to this register's all players
+        /// </summary>
+        /// <param name="player">the player to add</param>
+        public void Add(Player player)
+        {
+            this.allPlayers.Add(player);
         }
 
 
         /// <summary>
         /// turns the register to a string
         /// </summary>
-        /// <returns></returns>
+        /// <returns>a string that describes the data held in the register</returns>
         public override string ToString()
         {
             string output = "";
@@ -96,12 +135,12 @@ namespace L2_ND
 
                 Player playerToCompare = output[0];
 
-                if (player.Height > playerToCompare.Height)
+                if (player > playerToCompare)
                 {
                     output.Clear();
                     output.Add(player);
                 }
-                else if (player.Height == playerToCompare.Height)
+                else if (player == playerToCompare)
                 {
                     output.Add(player);
                 }

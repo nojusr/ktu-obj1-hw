@@ -12,12 +12,15 @@ namespace L2_ND
     {
         static void Main(string[] args)
         {
-            List<Player> allPlayers = new List<Player>();
 
-            allPlayers.AddRange(IOUtils.ReadPlayersFromFile("2020-krepsininkai.csv"));
-            allPlayers.AddRange(IOUtils.ReadPlayersFromFile("2019-krepsininkai.csv"));
 
-            PlayerRegister reg = new PlayerRegister(allPlayers);
+            // only a single PlayerRegister is being used because it ends up being the cleanest solution
+            // for getting the tallest player and getting all of the unique clubs.
+            PlayerRegister reg = new PlayerRegister();
+
+            reg.AddRange(IOUtils.ReadPlayersFromFile("2020-krepsininkai.csv"));
+            reg.AddRange(IOUtils.ReadPlayersFromFile("2019-krepsininkai.csv"));
+
             
             // print out all players
             Console.WriteLine("Visi Žaidėjai: ");
