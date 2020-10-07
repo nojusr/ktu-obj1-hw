@@ -1,0 +1,440 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage[margin=2cm,a4paper]{geometry} 
+\usepackage[T1]{fontenc}
+\usepackage[english,lithuanian]{babel}
+\usepackage[unicode,hidelinks]{hyperref}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage[final]{pdfpages}
+\usepackage{titlesec}
+\usepackage{textcomp}
+\usepackage{lmodern, newunicodechar}
+\usepackage{minted}
+\usepackage{fontspec}
+
+% change subsection formatting
+\titleformat*{\subsection}{\large\bfseries}
+
+% small function to set margins for specific elements
+\def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
+\let\endchangemargin=\endlist 
+
+% set the default fonts
+\defaultfontfeatures{Scale = MatchLowercase}
+\setmainfont{Times New Roman}[Scale = 1.0]
+\setsansfont{Arial}
+\setmonofont{Courier New}
+
+\begin{document}
+
+% redefine matrix command for easily changeable matrix vspacing
+\makeatletter
+\renewcommand*\env@matrix[1][\arraystretch]{%
+  \edef\arraystretch{#1}%
+  \hskip -\arraycolsep
+  \let\@ifnextchar\new@ifnextchar
+  \array{*\c@MaxMatrixCols c}}
+\makeatother
+
+% Redefinition of ToC command to get centered heading
+\makeatletter
+\renewcommand\tableofcontents{%
+  \null\hfill\textbf{\Large\contentsname}\hfill\null\par
+  \@mkboth{\MakeUppercase\contentsname}{\MakeUppercase\contentsname}%
+  \@starttoc{toc}%
+}
+\makeatother
+
+% minted settings
+\setminted{
+    breaklines=true,
+    fontsize=\small
+}
+
+
+
+
+%-------------------------------------
+%TITLE PAGE
+%-------------------------------------
+
+% ktu logo
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=2.5cm]{Assets/ktu-ikona.png}
+\end{figure}
+
+\vspace{-0.8cm}
+
+\begin{center}
+    \Large\textbf{Kauno technologijos universitetas}
+\end{center}
+
+\vspace{-0.6cm}
+
+\begin{center}
+    \large{Informatikos fakultetas}
+\end{center}
+
+\vspace{5cm}
+
+\begin{center}
+    \LARGE\textbf{Objektinis programavimas I (P175B118)}
+\end{center}
+
+\vspace{-0.5cm}
+
+\begin{center}
+    \Large{Laboratorinių darbų ataskaita}
+\end{center}
+
+
+\vspace{2.5cm}
+
+
+\begin{changemargin}{7.5cm}{0cm}
+
+    \begin{itemize}
+        \item[]\large\textbf{Nojus Raškevičius, IFF-0/6}
+        \vspace{0.2cm} 
+        \item[]\large{Studentas}
+    \end{itemize}
+
+    \vspace{1cm}
+
+    \begin{itemize}
+        \item[]\large\textbf{Prof. Vacius Jusas}
+        \vspace{0.2cm} 
+        \item[]\large{Dėstytojas}
+    \end{itemize}
+
+\end{changemargin}
+
+\vspace*{\fill}
+
+\begin{center}
+    \large\textbf{Kaunas 2020}
+\end{center}
+
+\pagebreak
+\newpage
+
+%-----------------------------------------------------------------------------------------------------------------
+%CONTENTS
+%-----------------------------------------------------------------------------------------------------------------
+
+\tableofcontents
+
+\newpage
+
+%-----------------------------------------------------------------------------------------------------------------
+%L1
+%-----------------------------------------------------------------------------------------------------------------
+
+\section{Duomenų klasė}
+\subsection{Darbo užduotis}
+\textbf{Kompiuterinis žaidimas.} Kuriate „fantasy“ tipo kompiuterinį žaidimą. Duomenų faile turite informacija apie žaidimo herojus: vardas, rasė, klasė, gyvybės taškai, mana, žalos taškai, gynybos taškai, jėga, vikrumas, intelektas, ypatinga galia.
+\begin{itemize}
+    \item[•]Raskite daugiausiai gyvybės taškų turintį herojų, ekrane atspausdinkite jo vardą, rasę, klasę ir gyvybės taškų kiekį. Jei yra keli, spausdinkite visus.
+    \item[•]Raskite žaidėją, kurio gynybos ir žalos taškų skirtumas yra mažiausias. Atspausdinkite informaciją apie žaidėją į ekraną. Jei yra keli, spausdinkite visus. 
+    \item[•]Sudarykite visų herojų klasių sąrašą, klasių pavadinimus įrašykite į failą „Klasės.csv“ .
+\end{itemize}
+
+
+\subsection{Programos tekstas}
+
+\inputminted{csharp}{Assets/L1/L1-rawtext.txt}
+
+\subsection{Pradiniai duomenys ir rezultatai}
+
+\textbf{Pradiniai duomenys:}
+
+\inputminted{csharp}{Assets/L1/herojai.csv}
+
+\normalsize
+\begin{changemargin}{0cm}{0cm}
+    \textbf{Rezultatai:}
+\end{changemargin}
+
+\footnotesize
+\begin{verbatim}
+Visi herojai:
+┌──────────┬──────────────┬───────────┬────┬────┬────┬─────┬──┬──┬──┬────────────────┐
+│Vardas    │Rasė          │Klasė      │G.t.│M.t.│Ž.t.│Gy.t.│J.│V.│I.│Ypat. galia     │
+├──────────┼──────────────┼───────────┼────┼────┼────┼─────┼──┼──┼──┼────────────────┤
+│Aloyzas   │Lokys         │Kunigas    │97  │72  │38  │35   │7 │7 │1 │Gerai gamina... │
+├──────────┼──────────────┼───────────┼────┼────┼────┼─────┼──┼──┼──┼────────────────┤
+│Aloyzas   │Žmogus        │Dainininkas│42  │69  │82  │73   │4 │5 │8 │Labai laimin... │
+├──────────┼──────────────┼───────────┼────┼────┼────┼─────┼──┼──┼──┼────────────────┤
+│Antanas   │Varliažmogis  │Kunigas    │18  │27  │25  │51   │1 │9 │9 │Labai gražio... │
+├──────────┼──────────────┼───────────┼────┼────┼────┼─────┼──┼──┼──┼────────────────┤
+│Antanas   │Varliažmogis  │Kunigas    │66  │87  │99  │25   │4 │2 │4 │Ugnies valdy... │
+├──────────┼──────────────┼───────────┼────┼────┼────┼─────┼──┼──┼──┼────────────────┤
+│Petras    │Driežažmogis  │Burtininkas│21  │55  │20  │17   │5 │1 │1 │Labai laimin... │
+├──────────┼──────────────┼───────────┼────┼────┼────┼─────┼──┼──┼──┼────────────────┤
+│Vardėnis  │Driežažmogis  │Magas      │59  │33  │40  │55   │0 │0 │8 │Labai gražio... │
+├──────────┼──────────────┼───────────┼────┼────┼────┼─────┼──┼──┼──┼────────────────┤
+│Motiejus  │Elfas         │Lankininkas│35  │44  │45  │40   │3 │7 │5 │Labai laimin... │
+├──────────┼──────────────┼───────────┼────┼────┼────┼─────┼──┼──┼──┼────────────────┤
+│Motiejus  │Tamsusis elfas│Kunigas    │86  │70  │26  │69   │8 │9 │7 │Labai gražio... │
+├──────────┼──────────────┼───────────┼────┼────┼────┼─────┼──┼──┼──┼────────────────┤
+│Motiejus  │Elfas         │Karys      │57  │71  │95  │51   │4 │7 │2 │Labai laimin... │
+├──────────┼──────────────┼───────────┼────┼────┼────┼─────┼──┼──┼──┼────────────────┤
+│Antanas   │Driežažmogis  │Riteris    │33  │6   │91  │80   │3 │4 │7 │Ugnies valdy... │
+├──────────┼──────────────┼───────────┼────┼────┼────┼─────┼──┼──┼──┼────────────────┤
+│Vardėnis  │Lokys         │Gydytojas  │18  │34  │43  │12   │1 │3 │5 │Ugnies valdy... │
+├──────────┼──────────────┼───────────┼────┼────┼────┼─────┼──┼──┼──┼────────────────┤
+│Motiejus  │Tamsusis elfas│Lankininkas│75  │63  │18  │22   │1 │2 │7 │Labai laimin... │
+├──────────┼──────────────┼───────────┼────┼────┼────┼─────┼──┼──┼──┼────────────────┤
+│Juozas    │Šuo           │Karys      │12  │56  │86  │38   │6 │7 │4 │Gerai gamina... │
+├──────────┼──────────────┼───────────┼────┼────┼────┼─────┼──┼──┼──┼────────────────┤
+│Vardėnis  │Varliažmogis  │Burtininkas│37  │47  │14  │75   │1 │6 │6 │Gerai gamina... │
+├──────────┼──────────────┼───────────┼────┼────┼────┼─────┼──┼──┼──┼────────────────┤
+│Motiejus  │Žmogus        │Riteris    │28  │23  │61  │81   │3 │1 │9 │Labai gražio... │
+├──────────┼──────────────┼───────────┼────┼────┼────┼─────┼──┼──┼──┼────────────────┤
+│Antanas   │Elfas         │Riteris    │56  │4   │16  │91   │9 │7 │5 │Labai laimin... │
+├──────────┼──────────────┼───────────┼────┼────┼────┼─────┼──┼──┼──┼────────────────┤
+│Juozas    │Žmogus        │Karys      │97  │17  │74  │69   │5 │7 │5 │Ugnies valdy... │
+├──────────┼──────────────┼───────────┼────┼────┼────┼─────┼──┼──┼──┼────────────────┤
+│Motiejus  │Varliažmogis  │Magas      │39  │74  │21  │31   │7 │5 │0 │Labai gražio... │
+├──────────┼──────────────┼───────────┼────┼────┼────┼─────┼──┼──┼──┼────────────────┤
+│Petras    │Žmogus        │Riteris    │46  │64  │92  │83   │8 │6 │9 │Labai laimin... │
+├──────────┼──────────────┼───────────┼────┼────┼────┼─────┼──┼──┼──┼────────────────┤
+│Vardėnis  │Elfas         │Karys      │61  │77  │81  │26   │1 │1 │9 │Gerai gamina... │
+├──────────┼──────────────┼───────────┼────┼────┼────┼─────┼──┼──┼──┼────────────────┤
+│Petras    │Driežažmogis  │Gydytojas  │92  │35  │99  │37   │3 │4 │0 │Labai gražio... │
+├──────────┼──────────────┼───────────┼────┼────┼────┼─────┼──┼──┼──┼────────────────┤
+│Juozas    │Driežažmogis  │Riteris    │32  │60  │48  │83   │7 │6 │6 │Labai laimin... │
+├──────────┼──────────────┼───────────┼────┼────┼────┼─────┼──┼──┼──┼────────────────┤
+│Aloyzas   │Driežažmogis  │Lankininkas│65  │21  │98  │68   │6 │6 │9 │Labai gražio... │
+├──────────┼──────────────┼───────────┼────┼────┼────┼─────┼──┼──┼──┼────────────────┤
+│Juozas    │Driežažmogis  │Gydytojas  │91  │51  │63  │23   │4 │5 │4 │Ugnies valdy... │
+├──────────┼──────────────┼───────────┼────┼────┼────┼─────┼──┼──┼──┼────────────────┤
+│Juozas    │Zombis        │Gydytojas  │93  │95  │82  │23   │9 │9 │5 │Labai gražio... │
+└──────────┴──────────────┴───────────┴────┴────┴────┴─────┴──┴──┴──┴────────────────┘
+Herojai su didžiausiu kiekiu gyvybės taškų:
+┌──────────────────┬──────────────────┬──────────────────┬──────────────────┐
+│ Vardas           │ Rasė             │ Klasė            │ Gyvybės t.       │
+├──────────────────┼──────────────────┼──────────────────┼──────────────────┤
+│ Aloyzas          │ Lokys            │ Kunigas          │ 97               │
+├──────────────────┼──────────────────┼──────────────────┼──────────────────┤
+│ Juozas           │ Žmogus           │ Karys            │ 97               │
+└──────────────────┴──────────────────┴──────────────────┴──────────────────┘
+Herojai su mažiausiu skirtumu tarp žalos ir gynybos taškų:
+┌──────────┬──────────────┬───────────┬────┬────┬────┬─────┬──┬──┬──┬────────────────┐
+│Vardas    │Rasė          │Klasė      │G.t.│M.t.│Ž.t.│Gy.t.│J.│V.│I.│Ypat. galia     │
+├──────────┼──────────────┼───────────┼────┼────┼────┼─────┼──┼──┼──┼────────────────┤
+│Aloyzas   │Lokys         │Kunigas    │97  │72  │38  │35   │7 │7 │1 │Gerai gamina... │
+├──────────┼──────────────┼───────────┼────┼────┼────┼─────┼──┼──┼──┼────────────────┤
+│Petras    │Driežažmogis  │Burtininkas│21  │55  │20  │17   │5 │1 │1 │Labai laimin... │
+└──────────┴──────────────┴───────────┴────┴────┴────┴─────┴──┴──┴──┴────────────────┘
+\end{verbatim}
+
+\normalsize
+\begin{changemargin}{0cm}{0cm}
+    \textbf{Klasės.csv:}
+\end{changemargin}
+\inputminted{csharp}{Assets/L1/klases.csv}
+
+\subsection{Dėstytojo pastabos}
+\begin{itemize}
+    \item[•]Ataskaitos pavadinimas buvo ne pagal taisykles
+    \item[•]Dėstytotojo pareigos buvo ne tos
+    \item[•]Metodai nebuvo tinkamai bei visiškai aprašyti
+    \item[•]Nėra pateikti komentarai apie pradinių duomenų prasmę
+\end{itemize}
+
+\newpage
+
+%-----------------------------------------------------------------------------------------------------------------
+%L2
+%-----------------------------------------------------------------------------------------------------------------
+
+
+\section{Skaičiavimų klasė}
+
+\subsection{Darbo užduotis}
+\textbf{Krepšinio rinktinė.} urite  ne  tik  šių,  bet  ir  vienų  ankstesniųjų  metų  į  stovyklas  pakviestų krepšininkų sąrašus. Keičiasi duomenų failų formatas. Pirmoje eilutėje metai, antroje –stovyklos pradžios data, trečioje –stovyklos pabaigos data. Toliau informacija apie krepšininkus pateikta tokiu pačiu formatu kaip L1 užduotyje.
+\begin{itemize}
+    \item[•]Sudarykite visų puolėjų, dalyvavusių rinktinės stovyklose, sąrašą ir ekrane atspausdinkite jų vardus, pavardes bei ūgį.
+    \item[•]Raskite aukščiausiąkrepšininką, ir ekrane atspausdinkite jo vardą, pavardę bei amžių. Jei yra keli, spausdinkite visus.
+    \item[•]Sudarykite sąrašą klubų, kuriuose žaidė kandidatai į rinktinę, ir įrašykite į failą „Klubai.csv“.
+\end{itemize}
+
+\subsection{Programos tekstas}
+\inputminted{csharp}{Assets/L2/L2-rawtext.txt}
+\newpage
+
+\subsection{Pradiniai duomenys ir rezultatai}
+
+\subsubsection{Pirmas tikrinimas}
+\begin{changemargin}{0cm}{0cm}
+    \textbf{krepsininkai-2020.csv:}
+\end{changemargin}
+
+\inputminted{csharp}{Assets/L2/test1-input1.txt}
+
+\begin{changemargin}{0cm}{0cm}
+    \textbf{krepsininkai-2019.csv:}
+\end{changemargin}
+
+\inputminted{csharp}{Assets/L2/test1-input2.txt}
+
+
+\begin{changemargin}{0cm}{0cm}
+    Šitie duomenys yra skirti bendram tikrinimui atlikti. Išvestyje turėtų būti tik vienas aukščiausias žaidėjas,
+    (Juozas Pavardėnis), turėtų būti 7 puolėjai, turėtų būti 4 unikalūs klubai (Šaulys, L. Rytas, Žalgiris, Kruojos).
+\end{changemargin}
+
+\begin{changemargin}{0cm}{0cm}
+    \textbf{Programos išvestis:}
+\end{changemargin}
+
+
+\inputminted[fontsize=\footnotesize]{csharp}{Assets/L2/test1-output.txt}
+
+\footnotesize
+\begin{verbatim}
+Visi puolėjai:
+┌──────────┬──────────────┬───┐
+│Vardas    │Pavardė       │Au.│
+├──────────┼──────────────┼───┤
+│Aloyzas   │Valančiūnas   │182│
+├──────────┼──────────────┼───┤
+│Petras    │Pavardėnis    │197│
+├──────────┼──────────────┼───┤
+│Antanas   │Žukauskas     │198│
+├──────────┼──────────────┼───┤
+│Antanas   │Jasikevičius  │195│
+├──────────┼──────────────┼───┤
+│Aloyzas   │Valančiūnas   │195│
+├──────────┼──────────────┼───┤
+│Antanas   │Valančiūnas   │187│
+├──────────┼──────────────┼───┤
+│Juozas    │Pavardėnis    │207│
+└──────────┴──────────────┴───┘
+Aukščiausi žaidėjai:
+┌──────────┬──────────────┬───┐
+│Vardas    │Pavardė       │Au.│
+├──────────┼──────────────┼───┤
+│Juozas    │Pavardėnis    │207│
+└──────────┴──────────────┴───┘
+\end{verbatim}
+\normalsize
+
+\begin{changemargin}{0cm}{0cm}
+    \textbf{Klubai.csv:}
+\end{changemargin}
+
+\footnotesize
+\begin{verbatim}
+L. Rytas
+Šaulys
+Žalgiris
+Kruojos
+\end{verbatim}
+\normalsize
+
+\subsubsection{Antras tikrinimas}
+\begin{changemargin}{0cm}{0cm}
+    \textbf{krepsininkai-2020.csv:}
+\end{changemargin}
+
+\inputminted{csharp}{Assets/L2/test2-input1.txt}
+
+\begin{changemargin}{0cm}{0cm}
+    \textbf{krepsininkai-2019.csv:}
+\end{changemargin}
+
+\inputminted{csharp}{Assets/L2/test2-input2.txt}
+
+
+\begin{changemargin}{0cm}{0cm}
+    Šie įvesties duomenys yra skirti tikrinti „Klubai.csv“ išvestį.
+    Yra įvesti tokie patys klubai kaip ir pirmajame tikrinime, tačiau jie yra pakeisti taip,
+    kad žaidėjai yra priimami tik iš „Žalgirio“ ir „Šaulio“ klubų.
+    Kitaip tariant, Į „Klubai.csv“ turėtų buti išvesti tik du klubai: „Šaulys“ ir „Žalgiris“.
+\end{changemargin}
+
+\begin{changemargin}{0cm}{0cm}
+    \textbf{Programos išvestis:}
+\end{changemargin}
+
+
+\inputminted[fontsize=\footnotesize]{csharp}{Assets/L2/test2-output.txt}
+
+\footnotesize
+\begin{verbatim}
+Visi puolėjai:
+┌──────────┬──────────────┬───┐
+│Vardas    │Pavardė       │Au.│
+├──────────┼──────────────┼───┤
+│Vardėnis  │Sabonis       │193│
+├──────────┼──────────────┼───┤
+│Antanas   │Valančiūnas   │191│
+├──────────┼──────────────┼───┤
+│Juozas    │Pavardėnis    │194│
+├──────────┼──────────────┼───┤
+│Petras    │Sabonis       │191│
+└──────────┴──────────────┴───┘
+Aukščiausi žaidėjai:
+┌──────────┬──────────────┬───┐
+│Vardas    │Pavardė       │Au.│
+├──────────┼──────────────┼───┤
+│Petras    │Pavardėnis    │209│
+├──────────┼──────────────┼───┤
+│Antanas   │Sabonis       │209│
+└──────────┴──────────────┴───┘
+\end{verbatim}
+\normalsize
+
+\begin{changemargin}{0cm}{0cm}
+    \textbf{Klubai.csv:}
+\end{changemargin}
+
+\footnotesize
+\begin{verbatim}
+Šaulys
+Žalgiris
+\end{verbatim}
+\normalsize
+
+\subsection{Dėstytojo pastabos}
+\newpage
+
+%-----------------------------------------------------------------------------------------------------------------
+%L3
+%-----------------------------------------------------------------------------------------------------------------
+
+\section{Konteineris}
+\subsection{Darbo užduotis}
+\subsection{Programos tekstas}
+\subsection{Pradiniai duomenys ir rezultatai}
+\subsection{Dėstytojo pastabos}
+\newpage
+
+%-----------------------------------------------------------------------------------------------------------------
+%L4
+%-----------------------------------------------------------------------------------------------------------------
+
+\section{Teksto analizė ir redagavimas}
+\subsection{Darbo užduotis}
+\subsection{Programos tekstas}
+\subsection{Pradiniai duomenys ir rezultatai}
+\subsection{Dėstytojo pastabos}
+\newpage
+
+%-----------------------------------------------------------------------------------------------------------------
+%L5
+%-----------------------------------------------------------------------------------------------------------------
+
+\section{Paveldėjimas}
+\subsection{Darbo užduotis}
+\subsection{Programos tekstas}
+\subsection{Pradiniai duomenys ir rezultatai}
+\subsection{Dėstytojo pastabos}
+\newpage
+
+\end{document}

@@ -1,0 +1,16 @@
+2020
+07-01
+07-30
+Antanas;Žukauskas;21;177;Defender;L. Rytas;False;False
+Aloyzas;Sabonis;19;193;Striker;Šaulys;False;False
+Petras;Jasikevičius;22;204;Sniper;Šaulys;False;False
+Petras;Pavardėnis;28;209;Defender;L. Rytas;False;False
+Motiejus;Žukauskas;20;205;Defender;L. Rytas;False;False
+Vardėnis;Sabonis;26;193;Attacker;L. Rytas;False;False
+Juozas;Valančiūnas;23;198;Sniper;Šaulys;True;False
+Juozas;Žukauskas;25;185;Defender;L. Rytas;False;False
+Aloyzas;Pavardėnis;20;205;Defender;Žalgiris;True;False
+Vardėnis;Pavardėnis;19;178;Striker;L. Rytas;False;False
+Aloyzas;Valančiūnas;29;208;Striker;L. Rytas;False;False
+Antanas;Valančiūnas;32;191;Attacker;Žalgiris;True;False
+Antanas;Sabonis;27;209;Sniper;L. Rytas;False;False

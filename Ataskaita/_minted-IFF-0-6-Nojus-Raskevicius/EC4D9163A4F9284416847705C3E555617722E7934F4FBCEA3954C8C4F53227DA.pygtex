@@ -1,0 +1,18 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{l+m}{2020}
+\PYG{l+m}{07}\PYG{p}{\PYGZhy{}}\PYG{l+m}{01}
+\PYG{l+m}{07}\PYG{p}{\PYGZhy{}}\PYG{l+m}{30}
+\PYG{n}{Antanas}\PYG{p}{;}\PYG{n}{Žukauskas}\PYG{p}{;}\PYG{l+m}{21}\PYG{p}{;}\PYG{l+m}{177}\PYG{p}{;}\PYG{n}{Defender}\PYG{p}{;}\PYG{n}{L}\PYG{p}{.} \PYG{n}{Rytas}\PYG{p}{;}\PYG{n}{False}\PYG{p}{;}\PYG{n}{False}
+\PYG{n}{Aloyzas}\PYG{p}{;}\PYG{n}{Sabonis}\PYG{p}{;}\PYG{l+m}{19}\PYG{p}{;}\PYG{l+m}{193}\PYG{p}{;}\PYG{n}{Striker}\PYG{p}{;}\PYG{n}{Šaulys}\PYG{p}{;}\PYG{n}{False}\PYG{p}{;}\PYG{n}{False}
+\PYG{n}{Petras}\PYG{p}{;}\PYG{n}{Jasikevičius}\PYG{p}{;}\PYG{l+m}{22}\PYG{p}{;}\PYG{l+m}{204}\PYG{p}{;}\PYG{n}{Sniper}\PYG{p}{;}\PYG{n}{Šaulys}\PYG{p}{;}\PYG{n}{False}\PYG{p}{;}\PYG{n}{False}
+\PYG{n}{Petras}\PYG{p}{;}\PYG{n}{Pavardėnis}\PYG{p}{;}\PYG{l+m}{28}\PYG{p}{;}\PYG{l+m}{209}\PYG{p}{;}\PYG{n}{Defender}\PYG{p}{;}\PYG{n}{L}\PYG{p}{.} \PYG{n}{Rytas}\PYG{p}{;}\PYG{n}{False}\PYG{p}{;}\PYG{n}{False}
+\PYG{n}{Motiejus}\PYG{p}{;}\PYG{n}{Žukauskas}\PYG{p}{;}\PYG{l+m}{20}\PYG{p}{;}\PYG{l+m}{205}\PYG{p}{;}\PYG{n}{Defender}\PYG{p}{;}\PYG{n}{L}\PYG{p}{.} \PYG{n}{Rytas}\PYG{p}{;}\PYG{n}{False}\PYG{p}{;}\PYG{n}{False}
+\PYG{n}{Vardėnis}\PYG{p}{;}\PYG{n}{Sabonis}\PYG{p}{;}\PYG{l+m}{26}\PYG{p}{;}\PYG{l+m}{193}\PYG{p}{;}\PYG{n}{Attacker}\PYG{p}{;}\PYG{n}{L}\PYG{p}{.} \PYG{n}{Rytas}\PYG{p}{;}\PYG{n}{False}\PYG{p}{;}\PYG{n}{False}
+\PYG{n}{Juozas}\PYG{p}{;}\PYG{n}{Valančiūnas}\PYG{p}{;}\PYG{l+m}{23}\PYG{p}{;}\PYG{l+m}{198}\PYG{p}{;}\PYG{n}{Sniper}\PYG{p}{;}\PYG{n}{Šaulys}\PYG{p}{;}\PYG{n}{True}\PYG{p}{;}\PYG{n}{False}
+\PYG{n}{Juozas}\PYG{p}{;}\PYG{n}{Žukauskas}\PYG{p}{;}\PYG{l+m}{25}\PYG{p}{;}\PYG{l+m}{185}\PYG{p}{;}\PYG{n}{Defender}\PYG{p}{;}\PYG{n}{L}\PYG{p}{.} \PYG{n}{Rytas}\PYG{p}{;}\PYG{n}{False}\PYG{p}{;}\PYG{n}{False}
+\PYG{n}{Aloyzas}\PYG{p}{;}\PYG{n}{Pavardėnis}\PYG{p}{;}\PYG{l+m}{20}\PYG{p}{;}\PYG{l+m}{205}\PYG{p}{;}\PYG{n}{Defender}\PYG{p}{;}\PYG{n}{Žalgiris}\PYG{p}{;}\PYG{n}{True}\PYG{p}{;}\PYG{n}{False}
+\PYG{n}{Vardėnis}\PYG{p}{;}\PYG{n}{Pavardėnis}\PYG{p}{;}\PYG{l+m}{19}\PYG{p}{;}\PYG{l+m}{178}\PYG{p}{;}\PYG{n}{Striker}\PYG{p}{;}\PYG{n}{L}\PYG{p}{.} \PYG{n}{Rytas}\PYG{p}{;}\PYG{n}{False}\PYG{p}{;}\PYG{n}{False}
+\PYG{n}{Aloyzas}\PYG{p}{;}\PYG{n}{Valančiūnas}\PYG{p}{;}\PYG{l+m}{29}\PYG{p}{;}\PYG{l+m}{208}\PYG{p}{;}\PYG{n}{Striker}\PYG{p}{;}\PYG{n}{L}\PYG{p}{.} \PYG{n}{Rytas}\PYG{p}{;}\PYG{n}{False}\PYG{p}{;}\PYG{n}{False}
+\PYG{n}{Antanas}\PYG{p}{;}\PYG{n}{Valančiūnas}\PYG{p}{;}\PYG{l+m}{32}\PYG{p}{;}\PYG{l+m}{191}\PYG{p}{;}\PYG{n}{Attacker}\PYG{p}{;}\PYG{n}{Žalgiris}\PYG{p}{;}\PYG{n}{True}\PYG{p}{;}\PYG{n}{False}
+\PYG{n}{Antanas}\PYG{p}{;}\PYG{n}{Sabonis}\PYG{p}{;}\PYG{l+m}{27}\PYG{p}{;}\PYG{l+m}{209}\PYG{p}{;}\PYG{n}{Sniper}\PYG{p}{;}\PYG{n}{L}\PYG{p}{.} \PYG{n}{Rytas}\PYG{p}{;}\PYG{n}{False}\PYG{p}{;}\PYG{n}{False}
+\end{Verbatim}

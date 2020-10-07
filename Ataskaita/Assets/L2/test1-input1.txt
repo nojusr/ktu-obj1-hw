@@ -1,0 +1,10 @@
+2020
+07-01
+07-30
+Aloyzas;Valančiūnas;33;182;Attacker;L. Rytas;True;False
+Petras;Pavardėnis;28;197;Attacker;Kruojos;False;False
+Antanas;Žukauskas;31;198;Attacker;Šaulys;True;False
+Vardėnis;Valančiūnas;34;190;Striker;Žalgiris;False;False
+Antanas;Jasikevičius;21;195;Attacker;L. Rytas;False;False
+Vardėnis;Žukauskas;29;190;Sniper;Žalgiris;True;False
+Aloyzas;Valančiūnas;29;195;Attacker;Žalgiris;True;False

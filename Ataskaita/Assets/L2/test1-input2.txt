@@ -1,0 +1,9 @@
+2019
+08-01
+09-01
+Motiejus;Sabonis;31;192;Striker;Šaulys;True;False
+Antanas;Valančiūnas;22;187;Attacker;L. Rytas;True;False
+Aloyzas;Pavardėnis;30;206;Defender;L. Rytas;False;False
+Juozas;Valančiūnas;30;179;Striker;Šaulys;False;False
+Juozas;Pavardėnis;33;207;Attacker;L. Rytas;True;True
+Petras;Valančiūnas;27;191;Striker;Kruojos;True;False

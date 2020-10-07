@@ -1,0 +1,623 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{//Player.cs}
+\PYG{k}{using} \PYG{n+nn}{System}\PYG{p}{;}
+
+\PYG{k}{namespace} \PYG{n+nn}{L2\PYGZus{}ND}
+\PYG{p}{\PYGZob{}}
+    \PYG{k}{class} \PYG{n+nc}{Player}
+    \PYG{p}{\PYGZob{}}
+        \PYG{k}{public} \PYG{k+kt}{string} \PYG{n}{Name} \PYG{p}{\PYGZob{}} \PYG{k}{get}\PYG{p}{;} \PYG{k}{set}\PYG{p}{;} \PYG{p}{\PYGZcb{}}
+        \PYG{k}{public} \PYG{k+kt}{string} \PYG{n}{Surname} \PYG{p}{\PYGZob{}} \PYG{k}{get}\PYG{p}{;} \PYG{k}{set}\PYG{p}{;} \PYG{p}{\PYGZcb{}}
+        \PYG{k}{public} \PYG{k+kt}{int} \PYG{n}{Age} \PYG{p}{\PYGZob{}} \PYG{k}{get}\PYG{p}{;} \PYG{k}{set}\PYG{p}{;} \PYG{p}{\PYGZcb{}}
+        \PYG{k}{public} \PYG{k+kt}{int} \PYG{n}{Height} \PYG{p}{\PYGZob{}} \PYG{k}{get}\PYG{p}{;} \PYG{k}{set}\PYG{p}{;} \PYG{p}{\PYGZcb{}}
+        \PYG{k}{public} \PYG{k+kt}{string} \PYG{n}{Position} \PYG{p}{\PYGZob{}} \PYG{k}{get}\PYG{p}{;} \PYG{k}{set}\PYG{p}{;} \PYG{p}{\PYGZcb{}}
+        \PYG{k}{public} \PYG{k+kt}{string} \PYG{n}{Club} \PYG{p}{\PYGZob{}} \PYG{k}{get}\PYG{p}{;} \PYG{k}{set}\PYG{p}{;} \PYG{p}{\PYGZcb{}}
+        \PYG{k}{public} \PYG{k+kt}{bool} \PYG{n}{IsPicked} \PYG{p}{\PYGZob{}} \PYG{k}{get}\PYG{p}{;} \PYG{k}{set}\PYG{p}{;} \PYG{p}{\PYGZcb{}}
+        \PYG{k}{public} \PYG{k+kt}{bool} \PYG{n}{IsCaptain} \PYG{p}{\PYGZob{}} \PYG{k}{get}\PYG{p}{;} \PYG{k}{set}\PYG{p}{;} \PYG{p}{\PYGZcb{}}
+        \PYG{k}{public} \PYG{n}{DateTime} \PYG{n}{startDate} \PYG{p}{\PYGZob{}} \PYG{k}{get}\PYG{p}{;} \PYG{k}{set}\PYG{p}{;} \PYG{p}{\PYGZcb{}}
+        \PYG{k}{public} \PYG{n}{DateTime} \PYG{n}{endDate} \PYG{p}{\PYGZob{}} \PYG{k}{get}\PYG{p}{;} \PYG{k}{set}\PYG{p}{;} \PYG{p}{\PYGZcb{}}
+
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// a method to represent a player object with a string}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}returns\PYGZgt{}a string that describes a player\PYGZlt{}/returns\PYGZgt{}}
+        \PYG{k}{public} \PYG{k}{override} \PYG{k+kt}{string} \PYG{n+nf}{ToString}\PYG{p}{()}
+        \PYG{p}{\PYGZob{}}
+            \PYG{k}{return} \PYG{n}{String}\PYG{p}{.}\PYG{n}{Format}\PYG{p}{(}
+                \PYG{l+s}{\PYGZdq{}Žaidėjas: \PYGZob{}0\PYGZcb{} \PYGZob{}1\PYGZcb{}, Metai: \PYGZob{}2\PYGZcb{}, Aukštis: \PYGZob{}3\PYGZcb{}, Pozicija: \PYGZob{}4\PYGZcb{}, Klubas: \PYGZob{}5\PYGZcb{}, Ar parinktas: \PYGZob{}6\PYGZcb{}, Ar kapitonas: \PYGZob{}7\PYGZcb{}, Stovyklos pradžia: \PYGZob{}8\PYGZcb{}, Stovyklos pabaiga: \PYGZob{}9\PYGZcb{}\PYGZdq{}}\PYG{p}{,}
+                \PYG{k}{this}\PYG{p}{.}\PYG{n}{Name}\PYG{p}{,}
+                \PYG{k}{this}\PYG{p}{.}\PYG{n}{Surname}\PYG{p}{,}
+                \PYG{k}{this}\PYG{p}{.}\PYG{n}{Age}\PYG{p}{,}
+                \PYG{k}{this}\PYG{p}{.}\PYG{n}{Height}\PYG{p}{,}
+                \PYG{k}{this}\PYG{p}{.}\PYG{n}{Position}\PYG{p}{,}
+                \PYG{k}{this}\PYG{p}{.}\PYG{n}{Club}\PYG{p}{,}
+                \PYG{k}{this}\PYG{p}{.}\PYG{n}{IsPicked}\PYG{p}{,}
+                \PYG{k}{this}\PYG{p}{.}\PYG{n}{IsPicked}\PYG{p}{,}
+                \PYG{k}{this}\PYG{p}{.}\PYG{n}{startDate}\PYG{p}{.}\PYG{n}{ToShortDateString}\PYG{p}{(),}
+                \PYG{k}{this}\PYG{p}{.}\PYG{n}{endDate}\PYG{p}{.}\PYG{n}{ToShortDateString}\PYG{p}{()}
+            \PYG{p}{);}
+        \PYG{p}{\PYGZcb{}}
+
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// compares this object to any other object}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}other\PYGZdq{}\PYGZgt{}object to compare against\PYGZlt{}/param\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}returns\PYGZgt{}True if other is equal to this object; False if object isn\PYGZsq{}t equal.\PYGZlt{}/returns\PYGZgt{}}
+        \PYG{k}{public} \PYG{k}{override} \PYG{k+kt}{bool} \PYG{n+nf}{Equals}\PYG{p}{(}\PYG{k+kt}{object} \PYG{n}{other}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{k}{if} \PYG{p}{(}\PYG{n}{other} \PYG{p}{==} \PYG{k}{null} \PYG{p}{||} \PYG{n}{other}\PYG{p}{.}\PYG{n}{GetType}\PYG{p}{()} \PYG{p}{!=} \PYG{k}{this}\PYG{p}{.}\PYG{n}{GetType}\PYG{p}{())}
+            \PYG{p}{\PYGZob{}}
+                \PYG{k}{return} \PYG{k}{false}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+
+            \PYG{k}{if} \PYG{p}{(((}\PYG{n}{Player}\PYG{p}{)}\PYG{n}{other}\PYG{p}{).}\PYG{n}{GetHashCode}\PYG{p}{()} \PYG{p}{!=} \PYG{k}{this}\PYG{p}{.}\PYG{n}{GetHashCode}\PYG{p}{())}
+            \PYG{p}{\PYGZob{}}
+                \PYG{k}{return} \PYG{k}{false}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+
+            \PYG{k}{return} \PYG{k}{true}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// a rudimentary hashing method of this class}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}returns\PYGZgt{}an integer hash of this class\PYGZlt{}/returns\PYGZgt{}}
+        \PYG{k}{public} \PYG{k}{override} \PYG{k+kt}{int} \PYG{n+nf}{GetHashCode}\PYG{p}{()}
+        \PYG{p}{\PYGZob{}}
+            \PYG{k+kt}{int} \PYG{n}{hash} \PYG{p}{=} \PYG{l+m}{0}\PYG{p}{;}
+
+            \PYG{k+kt}{string} \PYG{n}{hString} \PYG{p}{=} \PYG{n}{String}\PYG{p}{.}\PYG{n}{Format}\PYG{p}{(}
+                \PYG{l+s}{\PYGZdq{}\PYGZob{}0\PYGZcb{}\PYGZob{}1\PYGZcb{}\PYGZob{}2\PYGZcb{}\PYGZob{}3\PYGZcb{}\PYGZob{}4\PYGZcb{}\PYGZob{}5\PYGZcb{}\PYGZdq{}}\PYG{p}{,}
+                \PYG{k}{this}\PYG{p}{.}\PYG{n}{Name}\PYG{p}{,}
+                \PYG{k}{this}\PYG{p}{.}\PYG{n}{Surname}\PYG{p}{,}
+                \PYG{k}{this}\PYG{p}{.}\PYG{n}{Position}\PYG{p}{,}
+                \PYG{k}{this}\PYG{p}{.}\PYG{n}{Club}\PYG{p}{,}
+                \PYG{k}{this}\PYG{p}{.}\PYG{n}{startDate}\PYG{p}{.}\PYG{n}{ToShortDateString}\PYG{p}{(),}
+                \PYG{k}{this}\PYG{p}{.}\PYG{n}{endDate}\PYG{p}{.}\PYG{n}{ToShortDateString}\PYG{p}{()}
+            \PYG{p}{);} 
+
+
+            \PYG{k}{foreach} \PYG{p}{(}\PYG{k+kt}{char} \PYG{n}{c} \PYG{k}{in} \PYG{n}{hString}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{n}{hash} \PYG{p}{+=} \PYG{p}{(}\PYG{k+kt}{int}\PYG{p}{)}\PYG{n}{c}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+
+            \PYG{n}{hash} \PYG{p}{+=} \PYG{k}{this}\PYG{p}{.}\PYG{n}{Age} \PYG{p}{+} \PYG{k}{this}\PYG{p}{.}\PYG{n}{Height}\PYG{p}{;}
+
+            \PYG{k}{if} \PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n}{IsPicked}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+                \PYG{n}{hash} \PYG{p}{+=} \PYG{l+m}{5}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+            \PYG{k}{if} \PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n}{IsCaptain}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+                \PYG{n}{hash} \PYG{p}{+=} \PYG{l+m}{7}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+
+            \PYG{k}{return} \PYG{n}{hash}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+
+        \PYG{k}{public} \PYG{n+nf}{Player}\PYG{p}{(}\PYG{k+kt}{string} \PYG{n}{name}\PYG{p}{,} \PYG{k+kt}{string} \PYG{n}{surname}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{age}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{height}\PYG{p}{,} \PYG{k+kt}{string} \PYG{n}{position}\PYG{p}{,} \PYG{k+kt}{string} \PYG{n}{club}\PYG{p}{,} \PYG{k+kt}{bool} \PYG{n}{isPicked}\PYG{p}{,} \PYG{k+kt}{bool} \PYG{n}{isCaptain}\PYG{p}{,} \PYG{n}{DateTime} \PYG{n}{start}\PYG{p}{,} \PYG{n}{DateTime} \PYG{n}{end}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{Name} \PYG{p}{=} \PYG{n}{name}\PYG{p}{;}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{Surname} \PYG{p}{=} \PYG{n}{surname}\PYG{p}{;}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{Age} \PYG{p}{=} \PYG{n}{age}\PYG{p}{;}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{Height} \PYG{p}{=} \PYG{n}{height}\PYG{p}{;}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{Position} \PYG{p}{=} \PYG{n}{position}\PYG{p}{;}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{Club} \PYG{p}{=} \PYG{n}{club}\PYG{p}{;}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{IsPicked} \PYG{p}{=} \PYG{n}{isPicked}\PYG{p}{;}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{IsCaptain} \PYG{p}{=} \PYG{n}{isCaptain}\PYG{p}{;}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{startDate} \PYG{p}{=} \PYG{n}{start}\PYG{p}{;}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{endDate} \PYG{p}{=} \PYG{n}{end}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+
+    \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{c+c1}{//PlayerRegister.cs}
+\PYG{k}{using} \PYG{n+nn}{System}\PYG{p}{;}
+\PYG{k}{using} \PYG{n+nn}{System.Collections.Generic}\PYG{p}{;}
+\PYG{k}{using} \PYG{n+nn}{System.Linq}\PYG{p}{;}
+
+\PYG{k}{namespace} \PYG{n+nn}{L2\PYGZus{}ND}
+\PYG{p}{\PYGZob{}}
+    \PYG{k}{class} \PYG{n+nc}{PlayerRegister}
+    \PYG{p}{\PYGZob{}}
+        \PYG{k}{private} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Player}\PYG{p}{\PYGZgt{}} \PYG{n}{allPlayers}\PYG{p}{;}
+
+        \PYG{k}{public} \PYG{n+nf}{PlayerRegister}\PYG{p}{(}\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Player}\PYG{p}{\PYGZgt{}} \PYG{n}{players}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{allPlayers} \PYG{p}{=} \PYG{n}{players}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+
+
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// turns the register to a string}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}returns\PYGZgt{}\PYGZlt{}/returns\PYGZgt{}}
+        \PYG{k}{public} \PYG{k}{override} \PYG{k+kt}{string} \PYG{n+nf}{ToString}\PYG{p}{()}
+        \PYG{p}{\PYGZob{}}
+            \PYG{k+kt}{string} \PYG{n}{output} \PYG{p}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}
+
+            \PYG{n}{output} \PYG{p}{+=} \PYG{n}{String}\PYG{p}{.}\PYG{n}{Format}\PYG{p}{(}
+                \PYG{l+s}{\PYGZdq{}Žaidėjų registras: Žaidėjų kiekis: \PYGZob{}0\PYGZcb{}\PYGZbs{}n\PYGZdq{}}\PYG{p}{,}
+                \PYG{k}{this}\PYG{p}{.}\PYG{n}{PlayerCount}\PYG{p}{()}
+            \PYG{p}{);}
+
+            \PYG{n}{output} \PYG{p}{+=} \PYG{l+s}{\PYGZdq{}Visi Žaidėjai: \PYGZbs{}n\PYGZdq{}}\PYG{p}{;}
+
+            \PYG{k}{foreach} \PYG{p}{(}\PYG{n}{Player} \PYG{n}{p} \PYG{k}{in} \PYG{k}{this}\PYG{p}{.}\PYG{n}{allPlayers}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{n}{output} \PYG{p}{+=} \PYG{n}{String}\PYG{p}{.}\PYG{n}{Format}\PYG{p}{(}
+                    \PYG{l+s}{\PYGZdq{}\PYGZob{}0\PYGZcb{}\PYGZbs{}n\PYGZdq{}}\PYG{p}{,}
+                    \PYG{n}{p}\PYG{p}{.}\PYG{n}{ToString}\PYG{p}{()}
+                \PYG{p}{);}
+            \PYG{p}{\PYGZcb{}}
+
+            \PYG{k}{return} \PYG{n}{output}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// gets the amount of players in the register}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}returns\PYGZgt{}the player count\PYGZlt{}/returns\PYGZgt{}}
+        \PYG{k}{public} \PYG{k+kt}{int} \PYG{n+nf}{PlayerCount}\PYG{p}{()}
+        \PYG{p}{\PYGZob{}}
+            \PYG{k}{return} \PYG{k}{this}\PYG{p}{.}\PYG{n}{allPlayers}\PYG{p}{.}\PYG{n}{Count}\PYG{p}{();}
+        \PYG{p}{\PYGZcb{}}
+
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// gets all players that are stored in the register}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}returns\PYGZgt{}a list of all players\PYGZlt{}/returns\PYGZgt{}}
+        \PYG{k}{public} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Player}\PYG{p}{\PYGZgt{}} \PYG{n}{GetAllPlayers}\PYG{p}{()}
+        \PYG{p}{\PYGZob{}}
+            \PYG{k}{return} \PYG{k}{this}\PYG{p}{.}\PYG{n}{allPlayers}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// get a list of all players who have been invited}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}returns\PYGZgt{}a list of players who have been invited\PYGZlt{}/returns\PYGZgt{}}
+        \PYG{k}{public} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Player}\PYG{p}{\PYGZgt{}} \PYG{n}{GetInvitedPlayers}\PYG{p}{()}
+        \PYG{p}{\PYGZob{}}
+            \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Player}\PYG{p}{\PYGZgt{}} \PYG{n}{output} \PYG{p}{=} \PYG{k}{new} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Player}\PYG{p}{\PYGZgt{}();}
+
+            \PYG{k}{foreach} \PYG{p}{(}\PYG{n}{Player} \PYG{n}{player} \PYG{k}{in} \PYG{k}{this}\PYG{p}{.}\PYG{n}{allPlayers}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{k}{if} \PYG{p}{(}\PYG{n}{player}\PYG{p}{.}\PYG{n}{IsPicked} \PYG{p}{==} \PYG{k}{true}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{n}{output}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{player}\PYG{p}{);}
+                \PYG{p}{\PYGZcb{}}
+            \PYG{p}{\PYGZcb{}}
+            \PYG{k}{return} \PYG{n}{output}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// get the tallest player(s) in the register}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}returns\PYGZgt{}a list of the tallest players\PYGZlt{}/returns\PYGZgt{}}
+        \PYG{k}{public} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Player}\PYG{p}{\PYGZgt{}} \PYG{n}{GetTallestPlayers}\PYG{p}{()}
+        \PYG{p}{\PYGZob{}}
+
+            \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Player}\PYG{p}{\PYGZgt{}} \PYG{n}{output} \PYG{p}{=} \PYG{k}{new} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Player}\PYG{p}{\PYGZgt{}();}
+
+            \PYG{k}{foreach} \PYG{p}{(}\PYG{n}{Player} \PYG{n}{player} \PYG{k}{in} \PYG{k}{this}\PYG{p}{.}\PYG{n}{allPlayers}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{k}{if} \PYG{p}{(}\PYG{n}{output}\PYG{p}{.}\PYG{n}{Count} \PYG{p}{==} \PYG{l+m}{0}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{n}{output}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{player}\PYG{p}{);}
+                    \PYG{k}{continue}\PYG{p}{;}
+                \PYG{p}{\PYGZcb{}}
+
+                \PYG{n}{Player} \PYG{n}{playerToCompare} \PYG{p}{=} \PYG{n}{output}\PYG{p}{[}\PYG{l+m}{0}\PYG{p}{];}
+
+                \PYG{k}{if} \PYG{p}{(}\PYG{n}{player}\PYG{p}{.}\PYG{n}{Height} \PYG{p}{\PYGZgt{}} \PYG{n}{playerToCompare}\PYG{p}{.}\PYG{n}{Height}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{n}{output}\PYG{p}{.}\PYG{n}{Clear}\PYG{p}{();}
+                    \PYG{n}{output}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{player}\PYG{p}{);}
+                \PYG{p}{\PYGZcb{}}
+                \PYG{k}{else} \PYG{n+nf}{if} \PYG{p}{(}\PYG{n}{player}\PYG{p}{.}\PYG{n}{Height} \PYG{p}{==} \PYG{n}{playerToCompare}\PYG{p}{.}\PYG{n}{Height}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{n}{output}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{player}\PYG{p}{);}
+                \PYG{p}{\PYGZcb{}}
+            \PYG{p}{\PYGZcb{}}
+            \PYG{k}{return} \PYG{n}{output}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+
+
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// gets a list of all of the attackers}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}returns\PYGZgt{}a list of all attackers\PYGZlt{}/returns\PYGZgt{}}
+        \PYG{k}{public} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Player}\PYG{p}{\PYGZgt{}} \PYG{n}{GetAllAttackers}\PYG{p}{()}
+        \PYG{p}{\PYGZob{}}
+            \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Player}\PYG{p}{\PYGZgt{}} \PYG{n}{output} \PYG{p}{=} \PYG{k}{new} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Player}\PYG{p}{\PYGZgt{}();}
+
+            \PYG{k}{foreach} \PYG{p}{(}\PYG{n}{Player} \PYG{n}{player} \PYG{k}{in} \PYG{k}{this}\PYG{p}{.}\PYG{n}{allPlayers}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{k}{if} \PYG{p}{(}\PYG{n}{player}\PYG{p}{.}\PYG{n}{Position} \PYG{p}{==} \PYG{l+s}{\PYGZdq{}Attacker\PYGZdq{}}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{n}{output}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{player}\PYG{p}{);}
+                \PYG{p}{\PYGZcb{}}
+            \PYG{p}{\PYGZcb{}}
+            \PYG{k}{return} \PYG{n}{output}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// gets a list of all unique clubs from every invited player}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}returns\PYGZgt{}a list of strings\PYGZlt{}/returns\PYGZgt{}}
+        \PYG{k}{public} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{String}\PYG{p}{\PYGZgt{}} \PYG{n}{GetUniqueInvitedClubs}\PYG{p}{()}
+        \PYG{p}{\PYGZob{}}
+            \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{k+kt}{string}\PYG{p}{\PYGZgt{}} \PYG{n}{output} \PYG{p}{=} \PYG{k}{new} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{k+kt}{string}\PYG{p}{\PYGZgt{}();}
+
+            \PYG{k}{foreach} \PYG{p}{(}\PYG{n}{Player} \PYG{n}{player} \PYG{k}{in} \PYG{k}{this}\PYG{p}{.}\PYG{n}{GetInvitedPlayers}\PYG{p}{())}
+            \PYG{p}{\PYGZob{}}
+                \PYG{k+kt}{string} \PYG{n}{club} \PYG{p}{=} \PYG{n}{player}\PYG{p}{.}\PYG{n}{Club}\PYG{p}{;}
+
+                \PYG{k}{if} \PYG{p}{(}\PYG{n}{output}\PYG{p}{.}\PYG{n}{Contains}\PYG{p}{(}\PYG{n}{club}\PYG{p}{)} \PYG{p}{==} \PYG{k}{false}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{n}{output}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{club}\PYG{p}{);}
+                \PYG{p}{\PYGZcb{}}
+            \PYG{p}{\PYGZcb{}}
+
+            \PYG{k}{return} \PYG{n}{output}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{c+c1}{//IOUtils.cs}
+\PYG{k}{using} \PYG{n+nn}{System}\PYG{p}{;}
+\PYG{k}{using} \PYG{n+nn}{System.IO}\PYG{p}{;}
+\PYG{k}{using} \PYG{n+nn}{System.Collections.Generic}\PYG{p}{;}
+\PYG{k}{using} \PYG{n+nn}{System.Text}\PYG{p}{;}
+
+\PYG{k}{namespace} \PYG{n+nn}{L2\PYGZus{}ND}
+\PYG{p}{\PYGZob{}}
+    \PYG{k}{static} \PYG{k}{class} \PYG{n+nc}{IOUtils}
+    \PYG{p}{\PYGZob{}}
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// reads players in from a filename}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}fileName\PYGZdq{}\PYGZgt{}the filename from which to read\PYGZlt{}/param\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}returns\PYGZgt{}a list of players\PYGZlt{}/returns\PYGZgt{}}
+        \PYG{k}{public} \PYG{k}{static} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Player}\PYG{p}{\PYGZgt{}} \PYG{n}{ReadPlayersFromFile}\PYG{p}{(}\PYG{k+kt}{string} \PYG{n}{fileName}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Player}\PYG{p}{\PYGZgt{}} \PYG{n}{output} \PYG{p}{=} \PYG{k}{new} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Player}\PYG{p}{\PYGZgt{}();}
+
+            \PYG{k+kt}{string}\PYG{p}{[]} \PYG{n}{lines} \PYG{p}{=} \PYG{k}{new} \PYG{k+kt}{string}\PYG{p}{[}\PYG{l+m}{150}\PYG{p}{];}
+
+            \PYG{n}{DateTime} \PYG{n}{startDate} \PYG{p}{=} \PYG{k}{new} \PYG{n}{DateTime}\PYG{p}{();}
+            \PYG{n}{DateTime} \PYG{n}{endDate} \PYG{p}{=} \PYG{k}{new} \PYG{n}{DateTime}\PYG{p}{();}
+
+            \PYG{c+c1}{// file error handling}
+            \PYG{k}{if} \PYG{p}{(}\PYG{n}{System}\PYG{p}{.}\PYG{n}{IO}\PYG{p}{.}\PYG{n}{File}\PYG{p}{.}\PYG{n}{Exists}\PYG{p}{(}\PYG{n}{fileName}\PYG{p}{))}
+            \PYG{p}{\PYGZob{}}
+                \PYG{n}{lines} \PYG{p}{=} \PYG{n}{File}\PYG{p}{.}\PYG{n}{ReadAllLines}\PYG{p}{(}\PYG{n}{fileName}\PYG{p}{,} \PYG{n}{Encoding}\PYG{p}{.}\PYG{n}{UTF8}\PYG{p}{);}
+            \PYG{p}{\PYGZcb{}}
+            \PYG{k}{else}
+            \PYG{p}{\PYGZob{}}
+                \PYG{n}{Console}\PYG{p}{.}\PYG{n}{WriteLine}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Failas nerastas. Programa negali veikti.\PYGZdq{}}\PYG{p}{);}
+                \PYG{n}{System}\PYG{p}{.}\PYG{n}{Environment}\PYG{p}{.}\PYG{n}{Exit}\PYG{p}{(}\PYG{l+m}{1}\PYG{p}{);} \PYG{c+c1}{// exit code 1 means that the program did not run successfuly}
+            \PYG{p}{\PYGZcb{}}
+
+            \PYG{k}{if} \PYG{p}{(}\PYG{n}{lines}\PYG{p}{.}\PYG{n}{Length} \PYG{p}{\PYGZlt{}=} \PYG{l+m}{0}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{n}{Console}\PYG{p}{.}\PYG{n}{WriteLine}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Pateiktas tuščias failas. Programa negali veikti.\PYGZdq{}}\PYG{p}{);}
+                \PYG{n}{System}\PYG{p}{.}\PYG{n}{Environment}\PYG{p}{.}\PYG{n}{Exit}\PYG{p}{(}\PYG{l+m}{1}\PYG{p}{);} \PYG{c+c1}{// exit code 1 means that the program did not run successfuly}
+            \PYG{p}{\PYGZcb{}}
+
+
+            \PYG{k+kt}{string} \PYG{n}{year} \PYG{p}{=} \PYG{n}{lines}\PYG{p}{[}\PYG{l+m}{0}\PYG{p}{];}
+
+            \PYG{n}{startDate} \PYG{p}{=} \PYG{n}{DateTime}\PYG{p}{.}\PYG{n}{Parse}\PYG{p}{(}\PYG{n}{String}\PYG{p}{.}\PYG{n}{Format}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}\PYGZob{}0\PYGZcb{}\PYGZhy{}\PYGZob{}1\PYGZcb{}\PYGZdq{}}\PYG{p}{,} \PYG{n}{year}\PYG{p}{,} \PYG{n}{lines}\PYG{p}{[}\PYG{l+m}{1}\PYG{p}{]));}
+            \PYG{n}{endDate} \PYG{p}{=} \PYG{n}{DateTime}\PYG{p}{.}\PYG{n}{Parse}\PYG{p}{(}\PYG{n}{String}\PYG{p}{.}\PYG{n}{Format}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}\PYGZob{}0\PYGZcb{}\PYGZhy{}\PYGZob{}1\PYGZcb{}\PYGZdq{}}\PYG{p}{,} \PYG{n}{year}\PYG{p}{,} \PYG{n}{lines}\PYG{p}{[}\PYG{l+m}{2}\PYG{p}{]));}
+
+
+            \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{=} \PYG{l+m}{3}\PYG{p}{;} \PYG{n}{i} \PYG{p}{\PYGZlt{}} \PYG{n}{lines}\PYG{p}{.}\PYG{n}{Length}\PYG{p}{;} \PYG{n}{i}\PYG{p}{++)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{k+kt}{string} \PYG{n}{line} \PYG{p}{=} \PYG{n}{lines}\PYG{p}{[}\PYG{n}{i}\PYG{p}{];}
+
+                \PYG{c+c1}{// basic support for comments}
+                \PYG{c+c1}{// if a line in the input file starts with}
+                \PYG{c+c1}{// \PYGZsq{}//\PYGZsq{}, then ignore it}
+                \PYG{k}{if} \PYG{p}{(}\PYG{n}{line}\PYG{p}{.}\PYG{n}{StartsWith}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}//\PYGZdq{}}\PYG{p}{))}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{k}{continue}\PYG{p}{;}
+                \PYG{p}{\PYGZcb{}}
+
+                \PYG{k+kt}{string}\PYG{p}{[]} \PYG{n}{values} \PYG{p}{=} \PYG{n}{line}\PYG{p}{.}\PYG{n}{Split}\PYG{p}{(}\PYG{l+s+sc}{\PYGZsq{};\PYGZsq{}}\PYG{p}{);}
+
+                \PYG{k+kt}{string} \PYG{n}{name} \PYG{p}{=} \PYG{n}{values}\PYG{p}{[}\PYG{l+m}{0}\PYG{p}{];}
+                \PYG{k+kt}{string} \PYG{n}{surname} \PYG{p}{=} \PYG{n}{values}\PYG{p}{[}\PYG{l+m}{1}\PYG{p}{];}
+                \PYG{k+kt}{int} \PYG{n}{age} \PYG{p}{=} \PYG{k+kt}{int}\PYG{p}{.}\PYG{n}{Parse}\PYG{p}{(}\PYG{n}{values}\PYG{p}{[}\PYG{l+m}{2}\PYG{p}{]);}
+                \PYG{k+kt}{int} \PYG{n}{height} \PYG{p}{=} \PYG{k+kt}{int}\PYG{p}{.}\PYG{n}{Parse}\PYG{p}{(}\PYG{n}{values}\PYG{p}{[}\PYG{l+m}{3}\PYG{p}{]);}
+                \PYG{k+kt}{string} \PYG{n}{position} \PYG{p}{=} \PYG{n}{values}\PYG{p}{[}\PYG{l+m}{4}\PYG{p}{];}
+                \PYG{k+kt}{string} \PYG{n}{club} \PYG{p}{=} \PYG{n}{values}\PYG{p}{[}\PYG{l+m}{5}\PYG{p}{];}
+                \PYG{k+kt}{bool} \PYG{n}{isPicked} \PYG{p}{=} \PYG{k+kt}{bool}\PYG{p}{.}\PYG{n}{Parse}\PYG{p}{(}\PYG{n}{values}\PYG{p}{[}\PYG{l+m}{6}\PYG{p}{]);}
+                \PYG{k+kt}{bool} \PYG{n}{isCaptain} \PYG{p}{=} \PYG{k+kt}{bool}\PYG{p}{.}\PYG{n}{Parse}\PYG{p}{(}\PYG{n}{values}\PYG{p}{[}\PYG{l+m}{7}\PYG{p}{]);}
+
+                \PYG{n}{Player} \PYG{n}{PlayerToAdd} \PYG{p}{=} \PYG{k}{new} \PYG{n}{Player}\PYG{p}{(}
+                    \PYG{n}{name}\PYG{p}{,}
+                    \PYG{n}{surname}\PYG{p}{,}
+                    \PYG{n}{age}\PYG{p}{,}
+                    \PYG{n}{height}\PYG{p}{,}
+                    \PYG{n}{position}\PYG{p}{,}
+                    \PYG{n}{club}\PYG{p}{,}
+                    \PYG{n}{isPicked}\PYG{p}{,}
+                    \PYG{n}{isCaptain}\PYG{p}{,}
+                    \PYG{n}{startDate}\PYG{p}{,}
+                    \PYG{n}{endDate}
+                \PYG{p}{);}
+
+                \PYG{n}{output}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{PlayerToAdd}\PYG{p}{);}
+
+            \PYG{p}{\PYGZcb{}}
+
+            \PYG{k}{return} \PYG{n}{output}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+
+
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// prints out a table of Players when give a list of them as input}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}input\PYGZdq{}\PYGZgt{}the list of Players to be used as input\PYGZlt{}/param\PYGZgt{}}
+        \PYG{k}{public} \PYG{k}{static} \PYG{k}{void} \PYG{n+nf}{PrintPlayers}\PYG{p}{(}\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Player}\PYG{p}{\PYGZgt{}} \PYG{n}{input}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{c+c1}{// the amount of empty characters given for every value in the table}
+            \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{k+kt}{int}\PYG{p}{\PYGZgt{}} \PYG{n}{tableSpacing} \PYG{p}{=} \PYG{k}{new} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{k+kt}{int}\PYG{p}{\PYGZgt{}} \PYG{p}{\PYGZob{}}\PYG{l+m}{10}\PYG{p}{,} \PYG{l+m}{14}\PYG{p}{,} \PYG{l+m}{3}\PYG{p}{,} \PYG{l+m}{3}\PYG{p}{,} \PYG{l+m}{10}\PYG{p}{,} \PYG{l+m}{10}\PYG{p}{,} \PYG{l+m}{10}\PYG{p}{,} \PYG{l+m}{10}\PYG{p}{\PYGZcb{};}
+
+
+
+            \PYG{n}{PrintIndexedTableLine}\PYG{p}{(}\PYG{n}{tableSpacing}\PYG{p}{,} \PYG{l+m}{8}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}┌\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}┬\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}┐\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}─\PYGZsq{}}\PYG{p}{);}
+
+            \PYG{n}{Console}\PYG{p}{.}\PYG{n}{WriteLine}\PYG{p}{(}
+                \PYG{l+s}{\PYGZdq{}│\PYGZob{}0,\PYGZhy{}10\PYGZcb{}│\PYGZob{}1,\PYGZhy{}14\PYGZcb{}│\PYGZob{}2,\PYGZhy{}3\PYGZcb{}│\PYGZob{}3,\PYGZhy{}3\PYGZcb{}│\PYGZob{}4,\PYGZhy{}10\PYGZcb{}│\PYGZob{}5, \PYGZhy{}10\PYGZcb{}│\PYGZob{}6, \PYGZhy{}10\PYGZcb{}│\PYGZob{}7, \PYGZhy{}10\PYGZcb{}│\PYGZdq{}}\PYG{p}{,}
+                \PYG{l+s}{\PYGZdq{}Vardas\PYGZdq{}}\PYG{p}{,}
+                \PYG{l+s}{\PYGZdq{}Pavardė\PYGZdq{}}\PYG{p}{,}
+                \PYG{l+s}{\PYGZdq{}Amž\PYGZdq{}}\PYG{p}{,}
+                \PYG{l+s}{\PYGZdq{}Au.\PYGZdq{}}\PYG{p}{,}
+                \PYG{l+s}{\PYGZdq{}Pozicija\PYGZdq{}}\PYG{p}{,}
+                \PYG{l+s}{\PYGZdq{}Klubas\PYGZdq{}}\PYG{p}{,}
+                \PYG{l+s}{\PYGZdq{}Išrinktas\PYGZdq{}}\PYG{p}{,}
+                \PYG{l+s}{\PYGZdq{}Kapitonas\PYGZdq{}}
+            \PYG{p}{);}
+
+            \PYG{n}{PrintIndexedTableLine}\PYG{p}{(}\PYG{n}{tableSpacing}\PYG{p}{,} \PYG{l+m}{8}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}├\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}┼\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}┤\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}─\PYGZsq{}}\PYG{p}{);}
+
+            \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{=} \PYG{l+m}{0}\PYG{p}{;} \PYG{n}{i} \PYG{p}{\PYGZlt{}} \PYG{n}{input}\PYG{p}{.}\PYG{n}{Count}\PYG{p}{;} \PYG{n}{i}\PYG{p}{++)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{n}{Player} \PYG{n}{player} \PYG{p}{=} \PYG{n}{input}\PYG{p}{[}\PYG{n}{i}\PYG{p}{];}
+                
+                \PYG{n}{Console}\PYG{p}{.}\PYG{n}{WriteLine}\PYG{p}{(}
+                    \PYG{l+s}{\PYGZdq{}│\PYGZob{}0,\PYGZhy{}10\PYGZcb{}│\PYGZob{}1,\PYGZhy{}14\PYGZcb{}│\PYGZob{}2,\PYGZhy{}3\PYGZcb{}│\PYGZob{}3,\PYGZhy{}3\PYGZcb{}│\PYGZob{}4,\PYGZhy{}10\PYGZcb{}│\PYGZob{}5, \PYGZhy{}10\PYGZcb{}│\PYGZob{}6, \PYGZhy{}10\PYGZcb{}│\PYGZob{}7, \PYGZhy{}10\PYGZcb{}│\PYGZdq{}}\PYG{p}{,}
+                    \PYG{n}{player}\PYG{p}{.}\PYG{n}{Name}\PYG{p}{,}
+                    \PYG{n}{player}\PYG{p}{.}\PYG{n}{Surname}\PYG{p}{,}
+                    \PYG{n}{player}\PYG{p}{.}\PYG{n}{Age}\PYG{p}{,}
+                    \PYG{n}{player}\PYG{p}{.}\PYG{n}{Height}\PYG{p}{,}
+                    \PYG{n}{player}\PYG{p}{.}\PYG{n}{Position}\PYG{p}{,}
+                    \PYG{n}{player}\PYG{p}{.}\PYG{n}{Club}\PYG{p}{,}
+                    \PYG{n}{player}\PYG{p}{.}\PYG{n}{IsPicked}\PYG{p}{,}
+                    \PYG{n}{player}\PYG{p}{.}\PYG{n}{IsCaptain}
+                \PYG{p}{);}
+
+                \PYG{k}{if} \PYG{p}{(}\PYG{n}{i} \PYG{p}{==} \PYG{n}{input}\PYG{p}{.}\PYG{n}{Count} \PYG{p}{\PYGZhy{}} \PYG{l+m}{1}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{n}{PrintIndexedTableLine}\PYG{p}{(}\PYG{n}{tableSpacing}\PYG{p}{,} \PYG{l+m}{8}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}└\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}┴\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}┘\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}─\PYGZsq{}}\PYG{p}{);}
+                \PYG{p}{\PYGZcb{}}
+                \PYG{k}{else}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{n}{PrintIndexedTableLine}\PYG{p}{(}\PYG{n}{tableSpacing}\PYG{p}{,} \PYG{l+m}{8}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}├\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}┼\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}┤\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}─\PYGZsq{}}\PYG{p}{);}
+                \PYG{p}{\PYGZcb{}}
+            \PYG{p}{\PYGZcb{}}
+        \PYG{p}{\PYGZcb{}}
+
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// prints only the name, surname and age of a list of players}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}input\PYGZdq{}\PYGZgt{}a list of players\PYGZlt{}/param\PYGZgt{}}
+        \PYG{k}{public} \PYG{k}{static} \PYG{k}{void} \PYG{n+nf}{PrintCondensedPlayersWithAge}\PYG{p}{(}\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Player}\PYG{p}{\PYGZgt{}} \PYG{n}{input}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{c+c1}{// the amount of empty characters given for every value in the table}
+            \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{k+kt}{int}\PYG{p}{\PYGZgt{}} \PYG{n}{tableSpacing} \PYG{p}{=} \PYG{k}{new} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{k+kt}{int}\PYG{p}{\PYGZgt{}} \PYG{p}{\PYGZob{}}\PYG{l+m}{10}\PYG{p}{,} \PYG{l+m}{14}\PYG{p}{,} \PYG{l+m}{3}\PYG{p}{\PYGZcb{};}
+
+            \PYG{n}{PrintIndexedTableLine}\PYG{p}{(}\PYG{n}{tableSpacing}\PYG{p}{,} \PYG{l+m}{3}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}┌\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}┬\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}┐\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}─\PYGZsq{}}\PYG{p}{);}
+
+            \PYG{n}{Console}\PYG{p}{.}\PYG{n}{WriteLine}\PYG{p}{(}
+                \PYG{l+s}{\PYGZdq{}│\PYGZob{}0,\PYGZhy{}10\PYGZcb{}│\PYGZob{}1,\PYGZhy{}14\PYGZcb{}│\PYGZob{}2,\PYGZhy{}3\PYGZcb{}│\PYGZdq{}}\PYG{p}{,}
+                \PYG{l+s}{\PYGZdq{}Vardas\PYGZdq{}}\PYG{p}{,}
+                \PYG{l+s}{\PYGZdq{}Pavardė\PYGZdq{}}\PYG{p}{,}
+                \PYG{l+s}{\PYGZdq{}Amž\PYGZdq{}}
+            \PYG{p}{);}
+
+            \PYG{n}{PrintIndexedTableLine}\PYG{p}{(}\PYG{n}{tableSpacing}\PYG{p}{,} \PYG{l+m}{3}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}├\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}┼\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}┤\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}─\PYGZsq{}}\PYG{p}{);}
+
+            \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{=} \PYG{l+m}{0}\PYG{p}{;} \PYG{n}{i} \PYG{p}{\PYGZlt{}} \PYG{n}{input}\PYG{p}{.}\PYG{n}{Count}\PYG{p}{;} \PYG{n}{i}\PYG{p}{++)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{n}{Player} \PYG{n}{player} \PYG{p}{=} \PYG{n}{input}\PYG{p}{[}\PYG{n}{i}\PYG{p}{];}
+                \PYG{n}{Console}\PYG{p}{.}\PYG{n}{WriteLine}\PYG{p}{(}
+                    \PYG{l+s}{\PYGZdq{}│\PYGZob{}0,\PYGZhy{}10\PYGZcb{}│\PYGZob{}1,\PYGZhy{}14\PYGZcb{}│\PYGZob{}2,\PYGZhy{}3\PYGZcb{}│\PYGZdq{}}\PYG{p}{,}
+                    \PYG{n}{player}\PYG{p}{.}\PYG{n}{Name}\PYG{p}{,}
+                    \PYG{n}{player}\PYG{p}{.}\PYG{n}{Surname}\PYG{p}{,}
+                    \PYG{n}{player}\PYG{p}{.}\PYG{n}{Age}
+                \PYG{p}{);}
+
+                \PYG{k}{if} \PYG{p}{(}\PYG{n}{i} \PYG{p}{==} \PYG{n}{input}\PYG{p}{.}\PYG{n}{Count} \PYG{p}{\PYGZhy{}} \PYG{l+m}{1}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{n}{PrintIndexedTableLine}\PYG{p}{(}\PYG{n}{tableSpacing}\PYG{p}{,} \PYG{l+m}{3}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}└\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}┴\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}┘\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}─\PYGZsq{}}\PYG{p}{);}
+                \PYG{p}{\PYGZcb{}}
+                \PYG{k}{else}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{n}{PrintIndexedTableLine}\PYG{p}{(}\PYG{n}{tableSpacing}\PYG{p}{,} \PYG{l+m}{3}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}├\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}┼\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}┤\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}─\PYGZsq{}}\PYG{p}{);}
+                \PYG{p}{\PYGZcb{}}
+            \PYG{p}{\PYGZcb{}}
+        \PYG{p}{\PYGZcb{}}
+
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// prints only the name, surname and height of a list of players}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}input\PYGZdq{}\PYGZgt{}a list of players\PYGZlt{}/param\PYGZgt{}}
+        \PYG{k}{public} \PYG{k}{static} \PYG{k}{void} \PYG{n+nf}{PrintCondensedPlayersWithHeight}\PYG{p}{(}\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Player}\PYG{p}{\PYGZgt{}} \PYG{n}{input}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{c+c1}{// the amount of empty characters given for every value in the table}
+            \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{k+kt}{int}\PYG{p}{\PYGZgt{}} \PYG{n}{tableSpacing} \PYG{p}{=} \PYG{k}{new} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{k+kt}{int}\PYG{p}{\PYGZgt{}} \PYG{p}{\PYGZob{}}\PYG{l+m}{10}\PYG{p}{,} \PYG{l+m}{14}\PYG{p}{,} \PYG{l+m}{3}\PYG{p}{\PYGZcb{};}
+
+
+            \PYG{n}{PrintIndexedTableLine}\PYG{p}{(}\PYG{n}{tableSpacing}\PYG{p}{,} \PYG{l+m}{3}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}┌\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}┬\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}┐\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}─\PYGZsq{}}\PYG{p}{);}
+
+            \PYG{n}{Console}\PYG{p}{.}\PYG{n}{WriteLine}\PYG{p}{(}
+                \PYG{l+s}{\PYGZdq{}│\PYGZob{}0,\PYGZhy{}10\PYGZcb{}│\PYGZob{}1,\PYGZhy{}14\PYGZcb{}│\PYGZob{}2,\PYGZhy{}3\PYGZcb{}│\PYGZdq{}}\PYG{p}{,}
+                \PYG{l+s}{\PYGZdq{}Vardas\PYGZdq{}}\PYG{p}{,}
+                \PYG{l+s}{\PYGZdq{}Pavardė\PYGZdq{}}\PYG{p}{,}
+                \PYG{l+s}{\PYGZdq{}Au.\PYGZdq{}}
+            \PYG{p}{);}
+
+            \PYG{n}{PrintIndexedTableLine}\PYG{p}{(}\PYG{n}{tableSpacing}\PYG{p}{,} \PYG{l+m}{3}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}├\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}┼\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}┤\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}─\PYGZsq{}}\PYG{p}{);}
+
+            \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{=} \PYG{l+m}{0}\PYG{p}{;} \PYG{n}{i} \PYG{p}{\PYGZlt{}} \PYG{n}{input}\PYG{p}{.}\PYG{n}{Count}\PYG{p}{;} \PYG{n}{i}\PYG{p}{++)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{n}{Player} \PYG{n}{player} \PYG{p}{=} \PYG{n}{input}\PYG{p}{[}\PYG{n}{i}\PYG{p}{];}
+                \PYG{n}{Console}\PYG{p}{.}\PYG{n}{WriteLine}\PYG{p}{(}
+                    \PYG{l+s}{\PYGZdq{}│\PYGZob{}0,\PYGZhy{}10\PYGZcb{}│\PYGZob{}1,\PYGZhy{}14\PYGZcb{}│\PYGZob{}2,\PYGZhy{}3\PYGZcb{}│\PYGZdq{}}\PYG{p}{,}
+                    \PYG{n}{player}\PYG{p}{.}\PYG{n}{Name}\PYG{p}{,}
+                    \PYG{n}{player}\PYG{p}{.}\PYG{n}{Surname}\PYG{p}{,}
+                    \PYG{n}{player}\PYG{p}{.}\PYG{n}{Height}
+                \PYG{p}{);}
+
+                \PYG{k}{if} \PYG{p}{(}\PYG{n}{i} \PYG{p}{==} \PYG{n}{input}\PYG{p}{.}\PYG{n}{Count} \PYG{p}{\PYGZhy{}} \PYG{l+m}{1}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{n}{PrintIndexedTableLine}\PYG{p}{(}\PYG{n}{tableSpacing}\PYG{p}{,} \PYG{l+m}{3}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}└\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}┴\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}┘\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}─\PYGZsq{}}\PYG{p}{);}
+                \PYG{p}{\PYGZcb{}}
+                \PYG{k}{else}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{n}{PrintIndexedTableLine}\PYG{p}{(}\PYG{n}{tableSpacing}\PYG{p}{,} \PYG{l+m}{3}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}├\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}┼\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}┤\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}─\PYGZsq{}}\PYG{p}{);}
+                \PYG{p}{\PYGZcb{}}
+            \PYG{p}{\PYGZcb{}}
+        \PYG{p}{\PYGZcb{}}
+ 
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// a method to truncate strings that are too long}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}value\PYGZdq{}\PYGZgt{}the string to truncate\PYGZlt{}/param\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}maxChars\PYGZdq{}\PYGZgt{}the maximum amount of chars to use before truncating\PYGZlt{}/param\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}returns\PYGZgt{}a truncated string\PYGZlt{}/returns\PYGZgt{}}
+        \PYG{k}{private} \PYG{k}{static} \PYG{k+kt}{string} \PYG{n+nf}{Truncate}\PYG{p}{(}\PYG{k+kt}{string} \PYG{k}{value}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{maxChars}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{k}{return} \PYG{k}{value}\PYG{p}{.}\PYG{n}{Length} \PYG{p}{\PYGZlt{}=} \PYG{n}{maxChars} \PYG{p}{?} \PYG{k}{value} \PYG{p}{:} \PYG{k}{value}\PYG{p}{.}\PYG{n}{Substring}\PYG{p}{(}\PYG{l+m}{0}\PYG{p}{,} \PYG{n}{maxChars}\PYG{p}{)} \PYG{p}{+} \PYG{l+s}{\PYGZdq{}...\PYGZdq{}}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+
+
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{///  a simple method to assist in creating text character based tables}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}spacing\PYGZdq{}\PYGZgt{}a list of ints which defines the amount of \PYGZlt{}paramref name=\PYGZdq{}line\PYGZdq{}/\PYGZgt{} chars to put in between any of the other chars\PYGZlt{}/param\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}columnCount\PYGZdq{}\PYGZgt{}the amount of columns in the\PYGZlt{}/param\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}leftEdge\PYGZdq{}\PYGZgt{}the char used at the left edge of the table\PYGZlt{}/param\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}middleEdge\PYGZdq{}\PYGZgt{}the char used inbetween lines\PYGZlt{}/param\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}rightEdge\PYGZdq{}\PYGZgt{}the char used at the right edge or end of the line\PYGZlt{}/param\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}line\PYGZdq{}\PYGZgt{}the char used inbetween any and all other chars\PYGZlt{}/param\PYGZgt{}}
+        \PYG{k}{private} \PYG{k}{static} \PYG{k}{void} \PYG{n+nf}{PrintIndexedTableLine}\PYG{p}{(}\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{k+kt}{int}\PYG{p}{\PYGZgt{}} \PYG{n}{spacing}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{columnCount}\PYG{p}{,} \PYG{k+kt}{char} \PYG{n}{leftEdge}\PYG{p}{,} \PYG{k+kt}{char} \PYG{n}{middleEdge}\PYG{p}{,} \PYG{k+kt}{char} \PYG{n}{rightEdge}\PYG{p}{,} \PYG{k+kt}{char} \PYG{n}{line}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+
+            \PYG{n}{Console}\PYG{p}{.}\PYG{n}{Write}\PYG{p}{(}\PYG{n}{leftEdge}\PYG{p}{);}
+
+            \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{=} \PYG{l+m}{0}\PYG{p}{;} \PYG{n}{i} \PYG{p}{\PYGZlt{}} \PYG{n}{columnCount}\PYG{p}{;} \PYG{n}{i}\PYG{p}{++)} \PYG{p}{\PYGZob{}}
+
+                \PYG{n}{Console}\PYG{p}{.}\PYG{n}{Write}\PYG{p}{(}\PYG{k}{new} \PYG{k+kt}{string}\PYG{p}{(}\PYG{n}{line}\PYG{p}{,} \PYG{n}{spacing}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]));}
+
+                \PYG{k}{if} \PYG{p}{(}\PYG{n}{i} \PYG{p}{==} \PYG{n}{columnCount} \PYG{p}{\PYGZhy{}} \PYG{l+m}{1}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{n}{Console}\PYG{p}{.}\PYG{n}{WriteLine}\PYG{p}{(}\PYG{n}{rightEdge}\PYG{p}{);}
+                \PYG{p}{\PYGZcb{}}
+                \PYG{k}{else}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{n}{Console}\PYG{p}{.}\PYG{n}{Write}\PYG{p}{(}\PYG{n}{middleEdge}\PYG{p}{);}
+                \PYG{p}{\PYGZcb{}}
+            \PYG{p}{\PYGZcb{}}
+        \PYG{p}{\PYGZcb{}}
+
+        
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// outputs a list of strings to a csv file}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}fileName\PYGZdq{}\PYGZgt{}the filename to which to output\PYGZlt{}/param\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}input\PYGZdq{}\PYGZgt{}a list of strings\PYGZlt{}/param\PYGZgt{}}
+        \PYG{k}{public} \PYG{k}{static} \PYG{k}{void} \PYG{n+nf}{OutputStringListToCSV}\PYG{p}{(}\PYG{k+kt}{string} \PYG{n}{fileName}\PYG{p}{,} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{String}\PYG{p}{\PYGZgt{}} \PYG{n}{input}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{k+kt}{string}\PYG{p}{[]} \PYG{n}{lines} \PYG{p}{=} \PYG{n}{input}\PYG{p}{.}\PYG{n}{ToArray}\PYG{p}{();}
+
+            \PYG{n}{File}\PYG{p}{.}\PYG{n}{WriteAllLines}\PYG{p}{(}\PYG{n}{fileName}\PYG{p}{,} \PYG{n}{lines}\PYG{p}{,} \PYG{n}{Encoding}\PYG{p}{.}\PYG{n}{UTF8}\PYG{p}{);}
+        \PYG{p}{\PYGZcb{}}
+
+
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// outputs a list of players into a csv file}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}fileName\PYGZdq{}\PYGZgt{}the filename to which to write\PYGZlt{}/param\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}players\PYGZdq{}\PYGZgt{}a list of players\PYGZlt{}/param\PYGZgt{}}
+        \PYG{k}{public} \PYG{k}{static} \PYG{k}{void} \PYG{n+nf}{OutputPlayersToCSV}\PYG{p}{(}\PYG{k+kt}{string} \PYG{n}{fileName}\PYG{p}{,} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Player}\PYG{p}{\PYGZgt{}} \PYG{n}{players}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+
+            \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{k+kt}{string}\PYG{p}{\PYGZgt{}} \PYG{n}{output} \PYG{p}{=} \PYG{k}{new} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{k+kt}{string}\PYG{p}{\PYGZgt{}();}
+
+            \PYG{k}{foreach} \PYG{p}{(}\PYG{n}{Player} \PYG{n}{p} \PYG{k}{in} \PYG{n}{players}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{k+kt}{string} \PYG{n}{line}\PYG{p}{;}
+
+                \PYG{n}{line} \PYG{p}{=} \PYG{n}{String}\PYG{p}{.}\PYG{n}{Format}\PYG{p}{(}
+                    \PYG{l+s}{\PYGZdq{}\PYGZob{}0\PYGZcb{};\PYGZob{}1\PYGZcb{};\PYGZob{}2\PYGZcb{};\PYGZob{}3\PYGZcb{};\PYGZob{}4\PYGZcb{};\PYGZob{}5\PYGZcb{};\PYGZob{}6\PYGZcb{}\PYGZdq{}}\PYG{p}{,}
+                    \PYG{n}{p}\PYG{p}{.}\PYG{n}{Name}\PYG{p}{,}
+                    \PYG{n}{p}\PYG{p}{.}\PYG{n}{Surname}\PYG{p}{,}
+                    \PYG{n}{p}\PYG{p}{.}\PYG{n}{Age}\PYG{p}{,}
+                    \PYG{n}{p}\PYG{p}{.}\PYG{n}{Height}\PYG{p}{,}
+                    \PYG{n}{p}\PYG{p}{.}\PYG{n}{Position}\PYG{p}{,}
+                    \PYG{n}{p}\PYG{p}{.}\PYG{n}{IsPicked}\PYG{p}{,}
+                    \PYG{n}{p}\PYG{p}{.}\PYG{n}{IsCaptain}
+                \PYG{p}{);}
+
+                \PYG{n}{output}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{line}\PYG{p}{);}
+            \PYG{p}{\PYGZcb{}}
+
+            \PYG{n}{File}\PYG{p}{.}\PYG{n}{WriteAllLines}\PYG{p}{(}\PYG{n}{fileName}\PYG{p}{,} \PYG{n}{output}\PYG{p}{.}\PYG{n}{ToArray}\PYG{p}{(),} \PYG{n}{Encoding}\PYG{p}{.}\PYG{n}{UTF8}\PYG{p}{);}
+        \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{c+c1}{//Program.cs}
+\PYG{k}{using} \PYG{n+nn}{System}\PYG{p}{;}
+\PYG{k}{using} \PYG{n+nn}{System.IO}\PYG{p}{;}
+\PYG{k}{using} \PYG{n+nn}{System.Collections.Generic}\PYG{p}{;}
+\PYG{k}{using} \PYG{n+nn}{System.Linq}\PYG{p}{;}
+\PYG{k}{using} \PYG{n+nn}{System.Text}\PYG{p}{;}
+\PYG{k}{using} \PYG{n+nn}{System.Threading.Tasks}\PYG{p}{;}
+
+\PYG{k}{namespace} \PYG{n+nn}{L2\PYGZus{}ND}
+\PYG{p}{\PYGZob{}}
+    \PYG{k}{class} \PYG{n+nc}{Program}
+    \PYG{p}{\PYGZob{}}
+        \PYG{k}{static} \PYG{k}{void} \PYG{n+nf}{Main}\PYG{p}{(}\PYG{k+kt}{string}\PYG{p}{[]} \PYG{n}{args}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Player}\PYG{p}{\PYGZgt{}} \PYG{n}{allPlayers} \PYG{p}{=} \PYG{k}{new} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Player}\PYG{p}{\PYGZgt{}();}
+
+            \PYG{n}{allPlayers}\PYG{p}{.}\PYG{n}{AddRange}\PYG{p}{(}\PYG{n}{IOUtils}\PYG{p}{.}\PYG{n}{ReadPlayersFromFile}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}2020\PYGZhy{}krepsininkai.csv\PYGZdq{}}\PYG{p}{));}
+            \PYG{n}{allPlayers}\PYG{p}{.}\PYG{n}{AddRange}\PYG{p}{(}\PYG{n}{IOUtils}\PYG{p}{.}\PYG{n}{ReadPlayersFromFile}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}2019\PYGZhy{}krepsininkai.csv\PYGZdq{}}\PYG{p}{));}
+
+            \PYG{n}{PlayerRegister} \PYG{n}{reg} \PYG{p}{=} \PYG{k}{new} \PYG{n}{PlayerRegister}\PYG{p}{(}\PYG{n}{allPlayers}\PYG{p}{);}
+            
+            \PYG{c+c1}{// print out all players}
+            \PYG{n}{Console}\PYG{p}{.}\PYG{n}{Write}\PYG{p}{(}\PYG{n}{reg}\PYG{p}{.}\PYG{n}{ToString}\PYG{p}{());}
+
+            \PYG{c+c1}{// get and print out all attackers}
+            \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Player}\PYG{p}{\PYGZgt{}} \PYG{n}{allAttackers} \PYG{p}{=} \PYG{n}{reg}\PYG{p}{.}\PYG{n}{GetAllAttackers}\PYG{p}{();}
+            \PYG{n}{Console}\PYG{p}{.}\PYG{n}{WriteLine}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Visi puolėjai:\PYGZdq{}}\PYG{p}{);}
+            \PYG{n}{IOUtils}\PYG{p}{.}\PYG{n}{PrintCondensedPlayersWithHeight}\PYG{p}{(}\PYG{n}{allAttackers}\PYG{p}{);}
+
+            \PYG{c+c1}{// get and print out the tallest player(s)}
+            \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Player}\PYG{p}{\PYGZgt{}} \PYG{n}{tallestPlayers} \PYG{p}{=} \PYG{n}{reg}\PYG{p}{.}\PYG{n}{GetTallestPlayers}\PYG{p}{();}
+            \PYG{n}{Console}\PYG{p}{.}\PYG{n}{WriteLine}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Aukščiausi žaidėjai:\PYGZdq{}}\PYG{p}{);}
+            \PYG{n}{IOUtils}\PYG{p}{.}\PYG{n}{PrintCondensedPlayersWithHeight}\PYG{p}{(}\PYG{n}{tallestPlayers}\PYG{p}{);}
+
+            \PYG{c+c1}{// write all unique clubs to a file}
+            \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{k+kt}{string}\PYG{p}{\PYGZgt{}} \PYG{n}{uniqueClubs} \PYG{p}{=} \PYG{n}{reg}\PYG{p}{.}\PYG{n}{GetUniqueInvitedClubs}\PYG{p}{();}
+            \PYG{n}{IOUtils}\PYG{p}{.}\PYG{n}{OutputStringListToCSV}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Klubai.csv\PYGZdq{}}\PYG{p}{,} \PYG{n}{uniqueClubs}\PYG{p}{);}
+        \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

@@ -1,0 +1,28 @@
+\babel@toc {lithuanian}{}
+\contentsline {section}{\numberline {1}Duomenų klasė}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Darbo užduotis}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Programos tekstas}{3}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Pradiniai duomenys ir rezultatai}{10}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Dėstytojo pastabos}{11}{subsection.1.4}%
+\contentsline {section}{\numberline {2}Skaičiavimų klasė}{12}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Darbo užduotis}{12}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Programos tekstas}{12}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Pradiniai duomenys ir rezultatai}{22}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}Pirmas tikrinimas}{22}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.2}Antras tikrinimas}{23}{subsubsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.4}Dėstytojo pastabos}{25}{subsection.2.4}%
+\contentsline {section}{\numberline {3}Konteineris}{26}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Darbo užduotis}{26}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Programos tekstas}{26}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Pradiniai duomenys ir rezultatai}{26}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Dėstytojo pastabos}{26}{subsection.3.4}%
+\contentsline {section}{\numberline {4}Teksto analizė ir redagavimas}{27}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Darbo užduotis}{27}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Programos tekstas}{27}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Pradiniai duomenys ir rezultatai}{27}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Dėstytojo pastabos}{27}{subsection.4.4}%
+\contentsline {section}{\numberline {5}Paveldėjimas}{28}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Darbo užduotis}{28}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Programos tekstas}{28}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Pradiniai duomenys ir rezultatai}{28}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Dėstytojo pastabos}{28}{subsection.5.4}%

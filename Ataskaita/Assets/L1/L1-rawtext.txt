@@ -1,0 +1,429 @@
+//Hero.cs
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace U1_24_NR_ND
+{
+    /// <summary>
+    /// the main hero class that is used throughout the program
+    /// </summary>
+    class Hero
+    {
+        public string Name { get; set; }
+        public string Race { get; set; }
+        public string Class { get; set; }
+        public int LifePoints { get; set; }
+        public int ManaPoints { get; set; }
+        public int AtkPoints { get; set; }
+        public int DefPoints { get; set; }
+        public int StrPoints { get; set; }
+        public int SpdPoints { get; set; }
+        public int IntPoints { get; set; }
+        public string Special { get; set; }
+
+        /// <summary>
+        /// the constructor method for this class
+        /// </summary>
+        public Hero(string name, string race, string _class, int lifePoints, int manaPoints, int atkPoints, int defPoints, int strPoints, int spdPoints, int intPoints, string special)
+        {
+            this.Name = name;
+            this.Race = race;
+            this.Class = _class;
+            this.LifePoints = lifePoints;
+            this.ManaPoints = manaPoints;
+            this.AtkPoints = atkPoints;
+            this.DefPoints = defPoints;
+            this.StrPoints = strPoints;
+            this.SpdPoints = spdPoints;
+            this.IntPoints = intPoints;
+            this.Special = special;
+        }
+    }
+}
+
+
+//IOUtils.cs
+using System;
+using System.IO;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace U1_24_NR_ND
+{
+    static class IOUtils
+    {
+        /// <summary>
+        /// reads heroes in from a filename
+        /// </summary>
+        /// <param name="fileName">the filename from which to read</param>
+        /// <returns>a list of heroes</returns>
+        public static List<Hero> ReadHeroes(string fileName)
+        {
+            List<Hero> output = new List<Hero>();
+
+            string[] lines = new string[100];
+
+            // file error handling
+            if (System.IO.File.Exists(fileName))
+            {
+                lines = File.ReadAllLines(fileName, Encoding.UTF8);
+            }
+            else
+            {
+                Console.WriteLine("Failas nerastas. Programa negali veikti.");
+                System.Environment.Exit(1); // exit code 1 means that the program did not run successfuly
+            }
+
+            if (lines.Length <= 0)
+            {
+                Console.WriteLine("Pateiktas tuščias failas. Programa negali veikti.");
+                System.Environment.Exit(1); // exit code 1 means that the program did not run successfuly
+            }
+
+            foreach (string line in lines)
+            {
+                string[] values = line.Split(';');
+
+                string name = values[0];
+                string race = values[1];
+                string _class = values[2];
+                int lifePoints = int.Parse(values[3]);
+                int manaPoints = int.Parse(values[4]);
+                int atkPoints = int.Parse(values[5]);
+                int defPoints = int.Parse(values[6]);
+                int strPoints = int.Parse(values[7]);
+                int spdPoints = int.Parse(values[8]);
+                int intPoints = int.Parse(values[9]);
+                string special = values[10];
+
+                Hero heroToAdd = new Hero(
+                    name,
+                    race,
+                    _class,
+                    lifePoints,
+                    manaPoints,
+                    atkPoints,
+                    defPoints,
+                    strPoints,
+                    spdPoints,
+                    intPoints,
+                    special
+                );
+
+                output.Add(heroToAdd);
+
+            }
+
+            return output;
+        }
+
+
+        /// <summary>
+        /// prints out a table of heroes when give a list of them as input
+        /// </summary>
+        /// <param name="input">the list of heroes to be used as input</param>
+        public static void PrintHeroes(List<Hero> input)
+        {
+            // the amount of empty characters given for every value in the table
+            List<int> tableSpacing = new List<int> {10, 14, 11, 4, 4, 4, 5, 2, 2, 2, 16};
+
+
+            PrintIndexedTableLine(tableSpacing, 11, '┌', '┬', '┐', '─');
+
+            Console.WriteLine(
+                "│{0,-10}│{1,-14}│{2,-11}│{3,-4}│{4,-4}│{5, -4}│{6, -5}│{7, -2}│{8, -2}│{9, -2}│{10, -16}│",
+                "Vardas",
+                "Rasė",
+                "Klasė",
+                "G.t.",
+                "M.t.",
+                "Ž.t.",
+                "Gy.t.",
+                "J.",
+                "V.",
+                "I.",
+                "Ypat. galia"
+            );
+
+            PrintIndexedTableLine(tableSpacing, 11, '├', '┼', '┤', '─');
+
+            for (int i = 0; i < input.Count; i++)
+            {
+                Hero hero = input[i];
+                Console.WriteLine(
+                    "│{0,-10}│{1,-14}│{2,-11}│{3,-4}│{4,-4}│{5, -4}│{6, -5}│{7, -2}│{8, -2}│{9, -2}│{10, -16}│",
+                    hero.Name,
+                    hero.Race,
+                    hero.Class,
+                    hero.LifePoints,
+                    hero.ManaPoints,
+                    hero.AtkPoints,
+                    hero.DefPoints,
+                    hero.StrPoints,
+                    hero.SpdPoints,
+                    hero.IntPoints,
+                    Truncate(hero.Special, 12)
+                );
+
+                if (i == input.Count - 1)
+                {
+                    PrintIndexedTableLine(tableSpacing, 11, '└', '┴', '┘', '─');
+                }
+                else
+                {
+                    PrintIndexedTableLine(tableSpacing, 11, '├', '┼', '┤', '─');
+                }
+            }
+
+        }
+
+        /// <summary>
+        /// prints out a list of heroes with some of their info omitted
+        /// </summary>
+        /// <param name="input">a list of heroes to be used as input</param>
+        public static void PrintHeroesCompressed(List<Hero> input)
+        {
+            // the amount of empty characters given for every value in the table
+            List<int> tableSpacing = new List<int> {18, 18, 18, 18};
+
+
+            PrintIndexedTableLine(tableSpacing, 4, '┌', '┬', '┐', '─');
+
+            Console.WriteLine(
+                "│ {0,-16} │ {1,-16} │ {2,-16} │ {3,-16} │",
+                "Vardas",
+                "Rasė",
+                "Klasė",
+                "Gyvybės t."
+            );
+
+            PrintIndexedTableLine(tableSpacing, 4, '├', '┼', '┤', '─');
+
+            for (int i = 0; i < input.Count; i++)
+            {
+                Hero hero = input[i];
+                Console.WriteLine(
+                    "│ {0,-16} │ {1,-16} │ {2,-16} │ {3,-16} │",
+                    hero.Name,
+                    hero.Race,
+                    hero.Class,
+                    hero.LifePoints
+                );
+
+                if (i == input.Count - 1)
+                {
+                    PrintIndexedTableLine(tableSpacing, 4, '└', '┴', '┘', '─');
+                }
+                else
+                {
+                    PrintIndexedTableLine(tableSpacing, 4, '├', '┼', '┤', '─');
+                }
+            }
+
+        }
+
+        /// <summary>
+        /// a method to truncate strings that are too long
+        /// </summary>
+        /// <param name="value">the string to truncate</param>
+        /// <param name="maxChars">the maximum amount of chars to use before truncating</param>
+        /// <returns></returns>
+        private static string Truncate(string value, int maxChars)
+        {
+            return value.Length <= maxChars ? value : value.Substring(0, maxChars) + "...";
+        }
+
+
+        /// <summary>
+        ///  a simple method to assist in creating text character based tables
+        /// </summary>
+        /// <param name="spacing">a list of ints which defines the amount of <paramref name="line"/> chars to put in between any of the other chars</param>
+        /// <param name="columnCount">the amount of columns in the</param>
+        /// <param name="leftEdge">the char used at the left edge of the table</param>
+        /// <param name="middleEdge">the char used inbetween lines</param>
+        /// <param name="rightEdge">the char used at the right edge or end of the line</param>
+        /// <param name="line">the char used inbetween any and all other chars</param>
+        private static void PrintIndexedTableLine(List<int> spacing, int columnCount, char leftEdge, char middleEdge, char rightEdge, char line)
+        {
+
+            Console.Write(leftEdge);
+
+            for (int i = 0; i < columnCount; i++) {
+
+                Console.Write(new string(line, spacing[i]));
+
+                if (i == columnCount - 1)
+                {
+                    Console.WriteLine(rightEdge);
+                }
+                else
+                {
+                    Console.Write(middleEdge);
+                }
+            }
+        }
+
+        /// <summary>
+        /// outputs a list of classes to a csv file
+        /// </summary>
+        /// <param name="fileName">the filename to which to output</param>
+        /// <param name="classes">the list of classes</param>
+        public static void OutputClassesToCSV(string fileName, List<String> classes)
+        {
+            string[] lines = classes.ToArray();
+
+            File.WriteAllLines(fileName, lines, Encoding.UTF8);
+        }
+
+    }
+}
+
+//TaskUtils.cs
+using System;
+using System.IO;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace U1_24_NR_ND
+{
+    class TaskUtils
+    {
+        /// <summary>
+        /// finds all heroes with the highest amount of health.
+        /// </summary>
+        /// <param name="input">a list of heroes</param>
+        /// <returns>a list of heroes who have the highest amount of health</returns>
+        public static List<Hero> FindHeroesWithHighestHealth(List<Hero> input)
+        {
+            List<Hero> output = new List<Hero>();
+
+            foreach (Hero hero in input)
+            {
+                if (output.Count == 0)
+                {
+                    output.Add(hero);
+                    continue;
+                }
+
+                Hero heroToCompare = output[0];
+
+                if (hero.LifePoints > heroToCompare.LifePoints)
+                {
+                    output.Clear();
+                    output.Add(hero);
+                }
+                else if (hero.LifePoints == heroToCompare.LifePoints)
+                {
+                    output.Add(hero);
+                }
+
+            }
+
+
+            return output;
+        }
+
+        /// <summary>
+        /// a method to find the heroes who have the smallest difference
+        /// between their attack and defence points
+        /// </summary>
+        /// <param name="input">a list of heroes</param>
+        /// <returns>the heroes who have the smallest difference between atk and def</returns>
+        public static List<Hero> FindHeroesWithSmallestDifference(List<Hero> input)
+        {
+            List<Hero> output = new List<Hero>();
+
+            foreach (Hero hero in input)
+            {
+                if (output.Count == 0)
+                {
+                    output.Add(hero);
+                    continue;
+                }
+
+                Hero heroToCompare = output[0];
+
+                int aDiff = Math.Abs(hero.AtkPoints-hero.DefPoints);
+                int bDiff = Math.Abs(heroToCompare.AtkPoints - heroToCompare.DefPoints);
+
+                if (aDiff < bDiff)
+                {
+                    output.Clear();
+                    output.Add(hero);
+                }
+                else if (aDiff == bDiff)
+                {
+                    output.Add(hero);
+                }
+            }
+
+            return output;
+        }
+
+        /// <summary>
+        /// finds all unique hero classes when given a list of them as input
+        /// </summary>
+        /// <param name="input">the list of heroes</param>
+        /// <returns>the unique classes</returns>
+        public static List<String> FindUniqueClasses(List<Hero> input)
+        {
+            List<String> output = new List<String>();
+
+            foreach (Hero hero in input)
+            {
+                if (!output.Contains(hero.Class))
+                {
+                    output.Add(hero.Class);
+                }
+            }
+            return output;
+        }
+    }
+}
+
+//Program.cs
+using System;
+using System.IO;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace U1_24_NR_ND
+{
+    class Program
+    {
+        /// <summary>
+        /// the main method for this program
+        /// </summary>
+        public static void Main(string[] args)
+        {
+            // read from file
+            List<Hero> allHeroes = IOUtils.ReadHeroes("herojai.csv");
+
+            // print out all heroes
+            Console.WriteLine("Visi herojai:");
+            IOUtils.PrintHeroes(allHeroes);
+
+            // print out heroes with highest [LifePoints]
+            Console.WriteLine("Herojai su didžiausiu kiekiu gyvybės taškų:");
+            IOUtils.PrintHeroesCompressed(TaskUtils.FindHeroesWithHighestHealth(allHeroes));
+
+            // print out all heroes with the smallest difference between
+            // [AtkPoints] and [DefPoints]
+            Console.WriteLine("Herojai su mažiausiu skirtumu tarp žalos ir gynybos taškų:");
+            IOUtils.PrintHeroes(TaskUtils.FindHeroesWithSmallestDifference(allHeroes));
+
+            // find and output all unique classes
+            List<String> uniqueClasses = TaskUtils.FindUniqueClasses(allHeroes);
+            IOUtils.OutputClassesToCSV("Klasės.csv", uniqueClasses);
+        }
+    }
+}

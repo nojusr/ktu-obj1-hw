@@ -1,0 +1,26 @@
+Žaidėjų registras: Žaidėjų kiekis: 24
+Visi Žaidėjai: 
+Žaidėjas: Antanas Žukauskas, Metai: 21, Aukštis: 177, Pozicija: Defender, Klubas: L. Rytas, Ar parinktas: False, Ar kapitonas: False, Stovyklos pradžia: 7/1/2020, Stovyklos pabaiga: 7/30/2020
+Žaidėjas: Aloyzas Sabonis, Metai: 19, Aukštis: 193, Pozicija: Striker, Klubas: Šaulys, Ar parinktas: False, Ar kapitonas: False, Stovyklos pradžia: 7/1/2020, Stovyklos pabaiga: 7/30/2020
+Žaidėjas: Petras Jasikevičius, Metai: 22, Aukštis: 204, Pozicija: Sniper, Klubas: Šaulys, Ar parinktas: False, Ar kapitonas: False, Stovyklos pradžia: 7/1/2020, Stovyklos pabaiga: 7/30/2020
+Žaidėjas: Petras Pavardėnis, Metai: 28, Aukštis: 209, Pozicija: Defender, Klubas: L. Rytas, Ar parinktas: False, Ar kapitonas: False, Stovyklos pradžia: 7/1/2020, Stovyklos pabaiga: 7/30/2020
+Žaidėjas: Motiejus Žukauskas, Metai: 20, Aukštis: 205, Pozicija: Defender, Klubas: L. Rytas, Ar parinktas: False, Ar kapitonas: False, Stovyklos pradžia: 7/1/2020, Stovyklos pabaiga: 7/30/2020
+Žaidėjas: Vardėnis Sabonis, Metai: 26, Aukštis: 193, Pozicija: Attacker, Klubas: L. Rytas, Ar parinktas: False, Ar kapitonas: False, Stovyklos pradžia: 7/1/2020, Stovyklos pabaiga: 7/30/2020
+Žaidėjas: Juozas Valančiūnas, Metai: 23, Aukštis: 198, Pozicija: Sniper, Klubas: Šaulys, Ar parinktas: True, Ar kapitonas: True, Stovyklos pradžia: 7/1/2020, Stovyklos pabaiga: 7/30/2020
+Žaidėjas: Juozas Žukauskas, Metai: 25, Aukštis: 185, Pozicija: Defender, Klubas: L. Rytas, Ar parinktas: False, Ar kapitonas: False, Stovyklos pradžia: 7/1/2020, Stovyklos pabaiga: 7/30/2020
+Žaidėjas: Aloyzas Pavardėnis, Metai: 20, Aukštis: 205, Pozicija: Defender, Klubas: Žalgiris, Ar parinktas: True, Ar kapitonas: True, Stovyklos pradžia: 7/1/2020, Stovyklos pabaiga: 7/30/2020
+Žaidėjas: Vardėnis Pavardėnis, Metai: 19, Aukštis: 178, Pozicija: Striker, Klubas: L. Rytas, Ar parinktas: False, Ar kapitonas: False, Stovyklos pradžia: 7/1/2020, Stovyklos pabaiga: 7/30/2020
+Žaidėjas: Aloyzas Valančiūnas, Metai: 29, Aukštis: 208, Pozicija: Striker, Klubas: L. Rytas, Ar parinktas: False, Ar kapitonas: False, Stovyklos pradžia: 7/1/2020, Stovyklos pabaiga: 7/30/2020
+Žaidėjas: Antanas Valančiūnas, Metai: 32, Aukštis: 191, Pozicija: Attacker, Klubas: Žalgiris, Ar parinktas: True, Ar kapitonas: True, Stovyklos pradžia: 7/1/2020, Stovyklos pabaiga: 7/30/2020
+Žaidėjas: Antanas Sabonis, Metai: 27, Aukštis: 209, Pozicija: Sniper, Klubas: L. Rytas, Ar parinktas: False, Ar kapitonas: False, Stovyklos pradžia: 7/1/2020, Stovyklos pabaiga: 7/30/2020
+Žaidėjas: Juozas Žukauskas, Metai: 21, Aukštis: 191, Pozicija: Striker, Klubas: Žalgiris, Ar parinktas: True, Ar kapitonas: True, Stovyklos pradžia: 8/1/2019, Stovyklos pabaiga: 9/1/2019
+Žaidėjas: Juozas Pavardėnis, Metai: 29, Aukštis: 194, Pozicija: Attacker, Klubas: Žalgiris, Ar parinktas: True, Ar kapitonas: True, Stovyklos pradžia: 8/1/2019, Stovyklos pabaiga: 9/1/2019
+Žaidėjas: Vardėnis Valančiūnas, Metai: 28, Aukštis: 182, Pozicija: Sniper, Klubas: L. Rytas, Ar parinktas: False, Ar kapitonas: False, Stovyklos pradžia: 8/1/2019, Stovyklos pabaiga: 9/1/2019
+Žaidėjas: Aloyzas Jasikevičius, Metai: 32, Aukštis: 179, Pozicija: Defender, Klubas: L. Rytas, Ar parinktas: False, Ar kapitonas: False, Stovyklos pradžia: 8/1/2019, Stovyklos pabaiga: 9/1/2019
+Žaidėjas: Motiejus Sabonis, Metai: 32, Aukštis: 179, Pozicija: Striker, Klubas: Šaulys, Ar parinktas: False, Ar kapitonas: False, Stovyklos pradžia: 8/1/2019, Stovyklos pabaiga: 9/1/2019
+Žaidėjas: Petras Sabonis, Metai: 23, Aukštis: 191, Pozicija: Attacker, Klubas: Žalgiris, Ar parinktas: False, Ar kapitonas: False, Stovyklos pradžia: 8/1/2019, Stovyklos pabaiga: 9/1/2019
+Žaidėjas: Juozas Pavardėnis, Metai: 18, Aukštis: 184, Pozicija: Sniper, Klubas: L. Rytas, Ar parinktas: False, Ar kapitonas: False, Stovyklos pradžia: 8/1/2019, Stovyklos pabaiga: 9/1/2019
+Žaidėjas: Vardėnis Pavardėnis, Metai: 19, Aukštis: 201, Pozicija: Defender, Klubas: Žalgiris, Ar parinktas: True, Ar kapitonas: True, Stovyklos pradžia: 8/1/2019, Stovyklos pabaiga: 9/1/2019
+Žaidėjas: Juozas Pavardėnis, Metai: 28, Aukštis: 202, Pozicija: Defender, Klubas: Šaulys, Ar parinktas: True, Ar kapitonas: True, Stovyklos pradžia: 8/1/2019, Stovyklos pabaiga: 9/1/2019
+Žaidėjas: Petras Jasikevičius, Metai: 33, Aukštis: 177, Pozicija: Defender, Klubas: Kruojos, Ar parinktas: False, Ar kapitonas: False, Stovyklos pradžia: 8/1/2019, Stovyklos pabaiga: 9/1/2019
+Žaidėjas: Vardėnis Sabonis, Metai: 25, Aukštis: 192, Pozicija: Striker, Klubas: Šaulys, Ar parinktas: True, Ar kapitonas: True, Stovyklos pradžia: 8/1/2019, Stovyklos pabaiga: 9/1/2019

@@ -1,0 +1,16 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{l+m}{2019}
+\PYG{l+m}{08}\PYG{p}{\PYGZhy{}}\PYG{l+m}{01}
+\PYG{l+m}{09}\PYG{p}{\PYGZhy{}}\PYG{l+m}{01}
+\PYG{n}{Juozas}\PYG{p}{;}\PYG{n}{Žukauskas}\PYG{p}{;}\PYG{l+m}{21}\PYG{p}{;}\PYG{l+m}{191}\PYG{p}{;}\PYG{n}{Striker}\PYG{p}{;}\PYG{n}{Žalgiris}\PYG{p}{;}\PYG{n}{True}\PYG{p}{;}\PYG{n}{True}
+\PYG{n}{Juozas}\PYG{p}{;}\PYG{n}{Pavardėnis}\PYG{p}{;}\PYG{l+m}{29}\PYG{p}{;}\PYG{l+m}{194}\PYG{p}{;}\PYG{n}{Attacker}\PYG{p}{;}\PYG{n}{Žalgiris}\PYG{p}{;}\PYG{n}{True}\PYG{p}{;}\PYG{n}{False}
+\PYG{n}{Vardėnis}\PYG{p}{;}\PYG{n}{Valančiūnas}\PYG{p}{;}\PYG{l+m}{28}\PYG{p}{;}\PYG{l+m}{182}\PYG{p}{;}\PYG{n}{Sniper}\PYG{p}{;}\PYG{n}{L}\PYG{p}{.} \PYG{n}{Rytas}\PYG{p}{;}\PYG{n}{False}\PYG{p}{;}\PYG{n}{False}
+\PYG{n}{Aloyzas}\PYG{p}{;}\PYG{n}{Jasikevičius}\PYG{p}{;}\PYG{l+m}{32}\PYG{p}{;}\PYG{l+m}{179}\PYG{p}{;}\PYG{n}{Defender}\PYG{p}{;}\PYG{n}{L}\PYG{p}{.} \PYG{n}{Rytas}\PYG{p}{;}\PYG{n}{False}\PYG{p}{;}\PYG{n}{False}
+\PYG{n}{Motiejus}\PYG{p}{;}\PYG{n}{Sabonis}\PYG{p}{;}\PYG{l+m}{32}\PYG{p}{;}\PYG{l+m}{179}\PYG{p}{;}\PYG{n}{Striker}\PYG{p}{;}\PYG{n}{Šaulys}\PYG{p}{;}\PYG{n}{False}\PYG{p}{;}\PYG{n}{False}
+\PYG{n}{Petras}\PYG{p}{;}\PYG{n}{Sabonis}\PYG{p}{;}\PYG{l+m}{23}\PYG{p}{;}\PYG{l+m}{191}\PYG{p}{;}\PYG{n}{Attacker}\PYG{p}{;}\PYG{n}{Žalgiris}\PYG{p}{;}\PYG{n}{False}\PYG{p}{;}\PYG{n}{False}
+\PYG{n}{Juozas}\PYG{p}{;}\PYG{n}{Pavardėnis}\PYG{p}{;}\PYG{l+m}{18}\PYG{p}{;}\PYG{l+m}{184}\PYG{p}{;}\PYG{n}{Sniper}\PYG{p}{;}\PYG{n}{L}\PYG{p}{.} \PYG{n}{Rytas}\PYG{p}{;}\PYG{n}{False}\PYG{p}{;}\PYG{n}{False}
+\PYG{n}{Vardėnis}\PYG{p}{;}\PYG{n}{Pavardėnis}\PYG{p}{;}\PYG{l+m}{19}\PYG{p}{;}\PYG{l+m}{201}\PYG{p}{;}\PYG{n}{Defender}\PYG{p}{;}\PYG{n}{Žalgiris}\PYG{p}{;}\PYG{n}{True}\PYG{p}{;}\PYG{n}{False}
+\PYG{n}{Juozas}\PYG{p}{;}\PYG{n}{Pavardėnis}\PYG{p}{;}\PYG{l+m}{28}\PYG{p}{;}\PYG{l+m}{202}\PYG{p}{;}\PYG{n}{Defender}\PYG{p}{;}\PYG{n}{Šaulys}\PYG{p}{;}\PYG{n}{True}\PYG{p}{;}\PYG{n}{False}
+\PYG{n}{Petras}\PYG{p}{;}\PYG{n}{Jasikevičius}\PYG{p}{;}\PYG{l+m}{33}\PYG{p}{;}\PYG{l+m}{177}\PYG{p}{;}\PYG{n}{Defender}\PYG{p}{;}\PYG{n}{Kruojos}\PYG{p}{;}\PYG{n}{False}\PYG{p}{;}\PYG{n}{False}
+\PYG{n}{Vardėnis}\PYG{p}{;}\PYG{n}{Sabonis}\PYG{p}{;}\PYG{l+m}{25}\PYG{p}{;}\PYG{l+m}{192}\PYG{p}{;}\PYG{n}{Striker}\PYG{p}{;}\PYG{n}{Šaulys}\PYG{p}{;}\PYG{n}{True}\PYG{p}{;}\PYG{n}{False}
+\end{Verbatim}

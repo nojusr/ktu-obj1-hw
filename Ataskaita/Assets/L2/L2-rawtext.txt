@@ -1,0 +1,621 @@
+//Player.cs
+using System;
+
+namespace L2_ND
+{
+    class Player
+    {
+        public string Name { get; set; }
+        public string Surname { get; set; }
+        public int Age { get; set; }
+        public int Height { get; set; }
+        public string Position { get; set; }
+        public string Club { get; set; }
+        public bool IsPicked { get; set; }
+        public bool IsCaptain { get; set; }
+        public DateTime startDate { get; set; }
+        public DateTime endDate { get; set; }
+
+        /// <summary>
+        /// a method to represent a player object with a string
+        /// </summary>
+        /// <returns>a string that describes a player</returns>
+        public override string ToString()
+        {
+            return String.Format(
+                "Žaidėjas: {0} {1}, Metai: {2}, Aukštis: {3}, Pozicija: {4}, Klubas: {5}, Ar parinktas: {6}, Ar kapitonas: {7}, Stovyklos pradžia: {8}, Stovyklos pabaiga: {9}",
+                this.Name,
+                this.Surname,
+                this.Age,
+                this.Height,
+                this.Position,
+                this.Club,
+                this.IsPicked,
+                this.IsPicked,
+                this.startDate.ToShortDateString(),
+                this.endDate.ToShortDateString()
+            );
+        }
+
+        /// <summary>
+        /// compares this object to any other object
+        /// </summary>
+        /// <param name="other">object to compare against</param>
+        /// <returns>True if other is equal to this object; False if object isn't equal.</returns>
+        public override bool Equals(object other)
+        {
+            if (other == null || other.GetType() != this.GetType())
+            {
+                return false;
+            }
+
+            if (((Player)other).GetHashCode() != this.GetHashCode())
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        /// <summary>
+        /// a rudimentary hashing method of this class
+        /// </summary>
+        /// <returns>an integer hash of this class</returns>
+        public override int GetHashCode()
+        {
+            int hash = 0;
+
+            string hString = String.Format(
+                "{0}{1}{2}{3}{4}{5}",
+                this.Name,
+                this.Surname,
+                this.Position,
+                this.Club,
+                this.startDate.ToShortDateString(),
+                this.endDate.ToShortDateString()
+            ); 
+
+
+            foreach (char c in hString)
+            {
+                hash += (int)c;
+            }
+
+            hash += this.Age + this.Height;
+
+            if (this.IsPicked) {
+                hash += 5;
+            }
+            if (this.IsCaptain) {
+                hash += 7;
+            }
+
+            return hash;
+        }
+
+        public Player(string name, string surname, int age, int height, string position, string club, bool isPicked, bool isCaptain, DateTime start, DateTime end) {
+            this.Name = name;
+            this.Surname = surname;
+            this.Age = age;
+            this.Height = height;
+            this.Position = position;
+            this.Club = club;
+            this.IsPicked = isPicked;
+            this.IsCaptain = isCaptain;
+            this.startDate = start;
+            this.endDate = end;
+        }
+
+    }
+}
+
+//PlayerRegister.cs
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace L2_ND
+{
+    class PlayerRegister
+    {
+        private List<Player> allPlayers;
+
+        public PlayerRegister(List<Player> players)
+        {
+            this.allPlayers = players;
+        }
+
+
+        /// <summary>
+        /// turns the register to a string
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            string output = "";
+
+            output += String.Format(
+                "Žaidėjų registras: Žaidėjų kiekis: {0}\n",
+                this.PlayerCount()
+            );
+
+            output += "Visi Žaidėjai: \n";
+
+            foreach (Player p in this.allPlayers)
+            {
+                output += String.Format(
+                    "{0}\n",
+                    p.ToString()
+                );
+            }
+
+            return output;
+        }
+
+        /// <summary>
+        /// gets the amount of players in the register
+        /// </summary>
+        /// <returns>the player count</returns>
+        public int PlayerCount()
+        {
+            return this.allPlayers.Count();
+        }
+
+        /// <summary>
+        /// gets all players that are stored in the register
+        /// </summary>
+        /// <returns>a list of all players</returns>
+        public List<Player> GetAllPlayers()
+        {
+            return this.allPlayers;
+        }
+
+        /// <summary>
+        /// get a list of all players who have been invited
+        /// </summary>
+        /// <returns>a list of players who have been invited</returns>
+        public List<Player> GetInvitedPlayers()
+        {
+            List<Player> output = new List<Player>();
+
+            foreach (Player player in this.allPlayers)
+            {
+                if (player.IsPicked == true)
+                {
+                    output.Add(player);
+                }
+            }
+            return output;
+        }
+
+        /// <summary>
+        /// get the tallest player(s) in the register
+        /// </summary>
+        /// <returns>a list of the tallest players</returns>
+        public List<Player> GetTallestPlayers()
+        {
+
+            List<Player> output = new List<Player>();
+
+            foreach (Player player in this.allPlayers)
+            {
+                if (output.Count == 0)
+                {
+                    output.Add(player);
+                    continue;
+                }
+
+                Player playerToCompare = output[0];
+
+                if (player.Height > playerToCompare.Height)
+                {
+                    output.Clear();
+                    output.Add(player);
+                }
+                else if (player.Height == playerToCompare.Height)
+                {
+                    output.Add(player);
+                }
+            }
+            return output;
+        }
+
+
+        /// <summary>
+        /// gets a list of all of the attackers
+        /// </summary>
+        /// <returns>a list of all attackers</returns>
+        public List<Player> GetAllAttackers()
+        {
+            List<Player> output = new List<Player>();
+
+            foreach (Player player in this.allPlayers)
+            {
+                if (player.Position == "Attacker")
+                {
+                    output.Add(player);
+                }
+            }
+            return output;
+        }
+
+        /// <summary>
+        /// gets a list of all unique clubs from every invited player
+        /// </summary>
+        /// <returns>a list of strings</returns>
+        public List<String> GetUniqueInvitedClubs()
+        {
+            List<string> output = new List<string>();
+
+            foreach (Player player in this.GetInvitedPlayers())
+            {
+                string club = player.Club;
+
+                if (output.Contains(club) == false)
+                {
+                    output.Add(club);
+                }
+            }
+
+            return output;
+        }
+    }
+}
+
+//IOUtils.cs
+using System;
+using System.IO;
+using System.Collections.Generic;
+using System.Text;
+
+namespace L2_ND
+{
+    static class IOUtils
+    {
+        /// <summary>
+        /// reads players in from a filename
+        /// </summary>
+        /// <param name="fileName">the filename from which to read</param>
+        /// <returns>a list of players</returns>
+        public static List<Player> ReadPlayersFromFile(string fileName)
+        {
+            List<Player> output = new List<Player>();
+
+            string[] lines = new string[150];
+
+            DateTime startDate = new DateTime();
+            DateTime endDate = new DateTime();
+
+            // file error handling
+            if (System.IO.File.Exists(fileName))
+            {
+                lines = File.ReadAllLines(fileName, Encoding.UTF8);
+            }
+            else
+            {
+                Console.WriteLine("Failas nerastas. Programa negali veikti.");
+                System.Environment.Exit(1); // exit code 1 means that the program did not run successfuly
+            }
+
+            if (lines.Length <= 0)
+            {
+                Console.WriteLine("Pateiktas tuščias failas. Programa negali veikti.");
+                System.Environment.Exit(1); // exit code 1 means that the program did not run successfuly
+            }
+
+
+            string year = lines[0];
+
+            startDate = DateTime.Parse(String.Format("{0}-{1}", year, lines[1]));
+            endDate = DateTime.Parse(String.Format("{0}-{1}", year, lines[2]));
+
+
+            for (int i = 3; i < lines.Length; i++)
+            {
+                string line = lines[i];
+
+                // basic support for comments
+                // if a line in the input file starts with
+                // '//', then ignore it
+                if (line.StartsWith("//"))
+                {
+                    continue;
+                }
+
+                string[] values = line.Split(';');
+
+                string name = values[0];
+                string surname = values[1];
+                int age = int.Parse(values[2]);
+                int height = int.Parse(values[3]);
+                string position = values[4];
+                string club = values[5];
+                bool isPicked = bool.Parse(values[6]);
+                bool isCaptain = bool.Parse(values[7]);
+
+                Player PlayerToAdd = new Player(
+                    name,
+                    surname,
+                    age,
+                    height,
+                    position,
+                    club,
+                    isPicked,
+                    isCaptain,
+                    startDate,
+                    endDate
+                );
+
+                output.Add(PlayerToAdd);
+
+            }
+
+            return output;
+        }
+
+
+        /// <summary>
+        /// prints out a table of Players when give a list of them as input
+        /// </summary>
+        /// <param name="input">the list of Players to be used as input</param>
+        public static void PrintPlayers(List<Player> input)
+        {
+            // the amount of empty characters given for every value in the table
+            List<int> tableSpacing = new List<int> {10, 14, 3, 3, 10, 10, 10, 10};
+
+
+
+            PrintIndexedTableLine(tableSpacing, 8, '┌', '┬', '┐', '─');
+
+            Console.WriteLine(
+                "│{0,-10}│{1,-14}│{2,-3}│{3,-3}│{4,-10}│{5, -10}│{6, -10}│{7, -10}│",
+                "Vardas",
+                "Pavardė",
+                "Amž",
+                "Au.",
+                "Pozicija",
+                "Klubas",
+                "Išrinktas",
+                "Kapitonas"
+            );
+
+            PrintIndexedTableLine(tableSpacing, 8, '├', '┼', '┤', '─');
+
+            for (int i = 0; i < input.Count; i++)
+            {
+                Player player = input[i];
+                
+                Console.WriteLine(
+                    "│{0,-10}│{1,-14}│{2,-3}│{3,-3}│{4,-10}│{5, -10}│{6, -10}│{7, -10}│",
+                    player.Name,
+                    player.Surname,
+                    player.Age,
+                    player.Height,
+                    player.Position,
+                    player.Club,
+                    player.IsPicked,
+                    player.IsCaptain
+                );
+
+                if (i == input.Count - 1)
+                {
+                    PrintIndexedTableLine(tableSpacing, 8, '└', '┴', '┘', '─');
+                }
+                else
+                {
+                    PrintIndexedTableLine(tableSpacing, 8, '├', '┼', '┤', '─');
+                }
+            }
+        }
+
+        /// <summary>
+        /// prints only the name, surname and age of a list of players
+        /// </summary>
+        /// <param name="input">a list of players</param>
+        public static void PrintCondensedPlayersWithAge(List<Player> input)
+        {
+            // the amount of empty characters given for every value in the table
+            List<int> tableSpacing = new List<int> {10, 14, 3};
+
+            PrintIndexedTableLine(tableSpacing, 3, '┌', '┬', '┐', '─');
+
+            Console.WriteLine(
+                "│{0,-10}│{1,-14}│{2,-3}│",
+                "Vardas",
+                "Pavardė",
+                "Amž"
+            );
+
+            PrintIndexedTableLine(tableSpacing, 3, '├', '┼', '┤', '─');
+
+            for (int i = 0; i < input.Count; i++)
+            {
+                Player player = input[i];
+                Console.WriteLine(
+                    "│{0,-10}│{1,-14}│{2,-3}│",
+                    player.Name,
+                    player.Surname,
+                    player.Age
+                );
+
+                if (i == input.Count - 1)
+                {
+                    PrintIndexedTableLine(tableSpacing, 3, '└', '┴', '┘', '─');
+                }
+                else
+                {
+                    PrintIndexedTableLine(tableSpacing, 3, '├', '┼', '┤', '─');
+                }
+            }
+        }
+
+        /// <summary>
+        /// prints only the name, surname and height of a list of players
+        /// </summary>
+        /// <param name="input">a list of players</param>
+        public static void PrintCondensedPlayersWithHeight(List<Player> input)
+        {
+            // the amount of empty characters given for every value in the table
+            List<int> tableSpacing = new List<int> {10, 14, 3};
+
+
+            PrintIndexedTableLine(tableSpacing, 3, '┌', '┬', '┐', '─');
+
+            Console.WriteLine(
+                "│{0,-10}│{1,-14}│{2,-3}│",
+                "Vardas",
+                "Pavardė",
+                "Au."
+            );
+
+            PrintIndexedTableLine(tableSpacing, 3, '├', '┼', '┤', '─');
+
+            for (int i = 0; i < input.Count; i++)
+            {
+                Player player = input[i];
+                Console.WriteLine(
+                    "│{0,-10}│{1,-14}│{2,-3}│",
+                    player.Name,
+                    player.Surname,
+                    player.Height
+                );
+
+                if (i == input.Count - 1)
+                {
+                    PrintIndexedTableLine(tableSpacing, 3, '└', '┴', '┘', '─');
+                }
+                else
+                {
+                    PrintIndexedTableLine(tableSpacing, 3, '├', '┼', '┤', '─');
+                }
+            }
+        }
+ 
+        /// <summary>
+        /// a method to truncate strings that are too long
+        /// </summary>
+        /// <param name="value">the string to truncate</param>
+        /// <param name="maxChars">the maximum amount of chars to use before truncating</param>
+        /// <returns>a truncated string</returns>
+        private static string Truncate(string value, int maxChars)
+        {
+            return value.Length <= maxChars ? value : value.Substring(0, maxChars) + "...";
+        }
+
+
+        /// <summary>
+        ///  a simple method to assist in creating text character based tables
+        /// </summary>
+        /// <param name="spacing">a list of ints which defines the amount of <paramref name="line"/> chars to put in between any of the other chars</param>
+        /// <param name="columnCount">the amount of columns in the</param>
+        /// <param name="leftEdge">the char used at the left edge of the table</param>
+        /// <param name="middleEdge">the char used inbetween lines</param>
+        /// <param name="rightEdge">the char used at the right edge or end of the line</param>
+        /// <param name="line">the char used inbetween any and all other chars</param>
+        private static void PrintIndexedTableLine(List<int> spacing, int columnCount, char leftEdge, char middleEdge, char rightEdge, char line)
+        {
+
+            Console.Write(leftEdge);
+
+            for (int i = 0; i < columnCount; i++) {
+
+                Console.Write(new string(line, spacing[i]));
+
+                if (i == columnCount - 1)
+                {
+                    Console.WriteLine(rightEdge);
+                }
+                else
+                {
+                    Console.Write(middleEdge);
+                }
+            }
+        }
+
+        
+        /// <summary>
+        /// outputs a list of strings to a csv file
+        /// </summary>
+        /// <param name="fileName">the filename to which to output</param>
+        /// <param name="input">a list of strings</param>
+        public static void OutputStringListToCSV(string fileName, List<String> input)
+        {
+            string[] lines = input.ToArray();
+
+            File.WriteAllLines(fileName, lines, Encoding.UTF8);
+        }
+
+
+        /// <summary>
+        /// outputs a list of players into a csv file
+        /// </summary>
+        /// <param name="fileName">the filename to which to write</param>
+        /// <param name="players">a list of players</param>
+        public static void OutputPlayersToCSV(string fileName, List<Player> players)
+        {
+
+            List<string> output = new List<string>();
+
+            foreach (Player p in players)
+            {
+                string line;
+
+                line = String.Format(
+                    "{0};{1};{2};{3};{4};{5};{6}",
+                    p.Name,
+                    p.Surname,
+                    p.Age,
+                    p.Height,
+                    p.Position,
+                    p.IsPicked,
+                    p.IsCaptain
+                );
+
+                output.Add(line);
+            }
+
+            File.WriteAllLines(fileName, output.ToArray(), Encoding.UTF8);
+        }
+    }
+}
+
+//Program.cs
+using System;
+using System.IO;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace L2_ND
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            List<Player> allPlayers = new List<Player>();
+
+            allPlayers.AddRange(IOUtils.ReadPlayersFromFile("2020-krepsininkai.csv"));
+            allPlayers.AddRange(IOUtils.ReadPlayersFromFile("2019-krepsininkai.csv"));
+
+            PlayerRegister reg = new PlayerRegister(allPlayers);
+            
+            // print out all players
+            Console.Write(reg.ToString());
+
+            // get and print out all attackers
+            List<Player> allAttackers = reg.GetAllAttackers();
+            Console.WriteLine("Visi puolėjai:");
+            IOUtils.PrintCondensedPlayersWithHeight(allAttackers);
+
+            // get and print out the tallest player(s)
+            List<Player> tallestPlayers = reg.GetTallestPlayers();
+            Console.WriteLine("Aukščiausi žaidėjai:");
+            IOUtils.PrintCondensedPlayersWithHeight(tallestPlayers);
+
+            // write all unique clubs to a file
+            List<string> uniqueClubs = reg.GetUniqueInvitedClubs();
+            IOUtils.OutputStringListToCSV("Klubai.csv", uniqueClubs);
+        }
+    }
+}

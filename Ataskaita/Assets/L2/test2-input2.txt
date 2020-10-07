@@ -1,0 +1,14 @@
+2019
+08-01
+09-01
+Juozas;Žukauskas;21;191;Striker;Žalgiris;True;True
+Juozas;Pavardėnis;29;194;Attacker;Žalgiris;True;False
+Vardėnis;Valančiūnas;28;182;Sniper;L. Rytas;False;False
+Aloyzas;Jasikevičius;32;179;Defender;L. Rytas;False;False
+Motiejus;Sabonis;32;179;Striker;Šaulys;False;False
+Petras;Sabonis;23;191;Attacker;Žalgiris;False;False
+Juozas;Pavardėnis;18;184;Sniper;L. Rytas;False;False
+Vardėnis;Pavardėnis;19;201;Defender;Žalgiris;True;False
+Juozas;Pavardėnis;28;202;Defender;Šaulys;True;False
+Petras;Jasikevičius;33;177;Defender;Kruojos;False;False
+Vardėnis;Sabonis;25;192;Striker;Šaulys;True;False

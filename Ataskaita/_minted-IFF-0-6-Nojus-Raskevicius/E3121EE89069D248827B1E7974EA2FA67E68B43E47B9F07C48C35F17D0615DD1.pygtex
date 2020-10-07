@@ -1,0 +1,431 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{//Hero.cs}
+\PYG{k}{using} \PYG{n+nn}{System}\PYG{p}{;}
+\PYG{k}{using} \PYG{n+nn}{System.Collections.Generic}\PYG{p}{;}
+\PYG{k}{using} \PYG{n+nn}{System.Linq}\PYG{p}{;}
+\PYG{k}{using} \PYG{n+nn}{System.Text}\PYG{p}{;}
+\PYG{k}{using} \PYG{n+nn}{System.Threading.Tasks}\PYG{p}{;}
+
+\PYG{k}{namespace} \PYG{n+nn}{U1\PYGZus{}24\PYGZus{}NR\PYGZus{}ND}
+\PYG{p}{\PYGZob{}}
+    \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+    \PYG{c+c1}{/// the main hero class that is used throughout the program}
+    \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+    \PYG{k}{class} \PYG{n+nc}{Hero}
+    \PYG{p}{\PYGZob{}}
+        \PYG{k}{public} \PYG{k+kt}{string} \PYG{n}{Name} \PYG{p}{\PYGZob{}} \PYG{k}{get}\PYG{p}{;} \PYG{k}{set}\PYG{p}{;} \PYG{p}{\PYGZcb{}}
+        \PYG{k}{public} \PYG{k+kt}{string} \PYG{n}{Race} \PYG{p}{\PYGZob{}} \PYG{k}{get}\PYG{p}{;} \PYG{k}{set}\PYG{p}{;} \PYG{p}{\PYGZcb{}}
+        \PYG{k}{public} \PYG{k+kt}{string} \PYG{n}{Class} \PYG{p}{\PYGZob{}} \PYG{k}{get}\PYG{p}{;} \PYG{k}{set}\PYG{p}{;} \PYG{p}{\PYGZcb{}}
+        \PYG{k}{public} \PYG{k+kt}{int} \PYG{n}{LifePoints} \PYG{p}{\PYGZob{}} \PYG{k}{get}\PYG{p}{;} \PYG{k}{set}\PYG{p}{;} \PYG{p}{\PYGZcb{}}
+        \PYG{k}{public} \PYG{k+kt}{int} \PYG{n}{ManaPoints} \PYG{p}{\PYGZob{}} \PYG{k}{get}\PYG{p}{;} \PYG{k}{set}\PYG{p}{;} \PYG{p}{\PYGZcb{}}
+        \PYG{k}{public} \PYG{k+kt}{int} \PYG{n}{AtkPoints} \PYG{p}{\PYGZob{}} \PYG{k}{get}\PYG{p}{;} \PYG{k}{set}\PYG{p}{;} \PYG{p}{\PYGZcb{}}
+        \PYG{k}{public} \PYG{k+kt}{int} \PYG{n}{DefPoints} \PYG{p}{\PYGZob{}} \PYG{k}{get}\PYG{p}{;} \PYG{k}{set}\PYG{p}{;} \PYG{p}{\PYGZcb{}}
+        \PYG{k}{public} \PYG{k+kt}{int} \PYG{n}{StrPoints} \PYG{p}{\PYGZob{}} \PYG{k}{get}\PYG{p}{;} \PYG{k}{set}\PYG{p}{;} \PYG{p}{\PYGZcb{}}
+        \PYG{k}{public} \PYG{k+kt}{int} \PYG{n}{SpdPoints} \PYG{p}{\PYGZob{}} \PYG{k}{get}\PYG{p}{;} \PYG{k}{set}\PYG{p}{;} \PYG{p}{\PYGZcb{}}
+        \PYG{k}{public} \PYG{k+kt}{int} \PYG{n}{IntPoints} \PYG{p}{\PYGZob{}} \PYG{k}{get}\PYG{p}{;} \PYG{k}{set}\PYG{p}{;} \PYG{p}{\PYGZcb{}}
+        \PYG{k}{public} \PYG{k+kt}{string} \PYG{n}{Special} \PYG{p}{\PYGZob{}} \PYG{k}{get}\PYG{p}{;} \PYG{k}{set}\PYG{p}{;} \PYG{p}{\PYGZcb{}}
+
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// the constructor method for this class}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{k}{public} \PYG{n+nf}{Hero}\PYG{p}{(}\PYG{k+kt}{string} \PYG{n}{name}\PYG{p}{,} \PYG{k+kt}{string} \PYG{n}{race}\PYG{p}{,} \PYG{k+kt}{string} \PYG{n}{\PYGZus{}class}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{lifePoints}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{manaPoints}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{atkPoints}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{defPoints}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{strPoints}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{spdPoints}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{intPoints}\PYG{p}{,} \PYG{k+kt}{string} \PYG{n}{special}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{Name} \PYG{p}{=} \PYG{n}{name}\PYG{p}{;}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{Race} \PYG{p}{=} \PYG{n}{race}\PYG{p}{;}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{Class} \PYG{p}{=} \PYG{n}{\PYGZus{}class}\PYG{p}{;}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{LifePoints} \PYG{p}{=} \PYG{n}{lifePoints}\PYG{p}{;}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{ManaPoints} \PYG{p}{=} \PYG{n}{manaPoints}\PYG{p}{;}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{AtkPoints} \PYG{p}{=} \PYG{n}{atkPoints}\PYG{p}{;}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{DefPoints} \PYG{p}{=} \PYG{n}{defPoints}\PYG{p}{;}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{StrPoints} \PYG{p}{=} \PYG{n}{strPoints}\PYG{p}{;}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{SpdPoints} \PYG{p}{=} \PYG{n}{spdPoints}\PYG{p}{;}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{IntPoints} \PYG{p}{=} \PYG{n}{intPoints}\PYG{p}{;}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{Special} \PYG{p}{=} \PYG{n}{special}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+
+
+\PYG{c+c1}{//IOUtils.cs}
+\PYG{k}{using} \PYG{n+nn}{System}\PYG{p}{;}
+\PYG{k}{using} \PYG{n+nn}{System.IO}\PYG{p}{;}
+\PYG{k}{using} \PYG{n+nn}{System.Collections.Generic}\PYG{p}{;}
+\PYG{k}{using} \PYG{n+nn}{System.Linq}\PYG{p}{;}
+\PYG{k}{using} \PYG{n+nn}{System.Text}\PYG{p}{;}
+\PYG{k}{using} \PYG{n+nn}{System.Threading.Tasks}\PYG{p}{;}
+
+\PYG{k}{namespace} \PYG{n+nn}{U1\PYGZus{}24\PYGZus{}NR\PYGZus{}ND}
+\PYG{p}{\PYGZob{}}
+    \PYG{k}{static} \PYG{k}{class} \PYG{n+nc}{IOUtils}
+    \PYG{p}{\PYGZob{}}
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// reads heroes in from a filename}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}fileName\PYGZdq{}\PYGZgt{}the filename from which to read\PYGZlt{}/param\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}returns\PYGZgt{}a list of heroes\PYGZlt{}/returns\PYGZgt{}}
+        \PYG{k}{public} \PYG{k}{static} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Hero}\PYG{p}{\PYGZgt{}} \PYG{n}{ReadHeroes}\PYG{p}{(}\PYG{k+kt}{string} \PYG{n}{fileName}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Hero}\PYG{p}{\PYGZgt{}} \PYG{n}{output} \PYG{p}{=} \PYG{k}{new} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Hero}\PYG{p}{\PYGZgt{}();}
+
+            \PYG{k+kt}{string}\PYG{p}{[]} \PYG{n}{lines} \PYG{p}{=} \PYG{k}{new} \PYG{k+kt}{string}\PYG{p}{[}\PYG{l+m}{100}\PYG{p}{];}
+
+            \PYG{c+c1}{// file error handling}
+            \PYG{k}{if} \PYG{p}{(}\PYG{n}{System}\PYG{p}{.}\PYG{n}{IO}\PYG{p}{.}\PYG{n}{File}\PYG{p}{.}\PYG{n}{Exists}\PYG{p}{(}\PYG{n}{fileName}\PYG{p}{))}
+            \PYG{p}{\PYGZob{}}
+                \PYG{n}{lines} \PYG{p}{=} \PYG{n}{File}\PYG{p}{.}\PYG{n}{ReadAllLines}\PYG{p}{(}\PYG{n}{fileName}\PYG{p}{,} \PYG{n}{Encoding}\PYG{p}{.}\PYG{n}{UTF8}\PYG{p}{);}
+            \PYG{p}{\PYGZcb{}}
+            \PYG{k}{else}
+            \PYG{p}{\PYGZob{}}
+                \PYG{n}{Console}\PYG{p}{.}\PYG{n}{WriteLine}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Failas nerastas. Programa negali veikti.\PYGZdq{}}\PYG{p}{);}
+                \PYG{n}{System}\PYG{p}{.}\PYG{n}{Environment}\PYG{p}{.}\PYG{n}{Exit}\PYG{p}{(}\PYG{l+m}{1}\PYG{p}{);} \PYG{c+c1}{// exit code 1 means that the program did not run successfuly}
+            \PYG{p}{\PYGZcb{}}
+
+            \PYG{k}{if} \PYG{p}{(}\PYG{n}{lines}\PYG{p}{.}\PYG{n}{Length} \PYG{p}{\PYGZlt{}=} \PYG{l+m}{0}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{n}{Console}\PYG{p}{.}\PYG{n}{WriteLine}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Pateiktas tuščias failas. Programa negali veikti.\PYGZdq{}}\PYG{p}{);}
+                \PYG{n}{System}\PYG{p}{.}\PYG{n}{Environment}\PYG{p}{.}\PYG{n}{Exit}\PYG{p}{(}\PYG{l+m}{1}\PYG{p}{);} \PYG{c+c1}{// exit code 1 means that the program did not run successfuly}
+            \PYG{p}{\PYGZcb{}}
+
+            \PYG{k}{foreach} \PYG{p}{(}\PYG{k+kt}{string} \PYG{n}{line} \PYG{k}{in} \PYG{n}{lines}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{k+kt}{string}\PYG{p}{[]} \PYG{n}{values} \PYG{p}{=} \PYG{n}{line}\PYG{p}{.}\PYG{n}{Split}\PYG{p}{(}\PYG{l+s+sc}{\PYGZsq{};\PYGZsq{}}\PYG{p}{);}
+
+                \PYG{k+kt}{string} \PYG{n}{name} \PYG{p}{=} \PYG{n}{values}\PYG{p}{[}\PYG{l+m}{0}\PYG{p}{];}
+                \PYG{k+kt}{string} \PYG{n}{race} \PYG{p}{=} \PYG{n}{values}\PYG{p}{[}\PYG{l+m}{1}\PYG{p}{];}
+                \PYG{k+kt}{string} \PYG{n}{\PYGZus{}class} \PYG{p}{=} \PYG{n}{values}\PYG{p}{[}\PYG{l+m}{2}\PYG{p}{];}
+                \PYG{k+kt}{int} \PYG{n}{lifePoints} \PYG{p}{=} \PYG{k+kt}{int}\PYG{p}{.}\PYG{n}{Parse}\PYG{p}{(}\PYG{n}{values}\PYG{p}{[}\PYG{l+m}{3}\PYG{p}{]);}
+                \PYG{k+kt}{int} \PYG{n}{manaPoints} \PYG{p}{=} \PYG{k+kt}{int}\PYG{p}{.}\PYG{n}{Parse}\PYG{p}{(}\PYG{n}{values}\PYG{p}{[}\PYG{l+m}{4}\PYG{p}{]);}
+                \PYG{k+kt}{int} \PYG{n}{atkPoints} \PYG{p}{=} \PYG{k+kt}{int}\PYG{p}{.}\PYG{n}{Parse}\PYG{p}{(}\PYG{n}{values}\PYG{p}{[}\PYG{l+m}{5}\PYG{p}{]);}
+                \PYG{k+kt}{int} \PYG{n}{defPoints} \PYG{p}{=} \PYG{k+kt}{int}\PYG{p}{.}\PYG{n}{Parse}\PYG{p}{(}\PYG{n}{values}\PYG{p}{[}\PYG{l+m}{6}\PYG{p}{]);}
+                \PYG{k+kt}{int} \PYG{n}{strPoints} \PYG{p}{=} \PYG{k+kt}{int}\PYG{p}{.}\PYG{n}{Parse}\PYG{p}{(}\PYG{n}{values}\PYG{p}{[}\PYG{l+m}{7}\PYG{p}{]);}
+                \PYG{k+kt}{int} \PYG{n}{spdPoints} \PYG{p}{=} \PYG{k+kt}{int}\PYG{p}{.}\PYG{n}{Parse}\PYG{p}{(}\PYG{n}{values}\PYG{p}{[}\PYG{l+m}{8}\PYG{p}{]);}
+                \PYG{k+kt}{int} \PYG{n}{intPoints} \PYG{p}{=} \PYG{k+kt}{int}\PYG{p}{.}\PYG{n}{Parse}\PYG{p}{(}\PYG{n}{values}\PYG{p}{[}\PYG{l+m}{9}\PYG{p}{]);}
+                \PYG{k+kt}{string} \PYG{n}{special} \PYG{p}{=} \PYG{n}{values}\PYG{p}{[}\PYG{l+m}{10}\PYG{p}{];}
+
+                \PYG{n}{Hero} \PYG{n}{heroToAdd} \PYG{p}{=} \PYG{k}{new} \PYG{n}{Hero}\PYG{p}{(}
+                    \PYG{n}{name}\PYG{p}{,}
+                    \PYG{n}{race}\PYG{p}{,}
+                    \PYG{n}{\PYGZus{}class}\PYG{p}{,}
+                    \PYG{n}{lifePoints}\PYG{p}{,}
+                    \PYG{n}{manaPoints}\PYG{p}{,}
+                    \PYG{n}{atkPoints}\PYG{p}{,}
+                    \PYG{n}{defPoints}\PYG{p}{,}
+                    \PYG{n}{strPoints}\PYG{p}{,}
+                    \PYG{n}{spdPoints}\PYG{p}{,}
+                    \PYG{n}{intPoints}\PYG{p}{,}
+                    \PYG{n}{special}
+                \PYG{p}{);}
+
+                \PYG{n}{output}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{heroToAdd}\PYG{p}{);}
+
+            \PYG{p}{\PYGZcb{}}
+
+            \PYG{k}{return} \PYG{n}{output}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+
+
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// prints out a table of heroes when give a list of them as input}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}input\PYGZdq{}\PYGZgt{}the list of heroes to be used as input\PYGZlt{}/param\PYGZgt{}}
+        \PYG{k}{public} \PYG{k}{static} \PYG{k}{void} \PYG{n+nf}{PrintHeroes}\PYG{p}{(}\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Hero}\PYG{p}{\PYGZgt{}} \PYG{n}{input}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{c+c1}{// the amount of empty characters given for every value in the table}
+            \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{k+kt}{int}\PYG{p}{\PYGZgt{}} \PYG{n}{tableSpacing} \PYG{p}{=} \PYG{k}{new} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{k+kt}{int}\PYG{p}{\PYGZgt{}} \PYG{p}{\PYGZob{}}\PYG{l+m}{10}\PYG{p}{,} \PYG{l+m}{14}\PYG{p}{,} \PYG{l+m}{11}\PYG{p}{,} \PYG{l+m}{4}\PYG{p}{,} \PYG{l+m}{4}\PYG{p}{,} \PYG{l+m}{4}\PYG{p}{,} \PYG{l+m}{5}\PYG{p}{,} \PYG{l+m}{2}\PYG{p}{,} \PYG{l+m}{2}\PYG{p}{,} \PYG{l+m}{2}\PYG{p}{,} \PYG{l+m}{16}\PYG{p}{\PYGZcb{};}
+
+
+            \PYG{n}{PrintIndexedTableLine}\PYG{p}{(}\PYG{n}{tableSpacing}\PYG{p}{,} \PYG{l+m}{11}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}┌\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}┬\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}┐\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}─\PYGZsq{}}\PYG{p}{);}
+
+            \PYG{n}{Console}\PYG{p}{.}\PYG{n}{WriteLine}\PYG{p}{(}
+                \PYG{l+s}{\PYGZdq{}│\PYGZob{}0,\PYGZhy{}10\PYGZcb{}│\PYGZob{}1,\PYGZhy{}14\PYGZcb{}│\PYGZob{}2,\PYGZhy{}11\PYGZcb{}│\PYGZob{}3,\PYGZhy{}4\PYGZcb{}│\PYGZob{}4,\PYGZhy{}4\PYGZcb{}│\PYGZob{}5, \PYGZhy{}4\PYGZcb{}│\PYGZob{}6, \PYGZhy{}5\PYGZcb{}│\PYGZob{}7, \PYGZhy{}2\PYGZcb{}│\PYGZob{}8, \PYGZhy{}2\PYGZcb{}│\PYGZob{}9, \PYGZhy{}2\PYGZcb{}│\PYGZob{}10, \PYGZhy{}16\PYGZcb{}│\PYGZdq{}}\PYG{p}{,}
+                \PYG{l+s}{\PYGZdq{}Vardas\PYGZdq{}}\PYG{p}{,}
+                \PYG{l+s}{\PYGZdq{}Rasė\PYGZdq{}}\PYG{p}{,}
+                \PYG{l+s}{\PYGZdq{}Klasė\PYGZdq{}}\PYG{p}{,}
+                \PYG{l+s}{\PYGZdq{}G.t.\PYGZdq{}}\PYG{p}{,}
+                \PYG{l+s}{\PYGZdq{}M.t.\PYGZdq{}}\PYG{p}{,}
+                \PYG{l+s}{\PYGZdq{}Ž.t.\PYGZdq{}}\PYG{p}{,}
+                \PYG{l+s}{\PYGZdq{}Gy.t.\PYGZdq{}}\PYG{p}{,}
+                \PYG{l+s}{\PYGZdq{}J.\PYGZdq{}}\PYG{p}{,}
+                \PYG{l+s}{\PYGZdq{}V.\PYGZdq{}}\PYG{p}{,}
+                \PYG{l+s}{\PYGZdq{}I.\PYGZdq{}}\PYG{p}{,}
+                \PYG{l+s}{\PYGZdq{}Ypat. galia\PYGZdq{}}
+            \PYG{p}{);}
+
+            \PYG{n}{PrintIndexedTableLine}\PYG{p}{(}\PYG{n}{tableSpacing}\PYG{p}{,} \PYG{l+m}{11}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}├\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}┼\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}┤\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}─\PYGZsq{}}\PYG{p}{);}
+
+            \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{=} \PYG{l+m}{0}\PYG{p}{;} \PYG{n}{i} \PYG{p}{\PYGZlt{}} \PYG{n}{input}\PYG{p}{.}\PYG{n}{Count}\PYG{p}{;} \PYG{n}{i}\PYG{p}{++)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{n}{Hero} \PYG{n}{hero} \PYG{p}{=} \PYG{n}{input}\PYG{p}{[}\PYG{n}{i}\PYG{p}{];}
+                \PYG{n}{Console}\PYG{p}{.}\PYG{n}{WriteLine}\PYG{p}{(}
+                    \PYG{l+s}{\PYGZdq{}│\PYGZob{}0,\PYGZhy{}10\PYGZcb{}│\PYGZob{}1,\PYGZhy{}14\PYGZcb{}│\PYGZob{}2,\PYGZhy{}11\PYGZcb{}│\PYGZob{}3,\PYGZhy{}4\PYGZcb{}│\PYGZob{}4,\PYGZhy{}4\PYGZcb{}│\PYGZob{}5, \PYGZhy{}4\PYGZcb{}│\PYGZob{}6, \PYGZhy{}5\PYGZcb{}│\PYGZob{}7, \PYGZhy{}2\PYGZcb{}│\PYGZob{}8, \PYGZhy{}2\PYGZcb{}│\PYGZob{}9, \PYGZhy{}2\PYGZcb{}│\PYGZob{}10, \PYGZhy{}16\PYGZcb{}│\PYGZdq{}}\PYG{p}{,}
+                    \PYG{n}{hero}\PYG{p}{.}\PYG{n}{Name}\PYG{p}{,}
+                    \PYG{n}{hero}\PYG{p}{.}\PYG{n}{Race}\PYG{p}{,}
+                    \PYG{n}{hero}\PYG{p}{.}\PYG{n}{Class}\PYG{p}{,}
+                    \PYG{n}{hero}\PYG{p}{.}\PYG{n}{LifePoints}\PYG{p}{,}
+                    \PYG{n}{hero}\PYG{p}{.}\PYG{n}{ManaPoints}\PYG{p}{,}
+                    \PYG{n}{hero}\PYG{p}{.}\PYG{n}{AtkPoints}\PYG{p}{,}
+                    \PYG{n}{hero}\PYG{p}{.}\PYG{n}{DefPoints}\PYG{p}{,}
+                    \PYG{n}{hero}\PYG{p}{.}\PYG{n}{StrPoints}\PYG{p}{,}
+                    \PYG{n}{hero}\PYG{p}{.}\PYG{n}{SpdPoints}\PYG{p}{,}
+                    \PYG{n}{hero}\PYG{p}{.}\PYG{n}{IntPoints}\PYG{p}{,}
+                    \PYG{n}{Truncate}\PYG{p}{(}\PYG{n}{hero}\PYG{p}{.}\PYG{n}{Special}\PYG{p}{,} \PYG{l+m}{12}\PYG{p}{)}
+                \PYG{p}{);}
+
+                \PYG{k}{if} \PYG{p}{(}\PYG{n}{i} \PYG{p}{==} \PYG{n}{input}\PYG{p}{.}\PYG{n}{Count} \PYG{p}{\PYGZhy{}} \PYG{l+m}{1}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{n}{PrintIndexedTableLine}\PYG{p}{(}\PYG{n}{tableSpacing}\PYG{p}{,} \PYG{l+m}{11}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}└\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}┴\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}┘\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}─\PYGZsq{}}\PYG{p}{);}
+                \PYG{p}{\PYGZcb{}}
+                \PYG{k}{else}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{n}{PrintIndexedTableLine}\PYG{p}{(}\PYG{n}{tableSpacing}\PYG{p}{,} \PYG{l+m}{11}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}├\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}┼\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}┤\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}─\PYGZsq{}}\PYG{p}{);}
+                \PYG{p}{\PYGZcb{}}
+            \PYG{p}{\PYGZcb{}}
+
+        \PYG{p}{\PYGZcb{}}
+
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// prints out a list of heroes with some of their info omitted}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}input\PYGZdq{}\PYGZgt{}a list of heroes to be used as input\PYGZlt{}/param\PYGZgt{}}
+        \PYG{k}{public} \PYG{k}{static} \PYG{k}{void} \PYG{n+nf}{PrintHeroesCompressed}\PYG{p}{(}\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Hero}\PYG{p}{\PYGZgt{}} \PYG{n}{input}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{c+c1}{// the amount of empty characters given for every value in the table}
+            \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{k+kt}{int}\PYG{p}{\PYGZgt{}} \PYG{n}{tableSpacing} \PYG{p}{=} \PYG{k}{new} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{k+kt}{int}\PYG{p}{\PYGZgt{}} \PYG{p}{\PYGZob{}}\PYG{l+m}{18}\PYG{p}{,} \PYG{l+m}{18}\PYG{p}{,} \PYG{l+m}{18}\PYG{p}{,} \PYG{l+m}{18}\PYG{p}{\PYGZcb{};}
+
+
+            \PYG{n}{PrintIndexedTableLine}\PYG{p}{(}\PYG{n}{tableSpacing}\PYG{p}{,} \PYG{l+m}{4}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}┌\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}┬\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}┐\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}─\PYGZsq{}}\PYG{p}{);}
+
+            \PYG{n}{Console}\PYG{p}{.}\PYG{n}{WriteLine}\PYG{p}{(}
+                \PYG{l+s}{\PYGZdq{}│ \PYGZob{}0,\PYGZhy{}16\PYGZcb{} │ \PYGZob{}1,\PYGZhy{}16\PYGZcb{} │ \PYGZob{}2,\PYGZhy{}16\PYGZcb{} │ \PYGZob{}3,\PYGZhy{}16\PYGZcb{} │\PYGZdq{}}\PYG{p}{,}
+                \PYG{l+s}{\PYGZdq{}Vardas\PYGZdq{}}\PYG{p}{,}
+                \PYG{l+s}{\PYGZdq{}Rasė\PYGZdq{}}\PYG{p}{,}
+                \PYG{l+s}{\PYGZdq{}Klasė\PYGZdq{}}\PYG{p}{,}
+                \PYG{l+s}{\PYGZdq{}Gyvybės t.\PYGZdq{}}
+            \PYG{p}{);}
+
+            \PYG{n}{PrintIndexedTableLine}\PYG{p}{(}\PYG{n}{tableSpacing}\PYG{p}{,} \PYG{l+m}{4}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}├\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}┼\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}┤\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}─\PYGZsq{}}\PYG{p}{);}
+
+            \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{=} \PYG{l+m}{0}\PYG{p}{;} \PYG{n}{i} \PYG{p}{\PYGZlt{}} \PYG{n}{input}\PYG{p}{.}\PYG{n}{Count}\PYG{p}{;} \PYG{n}{i}\PYG{p}{++)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{n}{Hero} \PYG{n}{hero} \PYG{p}{=} \PYG{n}{input}\PYG{p}{[}\PYG{n}{i}\PYG{p}{];}
+                \PYG{n}{Console}\PYG{p}{.}\PYG{n}{WriteLine}\PYG{p}{(}
+                    \PYG{l+s}{\PYGZdq{}│ \PYGZob{}0,\PYGZhy{}16\PYGZcb{} │ \PYGZob{}1,\PYGZhy{}16\PYGZcb{} │ \PYGZob{}2,\PYGZhy{}16\PYGZcb{} │ \PYGZob{}3,\PYGZhy{}16\PYGZcb{} │\PYGZdq{}}\PYG{p}{,}
+                    \PYG{n}{hero}\PYG{p}{.}\PYG{n}{Name}\PYG{p}{,}
+                    \PYG{n}{hero}\PYG{p}{.}\PYG{n}{Race}\PYG{p}{,}
+                    \PYG{n}{hero}\PYG{p}{.}\PYG{n}{Class}\PYG{p}{,}
+                    \PYG{n}{hero}\PYG{p}{.}\PYG{n}{LifePoints}
+                \PYG{p}{);}
+
+                \PYG{k}{if} \PYG{p}{(}\PYG{n}{i} \PYG{p}{==} \PYG{n}{input}\PYG{p}{.}\PYG{n}{Count} \PYG{p}{\PYGZhy{}} \PYG{l+m}{1}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{n}{PrintIndexedTableLine}\PYG{p}{(}\PYG{n}{tableSpacing}\PYG{p}{,} \PYG{l+m}{4}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}└\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}┴\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}┘\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}─\PYGZsq{}}\PYG{p}{);}
+                \PYG{p}{\PYGZcb{}}
+                \PYG{k}{else}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{n}{PrintIndexedTableLine}\PYG{p}{(}\PYG{n}{tableSpacing}\PYG{p}{,} \PYG{l+m}{4}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}├\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}┼\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}┤\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}─\PYGZsq{}}\PYG{p}{);}
+                \PYG{p}{\PYGZcb{}}
+            \PYG{p}{\PYGZcb{}}
+
+        \PYG{p}{\PYGZcb{}}
+
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// a method to truncate strings that are too long}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}value\PYGZdq{}\PYGZgt{}the string to truncate\PYGZlt{}/param\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}maxChars\PYGZdq{}\PYGZgt{}the maximum amount of chars to use before truncating\PYGZlt{}/param\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}returns\PYGZgt{}\PYGZlt{}/returns\PYGZgt{}}
+        \PYG{k}{private} \PYG{k}{static} \PYG{k+kt}{string} \PYG{n+nf}{Truncate}\PYG{p}{(}\PYG{k+kt}{string} \PYG{k}{value}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{maxChars}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{k}{return} \PYG{k}{value}\PYG{p}{.}\PYG{n}{Length} \PYG{p}{\PYGZlt{}=} \PYG{n}{maxChars} \PYG{p}{?} \PYG{k}{value} \PYG{p}{:} \PYG{k}{value}\PYG{p}{.}\PYG{n}{Substring}\PYG{p}{(}\PYG{l+m}{0}\PYG{p}{,} \PYG{n}{maxChars}\PYG{p}{)} \PYG{p}{+} \PYG{l+s}{\PYGZdq{}...\PYGZdq{}}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+
+
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{///  a simple method to assist in creating text character based tables}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}spacing\PYGZdq{}\PYGZgt{}a list of ints which defines the amount of \PYGZlt{}paramref name=\PYGZdq{}line\PYGZdq{}/\PYGZgt{} chars to put in between any of the other chars\PYGZlt{}/param\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}columnCount\PYGZdq{}\PYGZgt{}the amount of columns in the\PYGZlt{}/param\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}leftEdge\PYGZdq{}\PYGZgt{}the char used at the left edge of the table\PYGZlt{}/param\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}middleEdge\PYGZdq{}\PYGZgt{}the char used inbetween lines\PYGZlt{}/param\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}rightEdge\PYGZdq{}\PYGZgt{}the char used at the right edge or end of the line\PYGZlt{}/param\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}line\PYGZdq{}\PYGZgt{}the char used inbetween any and all other chars\PYGZlt{}/param\PYGZgt{}}
+        \PYG{k}{private} \PYG{k}{static} \PYG{k}{void} \PYG{n+nf}{PrintIndexedTableLine}\PYG{p}{(}\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{k+kt}{int}\PYG{p}{\PYGZgt{}} \PYG{n}{spacing}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{columnCount}\PYG{p}{,} \PYG{k+kt}{char} \PYG{n}{leftEdge}\PYG{p}{,} \PYG{k+kt}{char} \PYG{n}{middleEdge}\PYG{p}{,} \PYG{k+kt}{char} \PYG{n}{rightEdge}\PYG{p}{,} \PYG{k+kt}{char} \PYG{n}{line}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+
+            \PYG{n}{Console}\PYG{p}{.}\PYG{n}{Write}\PYG{p}{(}\PYG{n}{leftEdge}\PYG{p}{);}
+
+            \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{=} \PYG{l+m}{0}\PYG{p}{;} \PYG{n}{i} \PYG{p}{\PYGZlt{}} \PYG{n}{columnCount}\PYG{p}{;} \PYG{n}{i}\PYG{p}{++)} \PYG{p}{\PYGZob{}}
+
+                \PYG{n}{Console}\PYG{p}{.}\PYG{n}{Write}\PYG{p}{(}\PYG{k}{new} \PYG{k+kt}{string}\PYG{p}{(}\PYG{n}{line}\PYG{p}{,} \PYG{n}{spacing}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]));}
+
+                \PYG{k}{if} \PYG{p}{(}\PYG{n}{i} \PYG{p}{==} \PYG{n}{columnCount} \PYG{p}{\PYGZhy{}} \PYG{l+m}{1}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{n}{Console}\PYG{p}{.}\PYG{n}{WriteLine}\PYG{p}{(}\PYG{n}{rightEdge}\PYG{p}{);}
+                \PYG{p}{\PYGZcb{}}
+                \PYG{k}{else}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{n}{Console}\PYG{p}{.}\PYG{n}{Write}\PYG{p}{(}\PYG{n}{middleEdge}\PYG{p}{);}
+                \PYG{p}{\PYGZcb{}}
+            \PYG{p}{\PYGZcb{}}
+        \PYG{p}{\PYGZcb{}}
+
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// outputs a list of classes to a csv file}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}fileName\PYGZdq{}\PYGZgt{}the filename to which to output\PYGZlt{}/param\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}classes\PYGZdq{}\PYGZgt{}the list of classes\PYGZlt{}/param\PYGZgt{}}
+        \PYG{k}{public} \PYG{k}{static} \PYG{k}{void} \PYG{n+nf}{OutputClassesToCSV}\PYG{p}{(}\PYG{k+kt}{string} \PYG{n}{fileName}\PYG{p}{,} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{String}\PYG{p}{\PYGZgt{}} \PYG{n}{classes}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{k+kt}{string}\PYG{p}{[]} \PYG{n}{lines} \PYG{p}{=} \PYG{n}{classes}\PYG{p}{.}\PYG{n}{ToArray}\PYG{p}{();}
+
+            \PYG{n}{File}\PYG{p}{.}\PYG{n}{WriteAllLines}\PYG{p}{(}\PYG{n}{fileName}\PYG{p}{,} \PYG{n}{lines}\PYG{p}{,} \PYG{n}{Encoding}\PYG{p}{.}\PYG{n}{UTF8}\PYG{p}{);}
+        \PYG{p}{\PYGZcb{}}
+
+    \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{c+c1}{//TaskUtils.cs}
+\PYG{k}{using} \PYG{n+nn}{System}\PYG{p}{;}
+\PYG{k}{using} \PYG{n+nn}{System.IO}\PYG{p}{;}
+\PYG{k}{using} \PYG{n+nn}{System.Collections.Generic}\PYG{p}{;}
+\PYG{k}{using} \PYG{n+nn}{System.Linq}\PYG{p}{;}
+\PYG{k}{using} \PYG{n+nn}{System.Text}\PYG{p}{;}
+\PYG{k}{using} \PYG{n+nn}{System.Threading.Tasks}\PYG{p}{;}
+
+\PYG{k}{namespace} \PYG{n+nn}{U1\PYGZus{}24\PYGZus{}NR\PYGZus{}ND}
+\PYG{p}{\PYGZob{}}
+    \PYG{k}{class} \PYG{n+nc}{TaskUtils}
+    \PYG{p}{\PYGZob{}}
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// finds all heroes with the highest amount of health.}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}input\PYGZdq{}\PYGZgt{}a list of heroes\PYGZlt{}/param\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}returns\PYGZgt{}a list of heroes who have the highest amount of health\PYGZlt{}/returns\PYGZgt{}}
+        \PYG{k}{public} \PYG{k}{static} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Hero}\PYG{p}{\PYGZgt{}} \PYG{n}{FindHeroesWithHighestHealth}\PYG{p}{(}\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Hero}\PYG{p}{\PYGZgt{}} \PYG{n}{input}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Hero}\PYG{p}{\PYGZgt{}} \PYG{n}{output} \PYG{p}{=} \PYG{k}{new} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Hero}\PYG{p}{\PYGZgt{}();}
+
+            \PYG{k}{foreach} \PYG{p}{(}\PYG{n}{Hero} \PYG{n}{hero} \PYG{k}{in} \PYG{n}{input}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{k}{if} \PYG{p}{(}\PYG{n}{output}\PYG{p}{.}\PYG{n}{Count} \PYG{p}{==} \PYG{l+m}{0}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{n}{output}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{hero}\PYG{p}{);}
+                    \PYG{k}{continue}\PYG{p}{;}
+                \PYG{p}{\PYGZcb{}}
+
+                \PYG{n}{Hero} \PYG{n}{heroToCompare} \PYG{p}{=} \PYG{n}{output}\PYG{p}{[}\PYG{l+m}{0}\PYG{p}{];}
+
+                \PYG{k}{if} \PYG{p}{(}\PYG{n}{hero}\PYG{p}{.}\PYG{n}{LifePoints} \PYG{p}{\PYGZgt{}} \PYG{n}{heroToCompare}\PYG{p}{.}\PYG{n}{LifePoints}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{n}{output}\PYG{p}{.}\PYG{n}{Clear}\PYG{p}{();}
+                    \PYG{n}{output}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{hero}\PYG{p}{);}
+                \PYG{p}{\PYGZcb{}}
+                \PYG{k}{else} \PYG{n+nf}{if} \PYG{p}{(}\PYG{n}{hero}\PYG{p}{.}\PYG{n}{LifePoints} \PYG{p}{==} \PYG{n}{heroToCompare}\PYG{p}{.}\PYG{n}{LifePoints}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{n}{output}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{hero}\PYG{p}{);}
+                \PYG{p}{\PYGZcb{}}
+
+            \PYG{p}{\PYGZcb{}}
+
+
+            \PYG{k}{return} \PYG{n}{output}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// a method to find the heroes who have the smallest difference}
+        \PYG{c+c1}{/// between their attack and defence points}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}input\PYGZdq{}\PYGZgt{}a list of heroes\PYGZlt{}/param\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}returns\PYGZgt{}the heroes who have the smallest difference between atk and def\PYGZlt{}/returns\PYGZgt{}}
+        \PYG{k}{public} \PYG{k}{static} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Hero}\PYG{p}{\PYGZgt{}} \PYG{n}{FindHeroesWithSmallestDifference}\PYG{p}{(}\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Hero}\PYG{p}{\PYGZgt{}} \PYG{n}{input}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Hero}\PYG{p}{\PYGZgt{}} \PYG{n}{output} \PYG{p}{=} \PYG{k}{new} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Hero}\PYG{p}{\PYGZgt{}();}
+
+            \PYG{k}{foreach} \PYG{p}{(}\PYG{n}{Hero} \PYG{n}{hero} \PYG{k}{in} \PYG{n}{input}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{k}{if} \PYG{p}{(}\PYG{n}{output}\PYG{p}{.}\PYG{n}{Count} \PYG{p}{==} \PYG{l+m}{0}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{n}{output}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{hero}\PYG{p}{);}
+                    \PYG{k}{continue}\PYG{p}{;}
+                \PYG{p}{\PYGZcb{}}
+
+                \PYG{n}{Hero} \PYG{n}{heroToCompare} \PYG{p}{=} \PYG{n}{output}\PYG{p}{[}\PYG{l+m}{0}\PYG{p}{];}
+
+                \PYG{k+kt}{int} \PYG{n}{aDiff} \PYG{p}{=} \PYG{n}{Math}\PYG{p}{.}\PYG{n}{Abs}\PYG{p}{(}\PYG{n}{hero}\PYG{p}{.}\PYG{n}{AtkPoints}\PYG{p}{\PYGZhy{}}\PYG{n}{hero}\PYG{p}{.}\PYG{n}{DefPoints}\PYG{p}{);}
+                \PYG{k+kt}{int} \PYG{n}{bDiff} \PYG{p}{=} \PYG{n}{Math}\PYG{p}{.}\PYG{n}{Abs}\PYG{p}{(}\PYG{n}{heroToCompare}\PYG{p}{.}\PYG{n}{AtkPoints} \PYG{p}{\PYGZhy{}} \PYG{n}{heroToCompare}\PYG{p}{.}\PYG{n}{DefPoints}\PYG{p}{);}
+
+                \PYG{k}{if} \PYG{p}{(}\PYG{n}{aDiff} \PYG{p}{\PYGZlt{}} \PYG{n}{bDiff}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{n}{output}\PYG{p}{.}\PYG{n}{Clear}\PYG{p}{();}
+                    \PYG{n}{output}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{hero}\PYG{p}{);}
+                \PYG{p}{\PYGZcb{}}
+                \PYG{k}{else} \PYG{n+nf}{if} \PYG{p}{(}\PYG{n}{aDiff} \PYG{p}{==} \PYG{n}{bDiff}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{n}{output}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{hero}\PYG{p}{);}
+                \PYG{p}{\PYGZcb{}}
+            \PYG{p}{\PYGZcb{}}
+
+            \PYG{k}{return} \PYG{n}{output}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// finds all unique hero classes when given a list of them as input}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}input\PYGZdq{}\PYGZgt{}the list of heroes\PYGZlt{}/param\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}returns\PYGZgt{}the unique classes\PYGZlt{}/returns\PYGZgt{}}
+        \PYG{k}{public} \PYG{k}{static} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{String}\PYG{p}{\PYGZgt{}} \PYG{n}{FindUniqueClasses}\PYG{p}{(}\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Hero}\PYG{p}{\PYGZgt{}} \PYG{n}{input}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{String}\PYG{p}{\PYGZgt{}} \PYG{n}{output} \PYG{p}{=} \PYG{k}{new} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{String}\PYG{p}{\PYGZgt{}();}
+
+            \PYG{k}{foreach} \PYG{p}{(}\PYG{n}{Hero} \PYG{n}{hero} \PYG{k}{in} \PYG{n}{input}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{k}{if} \PYG{p}{(!}\PYG{n}{output}\PYG{p}{.}\PYG{n}{Contains}\PYG{p}{(}\PYG{n}{hero}\PYG{p}{.}\PYG{n}{Class}\PYG{p}{))}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{n}{output}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{hero}\PYG{p}{.}\PYG{n}{Class}\PYG{p}{);}
+                \PYG{p}{\PYGZcb{}}
+            \PYG{p}{\PYGZcb{}}
+            \PYG{k}{return} \PYG{n}{output}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{c+c1}{//Program.cs}
+\PYG{k}{using} \PYG{n+nn}{System}\PYG{p}{;}
+\PYG{k}{using} \PYG{n+nn}{System.IO}\PYG{p}{;}
+\PYG{k}{using} \PYG{n+nn}{System.Collections.Generic}\PYG{p}{;}
+\PYG{k}{using} \PYG{n+nn}{System.Linq}\PYG{p}{;}
+\PYG{k}{using} \PYG{n+nn}{System.Text}\PYG{p}{;}
+\PYG{k}{using} \PYG{n+nn}{System.Threading.Tasks}\PYG{p}{;}
+
+\PYG{k}{namespace} \PYG{n+nn}{U1\PYGZus{}24\PYGZus{}NR\PYGZus{}ND}
+\PYG{p}{\PYGZob{}}
+    \PYG{k}{class} \PYG{n+nc}{Program}
+    \PYG{p}{\PYGZob{}}
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// the main method for this program}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{k}{public} \PYG{k}{static} \PYG{k}{void} \PYG{n+nf}{Main}\PYG{p}{(}\PYG{k+kt}{string}\PYG{p}{[]} \PYG{n}{args}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{c+c1}{// read from file}
+            \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Hero}\PYG{p}{\PYGZgt{}} \PYG{n}{allHeroes} \PYG{p}{=} \PYG{n}{IOUtils}\PYG{p}{.}\PYG{n}{ReadHeroes}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}herojai.csv\PYGZdq{}}\PYG{p}{);}
+
+            \PYG{c+c1}{// print out all heroes}
+            \PYG{n}{Console}\PYG{p}{.}\PYG{n}{WriteLine}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Visi herojai:\PYGZdq{}}\PYG{p}{);}
+            \PYG{n}{IOUtils}\PYG{p}{.}\PYG{n}{PrintHeroes}\PYG{p}{(}\PYG{n}{allHeroes}\PYG{p}{);}
+
+            \PYG{c+c1}{// print out heroes with highest [LifePoints]}
+            \PYG{n}{Console}\PYG{p}{.}\PYG{n}{WriteLine}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Herojai su didžiausiu kiekiu gyvybės taškų:\PYGZdq{}}\PYG{p}{);}
+            \PYG{n}{IOUtils}\PYG{p}{.}\PYG{n}{PrintHeroesCompressed}\PYG{p}{(}\PYG{n}{TaskUtils}\PYG{p}{.}\PYG{n}{FindHeroesWithHighestHealth}\PYG{p}{(}\PYG{n}{allHeroes}\PYG{p}{));}
+
+            \PYG{c+c1}{// print out all heroes with the smallest difference between}
+            \PYG{c+c1}{// [AtkPoints] and [DefPoints]}
+            \PYG{n}{Console}\PYG{p}{.}\PYG{n}{WriteLine}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Herojai su mažiausiu skirtumu tarp žalos ir gynybos taškų:\PYGZdq{}}\PYG{p}{);}
+            \PYG{n}{IOUtils}\PYG{p}{.}\PYG{n}{PrintHeroes}\PYG{p}{(}\PYG{n}{TaskUtils}\PYG{p}{.}\PYG{n}{FindHeroesWithSmallestDifference}\PYG{p}{(}\PYG{n}{allHeroes}\PYG{p}{));}
+
+            \PYG{c+c1}{// find and output all unique classes}
+            \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{String}\PYG{p}{\PYGZgt{}} \PYG{n}{uniqueClasses} \PYG{p}{=} \PYG{n}{TaskUtils}\PYG{p}{.}\PYG{n}{FindUniqueClasses}\PYG{p}{(}\PYG{n}{allHeroes}\PYG{p}{);}
+            \PYG{n}{IOUtils}\PYG{p}{.}\PYG{n}{OutputClassesToCSV}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Klasės.csv\PYGZdq{}}\PYG{p}{,} \PYG{n}{uniqueClasses}\PYG{p}{);}
+        \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}
