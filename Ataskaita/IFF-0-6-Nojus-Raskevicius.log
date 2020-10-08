@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/Arch Linux) (preloaded format=xelatex 2020.9.28)  5 OCT 2020 00:55
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/VoidLinux) (preloaded format=xelatex 2020.10.7)  8 OCT 2020 15:11
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -412,7 +412,7 @@ Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
 )
 runsystem(uname -s > "IFF-0-6-Nojus-Raskevicius.w18")...executed.
 
- (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/IFF-0-6-Nojus-Raskevicius.w18)
+ (./IFF-0-6-Nojus-Raskevicius.w18)
 runsystem(rm -- "IFF-0-6-Nojus-Raskevicius.w18")...executed.
 
 ) (/usr/share/texmf-dist/tex/generic/xstring/xstring.sty (/usr/share/texmf-dist/tex/generic/xstring/xstring.tex
@@ -618,93 +618,62 @@ Package: fontspec-xetex 2020/02/21 v2.7i Font selection for XeLaTeX and LuaLaTeX
 Package: fontenc 2020/02/11 v2.0o Standard LaTeX package
 ) (/usr/share/texmf-dist/tex/latex/fontspec/fontspec.cfg)))
 
-Package fontspec Info: Times New Roman scale = 0.963629354430423.
+Package fontspec Info: Liberation Serif scale = 0.9390261335567369.
 
 
-Package fontspec Info: Times New Roman scale = 0.963629354430423.
+Package fontspec Info: Liberation Serif scale = 0.9390261335567369.
 
 
-Package fontspec Info: Times New Roman/B scale = 0.944047646899576.
+Package fontspec Info: Liberation Serif/B scale = 0.9390261335567369.
 
 
-Package fontspec Info: Times New Roman/I scale = 0.9753419359739781.
+Package fontspec Info: Liberation Serif/I scale = 0.9390261335567369.
 
 
-Package fontspec Info: Times New Roman/BI scale = 0.9521947404438363.
+Package fontspec Info: Liberation Serif/BI scale = 0.9390261335567369.
 
 
-Package fontspec Info: Font family 'TimesNewRoman(0)' created for font 'Times
-(fontspec)             New Roman' with options [Scale =
+Package fontspec Info: Font family 'LiberationSerif(0)' created for font
+(fontspec)             'Liberation Serif' with options [Scale =
 (fontspec)             MatchLowercase,Ligatures=TeX,Scale = 1.0].
 (fontspec)              
 (fontspec)              This font family consists of the following NFSS
 (fontspec)             series/shapes:
 (fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.: <->s*[1.0]"Times New
-(fontspec)             Roman/OT:language=dflt;mapping=tex-text;"
+(fontspec)             - 'normal' (m/n) with NFSS spec.: <->s*[1.0]"Liberation
+(fontspec)             Serif/OT:script=latn;language=dflt;mapping=tex-text;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
-(fontspec)             - 'bold' (b/n) with NFSS spec.: <->s*[1.0]"Times New
-(fontspec)             Roman/B/OT:language=dflt;mapping=tex-text;"
-(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
-(fontspec)             - 'italic' (m/it) with NFSS spec.: <->s*[1.0]"Times New
-(fontspec)             Roman/I/OT:language=dflt;mapping=tex-text;"
-(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.: 
-(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
-(fontspec)             <->s*[1.0]"Times New
-(fontspec)             Roman/BI/OT:language=dflt;mapping=tex-text;"
-(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.: 
-
-LaTeX Font Info:    Font shape `TU/TimesNewRoman(0)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 26.
-
-Package fontspec Info: Arial scale = 0.8625210024688017.
-
-
-Package fontspec Info: Arial scale = 0.8625210024688017.
-
-
-Package fontspec Info: Arial/B scale = 0.8625210024688017.
-
-
-Package fontspec Info: Arial/I scale = 0.8625210024688017.
-
-
-Package fontspec Info: Arial/BI scale = 0.8625210024688017.
-
-
-Package fontspec Info: Font family 'Arial(0)' created for font 'Arial' with
-(fontspec)             options [Scale = MatchLowercase,Ligatures=TeX].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->s*[0.8625210024688017]"Arial/OT:language=dflt;mapping=tex-text;"
-(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
-(fontspec)             - 'bold' (b/n) with NFSS spec.:
-(fontspec)             <->s*[0.8625210024688017]"Arial/B/OT:language=dflt;mapping=tex-text;"
+(fontspec)             - 'bold' (b/n) with NFSS spec.: <->s*[1.0]"Liberation
+(fontspec)             Serif/B/OT:script=latn;language=dflt;mapping=tex-text;"
 (fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
 (fontspec)             - 'italic' (m/it) with NFSS spec.:
-(fontspec)             <->s*[0.8625210024688017]"Arial/I/OT:language=dflt;mapping=tex-text;"
+(fontspec)             <->s*[1.0]"Liberation
+(fontspec)             Serif/I/OT:script=latn;language=dflt;mapping=tex-text;"
 (fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.: 
 (fontspec)             - 'bold italic' (b/it) with NFSS spec.:
-(fontspec)             <->s*[0.8625210024688017]"Arial/BI/OT:language=dflt;mapping=tex-text;"
+(fontspec)             <->s*[1.0]"Liberation
+(fontspec)             Serif/BI/OT:script=latn;language=dflt;mapping=tex-text;"
 (fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.: 
 
+LaTeX Font Info:    Font shape `TU/LiberationSerif(0)/m/n' will be
+(Font)              scaled to size 10.0pt on input line 26.
 
-Package fontspec Info: Courier New scale = 1.057732903677455.
-
-
-Package fontspec Info: Courier New scale = 1.057732903677455.
-
-
-Package fontspec Info: Courier New/B scale = 1.008807100746487.
+Package fontspec Info: Courier New scale = 1.085446429538.
 
 
-Package fontspec Info: Courier New/I scale = 1.057732903677455.
+Package fontspec Info: Could not resolve font "Courier New/BI" (it probably
+(fontspec)             doesn't exist).
 
 
-Package fontspec Info: Courier New/BI scale = 1.008807100746487.
+Package fontspec Info: Could not resolve font "Courier New/B" (it probably
+(fontspec)             doesn't exist).
+
+
+Package fontspec Info: Could not resolve font "Courier New/I" (it probably
+(fontspec)             doesn't exist).
+
+
+Package fontspec Info: Courier New scale = 1.085446429538.
 
 
 Package fontspec Info: Font family 'CourierNew(0)' created for font 'Courier
@@ -715,35 +684,9 @@ Package fontspec Info: Font family 'CourierNew(0)' created for font 'Courier
 (fontspec)             series/shapes:
 (fontspec)              
 (fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->s*[1.057732903677455]"Courier New/OT:language=dflt;"
+(fontspec)             <->s*[1.085446429538]"Courier
+(fontspec)             New/OT:script=latn;language=dflt;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
-(fontspec)             and font adjustment code:
-(fontspec)             \fontdimen 2\font =1\fontdimen 2\font \fontdimen 3\font
-(fontspec)             =0\fontdimen 3\font \fontdimen 4\font =0\fontdimen
-(fontspec)             4\font \fontdimen 7\font =0\fontdimen 2\font
-(fontspec)             \tex_hyphenchar:D \font =-1\scan_stop: 
-(fontspec)             - 'bold' (b/n) with NFSS spec.:
-(fontspec)             <->s*[1.008807100746487]"Courier
-(fontspec)             New/B/OT:language=dflt;"
-(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
-(fontspec)             and font adjustment code:
-(fontspec)             \fontdimen 2\font =1\fontdimen 2\font \fontdimen 3\font
-(fontspec)             =0\fontdimen 3\font \fontdimen 4\font =0\fontdimen
-(fontspec)             4\font \fontdimen 7\font =0\fontdimen 2\font
-(fontspec)             \tex_hyphenchar:D \font =-1\scan_stop: 
-(fontspec)             - 'italic' (m/it) with NFSS spec.:
-(fontspec)             <->s*[1.057732903677455]"Courier
-(fontspec)             New/I/OT:language=dflt;"
-(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.: 
-(fontspec)             and font adjustment code:
-(fontspec)             \fontdimen 2\font =1\fontdimen 2\font \fontdimen 3\font
-(fontspec)             =0\fontdimen 3\font \fontdimen 4\font =0\fontdimen
-(fontspec)             4\font \fontdimen 7\font =0\fontdimen 2\font
-(fontspec)             \tex_hyphenchar:D \font =-1\scan_stop: 
-(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
-(fontspec)             <->s*[1.008807100746487]"Courier
-(fontspec)             New/BI/OT:language=dflt;"
-(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.: 
 (fontspec)             and font adjustment code:
 (fontspec)             \fontdimen 2\font =1\fontdimen 2\font \fontdimen 3\font
 (fontspec)             =0\fontdimen 3\font \fontdimen 4\font =0\fontdimen
@@ -754,31 +697,33 @@ runsystem(which pygmentize && touch IFF-0-6-Nojus-Raskevicius.aex)...executed.
 
 runsystem(rm IFF-0-6-Nojus-Raskevicius.aex)...executed.
 
- (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/IFF-0-6-Nojus-Raskevicius.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 30.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 30.
+ (./IFF-0-6-Nojus-Raskevicius.aux)
+\openout1 = `IFF-0-6-Nojus-Raskevicius.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 29.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 29.
  (/usr/share/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -815,7 +760,7 @@ LaTeX Font Info:    ... okay on input line 30.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \AtBeginShipoutBox=\box62
-Package hyperref Info: Link coloring OFF on input line 30.
+Package hyperref Info: Link coloring OFF on input line 29.
 (/usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
  (/usr/share/texmf-dist/tex/latex/refcount/refcount.sty
@@ -825,11 +770,13 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count319
 )
-LaTeX Info: Redefining \ref on input line 30.
-LaTeX Info: Redefining \pageref on input line 30.
-LaTeX Info: Redefining \nameref on input line 30.
- (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/IFF-0-6-Nojus-Raskevicius.out) (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/IFF-0-6-Nojus-Raskevicius.out)
+LaTeX Info: Redefining \ref on input line 29.
+LaTeX Info: Redefining \pageref on input line 29.
+LaTeX Info: Redefining \nameref on input line 29.
+ (./IFF-0-6-Nojus-Raskevicius.out) (./IFF-0-6-Nojus-Raskevicius.out)
 \@outlinefile=\write5
+\openout5 = `IFF-0-6-Nojus-Raskevicius.out'.
+
  (/usr/share/texmf-dist/tex/latex/pdflscape/pdflscape.sty
 Package: pdflscape 2019/12/05 v0.12 Display of landscape pages in PDF (HO)
  (/usr/share/texmf-dist/tex/latex/graphics/lscape.sty
@@ -839,24 +786,24 @@ Package pdflscape Info: Auto-detected driver: dvipdfm (xetex) on input line 98.
 )
 File: Assets/ktu-ikona.png Graphic file (type bmp)
 <Assets/ktu-ikona.png>
-LaTeX Font Info:    Font shape `TU/TimesNewRoman(0)/m/n' will be
-(Font)              scaled to size 14.4pt on input line 72.
-LaTeX Font Info:    Font shape `TU/TimesNewRoman(0)/b/n' will be
-(Font)              scaled to size 14.4pt on input line 72.
-LaTeX Font Info:    Font shape `TU/TimesNewRoman(0)/m/n' will be
-(Font)              scaled to size 12.0pt on input line 78.
-LaTeX Font Info:    Font shape `TU/TimesNewRoman(0)/m/n' will be
-(Font)              scaled to size 17.28pt on input line 84.
-LaTeX Font Info:    Font shape `TU/TimesNewRoman(0)/b/n' will be
-(Font)              scaled to size 17.28pt on input line 84.
-LaTeX Font Info:    Font shape `TU/TimesNewRoman(0)/b/n' will be
-(Font)              scaled to size 12.0pt on input line 100.
+LaTeX Font Info:    Font shape `TU/LiberationSerif(0)/m/n' will be
+(Font)              scaled to size 14.4pt on input line 71.
+LaTeX Font Info:    Font shape `TU/LiberationSerif(0)/b/n' will be
+(Font)              scaled to size 14.4pt on input line 71.
+LaTeX Font Info:    Font shape `TU/LiberationSerif(0)/m/n' will be
+(Font)              scaled to size 12.0pt on input line 77.
+LaTeX Font Info:    Font shape `TU/LiberationSerif(0)/m/n' will be
+(Font)              scaled to size 17.28pt on input line 83.
+LaTeX Font Info:    Font shape `TU/LiberationSerif(0)/b/n' will be
+(Font)              scaled to size 17.28pt on input line 83.
+LaTeX Font Info:    Font shape `TU/LiberationSerif(0)/b/n' will be
+(Font)              scaled to size 12.0pt on input line 99.
  [1
 
 ]
-LaTeX Font Info:    Font shape `TU/TimesNewRoman(0)/b/n' will be
-(Font)              scaled to size 10.0pt on input line 128.
- (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/IFF-0-6-Nojus-Raskevicius.toc
+LaTeX Font Info:    Font shape `TU/LiberationSerif(0)/b/n' will be
+(Font)              scaled to size 10.0pt on input line 127.
+ (./IFF-0-6-Nojus-Raskevicius.toc
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 3.
  (/usr/share/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -881,61 +828,76 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 3.
 )
 \tf@toc=\write6
- [2] (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/default-pyg-prefix.pygstyle) (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/default.pygstyle) (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/E3121EE89069D248827B1E7974EA2FA67E68B43E47B9F07C48C35F17D0615DD1.pygtex
-LaTeX Font Info:    Font shape `TU/TimesNewRoman(0)/m/n' will be
+\openout6 = `IFF-0-6-Nojus-Raskevicius.toc'.
+
+ [2] (./_minted-IFF-0-6-Nojus-Raskevicius/default-pyg-prefix.pygstyle) (./_minted-IFF-0-6-Nojus-Raskevicius/default.pygstyle) (./_minted-IFF-0-6-Nojus-Raskevicius/E3121EE89069D248827B1E7974EA2FA67E68B43E47B9F07C48C35F17D0615DD1.pygtex
+LaTeX Font Info:    Font shape `TU/LiberationSerif(0)/m/n' will be
 (Font)              scaled to size 9.0pt on input line 1.
 LaTeX Font Info:    Font shape `TU/CourierNew(0)/m/n' will be
-(Font)              scaled to size 9.51965pt on input line 1.
+(Font)              scaled to size 9.76904pt on input line 1.
+
+
+LaTeX Font Warning: Font shape `TU/CourierNew(0)/m/it' undefined
+(Font)              using `TU/CourierNew(0)/m/n' instead on input line 2.
+
 LaTeX Font Info:    Font shape `TU/CourierNew(0)/m/it' will be
-(Font)              scaled to size 9.51965pt on input line 2.
+(Font)              scaled to size 9.76904pt on input line 2.
+
+LaTeX Font Warning: Font shape `TU/CourierNew(0)/b/n' undefined
+(Font)              using `TU/CourierNew(0)/m/n' instead on input line 3.
+
 LaTeX Font Info:    Font shape `TU/CourierNew(0)/b/n' will be
-(Font)              scaled to size 9.07924pt on input line 3.
+(Font)              scaled to size 9.76904pt on input line 3.
 LaTeX Font Info:    Font shape `TU/CourierNew(0)/m/n' will be
-(Font)              scaled to size 5.2887pt on input line 31.
-LaTeX Font Info:    Font shape `TU/TimesNewRoman(0)/m/n' will be
+(Font)              scaled to size 5.42725pt on input line 31.
+LaTeX Font Info:    Font shape `TU/LiberationSerif(0)/m/n' will be
 (Font)              scaled to size 5.0pt on input line 31.
- [3] [4] [5] [6] [7] [8]
-Overfull \hbox (64.72443pt too wide) in paragraph at lines 418--418
-\TU/CourierNew(0)/m/n/9 IOUtils.PrintHeroesCompressed(TaskUtils.FindHeroesWithHighestHealth(allHeroes));|  
+[3] [4] [5] [6] [7] [8]
+Overfull \hbox (79.09161pt too wide) in paragraph at lines 418--418
+\TU/CourierNew(0)/b/n/9 IOUtils.PrintHeroesCompressed(TaskUtils.FindHeroesWithHighestHealth(allHeroes));|  
  []
 
 
-Overfull \hbox (36.16083pt too wide) in paragraph at lines 423--423
-\TU/CourierNew(0)/m/n/9 IOUtils.PrintHeroes(TaskUtils.FindHeroesWithSmallestDifference(allHeroes));|  
+Overfull \hbox (49.77972pt too wide) in paragraph at lines 423--423
+\TU/CourierNew(0)/b/n/9 IOUtils.PrintHeroes(TaskUtils.FindHeroesWithSmallestDifference(allHeroes));|  
  []
 
-[9]) (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/5E99834642852EC161DDED92BAD2AFA24189A00AE0BEA4E3D01B571D64C15074.pygtex)
-LaTeX Font Info:    Font shape `TU/TimesNewRoman(0)/m/n' will be
-(Font)              scaled to size 8.0pt on input line 161.
+[9]) (./_minted-IFF-0-6-Nojus-Raskevicius/5E99834642852EC161DDED92BAD2AFA24189A00AE0BEA4E3D01B571D64C15074.pygtex)
+LaTeX Font Info:    Font shape `TU/LiberationSerif(0)/m/n' will be
+(Font)              scaled to size 8.0pt on input line 160.
 LaTeX Font Info:    Font shape `TU/CourierNew(0)/m/n' will be
-(Font)              scaled to size 8.46191pt on input line 162.
- [10] (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/F59823B2918D260A10F5325FDC9EB4483888577629B25CE2CC3431B9F6A32B7B.pygtex) [11] (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/209784BE162EE9B8E44EA640514FA80F90C6DFB151BBFEF505B26B57CC128D8B.pygtex [12] [13] [14] [15] [16] [17] [18] [19] [20]
-Overfull \hbox (30.44809pt too wide) in paragraph at lines 599--599
-\TU/CourierNew(0)/m/n/9 allPlayers.AddRange(IOUtils.ReadPlayersFromFile([]"2020-krepsininkai.csv"[]));|  
+(Font)              scaled to size 8.6836pt on input line 161.
+ [10] (./_minted-IFF-0-6-Nojus-Raskevicius/F59823B2918D260A10F5325FDC9EB4483888577629B25CE2CC3431B9F6A32B7B.pygtex) [11] (./_minted-IFF-0-6-Nojus-Raskevicius/849B0BAAD60D80D1520C74151D60AF8D90C6DFB151BBFEF505B26B57CC128D8B.pygtex [12] [13] [14] [15] [16] [17] [18] [19] [20] [21]
+Overfull \hbox (43.91733pt too wide) in paragraph at lines 637--637
+\TU/CourierNew(0)/b/n/9 allPlayers.AddRange(IOUtils.ReadPlayersFromFile([]"2020-krepsininkai.csv"[]));|  
  []
 
 
-Overfull \hbox (30.44809pt too wide) in paragraph at lines 600--600
-\TU/CourierNew(0)/m/n/9 allPlayers.AddRange(IOUtils.ReadPlayersFromFile([]"2019-krepsininkai.csv"[]));|  
+Overfull \hbox (43.91733pt too wide) in paragraph at lines 638--638
+\TU/CourierNew(0)/b/n/9 allPlayers.AddRange(IOUtils.ReadPlayersFromFile([]"2019-krepsininkai.csv"[]));|  
  []
 
-) [21] (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/C9182CB4B3DF6828AF69AFF8F93BC2488100BD379CE0158C9AB58E57D2A2DBA4.pygtex) (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/72FA851D303CFC5DD7287172213105B8BC8F624D871D281BEB7A79583813BA51.pygtex) (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/88BF99DCEB1F96B077FDFCCC07265030F34673B6A6F3BE058EB4313ACD77A001.pygtex) [22] (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/EC4D9163A4F9284416847705C3E555617722E7934F4FBCEA3954C8C4F53227DA.pygtex) (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/6074DA5CE2E74E269A519F71508144B5C790098060E1CF40BB1DCBD5093E95A6.pygtex) [23] (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/38C1A377617368A2A51D154F2BD91899B2C880C3E2DF53F5E8D25D24383F73C7.pygtex [24]) [25] [26] [27] [28]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 440.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 440.
- (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/IFF-0-6-Nojus-Raskevicius.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 440.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 440.
+) [22] (./_minted-IFF-0-6-Nojus-Raskevicius/C9182CB4B3DF6828AF69AFF8F93BC2488100BD379CE0158C9AB58E57D2A2DBA4.pygtex) (./_minted-IFF-0-6-Nojus-Raskevicius/72FA851D303CFC5DD7287172213105B8BC8F624D871D281BEB7A79583813BA51.pygtex) (./_minted-IFF-0-6-Nojus-Raskevicius/88BF99DCEB1F96B077FDFCCC07265030F34673B6A6F3BE058EB4313ACD77A001.pygtex) [23] (./_minted-IFF-0-6-Nojus-Raskevicius/EC4D9163A4F9284416847705C3E555617722E7934F4FBCEA3954C8C4F53227DA.pygtex) (./_minted-IFF-0-6-Nojus-Raskevicius/6074DA5CE2E74E269A519F71508144B5C790098060E1CF40BB1DCBD5093E95A6.pygtex) [24] (./_minted-IFF-0-6-Nojus-Raskevicius/38C1A377617368A2A51D154F2BD91899B2C880C3E2DF53F5E8D25D24383F73C7.pygtex [25]) [26] [27] [28] [29]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 441.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 441.
+ (./IFF-0-6-Nojus-Raskevicius.aux)
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 441.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 441.
 Package rerunfilecheck Info: File `IFF-0-6-Nojus-Raskevicius.out' has not changed.
 (rerunfilecheck)             Checksum: F184BB1B5CF7E24A422943597C9D5119;4274.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 440.
+
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 441.
  ) 
 Here is how much of TeX's memory you used:
- 17695 strings out of 479284
- 337506 string characters out of 5886220
- 738225 words of memory out of 5000000
- 34983 multiletter control sequences out of 15000+600000
- 547082 words of font info for 84 fonts, out of 8000000 for 9000
+ 17638 strings out of 479284
+ 334187 string characters out of 5886209
+ 736104 words of memory out of 5000000
+ 34951 multiletter control sequences out of 15000+600000
+ 546938 words of font info for 66 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 48i,9n,119p,1033b,660s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 47i,9n,119p,1033b,660s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on /home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/IFF-0-6-Nojus-Raskevicius.xdv (28 pages, 582816 bytes).
+Output written on IFF-0-6-Nojus-Raskevicius.xdv (29 pages, 594116 bytes).

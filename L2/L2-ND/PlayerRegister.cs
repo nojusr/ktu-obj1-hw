@@ -90,12 +90,12 @@ namespace L2_ND
         }
 
         /// <summary>
-        /// gets all players that are stored in the register
+        /// gets a list of players by their year
         /// </summary>
-        /// <returns>a list of all players</returns>
-        public List<Player> GetAllPlayers()
+        /// <returns>a list of players</returns>
+        public List<Player> GetPlayersByYear(int year)
         {
-            return this.allPlayers;
+            return this.allPlayers.Where((Player p) => p.startDate.Year == year).ToList();
         }
 
         /// <summary>

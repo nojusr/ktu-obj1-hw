@@ -119,18 +119,57 @@
 \PYG{p}{\PYGZob{}}
     \PYG{k}{class} \PYG{n+nc}{PlayerRegister}
     \PYG{p}{\PYGZob{}}
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// the main list of players to be manipulated in the register}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
         \PYG{k}{private} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Player}\PYG{p}{\PYGZgt{}} \PYG{n}{allPlayers}\PYG{p}{;}
 
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// constructor method with a player list as an argument}
+        \PYG{c+c1}{/// creates a new list of players and adds the argument to the register\PYGZsq{}s list}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}players\PYGZdq{}\PYGZgt{}a list of players\PYGZlt{}/param\PYGZgt{}}
         \PYG{k}{public} \PYG{n+nf}{PlayerRegister}\PYG{p}{(}\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Player}\PYG{p}{\PYGZgt{}} \PYG{n}{players}\PYG{p}{)}
         \PYG{p}{\PYGZob{}}
-            \PYG{k}{this}\PYG{p}{.}\PYG{n}{allPlayers} \PYG{p}{=} \PYG{n}{players}\PYG{p}{;}
+            \PYG{k}{if} \PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n}{allPlayers} \PYG{p}{==} \PYG{k}{null}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{k}{this}\PYG{p}{.}\PYG{n}{allPlayers} \PYG{p}{=} \PYG{k}{new} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Player}\PYG{p}{\PYGZgt{}();}
+            \PYG{p}{\PYGZcb{}}
+
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{allPlayers}\PYG{p}{.}\PYG{n}{AddRange}\PYG{p}{(}\PYG{n}{players}\PYG{p}{);}
+        \PYG{p}{\PYGZcb{}}
+
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// constructor method without any arguments \PYGZhy{}\PYGZhy{} creates an empty list of players in the register}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{k}{public} \PYG{n+nf}{PlayerRegister}\PYG{p}{()}
+        \PYG{p}{\PYGZob{}}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{allPlayers} \PYG{p}{=} \PYG{k}{new} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Player}\PYG{p}{\PYGZgt{}();}
+        \PYG{p}{\PYGZcb{}}
+
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// adds a list of players to this register\PYGZsq{}s player list}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}playersToAdd\PYGZdq{}\PYGZgt{}a list of players\PYGZlt{}/param\PYGZgt{}}
+        \PYG{k}{public} \PYG{k}{void} \PYG{n+nf}{AddRange}\PYG{p}{(}\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Player}\PYG{p}{\PYGZgt{}} \PYG{n}{playersToAdd}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{allPlayers}\PYG{p}{.}\PYG{n}{AddRange}\PYG{p}{(}\PYG{n}{playersToAdd}\PYG{p}{);}
+        \PYG{p}{\PYGZcb{}}
+
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// adds a player to this register\PYGZsq{}s all players}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}player\PYGZdq{}\PYGZgt{}the player to add\PYGZlt{}/param\PYGZgt{}}
+        \PYG{k}{public} \PYG{k}{void} \PYG{n+nf}{Add}\PYG{p}{(}\PYG{n}{Player} \PYG{n}{player}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{allPlayers}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{player}\PYG{p}{);}
         \PYG{p}{\PYGZcb{}}
 
 
         \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
         \PYG{c+c1}{/// turns the register to a string}
         \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
-        \PYG{c+c1}{/// \PYGZlt{}returns\PYGZgt{}\PYGZlt{}/returns\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}returns\PYGZgt{}a string that describes the data held in the register\PYGZlt{}/returns\PYGZgt{}}
         \PYG{k}{public} \PYG{k}{override} \PYG{k+kt}{string} \PYG{n+nf}{ToString}\PYG{p}{()}
         \PYG{p}{\PYGZob{}}
             \PYG{k+kt}{string} \PYG{n}{output} \PYG{p}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}
@@ -163,12 +202,12 @@
         \PYG{p}{\PYGZcb{}}
 
         \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
-        \PYG{c+c1}{/// gets all players that are stored in the register}
+        \PYG{c+c1}{/// gets a list of players by their year}
         \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
-        \PYG{c+c1}{/// \PYGZlt{}returns\PYGZgt{}a list of all players\PYGZlt{}/returns\PYGZgt{}}
-        \PYG{k}{public} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Player}\PYG{p}{\PYGZgt{}} \PYG{n}{GetAllPlayers}\PYG{p}{()}
+        \PYG{c+c1}{/// \PYGZlt{}returns\PYGZgt{}a list of players\PYGZlt{}/returns\PYGZgt{}}
+        \PYG{k}{public} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Player}\PYG{p}{\PYGZgt{}} \PYG{n}{GetPlayersByYear}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{year}\PYG{p}{)}
         \PYG{p}{\PYGZob{}}
-            \PYG{k}{return} \PYG{k}{this}\PYG{p}{.}\PYG{n}{allPlayers}\PYG{p}{;}
+            \PYG{k}{return} \PYG{k}{this}\PYG{p}{.}\PYG{n}{allPlayers}\PYG{p}{.}\PYG{n}{Where}\PYG{p}{((}\PYG{n}{Player} \PYG{n}{p}\PYG{p}{)} \PYG{p}{=\PYGZgt{}} \PYG{n}{p}\PYG{p}{.}\PYG{n}{startDate}\PYG{p}{.}\PYG{n}{Year} \PYG{p}{==} \PYG{n}{year}\PYG{p}{).}\PYG{n}{ToList}\PYG{p}{();}
         \PYG{p}{\PYGZcb{}}
 
         \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
@@ -208,12 +247,12 @@
 
                 \PYG{n}{Player} \PYG{n}{playerToCompare} \PYG{p}{=} \PYG{n}{output}\PYG{p}{[}\PYG{l+m}{0}\PYG{p}{];}
 
-                \PYG{k}{if} \PYG{p}{(}\PYG{n}{player}\PYG{p}{.}\PYG{n}{Height} \PYG{p}{\PYGZgt{}} \PYG{n}{playerToCompare}\PYG{p}{.}\PYG{n}{Height}\PYG{p}{)}
+                \PYG{k}{if} \PYG{p}{(}\PYG{n}{player} \PYG{p}{\PYGZgt{}} \PYG{n}{playerToCompare}\PYG{p}{)}
                 \PYG{p}{\PYGZob{}}
                     \PYG{n}{output}\PYG{p}{.}\PYG{n}{Clear}\PYG{p}{();}
                     \PYG{n}{output}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{player}\PYG{p}{);}
                 \PYG{p}{\PYGZcb{}}
-                \PYG{k}{else} \PYG{n+nf}{if} \PYG{p}{(}\PYG{n}{player}\PYG{p}{.}\PYG{n}{Height} \PYG{p}{==} \PYG{n}{playerToCompare}\PYG{p}{.}\PYG{n}{Height}\PYG{p}{)}
+                \PYG{k}{else} \PYG{n+nf}{if} \PYG{p}{(}\PYG{n}{player} \PYG{p}{==} \PYG{n}{playerToCompare}\PYG{p}{)}
                 \PYG{p}{\PYGZob{}}
                     \PYG{n}{output}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{player}\PYG{p}{);}
                 \PYG{p}{\PYGZcb{}}
@@ -262,6 +301,7 @@
         \PYG{p}{\PYGZcb{}}
     \PYG{p}{\PYGZcb{}}
 \PYG{p}{\PYGZcb{}}
+
 
 \PYG{c+c1}{//IOUtils.cs}
 \PYG{k}{using} \PYG{n+nn}{System}\PYG{p}{;}
@@ -353,7 +393,6 @@
 
             \PYG{k}{return} \PYG{n}{output}\PYG{p}{;}
         \PYG{p}{\PYGZcb{}}
-
 
         \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
         \PYG{c+c1}{/// prints out a table of Players when give a list of them as input}
@@ -502,7 +541,6 @@
         \PYG{p}{\PYGZob{}}
             \PYG{k}{return} \PYG{k}{value}\PYG{p}{.}\PYG{n}{Length} \PYG{p}{\PYGZlt{}=} \PYG{n}{maxChars} \PYG{p}{?} \PYG{k}{value} \PYG{p}{:} \PYG{k}{value}\PYG{p}{.}\PYG{n}{Substring}\PYG{p}{(}\PYG{l+m}{0}\PYG{p}{,} \PYG{n}{maxChars}\PYG{p}{)} \PYG{p}{+} \PYG{l+s}{\PYGZdq{}...\PYGZdq{}}\PYG{p}{;}
         \PYG{p}{\PYGZcb{}}
-
 
         \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
         \PYG{c+c1}{///  a simple method to assist in creating text character based tables}
