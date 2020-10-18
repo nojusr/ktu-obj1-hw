@@ -157,6 +157,16 @@
         \PYG{p}{\PYGZcb{}}
 
         \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// get a player by index}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}index\PYGZdq{}\PYGZgt{}an index number\PYGZlt{}/param\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}returns\PYGZgt{}a Player object\PYGZlt{}/returns\PYGZgt{}}
+        \PYG{k}{public} \PYG{n}{Player} \PYG{n+nf}{GetPlayer}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{index}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{k}{return} \PYG{k}{this}\PYG{p}{.}\PYG{n}{allPlayers}\PYG{p}{[}\PYG{n}{index}\PYG{p}{];}
+        \PYG{p}{\PYGZcb{}}
+
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
         \PYG{c+c1}{/// adds a player to this register\PYGZsq{}s all players}
         \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
         \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}player\PYGZdq{}\PYGZgt{}the player to add\PYGZlt{}/param\PYGZgt{}}
@@ -301,6 +311,7 @@
         \PYG{p}{\PYGZcb{}}
     \PYG{p}{\PYGZcb{}}
 \PYG{p}{\PYGZcb{}}
+
 
 
 \PYG{c+c1}{//IOUtils.cs}

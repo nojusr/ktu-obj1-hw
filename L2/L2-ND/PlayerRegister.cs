@@ -45,6 +45,16 @@ namespace L2_ND
         }
 
         /// <summary>
+        /// get a player by index
+        /// </summary>
+        /// <param name="index">an index number</param>
+        /// <returns>a Player object</returns>
+        public Player GetPlayer(int index)
+        {
+            return this.allPlayers[index];
+        }
+
+        /// <summary>
         /// adds a player to this register's all players
         /// </summary>
         /// <param name="player">the player to add</param>

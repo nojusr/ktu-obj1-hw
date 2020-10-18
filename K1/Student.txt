@@ -1,0 +1,5 @@
+Vardas2;9
+Vardas3;3
+Vardas5;6
+Vardas1;3
+Vardas4;9

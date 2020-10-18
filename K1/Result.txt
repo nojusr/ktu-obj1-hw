@@ -1,0 +1,8 @@
+﻿Pradiniai duomenys:
+Modulis Modulis1, kreditai: 3, valandų skaičius: 150, laisvos vietos: 3
+Modulis Modulis5, kreditai: 6, valandų skaičius: 180, laisvos vietos: 5
+Modulis Modulis3, kreditai: 3, valandų skaičius: 170, laisvos vietos: 1
+Modulis Modulis2, kreditai: 6, valandų skaičius: 160, laisvos vietos: 15
+Modulis Modulis6, kreditai: 9, valandų skaičius: 218, laisvos vietos: 6
+Modulis Modulis7, kreditai: 6, valandų skaičius: 190, laisvos vietos: 2
+Modulis Modulis22, kreditai: 9, valandų skaičius: 289, laisvos vietos: 8
