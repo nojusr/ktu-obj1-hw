@@ -301,5 +301,32 @@ namespace L3
                 File.WriteAllLines(fileName, lines, Encoding.UTF8);
             }
         }
+
+
+        public static void PrintMatchedVehiclesToCSV(string fileName, VehiclesRegister left, VehiclesRegister right, VehicleContainer matches)
+        {
+
+            if (matches.Count <= 0)
+            {
+                return;
+            }
+
+            string[] lines = new string[matches.Count+2];
+
+            lines[0] = left.City;
+            lines[1] = right.City;
+
+            for (int i = 0; i < matches.Count; i++)
+            {
+                int lineIndex = i+2;
+
+                lines[lineIndex] = String.Format(
+                    "{0};{1}",
+                    matches[i].LicensePlate,
+                    matches[i].Model
+                );
+            }
+            File.WriteAllLines(fileName, lines, Encoding.UTF8);
+        }
     }
 }

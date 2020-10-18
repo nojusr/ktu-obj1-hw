@@ -128,5 +128,44 @@ namespace L3
             return false;
         }
 
+
+        /// <summary>
+        /// A delegate method to specify how should the sorting in Sort be performed.
+        /// Using a delegate as part of the Sort function allows for arbitrary possibilities when sorting
+        /// and does not force the programmer to overload the top level methods of their custom class to do only one specific function
+        /// </summary>
+        /// <param name="left">the left Vehicle to compare</param>
+        /// <param name="right">the right Vehicle to compare</param>
+        /// <returns>1 if left is the 'bigger' object, -1 if right is the 'bigger' object, 0 if they're equal</returns>
+        public delegate int SortingDelegate(Vehicle left, Vehicle right);
+
+
+        /// <summary>
+        /// the sorting function that uses a delegate
+        /// </summary>
+        /// <param name="sortingDel">A delegate method by which to sort</param>
+        public void SortWithDelegate(SortingDelegate sortingDel)
+        {
+            bool flag = true;
+
+            while (flag)
+            {
+
+                flag = false;
+
+                for (int i = 0; i < this.Count-1; i++)
+                {
+                    Vehicle left = this.vehicles[i];
+                    Vehicle right = this.vehicles[i+1];
+
+                    if (sortingDel(left,right) > 0) {
+                        this.vehicles[i] = right;
+                        this.vehicles[i+1] = left;
+                        flag = true;
+                    }
+                }
+            }
+        }
+
     }
 }

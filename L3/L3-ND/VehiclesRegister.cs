@@ -8,7 +8,26 @@ namespace L3
     class VehiclesRegister
     {
 
-        private VehicleContainer AllVehicles;
+        public string City {
+            get {
+                return this.AllVehicles[0].City;
+            }
+        }
+
+        public string Adress {
+            get {
+                return this.AllVehicles[0].Address;
+            }
+        }
+
+        public string PhoneNum {
+            get {
+                return this.AllVehicles[0].PhoneNum;
+            }
+        }
+
+        public VehicleContainer AllVehicles;
+
 
         public VehiclesRegister()
         {
@@ -26,7 +45,6 @@ namespace L3
             }
         }
 
-
         /// <summary>
         /// Method adds a vehicle to the list
         /// </summary>
@@ -38,7 +56,7 @@ namespace L3
 
 
         /// <summary>
-        /// Method prints startting data to txt file
+        /// Method to print all vehicles to a text file
         /// </summary>
         /// <param name="fileName"></param>
         public void PrintToTxt(string fileName)
@@ -59,7 +77,7 @@ namespace L3
 
 
         /// <summary>
-        /// Method  to find all unique car producers
+        /// Method to find all unique car producers
         /// </summary>
         /// <returns></returns>
         public List<string> FindProducers()
@@ -79,6 +97,33 @@ namespace L3
 
 
         /// <summary>
+        /// a method to find all matching vehicles from another VehiclesRegister
+        /// </summary>
+        /// <param name="other">a vehicle register to which to compare against</param>
+        /// <returns>a VehicleContainer that contains all matching vehicles</returns>
+        public VehicleContainer FindMatches(VehiclesRegister other)
+        {
+            VehicleContainer matches = new VehicleContainer();
+
+            VehicleContainer selfContainer = this.AllVehicles;
+            VehicleContainer otherContainer = other.AllVehicles;
+            
+            for (int i = 0; i < selfContainer.Count; i++)
+                {
+                for (int j = 0; j < otherContainer.Count; j++)
+                {
+                    if (selfContainer[i].Equals(otherContainer[j]))
+                    {
+                        matches.Add(selfContainer[i]);
+                    }
+                }
+            }
+
+            return matches;
+
+        }
+
+        /// <summary>
         /// Method creates new list with filtered producers and new segment for counting the quantity of producer's cars
         /// </summary>
         /// <param name="filteredProducers"></param>
@@ -96,7 +141,7 @@ namespace L3
 
 
         /// <summary>
-        /// Method counts how many vehicles each producer has
+        /// Method to count how many vehicles each producer has
         /// </summary>
         /// <param name="filteredProducers"></param>
         /// <param name="vehicles"></param>
@@ -113,7 +158,7 @@ namespace L3
 
 
         /// <summary>
-        /// Method counts how many vehicles a producer has
+        /// Method to count how many vehicles a producer has
         /// </summary>
         /// <param name="ProducerName"></param>
         /// <returns></returns>
@@ -169,6 +214,26 @@ namespace L3
             return NewestVehicles;
         }
 
+        /// <summary>
+        /// calculates the average age of all the vehicles in this register
+        /// </summary>
+        /// <returns>a double which gives the average age in years (i assume)</returns>
+        public double GetAverageVehicleAge()
+        {
+            double output = 0.0;
+
+            double sum = 0.0;
+
+            for (int i = 0; i < this.AllVehicles.Count; i++)
+            {
+                sum += (double)this.AllVehicles[i].Age;
+            }
+
+            output = sum/(double)this.AllVehicles.Count;
+
+            return output;
+        }
+
 
         /// <summary>
         /// Method to find the newest vehicle
@@ -192,7 +257,7 @@ namespace L3
         /// <summary>
         /// Method to find vehicles with an expired technical inspection and add them to a list
         /// </summary>
-        /// <returns></returns>
+        /// <returns>a VehicleContainer that contains all vehicles with their expired TI</returns>
         public VehicleContainer FindVehiclesWithExpiredTI()
         {
 
@@ -212,6 +277,39 @@ namespace L3
                     VehiclesWithExpiredTI.Add(vehicle);
                 }
             }
+
+            VehiclesWithExpiredTI.SortWithDelegate((left, right) => {
+                
+                if (left.Producer.CompareTo(right.Producer) > 0)
+                {
+                    return 1;
+                } else if (left.Producer.CompareTo(right.Producer) < 0)
+                {
+                    return -1;
+                }
+
+                // producer names are equal, sort by model next
+                if (left.Model.CompareTo(right.Model) > 0)
+                {
+                    return 1;
+                } else if (left.Model.CompareTo(right.Model) < 0)
+                {
+                    return -1;
+                }
+
+                // model names are equal, sort by ID
+                if (left.LicensePlate.CompareTo(right.LicensePlate) > 0)
+                {
+                    return 1;
+                } else if (left.LicensePlate.CompareTo(right.LicensePlate) > 0)
+                {
+                    return -1;
+                }
+                
+                return 0; // vehicles are identical
+            });
+
+
             return VehiclesWithExpiredTI;
         }
     }

@@ -27,6 +27,25 @@ namespace L3
             register1.PrintToTxt("DuomenysPradiniai1.txt");
             register2.PrintToTxt("DuomenysPradiniai2.txt");
 
+            double reg1AvgAge = register1.GetAverageVehicleAge();
+            double reg2AvgAge = register2.GetAverageVehicleAge();
+
+
+            // find and print the regsiter with the oldest cars on average
+            if (reg1AvgAge > reg2AvgAge) {
+                Console.WriteLine("Pirmame Filiale (registre) yra senesni automobiliai.");
+                register1.PrintVehicles();
+            } else if (reg1AvgAge == reg2AvgAge){
+                Console.WriteLine("Abu filialai (registrai) turi lygiai tokio pačio senumo automobilius.");
+            } else {
+                Console.WriteLine("Antrame Filiale (registre) yra senesni automobiliai.");
+                register2.PrintVehicles();
+            }
+            Console.Write("\n"); // add some space to distinguish the tasks better
+
+            // find and write to file the matching vehicles in both registers
+            VehicleContainer matches = register1.FindMatches(register2);
+            InOutUtils.PrintMatchedVehiclesToCSV("Klaidos.csv", register1, register2, matches);
 
 
             Console.WriteLine("Pirmas registras:");
