@@ -1,0 +1,1020 @@
+// Vehicle.cs
+using System;
+
+namespace L3
+{
+    /// <summary>
+    /// class defining list (Vehicle) variables
+    /// </summary>
+    public class Vehicle
+    {
+        public string LicensePlate { get; set; }
+        public string Producer { get; set; }
+        public string Model { get; set; }
+        public int YearOfProduction { get; set; }
+        public int MonthOfProduction { get; set; }
+        public DateTime TechnicalInspection { get; set; }
+        public string Fuel { get; set; }
+        public double AverageFuelConsumption { get; set; }
+        public string City { get; set; }
+        public string Address { get; set; }
+        public string PhoneNum { get; set; }
+        public Vehicle(string licensePlate, string producer, string model, int yearOfProduction, int monthOfProduction,
+                        DateTime technicalInspection, string fuel, double averageFuelConsumption, 
+                        string city, string address, string phoneNum)
+        {
+            this.LicensePlate = licensePlate;
+            this.Producer = producer;
+            this.Model = model;
+            this.YearOfProduction = yearOfProduction;
+            this.MonthOfProduction = monthOfProduction;
+            this.TechnicalInspection = technicalInspection;
+            this.Fuel = fuel;
+            this.AverageFuelConsumption = averageFuelConsumption;
+            this.City = city;
+            this.Address = address;
+            this.PhoneNum = phoneNum;
+        }
+        /// <summary>
+        /// Used for finding the age of the vehicles
+        /// </summary>
+        public int Age
+        {
+            get
+            {
+                int age = DateTime.Today.Year * 12 + DateTime.Today.Month - this.YearOfProduction * 12 - this.MonthOfProduction;
+                return age;
+            }
+        }
+        public override bool Equals(object other)
+        {
+            Vehicle vehicle = other as Vehicle;
+            return this.LicensePlate == vehicle.LicensePlate;
+        }
+        public override int GetHashCode()
+        {
+            return this.LicensePlate.GetHashCode();
+        }
+        public static bool operator >(Vehicle vehicle1, Vehicle vehicle2) {
+            return vehicle1.Age > vehicle2.Age;
+                }
+        public static bool operator <(Vehicle vehicle1, Vehicle vehicle2) {
+            return vehicle1.Age < vehicle2.Age;
+        }
+    }
+}
+
+
+//Producer.cs
+
+namespace L3
+{
+    /// <summary>
+    /// class defining list variables
+    /// </summary>
+    public class Producer
+    {
+        public string ProducerName { get; set; }
+        public int NumberOfVehicles { get; set; }
+        public Producer(string producer, int numberOfVehicles)
+        {
+            this.ProducerName = producer;
+            this.NumberOfVehicles = numberOfVehicles;
+        }
+    }
+}
+
+
+// VehicleContainer.cs
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Text;
+
+namespace L3
+{
+
+    /// <summary>
+    /// a class that stores all vehicles
+    /// </summary>
+    class VehicleContainer
+    {
+        private Vehicle[] vehicles;
+        public int Count { get; private set; }
+
+        public VehicleContainer(int capacity = 50)
+        {
+            this.Count = 0;
+            this.vehicles = new Vehicle[capacity];
+        }
+
+
+
+        /// <summary>
+        /// a method to add a value to this container
+        /// </summary>
+        /// <param name="vehicle">the object to add to this container</param>
+        public void Add(Vehicle vehicle)
+        {
+            this.vehicles[this.Count] = vehicle;
+            this.Count++;
+        }
+
+        /// <summary>
+        /// A method to retreive a value from this container
+        /// </summary>
+        /// <param name="index">an integer that contains the location of the item to retreive</param>
+        /// <returns>a Vehicle object</returns>
+        public Vehicle Get(int index)
+        {
+            return this.vehicles[index];
+        }
+
+        /// <summary>
+        /// An indexer to allow to use this container with the [] operator.
+        /// Implemented because it would require me less work to implement 
+        /// the use of this container in the VehiclesRegister class.
+        /// </summary>
+        public Vehicle this[int index]
+        {
+            get { return this.vehicles[index]; }
+            set { this.vehicles[index] = value; }
+        }
+
+
+        public void Insert(Vehicle vehicle, int index)
+        {
+
+            if (index > this.Count) {
+                this.Add(vehicle);
+                return;
+            }
+
+            this.Count++;
+
+            for (int i = this.Count; i > index; i--)
+            {
+                this.vehicles[i-1] = this.vehicles[i];
+            }
+
+            this.vehicles[index] = vehicle;
+
+        }
+
+
+        /// <summary>
+        /// A method to remove a value from this container
+        /// </summary>
+        /// <param name="vehicle">the object to remove</param>
+        public void Remove(Vehicle vehicle)
+        {
+            for (int i = 0; i < this.Count; i++)
+            {
+                if (this.vehicles[i] == vehicle)
+                {
+                    this.Count -= 1;
+                    for (int j = i; j < this.Count; j++)
+                    {
+                        this.vehicles[j] = this.vehicles[j+1];
+                    }
+                    break;
+                }
+            }
+        }
+
+
+        /// <summary>
+        /// A method to remove a value at a specific index from this container
+        /// </summary>
+        /// <param name="index">the index at which the value to be removed is located</param>
+        public void RemoveAt(int index)
+        {
+            this.Count -= 1;
+            for (int i = index; i < this.Count; i++)
+            {
+                this.vehicles[i] = this.vehicles[i+1];
+            }
+        }
+
+
+        /// <summary>
+        /// a method to determine if the container contains a given object
+        /// </summary>
+        /// <param name="vehicle">a Vehicle object</param>
+        /// <returns>a boolean value</returns>
+        public bool Contains(Vehicle vehicle)
+        {
+
+            for (int i = 0; i < this.Count; i++)
+            {
+                if (this.vehicles[i] == vehicle)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+
+        /// <summary>
+        /// A delegate method to specify how should the sorting in Sort be performed.
+        /// Using a delegate as part of the Sort function allows for arbitrary possibilities when sorting
+        /// and does not force the programmer to overload the top level methods of their custom class to do only one specific function
+        /// </summary>
+        /// <param name="left">the left Vehicle to compare</param>
+        /// <param name="right">the right Vehicle to compare</param>
+        /// <returns>1 if left is the 'bigger' object, -1 if right is the 'bigger' object, 0 if they're equal</returns>
+        public delegate int SortingDelegate(Vehicle left, Vehicle right);
+
+
+        /// <summary>
+        /// the sorting function that uses a delegate
+        /// </summary>
+        /// <param name="sortingDel">A delegate method by which to sort</param>
+        public void SortWithDelegate(SortingDelegate sortingDel)
+        {
+            bool flag = true;
+
+            while (flag)
+            {
+
+                flag = false;
+
+                for (int i = 0; i < this.Count-1; i++)
+                {
+                    Vehicle left = this.vehicles[i];
+                    Vehicle right = this.vehicles[i+1];
+
+                    if (sortingDel(left,right) > 0) {
+                        this.vehicles[i] = right;
+                        this.vehicles[i+1] = left;
+                        flag = true;
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+
+//InOutUtils.cs
+using System;
+using System.IO;
+using System.Collections.Generic;
+using System.Text;
+
+namespace L3
+{
+    /// <summary>
+    /// Class containing reading and priniting methods
+    /// </summary>
+    static class InOutUtils
+    {
+        /// <summary>
+        /// the method that reads the data from a file
+        /// </summary>
+        /// <param name="fileName"> input filename </param>
+        /// <returns>a vehicleRegister</returns>
+        public static VehiclesRegister ReadVehicles(string fileName)
+        {
+
+            string[] lines = new string[150];
+
+            VehiclesRegister output = new VehiclesRegister();
+
+            // file error handling
+            if (System.IO.File.Exists(fileName))
+            {
+                lines = File.ReadAllLines(fileName, Encoding.UTF8);
+            }
+            else
+            {
+                Console.WriteLine("Failas nerastas. Programa negali veikti.");
+                System.Environment.Exit(1); // exit code 1 means that the program did not run successfuly
+            }
+
+            if (lines.Length <= 0)
+            {
+                Console.WriteLine("Pateiktas tuščias failas. Programa negali veikti.");
+                System.Environment.Exit(1); // exit code 1 means that the program did not run successfuly
+            }
+
+            string city = lines[0];
+            string address = lines[1];
+            string phoneNum = lines[2];
+
+            for (int i = 3; i < lines.Length; i++)
+            {
+                string line = lines[i];
+
+                // basic support for comments
+                // if a line in the input file starts with
+                // '//', then ignore the line and move on
+                if (line.StartsWith("//"))
+                {
+                    continue;
+                }
+
+                string[] values = line.Split(';');
+
+                Vehicle vehicleToAdd = new Vehicle(
+                    values[0],
+                    values[1],
+                    values[2],
+                    int.Parse(values[3]),
+                    int.Parse(values[4]), 
+                    DateTime.Parse(values[5]),
+                    values[6],
+                    double.Parse(values[7]),
+                    city,
+                    address,
+                    phoneNum
+                );
+
+                output.Add(vehicleToAdd);
+            }
+
+            return output;
+        }
+
+        public static void PrintVehiclesByProducer(VehiclesRegister register)
+        {
+            List<String> output = CreateVehiclesByProducerTable(register);
+            Console.WriteLine(String.Join("\n", output));
+        }
+
+
+        /// <summary>
+        /// Method prints the most common producer(s)
+        /// </summary>
+        /// <param name="allVehicles"></param>
+        public static List<String> CreateVehiclesByProducerTable(VehiclesRegister register)
+        {
+
+            List<int> tableSpacing = new List<int> {16, 18};
+
+            string topstr = CreateIndexedTableLine(tableSpacing, 2, '┌', '┬', '┐', '─');
+            string midstr = CreateIndexedTableLine(tableSpacing, 2, '├', '┼', '┤', '─');
+            string botstr = CreateIndexedTableLine(tableSpacing, 2, '└', '┴', '┘', '─');
+
+            List<String> output = new List<String>();
+
+            List<string> producers = register.FindProducers();
+            List<Producer> filteredProducersWithNumberOfCars = register.ListOfStringsToProducerObjects(producers);
+            List<Producer> filteredProducers = register.CountVehiclesByProducers(filteredProducersWithNumberOfCars);
+            int HighestNumber = register.HighestNumber(filteredProducers);
+
+
+            output.Add("Daugiausiai automobilių turi: ");
+
+            output.Add(topstr);
+
+            output.Add(String.Format(
+                "│{0,-16}│{1,-18}│",
+                "Gamintojas(-ai)",
+                "Automobilių kiekis"
+            ));
+
+            output.Add(midstr);
+
+            foreach (Producer producer in filteredProducers) //searching producer with the most vehicles
+            {
+                if (producer.NumberOfVehicles == HighestNumber)
+                {
+                    output.Add(String.Format(
+                        "│{0,-16}│{1,-18}│",
+                        producer.ProducerName, 
+                        producer.NumberOfVehicles
+                    ));
+                }
+            }
+
+            output.Add(botstr);
+
+            return output;
+
+        }
+
+
+        /// <summary>
+        /// Outputs a list of vehicles to the console
+        /// </summary>
+        /// <param name="Vehicles">a list of vehicles</param>
+        public static void PrintVehicles(VehicleContainer vehicles)
+        {
+            List<String> output = CreateVehicleTable(vehicles);
+            Console.WriteLine(String.Join("\n", output));
+        }
+
+        /// <summary>
+        /// Outputs a list of vehicles to a text file
+        /// </summary>
+        /// <param name="fileName">the name of the text file to which to output</param>
+        /// <param name="vehicles">a list of vehicles</param>
+        public static void PrintVehiclesToText(string fileName, VehicleContainer vehicles)
+        {
+            List<String> output = CreateVehicleTable(vehicles);
+            File.WriteAllLines(fileName, output.ToArray(), Encoding.UTF8);
+        }
+
+        /// <summary>
+        ///  a simple method to assist in creating text character based tables
+        /// </summary>
+        /// <param name="spacing">a list of ints which defines the amount of <paramref name="line"/> chars to put in between any of the other chars</param>
+        /// <param name="columnCount">the amount of columns in the</param>
+        /// <param name="leftEdge">the char used at the left edge of the table</param>
+        /// <param name="middleEdge">the char used inbetween lines</param>
+        /// <param name="rightEdge">the char used at the right edge or end of the line</param>
+        /// <param name="line">the char used inbetween any and all other chars</param>
+        private static string CreateIndexedTableLine(List<int> spacing, int columnCount, char leftEdge, char middleEdge, char rightEdge, char line)
+        {
+
+            string output = "";
+
+            output += leftEdge;
+
+            for (int i = 0; i < columnCount; i++) {
+
+                output += new string(line, spacing[i]);
+
+                if (i == columnCount - 1)
+                {
+                    output += rightEdge;
+                }
+                else
+                {
+                    output += middleEdge;
+                }
+            }
+
+            return output;
+        }
+
+        /// <summary>
+        /// creates a string-based table of vehicles,
+        /// used in both console output and text output
+        /// </summary>
+        /// <returns>list of strings</returns>
+        private static List<String> CreateVehicleTable(VehicleContainer vehicles)
+        {
+            List<String> output = new List<String>();
+
+            // the amount of empty characters given for every value in the table
+            List<int> tableSpacing = new List<int> {7, 12, 8, 5, 4, 15, 10, 12};
+
+            string topstr = CreateIndexedTableLine(tableSpacing, 8, '┌', '┬', '┐', '─');
+            string midstr = CreateIndexedTableLine(tableSpacing, 8, '├', '┼', '┤', '─');
+            string botstr = CreateIndexedTableLine(tableSpacing, 8, '└', '┴', '┘', '─');
+
+
+            output.Add(topstr);
+
+            output.Add(String.Format(
+                "│{0,-7}│{1,-12}│{2,-8}│{3,-5}│{4,-4}│{5,-15}│{6,-10}│{7,-12}│",
+                "Val. ID",
+                "Gamintojas",
+                "Modelis",
+                "Metai",
+                "Mėn.",
+                "T.A. gal. data",
+                "Kuras",
+                "Vid. sąnaud."
+            ));
+
+            output.Add(midstr);
+
+            for (int i = 0; i < vehicles.Count; i++)
+            {
+                Vehicle vehicle = vehicles[i];
+
+                output.Add(String.Format(
+                    "│{0,-7}│{1,-12}│{2,-8}│{3,-5}│{4,-4}│{5,-15}│{6,-10}│{7,-12}│",
+                    vehicle.LicensePlate,
+                    vehicle.Producer,
+                    vehicle.Model,
+                    vehicle.YearOfProduction,
+                    vehicle.MonthOfProduction,
+                    vehicle.TechnicalInspection.ToShortDateString(),
+                    vehicle.Fuel,
+                    vehicle.AverageFuelConsumption
+                ));
+
+            }
+
+            output.Add(botstr);
+
+            return output;
+
+        }
+
+
+        /// <summary>
+        /// Method to print vehicles to a CSV file
+        /// </summary>
+        /// <param name="Vehicles"></param>
+        /// <param name="fileName"></param>
+        public static void PrintVehiclesToCSV (VehicleContainer Vehicles, string fileName)
+        {
+            string[] lines = new string[Vehicles.Count + 1];
+            lines[0] = String.Format("{0};{1};{2};{3};{4};{5};{6};{7}",
+                "Valstybinis numeris", 
+                "Gamintojas",
+                "Modelis",
+                "Pagaminimo metai",
+                "Pagaminimo mėnuo",
+                "T.A. galiojimo data",
+                "Kuras",
+                "Vid. sąnaudos"
+            );
+
+
+            for (int i = 1; i < Vehicles.Count; i++)
+            {
+                if (Vehicles[i].TechnicalInspection == Convert.ToDateTime("1111/1/1"))
+                {
+                    lines[i] = String.Format(
+                        "{0};{1};{2};{3};{4};{5};{6};{7:f}",
+                        Vehicles[i].LicensePlate, 
+                        Vehicles[i].Producer,
+                        Vehicles[i].Model,
+                        Vehicles[i].YearOfProduction,
+                        Vehicles[i].MonthOfProduction,
+                        "SKUBIAI",
+                        Vehicles[i].Fuel,
+                        Vehicles[i].AverageFuelConsumption
+                    );
+                }
+                else
+                {
+                    lines[i] = String.Format(
+                        "{0};{1};{2};{3};{4};{5:yyyy-MM-dd};{6};{7:f}",
+                        Vehicles[i].LicensePlate, 
+                        Vehicles[i].Producer,
+                        Vehicles[i].Model,
+                        Vehicles[i].YearOfProduction,
+                        Vehicles[i].MonthOfProduction,
+                        Vehicles[i].TechnicalInspection,
+                        Vehicles[i].Fuel,
+                        Vehicles[i].AverageFuelConsumption
+                    );
+                }
+                File.WriteAllLines(fileName, lines, Encoding.UTF8);
+            }
+        }
+
+
+        public static void PrintMatchedVehiclesToCSV(string fileName, VehiclesRegister left, VehiclesRegister right, VehicleContainer matches)
+        {
+
+            if (matches.Count <= 0)
+            {
+                return;
+            }
+
+            string[] lines = new string[matches.Count+2];
+
+            lines[0] = left.City;
+            lines[1] = right.City;
+
+            for (int i = 0; i < matches.Count; i++)
+            {
+                int lineIndex = i+2;
+
+                lines[lineIndex] = String.Format(
+                    "{0};{1}",
+                    matches[i].LicensePlate,
+                    matches[i].Model
+                );
+            }
+            File.WriteAllLines(fileName, lines, Encoding.UTF8);
+        }
+    }
+}
+
+
+// VehiclesRegister.cs
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Text;
+
+namespace L3
+{
+    class VehiclesRegister
+    {
+
+        public string City {
+            get {
+                return this.AllVehicles[0].City;
+            }
+        }
+
+        public string Adress {
+            get {
+                return this.AllVehicles[0].Address;
+            }
+        }
+
+        public string PhoneNum {
+            get {
+                return this.AllVehicles[0].PhoneNum;
+            }
+        }
+
+        public VehicleContainer AllVehicles;
+
+
+        public VehiclesRegister()
+        {
+            AllVehicles = new VehicleContainer();
+        }
+
+
+        public VehiclesRegister(VehicleContainer Vehicles)
+        {
+            AllVehicles = new VehicleContainer();
+            for (int i = 0; i < Vehicles.Count; i++)
+            {
+                Vehicle vehicle = this.AllVehicles[i];
+                this.AllVehicles.Add(vehicle);
+            }
+        }
+
+        /// <summary>
+        /// Method adds a vehicle to the list
+        /// </summary>
+        /// <param name="vehicle"></param>
+        public void Add (Vehicle vehicle)
+        {
+            AllVehicles.Add(vehicle);
+        }
+
+
+        /// <summary>
+        /// Method to print all vehicles to a text file
+        /// </summary>
+        /// <param name="fileName"></param>
+        public void PrintToTxt(string fileName)
+        {
+            InOutUtils.PrintVehiclesToText(fileName, this.AllVehicles);
+        }
+
+
+        /// <summary>
+        /// Method to print all vehicles in the register
+        /// </summary>
+        public void PrintVehicles()
+        {
+            Console.WriteLine("UAB „Žaibas {0}“ priklausantys automobiliai:", AllVehicles[0].City);
+            InOutUtils.PrintVehicles(this.AllVehicles);
+        }
+
+
+
+        /// <summary>
+        /// Method to find all unique car producers
+        /// </summary>
+        /// <returns></returns>
+        public List<string> FindProducers()
+        {
+            List<string> producers = new List<string>();
+            for (int i = 0; i < this.AllVehicles.Count; i++)
+            {
+                Vehicle vehicle = this.AllVehicles[i];
+                string producer = vehicle.Producer;
+                if (!producers.Contains(producer))
+                {
+                    producers.Add(producer);
+                }
+            }
+            return producers;
+        }
+
+
+        /// <summary>
+        /// a method to find all matching vehicles from another VehiclesRegister
+        /// </summary>
+        /// <param name="other">a vehicle register to which to compare against</param>
+        /// <returns>a VehicleContainer that contains all matching vehicles</returns>
+        public VehicleContainer FindMatches(VehiclesRegister other)
+        {
+            VehicleContainer matches = new VehicleContainer();
+
+            VehicleContainer selfContainer = this.AllVehicles;
+            VehicleContainer otherContainer = other.AllVehicles;
+            
+            for (int i = 0; i < selfContainer.Count; i++)
+                {
+                for (int j = 0; j < otherContainer.Count; j++)
+                {
+                    if (selfContainer[i].Equals(otherContainer[j]))
+                    {
+                        matches.Add(selfContainer[i]);
+                    }
+                }
+            }
+
+            return matches;
+
+        }
+
+        /// <summary>
+        /// Method creates new list with filtered producers and new segment for counting the quantity of producer's cars
+        /// </summary>
+        /// <param name="filteredProducers"></param>
+        /// <returns></returns>
+        public List<Producer> ListOfStringsToProducerObjects(List<string> filteredProducers)
+        {
+            List<Producer> allProducers = new List<Producer>();
+            foreach (string newProducer in filteredProducers)
+            {
+                Producer producer = new Producer(newProducer, 0);
+                allProducers.Add(producer);
+            }
+            return allProducers;
+        }
+
+
+        /// <summary>
+        /// Method to count how many vehicles each producer has
+        /// </summary>
+        /// <param name="filteredProducers"></param>
+        /// <param name="vehicles"></param>
+        public List<Producer> CountVehiclesByProducers(List<Producer> filteredProducers)
+        {
+
+            for (int i = 0; i < filteredProducers.Count; i++)
+            {
+                int NumberOfVehicles = CountingOfVehiclesByProducer(filteredProducers[i].ProducerName);
+                filteredProducers[i].NumberOfVehicles = NumberOfVehicles;
+            }
+            return filteredProducers;
+        }
+
+
+        /// <summary>
+        /// Method to count how many vehicles a producer has
+        /// </summary>
+        /// <param name="ProducerName"></param>
+        /// <returns></returns>
+        public int CountingOfVehiclesByProducer(string ProducerName)
+        {
+            int NumberOfVehicles = 0;
+            for (int i = 0; i < this.AllVehicles.Count; i++)
+            {
+                Vehicle vehicle = this.AllVehicles[i];
+                if (vehicle.Producer == ProducerName)
+                {
+                    NumberOfVehicles++;
+                }
+            }
+            return NumberOfVehicles;
+        }
+
+
+        /// <summary>
+        /// Method to find the highest amount of vehicles made by a single brand
+        /// </summary>
+        /// <param name="filteredProducers"></param>
+        /// <returns>an integer</returns>
+        public int HighestNumber(List<Producer> filteredProducers)
+        {
+            int highestNumber = 0;
+            foreach (Producer producer in filteredProducers)
+            {
+                if (highestNumber < producer.NumberOfVehicles)
+                    highestNumber = producer.NumberOfVehicles;
+            }
+            return highestNumber;
+        }
+
+
+        /// <summary>
+        /// Method to find a list of the newest vehicles
+        /// </summary>
+        /// <returns></returns>
+        public VehicleContainer FindNewestVehicles()
+        {
+
+            VehicleContainer NewestVehicles = new VehicleContainer();
+
+            for (int i = 0; i < this.AllVehicles.Count; i++)
+            {
+                Vehicle vehicle = this.AllVehicles[i];
+                if (vehicle.Age == NewestVehicleDate().Age)
+                {
+                    NewestVehicles.Add(vehicle);
+                }
+            }
+            return NewestVehicles;
+        }
+
+        /// <summary>
+        /// calculates the average age of all the vehicles in this register
+        /// </summary>
+        /// <returns>a double which gives the average age in years (i assume)</returns>
+        public double GetAverageVehicleAge()
+        {
+            double output = 0.0;
+
+            double sum = 0.0;
+
+            for (int i = 0; i < this.AllVehicles.Count; i++)
+            {
+                sum += (double)this.AllVehicles[i].Age;
+            }
+
+            output = sum/(double)this.AllVehicles.Count;
+
+            return output;
+        }
+
+
+        /// <summary>
+        /// Method to find the newest vehicle
+        /// </summary>
+        /// <returns></returns>
+        private Vehicle NewestVehicleDate()
+        {
+            Vehicle NewestVehicle = AllVehicles[0];
+            for (int i = 0; i < this.AllVehicles.Count; i++)
+            {
+                Vehicle vehicle = this.AllVehicles[i];
+                if (vehicle < NewestVehicle)
+                {
+                    NewestVehicle = vehicle;
+                }
+            }
+            return NewestVehicle;
+        }
+
+
+        /// <summary>
+        /// Method to find vehicles with an expired technical inspection and add them to a list
+        /// </summary>
+        /// <returns>a VehicleContainer that contains all vehicles with their expired TI</returns>
+        public VehicleContainer FindVehiclesWithExpiredTI()
+        {
+
+            VehicleContainer VehiclesWithExpiredTI = new VehicleContainer();
+
+            DateTime Today = DateTime.Today;
+            for (int i = 0; i < this.AllVehicles.Count; i++)
+            {
+                Vehicle vehicle = this.AllVehicles[i];
+                if(Today.Year > vehicle.TechnicalInspection.Year)
+                {
+                    vehicle.TechnicalInspection = Convert.ToDateTime("1111/1/1");
+                    VehiclesWithExpiredTI.Add(vehicle);
+                }
+                else if (vehicle.TechnicalInspection.Year == Today.Year && vehicle.TechnicalInspection.Month - vehicle.TechnicalInspection.Month <= 1)
+                {
+                    VehiclesWithExpiredTI.Add(vehicle);
+                }
+            }
+
+            VehiclesWithExpiredTI.SortWithDelegate((left, right) => {
+                
+                if (left.Producer.CompareTo(right.Producer) > 0)
+                {
+                    return 1;
+                } else if (left.Producer.CompareTo(right.Producer) < 0)
+                {
+                    return -1;
+                }
+
+                // producer names are equal, sort by model next
+                if (left.Model.CompareTo(right.Model) > 0)
+                {
+                    return 1;
+                } else if (left.Model.CompareTo(right.Model) < 0)
+                {
+                    return -1;
+                }
+
+                // model names are equal, sort by ID
+                if (left.LicensePlate.CompareTo(right.LicensePlate) > 0)
+                {
+                    return 1;
+                } else if (left.LicensePlate.CompareTo(right.LicensePlate) > 0)
+                {
+                    return -1;
+                }
+                
+                return 0; // vehicles are identical
+            });
+
+
+            return VehiclesWithExpiredTI;
+        }
+    }
+}
+
+
+//Program.cs
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Text;
+
+namespace L3
+{
+    public class Program
+    {
+        /// <summary>
+        /// Main method
+        /// </summary>
+        /// <param name="args"> program's arguments </param>
+        static void Main(string[] args)
+        {
+            Console.OutputEncoding = Encoding.UTF8;
+
+            // filenames
+            string fileName1 = "Duomenys1.txt";
+            string fileName2 = "Duomenys2.txt";
+
+            // register initializations
+            VehiclesRegister register2 = InOutUtils.ReadVehicles(fileName2);
+            VehiclesRegister register1 = InOutUtils.ReadVehicles(fileName1);
+
+            // write out initial data to text
+            register1.PrintToTxt("DuomenysPradiniai1.txt");
+            register2.PrintToTxt("DuomenysPradiniai2.txt");
+
+            double reg1AvgAge = register1.GetAverageVehicleAge();
+            double reg2AvgAge = register2.GetAverageVehicleAge();
+
+
+            // find and print the regsiter with the oldest cars on average
+            if (reg1AvgAge > reg2AvgAge) {
+                Console.WriteLine("Pirmame Filiale (registre) yra senesni automobiliai.");
+                register1.PrintVehicles();
+            } else if (reg1AvgAge == reg2AvgAge){
+                Console.WriteLine("Abu filialai (registrai) turi lygiai tokio pačio senumo automobilius.");
+            } else {
+                Console.WriteLine("Antrame Filiale (registre) yra senesni automobiliai.");
+                register2.PrintVehicles();
+            }
+            Console.Write("\n"); // add some space to distinguish the tasks better
+
+            // find and write to file the matching vehicles in both registers
+            VehicleContainer matches = register1.FindMatches(register2);
+            InOutUtils.PrintMatchedVehiclesToCSV("Klaidos.csv", register1, register2, matches);
+
+
+            Console.WriteLine("Pirmas registras:");
+
+            // print out the first register's initial data
+            register1.PrintVehicles();
+            
+            // print out the first register's newest vehicle(s)
+            VehicleContainer NewestVehicles = register1.FindNewestVehicles();
+            Console.WriteLine("Naujausias(-i) automobilis(-iai):");
+            InOutUtils.PrintVehicles(NewestVehicles);
+            Console.WriteLine();
+
+
+            // print out the first register's vehicles that have an expired technical inspection status
+            VehicleContainer VehiclesWithExpiredTI = register1.FindVehiclesWithExpiredTI();
+            if (VehiclesWithExpiredTI.Count == 0)
+            {
+                Console.WriteLine("Automobilių su pasibaigusiu T.A. nėra");
+                Console.WriteLine();
+            }
+            else
+            {
+                InOutUtils.PrintVehiclesToCSV(VehiclesWithExpiredTI, "Apžiūra1.csv");
+            }
+
+
+
+            Console.WriteLine("Antras registras:");
+
+
+            // print out the second register's initial data
+            register2.PrintVehicles();
+
+
+            // print out the second register's newest vehicle(s)
+            VehicleContainer NewestVehicles2 = register2.FindNewestVehicles();
+            Console.WriteLine("Naujausias(-i) automobilis(-iai):");
+            InOutUtils.PrintVehicles(NewestVehicles2);
+            Console.WriteLine();
+
+
+            // print out the second register's vehicles that have an expired technical inspection status
+            VehicleContainer VehiclesWithExpiredTI2 = register2.FindVehiclesWithExpiredTI();
+            if (VehiclesWithExpiredTI2.Count == 0)
+            {
+                Console.WriteLine("Automobilių su pasibaigusiu T.A. nėra");
+                Console.WriteLine();
+            }
+            else
+            {
+                InOutUtils.PrintVehiclesToCSV(VehiclesWithExpiredTI2, "Apžiūra2.csv");
+            }
+        }
+    }
+}

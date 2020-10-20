@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{Valstybinis} \PYG{n}{numeris}\PYG{p}{;}\PYG{n}{Gamintojas}\PYG{p}{;}\PYG{n}{Modelis}\PYG{p}{;}\PYG{n}{Pagaminimo} \PYG{n}{metai}\PYG{p}{;}\PYG{n}{Pagaminimo} \PYG{n}{mėnuo}\PYG{p}{;}\PYG{n}{T}\PYG{p}{.}\PYG{n}{A}\PYG{p}{.} \PYG{n}{galiojimo} \PYG{n}{data}\PYG{p}{;}\PYG{n}{Kuras}\PYG{p}{;}\PYG{n}{Vid}\PYG{p}{.} \PYG{n}{sąnaudos}
+\PYG{n}{ASD435}\PYG{p}{;}\PYG{n}{Audi}\PYG{p}{;}\PYG{n}{A6}\PYG{p}{;}\PYG{l+m}{2005}\PYG{p}{;}\PYG{l+m}{4}\PYG{p}{;}\PYG{n}{SKUBIAI}\PYG{p}{;}\PYG{n}{benzinas}\PYG{p}{;}\PYG{l+m}{5.300}
+\PYG{n}{PPP875}\PYG{p}{;}\PYG{n}{Audi}\PYG{p}{;}\PYG{n}{A6}\PYG{p}{;}\PYG{l+m}{2018}\PYG{p}{;}\PYG{l+m}{5}\PYG{p}{;}\PYG{n}{SKUBIAI}\PYG{p}{;}\PYG{n}{dyzelis}\PYG{p}{;}\PYG{l+m}{7.300}
+\PYG{n}{UPP805}\PYG{p}{;}\PYG{n}{Audi}\PYG{p}{;}\PYG{n}{A6}\PYG{p}{;}\PYG{l+m}{2000}\PYG{p}{;}\PYG{l+m}{12}\PYG{p}{;}\PYG{n}{SKUBIAI}\PYG{p}{;}\PYG{n}{benzinas}\PYG{p}{;}\PYG{l+m}{9.300}
+\PYG{n}{LZM279}\PYG{p}{;}\PYG{n}{Audi}\PYG{p}{;}\PYG{n}{A7}\PYG{p}{;}\PYG{l+m}{2006}\PYG{p}{;}\PYG{l+m}{6}\PYG{p}{;}\PYG{n}{SKUBIAI}\PYG{p}{;}\PYG{n}{dujos}\PYG{p}{;}\PYG{l+m}{7.300}
+\PYG{n}{LYK465}\PYG{p}{;}\PYG{n}{BMW}\PYG{p}{;}\PYG{n}{X7}\PYG{p}{;}\PYG{l+m}{2017}\PYG{p}{;}\PYG{l+m}{3}\PYG{p}{;}\PYG{n}{SKUBIAI}\PYG{p}{;}\PYG{n}{dyzelis}\PYG{p}{;}\PYG{l+m}{4.000}
+\PYG{n}{FCX456}\PYG{p}{;}\PYG{n}{Ford}\PYG{p}{;}\PYG{n}{Focus}\PYG{p}{;}\PYG{l+m}{2016}\PYG{p}{;}\PYG{l+m}{4}\PYG{p}{;}\PYG{n}{SKUBIAI}\PYG{p}{;}\PYG{n}{dyzelis}\PYG{p}{;}\PYG{l+m}{7.900}
+\PYG{n}{LLL342}\PYG{p}{;}\PYG{n}{Mazda}\PYG{p}{;}\PYG{l+m}{3}\PYG{p}{;}\PYG{l+m}{1990}\PYG{p}{;}\PYG{l+m}{11}\PYG{p}{;}\PYG{n}{SKUBIAI}\PYG{p}{;}\PYG{n}{elektrine}\PYG{p}{;}\PYG{l+m}{3.000}
+\PYG{n}{DKI234}\PYG{p}{;}\PYG{n}{Passat}\PYG{p}{;}\PYG{n}{B6}\PYG{p}{;}\PYG{l+m}{1996}\PYG{p}{;}\PYG{l+m}{5}\PYG{p}{;}\PYG{n}{SKUBIAI}\PYG{p}{;}\PYG{n}{benzinas}\PYG{p}{;}\PYG{l+m}{5.600}
+\PYG{n}{OOO367}\PYG{p}{;}\PYG{n}{Volvo}\PYG{p}{;}\PYG{n}{S60}\PYG{p}{;}\PYG{l+m}{2012}\PYG{p}{;}\PYG{l+m}{7}\PYG{p}{;}\PYG{n}{SKUBIAI}\PYG{p}{;}\PYG{n}{benzinas}\PYG{p}{;}\PYG{l+m}{8.000}
+\PYG{n}{DKL759}\PYG{p}{;}\PYG{n}{Volvo}\PYG{p}{;}\PYG{n}{S80}\PYG{p}{;}\PYG{l+m}{2008}\PYG{p}{;}\PYG{l+m}{1}\PYG{p}{;}\PYG{n}{SKUBIAI}\PYG{p}{;}\PYG{n}{dyzelis}\PYG{p}{;}\PYG{l+m}{10.500}
+\PYG{n}{DOO499}\PYG{p}{;}\PYG{n}{Volvo}\PYG{p}{;}\PYG{n}{S80}\PYG{p}{;}\PYG{l+m}{2012}\PYG{p}{;}\PYG{l+m}{4}\PYG{p}{;}\PYG{n}{SKUBIAI}\PYG{p}{;}\PYG{n}{dyzelis}\PYG{p}{;}\PYG{l+m}{8.000}
+\PYG{n}{DYY999}\PYG{p}{;}\PYG{n}{Volvo}\PYG{p}{;}\PYG{n}{V70}\PYG{p}{;}\PYG{l+m}{2009}\PYG{p}{;}\PYG{l+m}{9}\PYG{p}{;}\PYG{n}{SKUBIAI}\PYG{p}{;}\PYG{n}{dyzelis}\PYG{p}{;}\PYG{l+m}{4.800}
+\end{Verbatim}

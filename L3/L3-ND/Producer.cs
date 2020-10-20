@@ -1,4 +1,6 @@
-﻿namespace L3
+﻿//Producer.cs
+
+namespace L3
 {
     /// <summary>
     /// class defining list variables

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/VoidLinux) (preloaded format=xelatex 2020.10.7)  8 OCT 2020 16:13
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/VoidLinux) (preloaded format=xelatex 2020.10.7)  20 OCT 2020 16:27
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -887,27 +887,42 @@ Underfull \hbox (badness 10000) in paragraph at lines 416--420
 
  []
 
-[27] [28] [29] [30]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 456.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 456.
+[27] (./_minted-IFF-0-6-Nojus-Raskevicius/AA177CCA42CE68B5B62BC9C89E887148770D755B5B647603A0D5AF78936EB51D.pygtex [28] [29] [30] [31] [32] [33]
+Overfull \hbox (14.60544pt too wide) in paragraph at lines 367--367
+\TU/CourierNew(0)/b/n/9 register.CountVehiclesByProducers(filteredProducersWithNumberOfCars);|  
+ []
+
+[34] [35]
+Overfull \hbox (32.19266pt too wide) in paragraph at lines 494--494
+[]\TU/CourierNew(0)/b/n/9 "│{0,-7}│{1,-12}│{2,-8}│{3,-5}│{4,-4}│{5,-15}│{6,-10}│{7,-12}│"[],|  
+ []
+
+[36] [37] [38] [39]
+Overfull \hbox (8.74307pt too wide) in paragraph at lines 751--751
+\TU/CourierNew(0)/b/n/9 CountingOfVehiclesByProducer(filteredProducers[i].ProducerName);|  
+ []
+
+[40] [41] [42] [43]) (./_minted-IFF-0-6-Nojus-Raskevicius/A1F700845FD8EB7BA04CD56E69AACD6BA7F56F0A60D1CB7E391DBE1D5A303301.pygtex [44]) (./_minted-IFF-0-6-Nojus-Raskevicius/D66549997224C99E100A31E598D30CA381A666454B9F7103F59A317739886093.pygtex) [45] (./_minted-IFF-0-6-Nojus-Raskevicius/B2B60B321E5B37136432189019D6C020CDF9037C37D77D37E79EE2484296BEE3.pygtex) (./_minted-IFF-0-6-Nojus-Raskevicius/6142B9DD834E0483C6FAE1050E0D66DCDB90AD0A62A157885E83426C0D5317E1.pygtex) (./_minted-IFF-0-6-Nojus-Raskevicius/ABCDC0AC96053B61BA637C65C77FBC206C2890EAAA2082107BCBC00F775138A2.pygtex) [46] [47] [48] [49]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 579.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 579.
  (./IFF-0-6-Nojus-Raskevicius.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 456.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 456.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 579.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 579.
 Package rerunfilecheck Info: File `IFF-0-6-Nojus-Raskevicius.out' has not changed.
-(rerunfilecheck)             Checksum: F184BB1B5CF7E24A422943597C9D5119;4274.
+(rerunfilecheck)             Checksum: 86796168E3FA5E126542296F065E8C72;4430.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 456.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 579.
  ) 
 Here is how much of TeX's memory you used:
- 17638 strings out of 479284
- 334187 string characters out of 5886209
- 735104 words of memory out of 5000000
- 34951 multiletter control sequences out of 15000+600000
+ 17669 strings out of 479284
+ 336999 string characters out of 5886209
+ 735707 words of memory out of 5000000
+ 34964 multiletter control sequences out of 15000+600000
  546938 words of font info for 66 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  47i,9n,119p,1033b,660s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on IFF-0-6-Nojus-Raskevicius.xdv (30 pages, 601900 bytes).
+Output written on IFF-0-6-Nojus-Raskevicius.xdv (49 pages, 992104 bytes).

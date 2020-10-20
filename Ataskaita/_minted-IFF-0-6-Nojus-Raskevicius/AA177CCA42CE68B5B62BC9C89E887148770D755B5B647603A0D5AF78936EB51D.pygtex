@@ -1,0 +1,1022 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{// Vehicle.cs}
+\PYG{k}{using} \PYG{n+nn}{System}\PYG{p}{;}
+
+\PYG{k}{namespace} \PYG{n+nn}{L3}
+\PYG{p}{\PYGZob{}}
+    \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+    \PYG{c+c1}{/// class defining list (Vehicle) variables}
+    \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+    \PYG{k}{public} \PYG{k}{class} \PYG{n+nc}{Vehicle}
+    \PYG{p}{\PYGZob{}}
+        \PYG{k}{public} \PYG{k+kt}{string} \PYG{n}{LicensePlate} \PYG{p}{\PYGZob{}} \PYG{k}{get}\PYG{p}{;} \PYG{k}{set}\PYG{p}{;} \PYG{p}{\PYGZcb{}}
+        \PYG{k}{public} \PYG{k+kt}{string} \PYG{n}{Producer} \PYG{p}{\PYGZob{}} \PYG{k}{get}\PYG{p}{;} \PYG{k}{set}\PYG{p}{;} \PYG{p}{\PYGZcb{}}
+        \PYG{k}{public} \PYG{k+kt}{string} \PYG{n}{Model} \PYG{p}{\PYGZob{}} \PYG{k}{get}\PYG{p}{;} \PYG{k}{set}\PYG{p}{;} \PYG{p}{\PYGZcb{}}
+        \PYG{k}{public} \PYG{k+kt}{int} \PYG{n}{YearOfProduction} \PYG{p}{\PYGZob{}} \PYG{k}{get}\PYG{p}{;} \PYG{k}{set}\PYG{p}{;} \PYG{p}{\PYGZcb{}}
+        \PYG{k}{public} \PYG{k+kt}{int} \PYG{n}{MonthOfProduction} \PYG{p}{\PYGZob{}} \PYG{k}{get}\PYG{p}{;} \PYG{k}{set}\PYG{p}{;} \PYG{p}{\PYGZcb{}}
+        \PYG{k}{public} \PYG{n}{DateTime} \PYG{n}{TechnicalInspection} \PYG{p}{\PYGZob{}} \PYG{k}{get}\PYG{p}{;} \PYG{k}{set}\PYG{p}{;} \PYG{p}{\PYGZcb{}}
+        \PYG{k}{public} \PYG{k+kt}{string} \PYG{n}{Fuel} \PYG{p}{\PYGZob{}} \PYG{k}{get}\PYG{p}{;} \PYG{k}{set}\PYG{p}{;} \PYG{p}{\PYGZcb{}}
+        \PYG{k}{public} \PYG{k+kt}{double} \PYG{n}{AverageFuelConsumption} \PYG{p}{\PYGZob{}} \PYG{k}{get}\PYG{p}{;} \PYG{k}{set}\PYG{p}{;} \PYG{p}{\PYGZcb{}}
+        \PYG{k}{public} \PYG{k+kt}{string} \PYG{n}{City} \PYG{p}{\PYGZob{}} \PYG{k}{get}\PYG{p}{;} \PYG{k}{set}\PYG{p}{;} \PYG{p}{\PYGZcb{}}
+        \PYG{k}{public} \PYG{k+kt}{string} \PYG{n}{Address} \PYG{p}{\PYGZob{}} \PYG{k}{get}\PYG{p}{;} \PYG{k}{set}\PYG{p}{;} \PYG{p}{\PYGZcb{}}
+        \PYG{k}{public} \PYG{k+kt}{string} \PYG{n}{PhoneNum} \PYG{p}{\PYGZob{}} \PYG{k}{get}\PYG{p}{;} \PYG{k}{set}\PYG{p}{;} \PYG{p}{\PYGZcb{}}
+        \PYG{k}{public} \PYG{n+nf}{Vehicle}\PYG{p}{(}\PYG{k+kt}{string} \PYG{n}{licensePlate}\PYG{p}{,} \PYG{k+kt}{string} \PYG{n}{producer}\PYG{p}{,} \PYG{k+kt}{string} \PYG{n}{model}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{yearOfProduction}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{monthOfProduction}\PYG{p}{,}
+                        \PYG{n}{DateTime} \PYG{n}{technicalInspection}\PYG{p}{,} \PYG{k+kt}{string} \PYG{n}{fuel}\PYG{p}{,} \PYG{k+kt}{double} \PYG{n}{averageFuelConsumption}\PYG{p}{,} 
+                        \PYG{k+kt}{string} \PYG{n}{city}\PYG{p}{,} \PYG{k+kt}{string} \PYG{n}{address}\PYG{p}{,} \PYG{k+kt}{string} \PYG{n}{phoneNum}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{LicensePlate} \PYG{p}{=} \PYG{n}{licensePlate}\PYG{p}{;}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{Producer} \PYG{p}{=} \PYG{n}{producer}\PYG{p}{;}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{Model} \PYG{p}{=} \PYG{n}{model}\PYG{p}{;}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{YearOfProduction} \PYG{p}{=} \PYG{n}{yearOfProduction}\PYG{p}{;}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{MonthOfProduction} \PYG{p}{=} \PYG{n}{monthOfProduction}\PYG{p}{;}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{TechnicalInspection} \PYG{p}{=} \PYG{n}{technicalInspection}\PYG{p}{;}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{Fuel} \PYG{p}{=} \PYG{n}{fuel}\PYG{p}{;}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{AverageFuelConsumption} \PYG{p}{=} \PYG{n}{averageFuelConsumption}\PYG{p}{;}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{City} \PYG{p}{=} \PYG{n}{city}\PYG{p}{;}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{Address} \PYG{p}{=} \PYG{n}{address}\PYG{p}{;}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{PhoneNum} \PYG{p}{=} \PYG{n}{phoneNum}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// Used for finding the age of the vehicles}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{k}{public} \PYG{k+kt}{int} \PYG{n}{Age}
+        \PYG{p}{\PYGZob{}}
+            \PYG{k}{get}
+            \PYG{p}{\PYGZob{}}
+                \PYG{k+kt}{int} \PYG{n}{age} \PYG{p}{=} \PYG{n}{DateTime}\PYG{p}{.}\PYG{n}{Today}\PYG{p}{.}\PYG{n}{Year} \PYG{p}{*} \PYG{l+m}{12} \PYG{p}{+} \PYG{n}{DateTime}\PYG{p}{.}\PYG{n}{Today}\PYG{p}{.}\PYG{n}{Month} \PYG{p}{\PYGZhy{}} \PYG{k}{this}\PYG{p}{.}\PYG{n}{YearOfProduction} \PYG{p}{*} \PYG{l+m}{12} \PYG{p}{\PYGZhy{}} \PYG{k}{this}\PYG{p}{.}\PYG{n}{MonthOfProduction}\PYG{p}{;}
+                \PYG{k}{return} \PYG{n}{age}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+        \PYG{p}{\PYGZcb{}}
+        \PYG{k}{public} \PYG{k}{override} \PYG{k+kt}{bool} \PYG{n+nf}{Equals}\PYG{p}{(}\PYG{k+kt}{object} \PYG{n}{other}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{n}{Vehicle} \PYG{n}{vehicle} \PYG{p}{=} \PYG{n}{other} \PYG{k}{as} \PYG{n}{Vehicle}\PYG{p}{;}
+            \PYG{k}{return} \PYG{k}{this}\PYG{p}{.}\PYG{n}{LicensePlate} \PYG{p}{==} \PYG{n}{vehicle}\PYG{p}{.}\PYG{n}{LicensePlate}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+        \PYG{k}{public} \PYG{k}{override} \PYG{k+kt}{int} \PYG{n+nf}{GetHashCode}\PYG{p}{()}
+        \PYG{p}{\PYGZob{}}
+            \PYG{k}{return} \PYG{k}{this}\PYG{p}{.}\PYG{n}{LicensePlate}\PYG{p}{.}\PYG{n}{GetHashCode}\PYG{p}{();}
+        \PYG{p}{\PYGZcb{}}
+        \PYG{k}{public} \PYG{k}{static} \PYG{k+kt}{bool} \PYG{k}{operator} \PYG{p}{\PYGZgt{}(}\PYG{n}{Vehicle} \PYG{n}{vehicle1}\PYG{p}{,} \PYG{n}{Vehicle} \PYG{n}{vehicle2}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+            \PYG{k}{return} \PYG{n}{vehicle1}\PYG{p}{.}\PYG{n}{Age} \PYG{p}{\PYGZgt{}} \PYG{n}{vehicle2}\PYG{p}{.}\PYG{n}{Age}\PYG{p}{;}
+                \PYG{p}{\PYGZcb{}}
+        \PYG{k}{public} \PYG{k}{static} \PYG{k+kt}{bool} \PYG{k}{operator} \PYG{p}{\PYGZlt{}(}\PYG{n}{Vehicle} \PYG{n}{vehicle1}\PYG{p}{,} \PYG{n}{Vehicle} \PYG{n}{vehicle2}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+            \PYG{k}{return} \PYG{n}{vehicle1}\PYG{p}{.}\PYG{n}{Age} \PYG{p}{\PYGZlt{}} \PYG{n}{vehicle2}\PYG{p}{.}\PYG{n}{Age}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+
+
+\PYG{c+c1}{//Producer.cs}
+
+\PYG{k}{namespace} \PYG{n+nn}{L3}
+\PYG{p}{\PYGZob{}}
+    \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+    \PYG{c+c1}{/// class defining list variables}
+    \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+    \PYG{k}{public} \PYG{k}{class} \PYG{n+nc}{Producer}
+    \PYG{p}{\PYGZob{}}
+        \PYG{k}{public} \PYG{k+kt}{string} \PYG{n}{ProducerName} \PYG{p}{\PYGZob{}} \PYG{k}{get}\PYG{p}{;} \PYG{k}{set}\PYG{p}{;} \PYG{p}{\PYGZcb{}}
+        \PYG{k}{public} \PYG{k+kt}{int} \PYG{n}{NumberOfVehicles} \PYG{p}{\PYGZob{}} \PYG{k}{get}\PYG{p}{;} \PYG{k}{set}\PYG{p}{;} \PYG{p}{\PYGZcb{}}
+        \PYG{k}{public} \PYG{n+nf}{Producer}\PYG{p}{(}\PYG{k+kt}{string} \PYG{n}{producer}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{numberOfVehicles}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{ProducerName} \PYG{p}{=} \PYG{n}{producer}\PYG{p}{;}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{NumberOfVehicles} \PYG{p}{=} \PYG{n}{numberOfVehicles}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+
+
+\PYG{c+c1}{// VehicleContainer.cs}
+\PYG{k}{using} \PYG{n+nn}{System}\PYG{p}{;}
+\PYG{k}{using} \PYG{n+nn}{System.Collections.Generic}\PYG{p}{;}
+\PYG{k}{using} \PYG{n+nn}{System.IO}\PYG{p}{;}
+\PYG{k}{using} \PYG{n+nn}{System.Text}\PYG{p}{;}
+
+\PYG{k}{namespace} \PYG{n+nn}{L3}
+\PYG{p}{\PYGZob{}}
+
+    \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+    \PYG{c+c1}{/// a class that stores all vehicles}
+    \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+    \PYG{k}{class} \PYG{n+nc}{VehicleContainer}
+    \PYG{p}{\PYGZob{}}
+        \PYG{k}{private} \PYG{n}{Vehicle}\PYG{p}{[]} \PYG{n}{vehicles}\PYG{p}{;}
+        \PYG{k}{public} \PYG{k+kt}{int} \PYG{n}{Count} \PYG{p}{\PYGZob{}} \PYG{k}{get}\PYG{p}{;} \PYG{k}{private} \PYG{k}{set}\PYG{p}{;} \PYG{p}{\PYGZcb{}}
+
+        \PYG{k}{public} \PYG{n+nf}{VehicleContainer}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{capacity} \PYG{p}{=} \PYG{l+m}{50}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{Count} \PYG{p}{=} \PYG{l+m}{0}\PYG{p}{;}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{vehicles} \PYG{p}{=} \PYG{k}{new} \PYG{n}{Vehicle}\PYG{p}{[}\PYG{n}{capacity}\PYG{p}{];}
+        \PYG{p}{\PYGZcb{}}
+
+
+
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// a method to add a value to this container}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}vehicle\PYGZdq{}\PYGZgt{}the object to add to this container\PYGZlt{}/param\PYGZgt{}}
+        \PYG{k}{public} \PYG{k}{void} \PYG{n+nf}{Add}\PYG{p}{(}\PYG{n}{Vehicle} \PYG{n}{vehicle}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{vehicles}\PYG{p}{[}\PYG{k}{this}\PYG{p}{.}\PYG{n}{Count}\PYG{p}{]} \PYG{p}{=} \PYG{n}{vehicle}\PYG{p}{;}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{Count}\PYG{p}{++;}
+        \PYG{p}{\PYGZcb{}}
+
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// A method to retreive a value from this container}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}index\PYGZdq{}\PYGZgt{}an integer that contains the location of the item to retreive\PYGZlt{}/param\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}returns\PYGZgt{}a Vehicle object\PYGZlt{}/returns\PYGZgt{}}
+        \PYG{k}{public} \PYG{n}{Vehicle} \PYG{n+nf}{Get}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{index}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{k}{return} \PYG{k}{this}\PYG{p}{.}\PYG{n}{vehicles}\PYG{p}{[}\PYG{n}{index}\PYG{p}{];}
+        \PYG{p}{\PYGZcb{}}
+
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// An indexer to allow to use this container with the [] operator.}
+        \PYG{c+c1}{/// Implemented because it would require me less work to implement }
+        \PYG{c+c1}{/// the use of this container in the VehiclesRegister class.}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{k}{public} \PYG{n}{Vehicle} \PYG{k}{this}\PYG{p}{[}\PYG{k+kt}{int} \PYG{n}{index}\PYG{p}{]}
+        \PYG{p}{\PYGZob{}}
+            \PYG{k}{get} \PYG{p}{\PYGZob{}} \PYG{k}{return} \PYG{k}{this}\PYG{p}{.}\PYG{n}{vehicles}\PYG{p}{[}\PYG{n}{index}\PYG{p}{];} \PYG{p}{\PYGZcb{}}
+            \PYG{k}{set} \PYG{p}{\PYGZob{}} \PYG{k}{this}\PYG{p}{.}\PYG{n}{vehicles}\PYG{p}{[}\PYG{n}{index}\PYG{p}{]} \PYG{p}{=} \PYG{k}{value}\PYG{p}{;} \PYG{p}{\PYGZcb{}}
+        \PYG{p}{\PYGZcb{}}
+
+
+        \PYG{k}{public} \PYG{k}{void} \PYG{n+nf}{Insert}\PYG{p}{(}\PYG{n}{Vehicle} \PYG{n}{vehicle}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{index}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+
+            \PYG{k}{if} \PYG{p}{(}\PYG{n}{index} \PYG{p}{\PYGZgt{}} \PYG{k}{this}\PYG{p}{.}\PYG{n}{Count}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+                \PYG{k}{this}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{vehicle}\PYG{p}{);}
+                \PYG{k}{return}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{Count}\PYG{p}{++;}
+
+            \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{=} \PYG{k}{this}\PYG{p}{.}\PYG{n}{Count}\PYG{p}{;} \PYG{n}{i} \PYG{p}{\PYGZgt{}} \PYG{n}{index}\PYG{p}{;} \PYG{n}{i}\PYG{p}{\PYGZhy{}\PYGZhy{})}
+            \PYG{p}{\PYGZob{}}
+                \PYG{k}{this}\PYG{p}{.}\PYG{n}{vehicles}\PYG{p}{[}\PYG{n}{i}\PYG{p}{\PYGZhy{}}\PYG{l+m}{1}\PYG{p}{]} \PYG{p}{=} \PYG{k}{this}\PYG{p}{.}\PYG{n}{vehicles}\PYG{p}{[}\PYG{n}{i}\PYG{p}{];}
+            \PYG{p}{\PYGZcb{}}
+
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{vehicles}\PYG{p}{[}\PYG{n}{index}\PYG{p}{]} \PYG{p}{=} \PYG{n}{vehicle}\PYG{p}{;}
+
+        \PYG{p}{\PYGZcb{}}
+
+
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// A method to remove a value from this container}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}vehicle\PYGZdq{}\PYGZgt{}the object to remove\PYGZlt{}/param\PYGZgt{}}
+        \PYG{k}{public} \PYG{k}{void} \PYG{n+nf}{Remove}\PYG{p}{(}\PYG{n}{Vehicle} \PYG{n}{vehicle}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{=} \PYG{l+m}{0}\PYG{p}{;} \PYG{n}{i} \PYG{p}{\PYGZlt{}} \PYG{k}{this}\PYG{p}{.}\PYG{n}{Count}\PYG{p}{;} \PYG{n}{i}\PYG{p}{++)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{k}{if} \PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n}{vehicles}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{p}{==} \PYG{n}{vehicle}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{k}{this}\PYG{p}{.}\PYG{n}{Count} \PYG{p}{\PYGZhy{}=} \PYG{l+m}{1}\PYG{p}{;}
+                    \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{j} \PYG{p}{=} \PYG{n}{i}\PYG{p}{;} \PYG{n}{j} \PYG{p}{\PYGZlt{}} \PYG{k}{this}\PYG{p}{.}\PYG{n}{Count}\PYG{p}{;} \PYG{n}{j}\PYG{p}{++)}
+                    \PYG{p}{\PYGZob{}}
+                        \PYG{k}{this}\PYG{p}{.}\PYG{n}{vehicles}\PYG{p}{[}\PYG{n}{j}\PYG{p}{]} \PYG{p}{=} \PYG{k}{this}\PYG{p}{.}\PYG{n}{vehicles}\PYG{p}{[}\PYG{n}{j}\PYG{p}{+}\PYG{l+m}{1}\PYG{p}{];}
+                    \PYG{p}{\PYGZcb{}}
+                    \PYG{k}{break}\PYG{p}{;}
+                \PYG{p}{\PYGZcb{}}
+            \PYG{p}{\PYGZcb{}}
+        \PYG{p}{\PYGZcb{}}
+
+
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// A method to remove a value at a specific index from this container}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}index\PYGZdq{}\PYGZgt{}the index at which the value to be removed is located\PYGZlt{}/param\PYGZgt{}}
+        \PYG{k}{public} \PYG{k}{void} \PYG{n+nf}{RemoveAt}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{index}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{Count} \PYG{p}{\PYGZhy{}=} \PYG{l+m}{1}\PYG{p}{;}
+            \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{=} \PYG{n}{index}\PYG{p}{;} \PYG{n}{i} \PYG{p}{\PYGZlt{}} \PYG{k}{this}\PYG{p}{.}\PYG{n}{Count}\PYG{p}{;} \PYG{n}{i}\PYG{p}{++)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{k}{this}\PYG{p}{.}\PYG{n}{vehicles}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{p}{=} \PYG{k}{this}\PYG{p}{.}\PYG{n}{vehicles}\PYG{p}{[}\PYG{n}{i}\PYG{p}{+}\PYG{l+m}{1}\PYG{p}{];}
+            \PYG{p}{\PYGZcb{}}
+        \PYG{p}{\PYGZcb{}}
+
+
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// a method to determine if the container contains a given object}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}vehicle\PYGZdq{}\PYGZgt{}a Vehicle object\PYGZlt{}/param\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}returns\PYGZgt{}a boolean value\PYGZlt{}/returns\PYGZgt{}}
+        \PYG{k}{public} \PYG{k+kt}{bool} \PYG{n+nf}{Contains}\PYG{p}{(}\PYG{n}{Vehicle} \PYG{n}{vehicle}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+
+            \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{=} \PYG{l+m}{0}\PYG{p}{;} \PYG{n}{i} \PYG{p}{\PYGZlt{}} \PYG{k}{this}\PYG{p}{.}\PYG{n}{Count}\PYG{p}{;} \PYG{n}{i}\PYG{p}{++)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{k}{if} \PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n}{vehicles}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{p}{==} \PYG{n}{vehicle}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{k}{return} \PYG{k}{true}\PYG{p}{;}
+                \PYG{p}{\PYGZcb{}}
+            \PYG{p}{\PYGZcb{}}
+
+            \PYG{k}{return} \PYG{k}{false}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+
+
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// A delegate method to specify how should the sorting in Sort be performed.}
+        \PYG{c+c1}{/// Using a delegate as part of the Sort function allows for arbitrary possibilities when sorting}
+        \PYG{c+c1}{/// and does not force the programmer to overload the top level methods of their custom class to do only one specific function}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}left\PYGZdq{}\PYGZgt{}the left Vehicle to compare\PYGZlt{}/param\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}right\PYGZdq{}\PYGZgt{}the right Vehicle to compare\PYGZlt{}/param\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}returns\PYGZgt{}1 if left is the \PYGZsq{}bigger\PYGZsq{} object, \PYGZhy{}1 if right is the \PYGZsq{}bigger\PYGZsq{} object, 0 if they\PYGZsq{}re equal\PYGZlt{}/returns\PYGZgt{}}
+        \PYG{k}{public} \PYG{k}{delegate} \PYG{k+kt}{int} \PYG{n+nf}{SortingDelegate}\PYG{p}{(}\PYG{n}{Vehicle} \PYG{n}{left}\PYG{p}{,} \PYG{n}{Vehicle} \PYG{n}{right}\PYG{p}{);}
+
+
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// the sorting function that uses a delegate}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}sortingDel\PYGZdq{}\PYGZgt{}A delegate method by which to sort\PYGZlt{}/param\PYGZgt{}}
+        \PYG{k}{public} \PYG{k}{void} \PYG{n+nf}{SortWithDelegate}\PYG{p}{(}\PYG{n}{SortingDelegate} \PYG{n}{sortingDel}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{k+kt}{bool} \PYG{n}{flag} \PYG{p}{=} \PYG{k}{true}\PYG{p}{;}
+
+            \PYG{k}{while} \PYG{p}{(}\PYG{n}{flag}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+
+                \PYG{n}{flag} \PYG{p}{=} \PYG{k}{false}\PYG{p}{;}
+
+                \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{=} \PYG{l+m}{0}\PYG{p}{;} \PYG{n}{i} \PYG{p}{\PYGZlt{}} \PYG{k}{this}\PYG{p}{.}\PYG{n}{Count}\PYG{p}{\PYGZhy{}}\PYG{l+m}{1}\PYG{p}{;} \PYG{n}{i}\PYG{p}{++)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{n}{Vehicle} \PYG{n}{left} \PYG{p}{=} \PYG{k}{this}\PYG{p}{.}\PYG{n}{vehicles}\PYG{p}{[}\PYG{n}{i}\PYG{p}{];}
+                    \PYG{n}{Vehicle} \PYG{n}{right} \PYG{p}{=} \PYG{k}{this}\PYG{p}{.}\PYG{n}{vehicles}\PYG{p}{[}\PYG{n}{i}\PYG{p}{+}\PYG{l+m}{1}\PYG{p}{];}
+
+                    \PYG{k}{if} \PYG{p}{(}\PYG{n}{sortingDel}\PYG{p}{(}\PYG{n}{left}\PYG{p}{,}\PYG{n}{right}\PYG{p}{)} \PYG{p}{\PYGZgt{}} \PYG{l+m}{0}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+                        \PYG{k}{this}\PYG{p}{.}\PYG{n}{vehicles}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{p}{=} \PYG{n}{right}\PYG{p}{;}
+                        \PYG{k}{this}\PYG{p}{.}\PYG{n}{vehicles}\PYG{p}{[}\PYG{n}{i}\PYG{p}{+}\PYG{l+m}{1}\PYG{p}{]} \PYG{p}{=} \PYG{n}{left}\PYG{p}{;}
+                        \PYG{n}{flag} \PYG{p}{=} \PYG{k}{true}\PYG{p}{;}
+                    \PYG{p}{\PYGZcb{}}
+                \PYG{p}{\PYGZcb{}}
+            \PYG{p}{\PYGZcb{}}
+        \PYG{p}{\PYGZcb{}}
+
+    \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+
+
+\PYG{c+c1}{//InOutUtils.cs}
+\PYG{k}{using} \PYG{n+nn}{System}\PYG{p}{;}
+\PYG{k}{using} \PYG{n+nn}{System.IO}\PYG{p}{;}
+\PYG{k}{using} \PYG{n+nn}{System.Collections.Generic}\PYG{p}{;}
+\PYG{k}{using} \PYG{n+nn}{System.Text}\PYG{p}{;}
+
+\PYG{k}{namespace} \PYG{n+nn}{L3}
+\PYG{p}{\PYGZob{}}
+    \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+    \PYG{c+c1}{/// Class containing reading and priniting methods}
+    \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+    \PYG{k}{static} \PYG{k}{class} \PYG{n+nc}{InOutUtils}
+    \PYG{p}{\PYGZob{}}
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// the method that reads the data from a file}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}fileName\PYGZdq{}\PYGZgt{} input filename \PYGZlt{}/param\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}returns\PYGZgt{}a vehicleRegister\PYGZlt{}/returns\PYGZgt{}}
+        \PYG{k}{public} \PYG{k}{static} \PYG{n}{VehiclesRegister} \PYG{n+nf}{ReadVehicles}\PYG{p}{(}\PYG{k+kt}{string} \PYG{n}{fileName}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+
+            \PYG{k+kt}{string}\PYG{p}{[]} \PYG{n}{lines} \PYG{p}{=} \PYG{k}{new} \PYG{k+kt}{string}\PYG{p}{[}\PYG{l+m}{150}\PYG{p}{];}
+
+            \PYG{n}{VehiclesRegister} \PYG{n}{output} \PYG{p}{=} \PYG{k}{new} \PYG{n}{VehiclesRegister}\PYG{p}{();}
+
+            \PYG{c+c1}{// file error handling}
+            \PYG{k}{if} \PYG{p}{(}\PYG{n}{System}\PYG{p}{.}\PYG{n}{IO}\PYG{p}{.}\PYG{n}{File}\PYG{p}{.}\PYG{n}{Exists}\PYG{p}{(}\PYG{n}{fileName}\PYG{p}{))}
+            \PYG{p}{\PYGZob{}}
+                \PYG{n}{lines} \PYG{p}{=} \PYG{n}{File}\PYG{p}{.}\PYG{n}{ReadAllLines}\PYG{p}{(}\PYG{n}{fileName}\PYG{p}{,} \PYG{n}{Encoding}\PYG{p}{.}\PYG{n}{UTF8}\PYG{p}{);}
+            \PYG{p}{\PYGZcb{}}
+            \PYG{k}{else}
+            \PYG{p}{\PYGZob{}}
+                \PYG{n}{Console}\PYG{p}{.}\PYG{n}{WriteLine}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Failas nerastas. Programa negali veikti.\PYGZdq{}}\PYG{p}{);}
+                \PYG{n}{System}\PYG{p}{.}\PYG{n}{Environment}\PYG{p}{.}\PYG{n}{Exit}\PYG{p}{(}\PYG{l+m}{1}\PYG{p}{);} \PYG{c+c1}{// exit code 1 means that the program did not run successfuly}
+            \PYG{p}{\PYGZcb{}}
+
+            \PYG{k}{if} \PYG{p}{(}\PYG{n}{lines}\PYG{p}{.}\PYG{n}{Length} \PYG{p}{\PYGZlt{}=} \PYG{l+m}{0}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{n}{Console}\PYG{p}{.}\PYG{n}{WriteLine}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Pateiktas tuščias failas. Programa negali veikti.\PYGZdq{}}\PYG{p}{);}
+                \PYG{n}{System}\PYG{p}{.}\PYG{n}{Environment}\PYG{p}{.}\PYG{n}{Exit}\PYG{p}{(}\PYG{l+m}{1}\PYG{p}{);} \PYG{c+c1}{// exit code 1 means that the program did not run successfuly}
+            \PYG{p}{\PYGZcb{}}
+
+            \PYG{k+kt}{string} \PYG{n}{city} \PYG{p}{=} \PYG{n}{lines}\PYG{p}{[}\PYG{l+m}{0}\PYG{p}{];}
+            \PYG{k+kt}{string} \PYG{n}{address} \PYG{p}{=} \PYG{n}{lines}\PYG{p}{[}\PYG{l+m}{1}\PYG{p}{];}
+            \PYG{k+kt}{string} \PYG{n}{phoneNum} \PYG{p}{=} \PYG{n}{lines}\PYG{p}{[}\PYG{l+m}{2}\PYG{p}{];}
+
+            \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{=} \PYG{l+m}{3}\PYG{p}{;} \PYG{n}{i} \PYG{p}{\PYGZlt{}} \PYG{n}{lines}\PYG{p}{.}\PYG{n}{Length}\PYG{p}{;} \PYG{n}{i}\PYG{p}{++)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{k+kt}{string} \PYG{n}{line} \PYG{p}{=} \PYG{n}{lines}\PYG{p}{[}\PYG{n}{i}\PYG{p}{];}
+
+                \PYG{c+c1}{// basic support for comments}
+                \PYG{c+c1}{// if a line in the input file starts with}
+                \PYG{c+c1}{// \PYGZsq{}//\PYGZsq{}, then ignore the line and move on}
+                \PYG{k}{if} \PYG{p}{(}\PYG{n}{line}\PYG{p}{.}\PYG{n}{StartsWith}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}//\PYGZdq{}}\PYG{p}{))}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{k}{continue}\PYG{p}{;}
+                \PYG{p}{\PYGZcb{}}
+
+                \PYG{k+kt}{string}\PYG{p}{[]} \PYG{n}{values} \PYG{p}{=} \PYG{n}{line}\PYG{p}{.}\PYG{n}{Split}\PYG{p}{(}\PYG{l+s+sc}{\PYGZsq{};\PYGZsq{}}\PYG{p}{);}
+
+                \PYG{n}{Vehicle} \PYG{n}{vehicleToAdd} \PYG{p}{=} \PYG{k}{new} \PYG{n}{Vehicle}\PYG{p}{(}
+                    \PYG{n}{values}\PYG{p}{[}\PYG{l+m}{0}\PYG{p}{],}
+                    \PYG{n}{values}\PYG{p}{[}\PYG{l+m}{1}\PYG{p}{],}
+                    \PYG{n}{values}\PYG{p}{[}\PYG{l+m}{2}\PYG{p}{],}
+                    \PYG{k+kt}{int}\PYG{p}{.}\PYG{n}{Parse}\PYG{p}{(}\PYG{n}{values}\PYG{p}{[}\PYG{l+m}{3}\PYG{p}{]),}
+                    \PYG{k+kt}{int}\PYG{p}{.}\PYG{n}{Parse}\PYG{p}{(}\PYG{n}{values}\PYG{p}{[}\PYG{l+m}{4}\PYG{p}{]),} 
+                    \PYG{n}{DateTime}\PYG{p}{.}\PYG{n}{Parse}\PYG{p}{(}\PYG{n}{values}\PYG{p}{[}\PYG{l+m}{5}\PYG{p}{]),}
+                    \PYG{n}{values}\PYG{p}{[}\PYG{l+m}{6}\PYG{p}{],}
+                    \PYG{k+kt}{double}\PYG{p}{.}\PYG{n}{Parse}\PYG{p}{(}\PYG{n}{values}\PYG{p}{[}\PYG{l+m}{7}\PYG{p}{]),}
+                    \PYG{n}{city}\PYG{p}{,}
+                    \PYG{n}{address}\PYG{p}{,}
+                    \PYG{n}{phoneNum}
+                \PYG{p}{);}
+
+                \PYG{n}{output}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{vehicleToAdd}\PYG{p}{);}
+            \PYG{p}{\PYGZcb{}}
+
+            \PYG{k}{return} \PYG{n}{output}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+
+        \PYG{k}{public} \PYG{k}{static} \PYG{k}{void} \PYG{n+nf}{PrintVehiclesByProducer}\PYG{p}{(}\PYG{n}{VehiclesRegister} \PYG{n}{register}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{String}\PYG{p}{\PYGZgt{}} \PYG{n}{output} \PYG{p}{=} \PYG{n}{CreateVehiclesByProducerTable}\PYG{p}{(}\PYG{n}{register}\PYG{p}{);}
+            \PYG{n}{Console}\PYG{p}{.}\PYG{n}{WriteLine}\PYG{p}{(}\PYG{n}{String}\PYG{p}{.}\PYG{n}{Join}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}\PYGZbs{}n\PYGZdq{}}\PYG{p}{,} \PYG{n}{output}\PYG{p}{));}
+        \PYG{p}{\PYGZcb{}}
+
+
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// Method prints the most common producer(s)}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}allVehicles\PYGZdq{}\PYGZgt{}\PYGZlt{}/param\PYGZgt{}}
+        \PYG{k}{public} \PYG{k}{static} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{String}\PYG{p}{\PYGZgt{}} \PYG{n}{CreateVehiclesByProducerTable}\PYG{p}{(}\PYG{n}{VehiclesRegister} \PYG{n}{register}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+
+            \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{k+kt}{int}\PYG{p}{\PYGZgt{}} \PYG{n}{tableSpacing} \PYG{p}{=} \PYG{k}{new} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{k+kt}{int}\PYG{p}{\PYGZgt{}} \PYG{p}{\PYGZob{}}\PYG{l+m}{16}\PYG{p}{,} \PYG{l+m}{18}\PYG{p}{\PYGZcb{};}
+
+            \PYG{k+kt}{string} \PYG{n}{topstr} \PYG{p}{=} \PYG{n}{CreateIndexedTableLine}\PYG{p}{(}\PYG{n}{tableSpacing}\PYG{p}{,} \PYG{l+m}{2}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}┌\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}┬\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}┐\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}─\PYGZsq{}}\PYG{p}{);}
+            \PYG{k+kt}{string} \PYG{n}{midstr} \PYG{p}{=} \PYG{n}{CreateIndexedTableLine}\PYG{p}{(}\PYG{n}{tableSpacing}\PYG{p}{,} \PYG{l+m}{2}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}├\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}┼\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}┤\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}─\PYGZsq{}}\PYG{p}{);}
+            \PYG{k+kt}{string} \PYG{n}{botstr} \PYG{p}{=} \PYG{n}{CreateIndexedTableLine}\PYG{p}{(}\PYG{n}{tableSpacing}\PYG{p}{,} \PYG{l+m}{2}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}└\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}┴\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}┘\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}─\PYGZsq{}}\PYG{p}{);}
+
+            \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{String}\PYG{p}{\PYGZgt{}} \PYG{n}{output} \PYG{p}{=} \PYG{k}{new} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{String}\PYG{p}{\PYGZgt{}();}
+
+            \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{k+kt}{string}\PYG{p}{\PYGZgt{}} \PYG{n}{producers} \PYG{p}{=} \PYG{n}{register}\PYG{p}{.}\PYG{n}{FindProducers}\PYG{p}{();}
+            \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Producer}\PYG{p}{\PYGZgt{}} \PYG{n}{filteredProducersWithNumberOfCars} \PYG{p}{=} \PYG{n}{register}\PYG{p}{.}\PYG{n}{ListOfStringsToProducerObjects}\PYG{p}{(}\PYG{n}{producers}\PYG{p}{);}
+            \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Producer}\PYG{p}{\PYGZgt{}} \PYG{n}{filteredProducers} \PYG{p}{=} \PYG{n}{register}\PYG{p}{.}\PYG{n}{CountVehiclesByProducers}\PYG{p}{(}\PYG{n}{filteredProducersWithNumberOfCars}\PYG{p}{);}
+            \PYG{k+kt}{int} \PYG{n}{HighestNumber} \PYG{p}{=} \PYG{n}{register}\PYG{p}{.}\PYG{n}{HighestNumber}\PYG{p}{(}\PYG{n}{filteredProducers}\PYG{p}{);}
+
+
+            \PYG{n}{output}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Daugiausiai automobilių turi: \PYGZdq{}}\PYG{p}{);}
+
+            \PYG{n}{output}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{topstr}\PYG{p}{);}
+
+            \PYG{n}{output}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{String}\PYG{p}{.}\PYG{n}{Format}\PYG{p}{(}
+                \PYG{l+s}{\PYGZdq{}│\PYGZob{}0,\PYGZhy{}16\PYGZcb{}│\PYGZob{}1,\PYGZhy{}18\PYGZcb{}│\PYGZdq{}}\PYG{p}{,}
+                \PYG{l+s}{\PYGZdq{}Gamintojas(\PYGZhy{}ai)\PYGZdq{}}\PYG{p}{,}
+                \PYG{l+s}{\PYGZdq{}Automobilių kiekis\PYGZdq{}}
+            \PYG{p}{));}
+
+            \PYG{n}{output}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{midstr}\PYG{p}{);}
+
+            \PYG{k}{foreach} \PYG{p}{(}\PYG{n}{Producer} \PYG{n}{producer} \PYG{k}{in} \PYG{n}{filteredProducers}\PYG{p}{)} \PYG{c+c1}{//searching producer with the most vehicles}
+            \PYG{p}{\PYGZob{}}
+                \PYG{k}{if} \PYG{p}{(}\PYG{n}{producer}\PYG{p}{.}\PYG{n}{NumberOfVehicles} \PYG{p}{==} \PYG{n}{HighestNumber}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{n}{output}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{String}\PYG{p}{.}\PYG{n}{Format}\PYG{p}{(}
+                        \PYG{l+s}{\PYGZdq{}│\PYGZob{}0,\PYGZhy{}16\PYGZcb{}│\PYGZob{}1,\PYGZhy{}18\PYGZcb{}│\PYGZdq{}}\PYG{p}{,}
+                        \PYG{n}{producer}\PYG{p}{.}\PYG{n}{ProducerName}\PYG{p}{,} 
+                        \PYG{n}{producer}\PYG{p}{.}\PYG{n}{NumberOfVehicles}
+                    \PYG{p}{));}
+                \PYG{p}{\PYGZcb{}}
+            \PYG{p}{\PYGZcb{}}
+
+            \PYG{n}{output}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{botstr}\PYG{p}{);}
+
+            \PYG{k}{return} \PYG{n}{output}\PYG{p}{;}
+
+        \PYG{p}{\PYGZcb{}}
+
+
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// Outputs a list of vehicles to the console}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}Vehicles\PYGZdq{}\PYGZgt{}a list of vehicles\PYGZlt{}/param\PYGZgt{}}
+        \PYG{k}{public} \PYG{k}{static} \PYG{k}{void} \PYG{n+nf}{PrintVehicles}\PYG{p}{(}\PYG{n}{VehicleContainer} \PYG{n}{vehicles}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{String}\PYG{p}{\PYGZgt{}} \PYG{n}{output} \PYG{p}{=} \PYG{n}{CreateVehicleTable}\PYG{p}{(}\PYG{n}{vehicles}\PYG{p}{);}
+            \PYG{n}{Console}\PYG{p}{.}\PYG{n}{WriteLine}\PYG{p}{(}\PYG{n}{String}\PYG{p}{.}\PYG{n}{Join}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}\PYGZbs{}n\PYGZdq{}}\PYG{p}{,} \PYG{n}{output}\PYG{p}{));}
+        \PYG{p}{\PYGZcb{}}
+
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// Outputs a list of vehicles to a text file}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}fileName\PYGZdq{}\PYGZgt{}the name of the text file to which to output\PYGZlt{}/param\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}vehicles\PYGZdq{}\PYGZgt{}a list of vehicles\PYGZlt{}/param\PYGZgt{}}
+        \PYG{k}{public} \PYG{k}{static} \PYG{k}{void} \PYG{n+nf}{PrintVehiclesToText}\PYG{p}{(}\PYG{k+kt}{string} \PYG{n}{fileName}\PYG{p}{,} \PYG{n}{VehicleContainer} \PYG{n}{vehicles}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{String}\PYG{p}{\PYGZgt{}} \PYG{n}{output} \PYG{p}{=} \PYG{n}{CreateVehicleTable}\PYG{p}{(}\PYG{n}{vehicles}\PYG{p}{);}
+            \PYG{n}{File}\PYG{p}{.}\PYG{n}{WriteAllLines}\PYG{p}{(}\PYG{n}{fileName}\PYG{p}{,} \PYG{n}{output}\PYG{p}{.}\PYG{n}{ToArray}\PYG{p}{(),} \PYG{n}{Encoding}\PYG{p}{.}\PYG{n}{UTF8}\PYG{p}{);}
+        \PYG{p}{\PYGZcb{}}
+
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{///  a simple method to assist in creating text character based tables}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}spacing\PYGZdq{}\PYGZgt{}a list of ints which defines the amount of \PYGZlt{}paramref name=\PYGZdq{}line\PYGZdq{}/\PYGZgt{} chars to put in between any of the other chars\PYGZlt{}/param\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}columnCount\PYGZdq{}\PYGZgt{}the amount of columns in the\PYGZlt{}/param\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}leftEdge\PYGZdq{}\PYGZgt{}the char used at the left edge of the table\PYGZlt{}/param\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}middleEdge\PYGZdq{}\PYGZgt{}the char used inbetween lines\PYGZlt{}/param\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}rightEdge\PYGZdq{}\PYGZgt{}the char used at the right edge or end of the line\PYGZlt{}/param\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}line\PYGZdq{}\PYGZgt{}the char used inbetween any and all other chars\PYGZlt{}/param\PYGZgt{}}
+        \PYG{k}{private} \PYG{k}{static} \PYG{k+kt}{string} \PYG{n+nf}{CreateIndexedTableLine}\PYG{p}{(}\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{k+kt}{int}\PYG{p}{\PYGZgt{}} \PYG{n}{spacing}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{columnCount}\PYG{p}{,} \PYG{k+kt}{char} \PYG{n}{leftEdge}\PYG{p}{,} \PYG{k+kt}{char} \PYG{n}{middleEdge}\PYG{p}{,} \PYG{k+kt}{char} \PYG{n}{rightEdge}\PYG{p}{,} \PYG{k+kt}{char} \PYG{n}{line}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+
+            \PYG{k+kt}{string} \PYG{n}{output} \PYG{p}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}
+
+            \PYG{n}{output} \PYG{p}{+=} \PYG{n}{leftEdge}\PYG{p}{;}
+
+            \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{=} \PYG{l+m}{0}\PYG{p}{;} \PYG{n}{i} \PYG{p}{\PYGZlt{}} \PYG{n}{columnCount}\PYG{p}{;} \PYG{n}{i}\PYG{p}{++)} \PYG{p}{\PYGZob{}}
+
+                \PYG{n}{output} \PYG{p}{+=} \PYG{k}{new} \PYG{k+kt}{string}\PYG{p}{(}\PYG{n}{line}\PYG{p}{,} \PYG{n}{spacing}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]);}
+
+                \PYG{k}{if} \PYG{p}{(}\PYG{n}{i} \PYG{p}{==} \PYG{n}{columnCount} \PYG{p}{\PYGZhy{}} \PYG{l+m}{1}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{n}{output} \PYG{p}{+=} \PYG{n}{rightEdge}\PYG{p}{;}
+                \PYG{p}{\PYGZcb{}}
+                \PYG{k}{else}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{n}{output} \PYG{p}{+=} \PYG{n}{middleEdge}\PYG{p}{;}
+                \PYG{p}{\PYGZcb{}}
+            \PYG{p}{\PYGZcb{}}
+
+            \PYG{k}{return} \PYG{n}{output}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// creates a string\PYGZhy{}based table of vehicles,}
+        \PYG{c+c1}{/// used in both console output and text output}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}returns\PYGZgt{}list of strings\PYGZlt{}/returns\PYGZgt{}}
+        \PYG{k}{private} \PYG{k}{static} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{String}\PYG{p}{\PYGZgt{}} \PYG{n}{CreateVehicleTable}\PYG{p}{(}\PYG{n}{VehicleContainer} \PYG{n}{vehicles}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{String}\PYG{p}{\PYGZgt{}} \PYG{n}{output} \PYG{p}{=} \PYG{k}{new} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{String}\PYG{p}{\PYGZgt{}();}
+
+            \PYG{c+c1}{// the amount of empty characters given for every value in the table}
+            \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{k+kt}{int}\PYG{p}{\PYGZgt{}} \PYG{n}{tableSpacing} \PYG{p}{=} \PYG{k}{new} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{k+kt}{int}\PYG{p}{\PYGZgt{}} \PYG{p}{\PYGZob{}}\PYG{l+m}{7}\PYG{p}{,} \PYG{l+m}{12}\PYG{p}{,} \PYG{l+m}{8}\PYG{p}{,} \PYG{l+m}{5}\PYG{p}{,} \PYG{l+m}{4}\PYG{p}{,} \PYG{l+m}{15}\PYG{p}{,} \PYG{l+m}{10}\PYG{p}{,} \PYG{l+m}{12}\PYG{p}{\PYGZcb{};}
+
+            \PYG{k+kt}{string} \PYG{n}{topstr} \PYG{p}{=} \PYG{n}{CreateIndexedTableLine}\PYG{p}{(}\PYG{n}{tableSpacing}\PYG{p}{,} \PYG{l+m}{8}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}┌\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}┬\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}┐\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}─\PYGZsq{}}\PYG{p}{);}
+            \PYG{k+kt}{string} \PYG{n}{midstr} \PYG{p}{=} \PYG{n}{CreateIndexedTableLine}\PYG{p}{(}\PYG{n}{tableSpacing}\PYG{p}{,} \PYG{l+m}{8}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}├\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}┼\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}┤\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}─\PYGZsq{}}\PYG{p}{);}
+            \PYG{k+kt}{string} \PYG{n}{botstr} \PYG{p}{=} \PYG{n}{CreateIndexedTableLine}\PYG{p}{(}\PYG{n}{tableSpacing}\PYG{p}{,} \PYG{l+m}{8}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}└\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}┴\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}┘\PYGZsq{}}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{}─\PYGZsq{}}\PYG{p}{);}
+
+
+            \PYG{n}{output}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{topstr}\PYG{p}{);}
+
+            \PYG{n}{output}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{String}\PYG{p}{.}\PYG{n}{Format}\PYG{p}{(}
+                \PYG{l+s}{\PYGZdq{}│\PYGZob{}0,\PYGZhy{}7\PYGZcb{}│\PYGZob{}1,\PYGZhy{}12\PYGZcb{}│\PYGZob{}2,\PYGZhy{}8\PYGZcb{}│\PYGZob{}3,\PYGZhy{}5\PYGZcb{}│\PYGZob{}4,\PYGZhy{}4\PYGZcb{}│\PYGZob{}5,\PYGZhy{}15\PYGZcb{}│\PYGZob{}6,\PYGZhy{}10\PYGZcb{}│\PYGZob{}7,\PYGZhy{}12\PYGZcb{}│\PYGZdq{}}\PYG{p}{,}
+                \PYG{l+s}{\PYGZdq{}Val. ID\PYGZdq{}}\PYG{p}{,}
+                \PYG{l+s}{\PYGZdq{}Gamintojas\PYGZdq{}}\PYG{p}{,}
+                \PYG{l+s}{\PYGZdq{}Modelis\PYGZdq{}}\PYG{p}{,}
+                \PYG{l+s}{\PYGZdq{}Metai\PYGZdq{}}\PYG{p}{,}
+                \PYG{l+s}{\PYGZdq{}Mėn.\PYGZdq{}}\PYG{p}{,}
+                \PYG{l+s}{\PYGZdq{}T.A. gal. data\PYGZdq{}}\PYG{p}{,}
+                \PYG{l+s}{\PYGZdq{}Kuras\PYGZdq{}}\PYG{p}{,}
+                \PYG{l+s}{\PYGZdq{}Vid. sąnaud.\PYGZdq{}}
+            \PYG{p}{));}
+
+            \PYG{n}{output}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{midstr}\PYG{p}{);}
+
+            \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{=} \PYG{l+m}{0}\PYG{p}{;} \PYG{n}{i} \PYG{p}{\PYGZlt{}} \PYG{n}{vehicles}\PYG{p}{.}\PYG{n}{Count}\PYG{p}{;} \PYG{n}{i}\PYG{p}{++)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{n}{Vehicle} \PYG{n}{vehicle} \PYG{p}{=} \PYG{n}{vehicles}\PYG{p}{[}\PYG{n}{i}\PYG{p}{];}
+
+                \PYG{n}{output}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{String}\PYG{p}{.}\PYG{n}{Format}\PYG{p}{(}
+                    \PYG{l+s}{\PYGZdq{}│\PYGZob{}0,\PYGZhy{}7\PYGZcb{}│\PYGZob{}1,\PYGZhy{}12\PYGZcb{}│\PYGZob{}2,\PYGZhy{}8\PYGZcb{}│\PYGZob{}3,\PYGZhy{}5\PYGZcb{}│\PYGZob{}4,\PYGZhy{}4\PYGZcb{}│\PYGZob{}5,\PYGZhy{}15\PYGZcb{}│\PYGZob{}6,\PYGZhy{}10\PYGZcb{}│\PYGZob{}7,\PYGZhy{}12\PYGZcb{}│\PYGZdq{}}\PYG{p}{,}
+                    \PYG{n}{vehicle}\PYG{p}{.}\PYG{n}{LicensePlate}\PYG{p}{,}
+                    \PYG{n}{vehicle}\PYG{p}{.}\PYG{n}{Producer}\PYG{p}{,}
+                    \PYG{n}{vehicle}\PYG{p}{.}\PYG{n}{Model}\PYG{p}{,}
+                    \PYG{n}{vehicle}\PYG{p}{.}\PYG{n}{YearOfProduction}\PYG{p}{,}
+                    \PYG{n}{vehicle}\PYG{p}{.}\PYG{n}{MonthOfProduction}\PYG{p}{,}
+                    \PYG{n}{vehicle}\PYG{p}{.}\PYG{n}{TechnicalInspection}\PYG{p}{.}\PYG{n}{ToShortDateString}\PYG{p}{(),}
+                    \PYG{n}{vehicle}\PYG{p}{.}\PYG{n}{Fuel}\PYG{p}{,}
+                    \PYG{n}{vehicle}\PYG{p}{.}\PYG{n}{AverageFuelConsumption}
+                \PYG{p}{));}
+
+            \PYG{p}{\PYGZcb{}}
+
+            \PYG{n}{output}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{botstr}\PYG{p}{);}
+
+            \PYG{k}{return} \PYG{n}{output}\PYG{p}{;}
+
+        \PYG{p}{\PYGZcb{}}
+
+
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// Method to print vehicles to a CSV file}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}Vehicles\PYGZdq{}\PYGZgt{}\PYGZlt{}/param\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}fileName\PYGZdq{}\PYGZgt{}\PYGZlt{}/param\PYGZgt{}}
+        \PYG{k}{public} \PYG{k}{static} \PYG{k}{void} \PYG{n+nf}{PrintVehiclesToCSV} \PYG{p}{(}\PYG{n}{VehicleContainer} \PYG{n}{Vehicles}\PYG{p}{,} \PYG{k+kt}{string} \PYG{n}{fileName}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{k+kt}{string}\PYG{p}{[]} \PYG{n}{lines} \PYG{p}{=} \PYG{k}{new} \PYG{k+kt}{string}\PYG{p}{[}\PYG{n}{Vehicles}\PYG{p}{.}\PYG{n}{Count} \PYG{p}{+} \PYG{l+m}{1}\PYG{p}{];}
+            \PYG{n}{lines}\PYG{p}{[}\PYG{l+m}{0}\PYG{p}{]} \PYG{p}{=} \PYG{n}{String}\PYG{p}{.}\PYG{n}{Format}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}\PYGZob{}0\PYGZcb{};\PYGZob{}1\PYGZcb{};\PYGZob{}2\PYGZcb{};\PYGZob{}3\PYGZcb{};\PYGZob{}4\PYGZcb{};\PYGZob{}5\PYGZcb{};\PYGZob{}6\PYGZcb{};\PYGZob{}7\PYGZcb{}\PYGZdq{}}\PYG{p}{,}
+                \PYG{l+s}{\PYGZdq{}Valstybinis numeris\PYGZdq{}}\PYG{p}{,} 
+                \PYG{l+s}{\PYGZdq{}Gamintojas\PYGZdq{}}\PYG{p}{,}
+                \PYG{l+s}{\PYGZdq{}Modelis\PYGZdq{}}\PYG{p}{,}
+                \PYG{l+s}{\PYGZdq{}Pagaminimo metai\PYGZdq{}}\PYG{p}{,}
+                \PYG{l+s}{\PYGZdq{}Pagaminimo mėnuo\PYGZdq{}}\PYG{p}{,}
+                \PYG{l+s}{\PYGZdq{}T.A. galiojimo data\PYGZdq{}}\PYG{p}{,}
+                \PYG{l+s}{\PYGZdq{}Kuras\PYGZdq{}}\PYG{p}{,}
+                \PYG{l+s}{\PYGZdq{}Vid. sąnaudos\PYGZdq{}}
+            \PYG{p}{);}
+
+
+            \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{=} \PYG{l+m}{1}\PYG{p}{;} \PYG{n}{i} \PYG{p}{\PYGZlt{}} \PYG{n}{Vehicles}\PYG{p}{.}\PYG{n}{Count}\PYG{p}{;} \PYG{n}{i}\PYG{p}{++)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{k}{if} \PYG{p}{(}\PYG{n}{Vehicles}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{TechnicalInspection} \PYG{p}{==} \PYG{n}{Convert}\PYG{p}{.}\PYG{n}{ToDateTime}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}1111/1/1\PYGZdq{}}\PYG{p}{))}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{n}{lines}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{p}{=} \PYG{n}{String}\PYG{p}{.}\PYG{n}{Format}\PYG{p}{(}
+                        \PYG{l+s}{\PYGZdq{}\PYGZob{}0\PYGZcb{};\PYGZob{}1\PYGZcb{};\PYGZob{}2\PYGZcb{};\PYGZob{}3\PYGZcb{};\PYGZob{}4\PYGZcb{};\PYGZob{}5\PYGZcb{};\PYGZob{}6\PYGZcb{};\PYGZob{}7:f\PYGZcb{}\PYGZdq{}}\PYG{p}{,}
+                        \PYG{n}{Vehicles}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{LicensePlate}\PYG{p}{,} 
+                        \PYG{n}{Vehicles}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{Producer}\PYG{p}{,}
+                        \PYG{n}{Vehicles}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{Model}\PYG{p}{,}
+                        \PYG{n}{Vehicles}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{YearOfProduction}\PYG{p}{,}
+                        \PYG{n}{Vehicles}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{MonthOfProduction}\PYG{p}{,}
+                        \PYG{l+s}{\PYGZdq{}SKUBIAI\PYGZdq{}}\PYG{p}{,}
+                        \PYG{n}{Vehicles}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{Fuel}\PYG{p}{,}
+                        \PYG{n}{Vehicles}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{AverageFuelConsumption}
+                    \PYG{p}{);}
+                \PYG{p}{\PYGZcb{}}
+                \PYG{k}{else}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{n}{lines}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{p}{=} \PYG{n}{String}\PYG{p}{.}\PYG{n}{Format}\PYG{p}{(}
+                        \PYG{l+s}{\PYGZdq{}\PYGZob{}0\PYGZcb{};\PYGZob{}1\PYGZcb{};\PYGZob{}2\PYGZcb{};\PYGZob{}3\PYGZcb{};\PYGZob{}4\PYGZcb{};\PYGZob{}5:yyyy\PYGZhy{}MM\PYGZhy{}dd\PYGZcb{};\PYGZob{}6\PYGZcb{};\PYGZob{}7:f\PYGZcb{}\PYGZdq{}}\PYG{p}{,}
+                        \PYG{n}{Vehicles}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{LicensePlate}\PYG{p}{,} 
+                        \PYG{n}{Vehicles}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{Producer}\PYG{p}{,}
+                        \PYG{n}{Vehicles}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{Model}\PYG{p}{,}
+                        \PYG{n}{Vehicles}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{YearOfProduction}\PYG{p}{,}
+                        \PYG{n}{Vehicles}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{MonthOfProduction}\PYG{p}{,}
+                        \PYG{n}{Vehicles}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{TechnicalInspection}\PYG{p}{,}
+                        \PYG{n}{Vehicles}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{Fuel}\PYG{p}{,}
+                        \PYG{n}{Vehicles}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{AverageFuelConsumption}
+                    \PYG{p}{);}
+                \PYG{p}{\PYGZcb{}}
+                \PYG{n}{File}\PYG{p}{.}\PYG{n}{WriteAllLines}\PYG{p}{(}\PYG{n}{fileName}\PYG{p}{,} \PYG{n}{lines}\PYG{p}{,} \PYG{n}{Encoding}\PYG{p}{.}\PYG{n}{UTF8}\PYG{p}{);}
+            \PYG{p}{\PYGZcb{}}
+        \PYG{p}{\PYGZcb{}}
+
+
+        \PYG{k}{public} \PYG{k}{static} \PYG{k}{void} \PYG{n+nf}{PrintMatchedVehiclesToCSV}\PYG{p}{(}\PYG{k+kt}{string} \PYG{n}{fileName}\PYG{p}{,} \PYG{n}{VehiclesRegister} \PYG{n}{left}\PYG{p}{,} \PYG{n}{VehiclesRegister} \PYG{n}{right}\PYG{p}{,} \PYG{n}{VehicleContainer} \PYG{n}{matches}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+
+            \PYG{k}{if} \PYG{p}{(}\PYG{n}{matches}\PYG{p}{.}\PYG{n}{Count} \PYG{p}{\PYGZlt{}=} \PYG{l+m}{0}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{k}{return}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+
+            \PYG{k+kt}{string}\PYG{p}{[]} \PYG{n}{lines} \PYG{p}{=} \PYG{k}{new} \PYG{k+kt}{string}\PYG{p}{[}\PYG{n}{matches}\PYG{p}{.}\PYG{n}{Count}\PYG{p}{+}\PYG{l+m}{2}\PYG{p}{];}
+
+            \PYG{n}{lines}\PYG{p}{[}\PYG{l+m}{0}\PYG{p}{]} \PYG{p}{=} \PYG{n}{left}\PYG{p}{.}\PYG{n}{City}\PYG{p}{;}
+            \PYG{n}{lines}\PYG{p}{[}\PYG{l+m}{1}\PYG{p}{]} \PYG{p}{=} \PYG{n}{right}\PYG{p}{.}\PYG{n}{City}\PYG{p}{;}
+
+            \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{=} \PYG{l+m}{0}\PYG{p}{;} \PYG{n}{i} \PYG{p}{\PYGZlt{}} \PYG{n}{matches}\PYG{p}{.}\PYG{n}{Count}\PYG{p}{;} \PYG{n}{i}\PYG{p}{++)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{k+kt}{int} \PYG{n}{lineIndex} \PYG{p}{=} \PYG{n}{i}\PYG{p}{+}\PYG{l+m}{2}\PYG{p}{;}
+
+                \PYG{n}{lines}\PYG{p}{[}\PYG{n}{lineIndex}\PYG{p}{]} \PYG{p}{=} \PYG{n}{String}\PYG{p}{.}\PYG{n}{Format}\PYG{p}{(}
+                    \PYG{l+s}{\PYGZdq{}\PYGZob{}0\PYGZcb{};\PYGZob{}1\PYGZcb{}\PYGZdq{}}\PYG{p}{,}
+                    \PYG{n}{matches}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{LicensePlate}\PYG{p}{,}
+                    \PYG{n}{matches}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{Model}
+                \PYG{p}{);}
+            \PYG{p}{\PYGZcb{}}
+            \PYG{n}{File}\PYG{p}{.}\PYG{n}{WriteAllLines}\PYG{p}{(}\PYG{n}{fileName}\PYG{p}{,} \PYG{n}{lines}\PYG{p}{,} \PYG{n}{Encoding}\PYG{p}{.}\PYG{n}{UTF8}\PYG{p}{);}
+        \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+
+
+\PYG{c+c1}{// VehiclesRegister.cs}
+\PYG{k}{using} \PYG{n+nn}{System}\PYG{p}{;}
+\PYG{k}{using} \PYG{n+nn}{System.Collections.Generic}\PYG{p}{;}
+\PYG{k}{using} \PYG{n+nn}{System.IO}\PYG{p}{;}
+\PYG{k}{using} \PYG{n+nn}{System.Text}\PYG{p}{;}
+
+\PYG{k}{namespace} \PYG{n+nn}{L3}
+\PYG{p}{\PYGZob{}}
+    \PYG{k}{class} \PYG{n+nc}{VehiclesRegister}
+    \PYG{p}{\PYGZob{}}
+
+        \PYG{k}{public} \PYG{k+kt}{string} \PYG{n}{City} \PYG{p}{\PYGZob{}}
+            \PYG{k}{get} \PYG{p}{\PYGZob{}}
+                \PYG{k}{return} \PYG{k}{this}\PYG{p}{.}\PYG{n}{AllVehicles}\PYG{p}{[}\PYG{l+m}{0}\PYG{p}{].}\PYG{n}{City}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+        \PYG{p}{\PYGZcb{}}
+
+        \PYG{k}{public} \PYG{k+kt}{string} \PYG{n}{Adress} \PYG{p}{\PYGZob{}}
+            \PYG{k}{get} \PYG{p}{\PYGZob{}}
+                \PYG{k}{return} \PYG{k}{this}\PYG{p}{.}\PYG{n}{AllVehicles}\PYG{p}{[}\PYG{l+m}{0}\PYG{p}{].}\PYG{n}{Address}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+        \PYG{p}{\PYGZcb{}}
+
+        \PYG{k}{public} \PYG{k+kt}{string} \PYG{n}{PhoneNum} \PYG{p}{\PYGZob{}}
+            \PYG{k}{get} \PYG{p}{\PYGZob{}}
+                \PYG{k}{return} \PYG{k}{this}\PYG{p}{.}\PYG{n}{AllVehicles}\PYG{p}{[}\PYG{l+m}{0}\PYG{p}{].}\PYG{n}{PhoneNum}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+        \PYG{p}{\PYGZcb{}}
+
+        \PYG{k}{public} \PYG{n}{VehicleContainer} \PYG{n}{AllVehicles}\PYG{p}{;}
+
+
+        \PYG{k}{public} \PYG{n+nf}{VehiclesRegister}\PYG{p}{()}
+        \PYG{p}{\PYGZob{}}
+            \PYG{n}{AllVehicles} \PYG{p}{=} \PYG{k}{new} \PYG{n}{VehicleContainer}\PYG{p}{();}
+        \PYG{p}{\PYGZcb{}}
+
+
+        \PYG{k}{public} \PYG{n+nf}{VehiclesRegister}\PYG{p}{(}\PYG{n}{VehicleContainer} \PYG{n}{Vehicles}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{n}{AllVehicles} \PYG{p}{=} \PYG{k}{new} \PYG{n}{VehicleContainer}\PYG{p}{();}
+            \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{=} \PYG{l+m}{0}\PYG{p}{;} \PYG{n}{i} \PYG{p}{\PYGZlt{}} \PYG{n}{Vehicles}\PYG{p}{.}\PYG{n}{Count}\PYG{p}{;} \PYG{n}{i}\PYG{p}{++)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{n}{Vehicle} \PYG{n}{vehicle} \PYG{p}{=} \PYG{k}{this}\PYG{p}{.}\PYG{n}{AllVehicles}\PYG{p}{[}\PYG{n}{i}\PYG{p}{];}
+                \PYG{k}{this}\PYG{p}{.}\PYG{n}{AllVehicles}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{vehicle}\PYG{p}{);}
+            \PYG{p}{\PYGZcb{}}
+        \PYG{p}{\PYGZcb{}}
+
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// Method adds a vehicle to the list}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}vehicle\PYGZdq{}\PYGZgt{}\PYGZlt{}/param\PYGZgt{}}
+        \PYG{k}{public} \PYG{k}{void} \PYG{n+nf}{Add} \PYG{p}{(}\PYG{n}{Vehicle} \PYG{n}{vehicle}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{n}{AllVehicles}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{vehicle}\PYG{p}{);}
+        \PYG{p}{\PYGZcb{}}
+
+
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// Method to print all vehicles to a text file}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}fileName\PYGZdq{}\PYGZgt{}\PYGZlt{}/param\PYGZgt{}}
+        \PYG{k}{public} \PYG{k}{void} \PYG{n+nf}{PrintToTxt}\PYG{p}{(}\PYG{k+kt}{string} \PYG{n}{fileName}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{n}{InOutUtils}\PYG{p}{.}\PYG{n}{PrintVehiclesToText}\PYG{p}{(}\PYG{n}{fileName}\PYG{p}{,} \PYG{k}{this}\PYG{p}{.}\PYG{n}{AllVehicles}\PYG{p}{);}
+        \PYG{p}{\PYGZcb{}}
+
+
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// Method to print all vehicles in the register}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{k}{public} \PYG{k}{void} \PYG{n+nf}{PrintVehicles}\PYG{p}{()}
+        \PYG{p}{\PYGZob{}}
+            \PYG{n}{Console}\PYG{p}{.}\PYG{n}{WriteLine}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}UAB „Žaibas \PYGZob{}0\PYGZcb{}“ priklausantys automobiliai:\PYGZdq{}}\PYG{p}{,} \PYG{n}{AllVehicles}\PYG{p}{[}\PYG{l+m}{0}\PYG{p}{].}\PYG{n}{City}\PYG{p}{);}
+            \PYG{n}{InOutUtils}\PYG{p}{.}\PYG{n}{PrintVehicles}\PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n}{AllVehicles}\PYG{p}{);}
+        \PYG{p}{\PYGZcb{}}
+
+
+
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// Method to find all unique car producers}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}returns\PYGZgt{}\PYGZlt{}/returns\PYGZgt{}}
+        \PYG{k}{public} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{k+kt}{string}\PYG{p}{\PYGZgt{}} \PYG{n}{FindProducers}\PYG{p}{()}
+        \PYG{p}{\PYGZob{}}
+            \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{k+kt}{string}\PYG{p}{\PYGZgt{}} \PYG{n}{producers} \PYG{p}{=} \PYG{k}{new} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{k+kt}{string}\PYG{p}{\PYGZgt{}();}
+            \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{=} \PYG{l+m}{0}\PYG{p}{;} \PYG{n}{i} \PYG{p}{\PYGZlt{}} \PYG{k}{this}\PYG{p}{.}\PYG{n}{AllVehicles}\PYG{p}{.}\PYG{n}{Count}\PYG{p}{;} \PYG{n}{i}\PYG{p}{++)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{n}{Vehicle} \PYG{n}{vehicle} \PYG{p}{=} \PYG{k}{this}\PYG{p}{.}\PYG{n}{AllVehicles}\PYG{p}{[}\PYG{n}{i}\PYG{p}{];}
+                \PYG{k+kt}{string} \PYG{n}{producer} \PYG{p}{=} \PYG{n}{vehicle}\PYG{p}{.}\PYG{n}{Producer}\PYG{p}{;}
+                \PYG{k}{if} \PYG{p}{(!}\PYG{n}{producers}\PYG{p}{.}\PYG{n}{Contains}\PYG{p}{(}\PYG{n}{producer}\PYG{p}{))}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{n}{producers}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{producer}\PYG{p}{);}
+                \PYG{p}{\PYGZcb{}}
+            \PYG{p}{\PYGZcb{}}
+            \PYG{k}{return} \PYG{n}{producers}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+
+
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// a method to find all matching vehicles from another VehiclesRegister}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}other\PYGZdq{}\PYGZgt{}a vehicle register to which to compare against\PYGZlt{}/param\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}returns\PYGZgt{}a VehicleContainer that contains all matching vehicles\PYGZlt{}/returns\PYGZgt{}}
+        \PYG{k}{public} \PYG{n}{VehicleContainer} \PYG{n+nf}{FindMatches}\PYG{p}{(}\PYG{n}{VehiclesRegister} \PYG{n}{other}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{n}{VehicleContainer} \PYG{n}{matches} \PYG{p}{=} \PYG{k}{new} \PYG{n}{VehicleContainer}\PYG{p}{();}
+
+            \PYG{n}{VehicleContainer} \PYG{n}{selfContainer} \PYG{p}{=} \PYG{k}{this}\PYG{p}{.}\PYG{n}{AllVehicles}\PYG{p}{;}
+            \PYG{n}{VehicleContainer} \PYG{n}{otherContainer} \PYG{p}{=} \PYG{n}{other}\PYG{p}{.}\PYG{n}{AllVehicles}\PYG{p}{;}
+            
+            \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{=} \PYG{l+m}{0}\PYG{p}{;} \PYG{n}{i} \PYG{p}{\PYGZlt{}} \PYG{n}{selfContainer}\PYG{p}{.}\PYG{n}{Count}\PYG{p}{;} \PYG{n}{i}\PYG{p}{++)}
+                \PYG{p}{\PYGZob{}}
+                \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{j} \PYG{p}{=} \PYG{l+m}{0}\PYG{p}{;} \PYG{n}{j} \PYG{p}{\PYGZlt{}} \PYG{n}{otherContainer}\PYG{p}{.}\PYG{n}{Count}\PYG{p}{;} \PYG{n}{j}\PYG{p}{++)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{k}{if} \PYG{p}{(}\PYG{n}{selfContainer}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{Equals}\PYG{p}{(}\PYG{n}{otherContainer}\PYG{p}{[}\PYG{n}{j}\PYG{p}{]))}
+                    \PYG{p}{\PYGZob{}}
+                        \PYG{n}{matches}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{selfContainer}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]);}
+                    \PYG{p}{\PYGZcb{}}
+                \PYG{p}{\PYGZcb{}}
+            \PYG{p}{\PYGZcb{}}
+
+            \PYG{k}{return} \PYG{n}{matches}\PYG{p}{;}
+
+        \PYG{p}{\PYGZcb{}}
+
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// Method creates new list with filtered producers and new segment for counting the quantity of producer\PYGZsq{}s cars}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}filteredProducers\PYGZdq{}\PYGZgt{}\PYGZlt{}/param\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}returns\PYGZgt{}\PYGZlt{}/returns\PYGZgt{}}
+        \PYG{k}{public} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Producer}\PYG{p}{\PYGZgt{}} \PYG{n}{ListOfStringsToProducerObjects}\PYG{p}{(}\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{k+kt}{string}\PYG{p}{\PYGZgt{}} \PYG{n}{filteredProducers}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Producer}\PYG{p}{\PYGZgt{}} \PYG{n}{allProducers} \PYG{p}{=} \PYG{k}{new} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Producer}\PYG{p}{\PYGZgt{}();}
+            \PYG{k}{foreach} \PYG{p}{(}\PYG{k+kt}{string} \PYG{n}{newProducer} \PYG{k}{in} \PYG{n}{filteredProducers}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{n}{Producer} \PYG{n}{producer} \PYG{p}{=} \PYG{k}{new} \PYG{n}{Producer}\PYG{p}{(}\PYG{n}{newProducer}\PYG{p}{,} \PYG{l+m}{0}\PYG{p}{);}
+                \PYG{n}{allProducers}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{producer}\PYG{p}{);}
+            \PYG{p}{\PYGZcb{}}
+            \PYG{k}{return} \PYG{n}{allProducers}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+
+
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// Method to count how many vehicles each producer has}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}filteredProducers\PYGZdq{}\PYGZgt{}\PYGZlt{}/param\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}vehicles\PYGZdq{}\PYGZgt{}\PYGZlt{}/param\PYGZgt{}}
+        \PYG{k}{public} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Producer}\PYG{p}{\PYGZgt{}} \PYG{n}{CountVehiclesByProducers}\PYG{p}{(}\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Producer}\PYG{p}{\PYGZgt{}} \PYG{n}{filteredProducers}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+
+            \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{=} \PYG{l+m}{0}\PYG{p}{;} \PYG{n}{i} \PYG{p}{\PYGZlt{}} \PYG{n}{filteredProducers}\PYG{p}{.}\PYG{n}{Count}\PYG{p}{;} \PYG{n}{i}\PYG{p}{++)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{k+kt}{int} \PYG{n}{NumberOfVehicles} \PYG{p}{=} \PYG{n}{CountingOfVehiclesByProducer}\PYG{p}{(}\PYG{n}{filteredProducers}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{ProducerName}\PYG{p}{);}
+                \PYG{n}{filteredProducers}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{NumberOfVehicles} \PYG{p}{=} \PYG{n}{NumberOfVehicles}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+            \PYG{k}{return} \PYG{n}{filteredProducers}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+
+
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// Method to count how many vehicles a producer has}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}ProducerName\PYGZdq{}\PYGZgt{}\PYGZlt{}/param\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}returns\PYGZgt{}\PYGZlt{}/returns\PYGZgt{}}
+        \PYG{k}{public} \PYG{k+kt}{int} \PYG{n+nf}{CountingOfVehiclesByProducer}\PYG{p}{(}\PYG{k+kt}{string} \PYG{n}{ProducerName}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{k+kt}{int} \PYG{n}{NumberOfVehicles} \PYG{p}{=} \PYG{l+m}{0}\PYG{p}{;}
+            \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{=} \PYG{l+m}{0}\PYG{p}{;} \PYG{n}{i} \PYG{p}{\PYGZlt{}} \PYG{k}{this}\PYG{p}{.}\PYG{n}{AllVehicles}\PYG{p}{.}\PYG{n}{Count}\PYG{p}{;} \PYG{n}{i}\PYG{p}{++)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{n}{Vehicle} \PYG{n}{vehicle} \PYG{p}{=} \PYG{k}{this}\PYG{p}{.}\PYG{n}{AllVehicles}\PYG{p}{[}\PYG{n}{i}\PYG{p}{];}
+                \PYG{k}{if} \PYG{p}{(}\PYG{n}{vehicle}\PYG{p}{.}\PYG{n}{Producer} \PYG{p}{==} \PYG{n}{ProducerName}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{n}{NumberOfVehicles}\PYG{p}{++;}
+                \PYG{p}{\PYGZcb{}}
+            \PYG{p}{\PYGZcb{}}
+            \PYG{k}{return} \PYG{n}{NumberOfVehicles}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+
+
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// Method to find the highest amount of vehicles made by a single brand}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}filteredProducers\PYGZdq{}\PYGZgt{}\PYGZlt{}/param\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}returns\PYGZgt{}an integer\PYGZlt{}/returns\PYGZgt{}}
+        \PYG{k}{public} \PYG{k+kt}{int} \PYG{n+nf}{HighestNumber}\PYG{p}{(}\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Producer}\PYG{p}{\PYGZgt{}} \PYG{n}{filteredProducers}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{k+kt}{int} \PYG{n}{highestNumber} \PYG{p}{=} \PYG{l+m}{0}\PYG{p}{;}
+            \PYG{k}{foreach} \PYG{p}{(}\PYG{n}{Producer} \PYG{n}{producer} \PYG{k}{in} \PYG{n}{filteredProducers}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{k}{if} \PYG{p}{(}\PYG{n}{highestNumber} \PYG{p}{\PYGZlt{}} \PYG{n}{producer}\PYG{p}{.}\PYG{n}{NumberOfVehicles}\PYG{p}{)}
+                    \PYG{n}{highestNumber} \PYG{p}{=} \PYG{n}{producer}\PYG{p}{.}\PYG{n}{NumberOfVehicles}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+            \PYG{k}{return} \PYG{n}{highestNumber}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+
+
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// Method to find a list of the newest vehicles}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}returns\PYGZgt{}\PYGZlt{}/returns\PYGZgt{}}
+        \PYG{k}{public} \PYG{n}{VehicleContainer} \PYG{n+nf}{FindNewestVehicles}\PYG{p}{()}
+        \PYG{p}{\PYGZob{}}
+
+            \PYG{n}{VehicleContainer} \PYG{n}{NewestVehicles} \PYG{p}{=} \PYG{k}{new} \PYG{n}{VehicleContainer}\PYG{p}{();}
+
+            \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{=} \PYG{l+m}{0}\PYG{p}{;} \PYG{n}{i} \PYG{p}{\PYGZlt{}} \PYG{k}{this}\PYG{p}{.}\PYG{n}{AllVehicles}\PYG{p}{.}\PYG{n}{Count}\PYG{p}{;} \PYG{n}{i}\PYG{p}{++)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{n}{Vehicle} \PYG{n}{vehicle} \PYG{p}{=} \PYG{k}{this}\PYG{p}{.}\PYG{n}{AllVehicles}\PYG{p}{[}\PYG{n}{i}\PYG{p}{];}
+                \PYG{k}{if} \PYG{p}{(}\PYG{n}{vehicle}\PYG{p}{.}\PYG{n}{Age} \PYG{p}{==} \PYG{n}{NewestVehicleDate}\PYG{p}{().}\PYG{n}{Age}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{n}{NewestVehicles}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{vehicle}\PYG{p}{);}
+                \PYG{p}{\PYGZcb{}}
+            \PYG{p}{\PYGZcb{}}
+            \PYG{k}{return} \PYG{n}{NewestVehicles}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// calculates the average age of all the vehicles in this register}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}returns\PYGZgt{}a double which gives the average age in years (i assume)\PYGZlt{}/returns\PYGZgt{}}
+        \PYG{k}{public} \PYG{k+kt}{double} \PYG{n+nf}{GetAverageVehicleAge}\PYG{p}{()}
+        \PYG{p}{\PYGZob{}}
+            \PYG{k+kt}{double} \PYG{n}{output} \PYG{p}{=} \PYG{l+m}{0.0}\PYG{p}{;}
+
+            \PYG{k+kt}{double} \PYG{n}{sum} \PYG{p}{=} \PYG{l+m}{0.0}\PYG{p}{;}
+
+            \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{=} \PYG{l+m}{0}\PYG{p}{;} \PYG{n}{i} \PYG{p}{\PYGZlt{}} \PYG{k}{this}\PYG{p}{.}\PYG{n}{AllVehicles}\PYG{p}{.}\PYG{n}{Count}\PYG{p}{;} \PYG{n}{i}\PYG{p}{++)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{n}{sum} \PYG{p}{+=} \PYG{p}{(}\PYG{k+kt}{double}\PYG{p}{)}\PYG{k}{this}\PYG{p}{.}\PYG{n}{AllVehicles}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{Age}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+
+            \PYG{n}{output} \PYG{p}{=} \PYG{n}{sum}\PYG{p}{/(}\PYG{k+kt}{double}\PYG{p}{)}\PYG{k}{this}\PYG{p}{.}\PYG{n}{AllVehicles}\PYG{p}{.}\PYG{n}{Count}\PYG{p}{;}
+
+            \PYG{k}{return} \PYG{n}{output}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+
+
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// Method to find the newest vehicle}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}returns\PYGZgt{}\PYGZlt{}/returns\PYGZgt{}}
+        \PYG{k}{private} \PYG{n}{Vehicle} \PYG{n+nf}{NewestVehicleDate}\PYG{p}{()}
+        \PYG{p}{\PYGZob{}}
+            \PYG{n}{Vehicle} \PYG{n}{NewestVehicle} \PYG{p}{=} \PYG{n}{AllVehicles}\PYG{p}{[}\PYG{l+m}{0}\PYG{p}{];}
+            \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{=} \PYG{l+m}{0}\PYG{p}{;} \PYG{n}{i} \PYG{p}{\PYGZlt{}} \PYG{k}{this}\PYG{p}{.}\PYG{n}{AllVehicles}\PYG{p}{.}\PYG{n}{Count}\PYG{p}{;} \PYG{n}{i}\PYG{p}{++)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{n}{Vehicle} \PYG{n}{vehicle} \PYG{p}{=} \PYG{k}{this}\PYG{p}{.}\PYG{n}{AllVehicles}\PYG{p}{[}\PYG{n}{i}\PYG{p}{];}
+                \PYG{k}{if} \PYG{p}{(}\PYG{n}{vehicle} \PYG{p}{\PYGZlt{}} \PYG{n}{NewestVehicle}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{n}{NewestVehicle} \PYG{p}{=} \PYG{n}{vehicle}\PYG{p}{;}
+                \PYG{p}{\PYGZcb{}}
+            \PYG{p}{\PYGZcb{}}
+            \PYG{k}{return} \PYG{n}{NewestVehicle}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+
+
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// Method to find vehicles with an expired technical inspection and add them to a list}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}returns\PYGZgt{}a VehicleContainer that contains all vehicles with their expired TI\PYGZlt{}/returns\PYGZgt{}}
+        \PYG{k}{public} \PYG{n}{VehicleContainer} \PYG{n+nf}{FindVehiclesWithExpiredTI}\PYG{p}{()}
+        \PYG{p}{\PYGZob{}}
+
+            \PYG{n}{VehicleContainer} \PYG{n}{VehiclesWithExpiredTI} \PYG{p}{=} \PYG{k}{new} \PYG{n}{VehicleContainer}\PYG{p}{();}
+
+            \PYG{n}{DateTime} \PYG{n}{Today} \PYG{p}{=} \PYG{n}{DateTime}\PYG{p}{.}\PYG{n}{Today}\PYG{p}{;}
+            \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{=} \PYG{l+m}{0}\PYG{p}{;} \PYG{n}{i} \PYG{p}{\PYGZlt{}} \PYG{k}{this}\PYG{p}{.}\PYG{n}{AllVehicles}\PYG{p}{.}\PYG{n}{Count}\PYG{p}{;} \PYG{n}{i}\PYG{p}{++)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{n}{Vehicle} \PYG{n}{vehicle} \PYG{p}{=} \PYG{k}{this}\PYG{p}{.}\PYG{n}{AllVehicles}\PYG{p}{[}\PYG{n}{i}\PYG{p}{];}
+                \PYG{k}{if}\PYG{p}{(}\PYG{n}{Today}\PYG{p}{.}\PYG{n}{Year} \PYG{p}{\PYGZgt{}} \PYG{n}{vehicle}\PYG{p}{.}\PYG{n}{TechnicalInspection}\PYG{p}{.}\PYG{n}{Year}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{n}{vehicle}\PYG{p}{.}\PYG{n}{TechnicalInspection} \PYG{p}{=} \PYG{n}{Convert}\PYG{p}{.}\PYG{n}{ToDateTime}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}1111/1/1\PYGZdq{}}\PYG{p}{);}
+                    \PYG{n}{VehiclesWithExpiredTI}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{vehicle}\PYG{p}{);}
+                \PYG{p}{\PYGZcb{}}
+                \PYG{k}{else} \PYG{n+nf}{if} \PYG{p}{(}\PYG{n}{vehicle}\PYG{p}{.}\PYG{n}{TechnicalInspection}\PYG{p}{.}\PYG{n}{Year} \PYG{p}{==} \PYG{n}{Today}\PYG{p}{.}\PYG{n}{Year} \PYG{p}{\PYGZam{}\PYGZam{}} \PYG{n}{vehicle}\PYG{p}{.}\PYG{n}{TechnicalInspection}\PYG{p}{.}\PYG{n}{Month} \PYG{p}{\PYGZhy{}} \PYG{n}{vehicle}\PYG{p}{.}\PYG{n}{TechnicalInspection}\PYG{p}{.}\PYG{n}{Month} \PYG{p}{\PYGZlt{}=} \PYG{l+m}{1}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{n}{VehiclesWithExpiredTI}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{vehicle}\PYG{p}{);}
+                \PYG{p}{\PYGZcb{}}
+            \PYG{p}{\PYGZcb{}}
+
+            \PYG{n}{VehiclesWithExpiredTI}\PYG{p}{.}\PYG{n}{SortWithDelegate}\PYG{p}{((}\PYG{n}{left}\PYG{p}{,} \PYG{n}{right}\PYG{p}{)} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+                
+                \PYG{k}{if} \PYG{p}{(}\PYG{n}{left}\PYG{p}{.}\PYG{n}{Producer}\PYG{p}{.}\PYG{n}{CompareTo}\PYG{p}{(}\PYG{n}{right}\PYG{p}{.}\PYG{n}{Producer}\PYG{p}{)} \PYG{p}{\PYGZgt{}} \PYG{l+m}{0}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{k}{return} \PYG{l+m}{1}\PYG{p}{;}
+                \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{k}{if} \PYG{p}{(}\PYG{n}{left}\PYG{p}{.}\PYG{n}{Producer}\PYG{p}{.}\PYG{n}{CompareTo}\PYG{p}{(}\PYG{n}{right}\PYG{p}{.}\PYG{n}{Producer}\PYG{p}{)} \PYG{p}{\PYGZlt{}} \PYG{l+m}{0}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{k}{return} \PYG{p}{\PYGZhy{}}\PYG{l+m}{1}\PYG{p}{;}
+                \PYG{p}{\PYGZcb{}}
+
+                \PYG{c+c1}{// producer names are equal, sort by model next}
+                \PYG{k}{if} \PYG{p}{(}\PYG{n}{left}\PYG{p}{.}\PYG{n}{Model}\PYG{p}{.}\PYG{n}{CompareTo}\PYG{p}{(}\PYG{n}{right}\PYG{p}{.}\PYG{n}{Model}\PYG{p}{)} \PYG{p}{\PYGZgt{}} \PYG{l+m}{0}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{k}{return} \PYG{l+m}{1}\PYG{p}{;}
+                \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{k}{if} \PYG{p}{(}\PYG{n}{left}\PYG{p}{.}\PYG{n}{Model}\PYG{p}{.}\PYG{n}{CompareTo}\PYG{p}{(}\PYG{n}{right}\PYG{p}{.}\PYG{n}{Model}\PYG{p}{)} \PYG{p}{\PYGZlt{}} \PYG{l+m}{0}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{k}{return} \PYG{p}{\PYGZhy{}}\PYG{l+m}{1}\PYG{p}{;}
+                \PYG{p}{\PYGZcb{}}
+
+                \PYG{c+c1}{// model names are equal, sort by ID}
+                \PYG{k}{if} \PYG{p}{(}\PYG{n}{left}\PYG{p}{.}\PYG{n}{LicensePlate}\PYG{p}{.}\PYG{n}{CompareTo}\PYG{p}{(}\PYG{n}{right}\PYG{p}{.}\PYG{n}{LicensePlate}\PYG{p}{)} \PYG{p}{\PYGZgt{}} \PYG{l+m}{0}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{k}{return} \PYG{l+m}{1}\PYG{p}{;}
+                \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{k}{if} \PYG{p}{(}\PYG{n}{left}\PYG{p}{.}\PYG{n}{LicensePlate}\PYG{p}{.}\PYG{n}{CompareTo}\PYG{p}{(}\PYG{n}{right}\PYG{p}{.}\PYG{n}{LicensePlate}\PYG{p}{)} \PYG{p}{\PYGZgt{}} \PYG{l+m}{0}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{k}{return} \PYG{p}{\PYGZhy{}}\PYG{l+m}{1}\PYG{p}{;}
+                \PYG{p}{\PYGZcb{}}
+                
+                \PYG{k}{return} \PYG{l+m}{0}\PYG{p}{;} \PYG{c+c1}{// vehicles are identical}
+            \PYG{p}{\PYGZcb{});}
+
+
+            \PYG{k}{return} \PYG{n}{VehiclesWithExpiredTI}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+
+
+\PYG{c+c1}{//Program.cs}
+\PYG{k}{using} \PYG{n+nn}{System}\PYG{p}{;}
+\PYG{k}{using} \PYG{n+nn}{System.Collections.Generic}\PYG{p}{;}
+\PYG{k}{using} \PYG{n+nn}{System.IO}\PYG{p}{;}
+\PYG{k}{using} \PYG{n+nn}{System.Text}\PYG{p}{;}
+
+\PYG{k}{namespace} \PYG{n+nn}{L3}
+\PYG{p}{\PYGZob{}}
+    \PYG{k}{public} \PYG{k}{class} \PYG{n+nc}{Program}
+    \PYG{p}{\PYGZob{}}
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// Main method}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}args\PYGZdq{}\PYGZgt{} program\PYGZsq{}s arguments \PYGZlt{}/param\PYGZgt{}}
+        \PYG{k}{static} \PYG{k}{void} \PYG{n+nf}{Main}\PYG{p}{(}\PYG{k+kt}{string}\PYG{p}{[]} \PYG{n}{args}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{n}{Console}\PYG{p}{.}\PYG{n}{OutputEncoding} \PYG{p}{=} \PYG{n}{Encoding}\PYG{p}{.}\PYG{n}{UTF8}\PYG{p}{;}
+
+            \PYG{c+c1}{// filenames}
+            \PYG{k+kt}{string} \PYG{n}{fileName1} \PYG{p}{=} \PYG{l+s}{\PYGZdq{}Duomenys1.txt\PYGZdq{}}\PYG{p}{;}
+            \PYG{k+kt}{string} \PYG{n}{fileName2} \PYG{p}{=} \PYG{l+s}{\PYGZdq{}Duomenys2.txt\PYGZdq{}}\PYG{p}{;}
+
+            \PYG{c+c1}{// register initializations}
+            \PYG{n}{VehiclesRegister} \PYG{n}{register2} \PYG{p}{=} \PYG{n}{InOutUtils}\PYG{p}{.}\PYG{n}{ReadVehicles}\PYG{p}{(}\PYG{n}{fileName2}\PYG{p}{);}
+            \PYG{n}{VehiclesRegister} \PYG{n}{register1} \PYG{p}{=} \PYG{n}{InOutUtils}\PYG{p}{.}\PYG{n}{ReadVehicles}\PYG{p}{(}\PYG{n}{fileName1}\PYG{p}{);}
+
+            \PYG{c+c1}{// write out initial data to text}
+            \PYG{n}{register1}\PYG{p}{.}\PYG{n}{PrintToTxt}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}DuomenysPradiniai1.txt\PYGZdq{}}\PYG{p}{);}
+            \PYG{n}{register2}\PYG{p}{.}\PYG{n}{PrintToTxt}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}DuomenysPradiniai2.txt\PYGZdq{}}\PYG{p}{);}
+
+            \PYG{k+kt}{double} \PYG{n}{reg1AvgAge} \PYG{p}{=} \PYG{n}{register1}\PYG{p}{.}\PYG{n}{GetAverageVehicleAge}\PYG{p}{();}
+            \PYG{k+kt}{double} \PYG{n}{reg2AvgAge} \PYG{p}{=} \PYG{n}{register2}\PYG{p}{.}\PYG{n}{GetAverageVehicleAge}\PYG{p}{();}
+
+
+            \PYG{c+c1}{// find and print the regsiter with the oldest cars on average}
+            \PYG{k}{if} \PYG{p}{(}\PYG{n}{reg1AvgAge} \PYG{p}{\PYGZgt{}} \PYG{n}{reg2AvgAge}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+                \PYG{n}{Console}\PYG{p}{.}\PYG{n}{WriteLine}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Pirmame Filiale (registre) yra senesni automobiliai.\PYGZdq{}}\PYG{p}{);}
+                \PYG{n}{register1}\PYG{p}{.}\PYG{n}{PrintVehicles}\PYG{p}{();}
+            \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{k}{if} \PYG{p}{(}\PYG{n}{reg1AvgAge} \PYG{p}{==} \PYG{n}{reg2AvgAge}\PYG{p}{)\PYGZob{}}
+                \PYG{n}{Console}\PYG{p}{.}\PYG{n}{WriteLine}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Abu filialai (registrai) turi lygiai tokio pačio senumo automobilius.\PYGZdq{}}\PYG{p}{);}
+            \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+                \PYG{n}{Console}\PYG{p}{.}\PYG{n}{WriteLine}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Antrame Filiale (registre) yra senesni automobiliai.\PYGZdq{}}\PYG{p}{);}
+                \PYG{n}{register2}\PYG{p}{.}\PYG{n}{PrintVehicles}\PYG{p}{();}
+            \PYG{p}{\PYGZcb{}}
+            \PYG{n}{Console}\PYG{p}{.}\PYG{n}{Write}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}\PYGZbs{}n\PYGZdq{}}\PYG{p}{);} \PYG{c+c1}{// add some space to distinguish the tasks better}
+
+            \PYG{c+c1}{// find and write to file the matching vehicles in both registers}
+            \PYG{n}{VehicleContainer} \PYG{n}{matches} \PYG{p}{=} \PYG{n}{register1}\PYG{p}{.}\PYG{n}{FindMatches}\PYG{p}{(}\PYG{n}{register2}\PYG{p}{);}
+            \PYG{n}{InOutUtils}\PYG{p}{.}\PYG{n}{PrintMatchedVehiclesToCSV}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Klaidos.csv\PYGZdq{}}\PYG{p}{,} \PYG{n}{register1}\PYG{p}{,} \PYG{n}{register2}\PYG{p}{,} \PYG{n}{matches}\PYG{p}{);}
+
+
+            \PYG{n}{Console}\PYG{p}{.}\PYG{n}{WriteLine}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Pirmas registras:\PYGZdq{}}\PYG{p}{);}
+
+            \PYG{c+c1}{// print out the first register\PYGZsq{}s initial data}
+            \PYG{n}{register1}\PYG{p}{.}\PYG{n}{PrintVehicles}\PYG{p}{();}
+            
+            \PYG{c+c1}{// print out the first register\PYGZsq{}s newest vehicle(s)}
+            \PYG{n}{VehicleContainer} \PYG{n}{NewestVehicles} \PYG{p}{=} \PYG{n}{register1}\PYG{p}{.}\PYG{n}{FindNewestVehicles}\PYG{p}{();}
+            \PYG{n}{Console}\PYG{p}{.}\PYG{n}{WriteLine}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Naujausias(\PYGZhy{}i) automobilis(\PYGZhy{}iai):\PYGZdq{}}\PYG{p}{);}
+            \PYG{n}{InOutUtils}\PYG{p}{.}\PYG{n}{PrintVehicles}\PYG{p}{(}\PYG{n}{NewestVehicles}\PYG{p}{);}
+            \PYG{n}{Console}\PYG{p}{.}\PYG{n}{WriteLine}\PYG{p}{();}
+
+
+            \PYG{c+c1}{// print out the first register\PYGZsq{}s vehicles that have an expired technical inspection status}
+            \PYG{n}{VehicleContainer} \PYG{n}{VehiclesWithExpiredTI} \PYG{p}{=} \PYG{n}{register1}\PYG{p}{.}\PYG{n}{FindVehiclesWithExpiredTI}\PYG{p}{();}
+            \PYG{k}{if} \PYG{p}{(}\PYG{n}{VehiclesWithExpiredTI}\PYG{p}{.}\PYG{n}{Count} \PYG{p}{==} \PYG{l+m}{0}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{n}{Console}\PYG{p}{.}\PYG{n}{WriteLine}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Automobilių su pasibaigusiu T.A. nėra\PYGZdq{}}\PYG{p}{);}
+                \PYG{n}{Console}\PYG{p}{.}\PYG{n}{WriteLine}\PYG{p}{();}
+            \PYG{p}{\PYGZcb{}}
+            \PYG{k}{else}
+            \PYG{p}{\PYGZob{}}
+                \PYG{n}{InOutUtils}\PYG{p}{.}\PYG{n}{PrintVehiclesToCSV}\PYG{p}{(}\PYG{n}{VehiclesWithExpiredTI}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}Apžiūra1.csv\PYGZdq{}}\PYG{p}{);}
+            \PYG{p}{\PYGZcb{}}
+
+
+
+            \PYG{n}{Console}\PYG{p}{.}\PYG{n}{WriteLine}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Antras registras:\PYGZdq{}}\PYG{p}{);}
+
+
+            \PYG{c+c1}{// print out the second register\PYGZsq{}s initial data}
+            \PYG{n}{register2}\PYG{p}{.}\PYG{n}{PrintVehicles}\PYG{p}{();}
+
+
+            \PYG{c+c1}{// print out the second register\PYGZsq{}s newest vehicle(s)}
+            \PYG{n}{VehicleContainer} \PYG{n}{NewestVehicles2} \PYG{p}{=} \PYG{n}{register2}\PYG{p}{.}\PYG{n}{FindNewestVehicles}\PYG{p}{();}
+            \PYG{n}{Console}\PYG{p}{.}\PYG{n}{WriteLine}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Naujausias(\PYGZhy{}i) automobilis(\PYGZhy{}iai):\PYGZdq{}}\PYG{p}{);}
+            \PYG{n}{InOutUtils}\PYG{p}{.}\PYG{n}{PrintVehicles}\PYG{p}{(}\PYG{n}{NewestVehicles2}\PYG{p}{);}
+            \PYG{n}{Console}\PYG{p}{.}\PYG{n}{WriteLine}\PYG{p}{();}
+
+
+            \PYG{c+c1}{// print out the second register\PYGZsq{}s vehicles that have an expired technical inspection status}
+            \PYG{n}{VehicleContainer} \PYG{n}{VehiclesWithExpiredTI2} \PYG{p}{=} \PYG{n}{register2}\PYG{p}{.}\PYG{n}{FindVehiclesWithExpiredTI}\PYG{p}{();}
+            \PYG{k}{if} \PYG{p}{(}\PYG{n}{VehiclesWithExpiredTI2}\PYG{p}{.}\PYG{n}{Count} \PYG{p}{==} \PYG{l+m}{0}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{n}{Console}\PYG{p}{.}\PYG{n}{WriteLine}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Automobilių su pasibaigusiu T.A. nėra\PYGZdq{}}\PYG{p}{);}
+                \PYG{n}{Console}\PYG{p}{.}\PYG{n}{WriteLine}\PYG{p}{();}
+            \PYG{p}{\PYGZcb{}}
+            \PYG{k}{else}
+            \PYG{p}{\PYGZob{}}
+                \PYG{n}{InOutUtils}\PYG{p}{.}\PYG{n}{PrintVehiclesToCSV}\PYG{p}{(}\PYG{n}{VehiclesWithExpiredTI2}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}Apžiūra2.csv\PYGZdq{}}\PYG{p}{);}
+            \PYG{p}{\PYGZcb{}}
+        \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

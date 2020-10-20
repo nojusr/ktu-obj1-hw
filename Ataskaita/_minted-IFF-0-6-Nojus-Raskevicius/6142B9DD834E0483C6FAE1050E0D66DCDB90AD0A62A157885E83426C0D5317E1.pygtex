@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{Valstybinis} \PYG{n}{numeris}\PYG{p}{;}\PYG{n}{Gamintojas}\PYG{p}{;}\PYG{n}{Modelis}\PYG{p}{;}\PYG{n}{Pagaminimo} \PYG{n}{metai}\PYG{p}{;}\PYG{n}{Pagaminimo} \PYG{n}{mėnuo}\PYG{p}{;}\PYG{n}{T}\PYG{p}{.}\PYG{n}{A}\PYG{p}{.} \PYG{n}{galiojimo} \PYG{n}{data}\PYG{p}{;}\PYG{n}{Kuras}\PYG{p}{;}\PYG{n}{Vid}\PYG{p}{.} \PYG{n}{sąnaudos}
+\PYG{n}{FCX456}\PYG{p}{;}\PYG{n}{Ford}\PYG{p}{;}\PYG{n}{Focus}\PYG{p}{;}\PYG{l+m}{2016}\PYG{p}{;}\PYG{l+m}{4}\PYG{p}{;}\PYG{n}{SKUBIAI}\PYG{p}{;}\PYG{n}{dyzelis}\PYG{p}{;}\PYG{l+m}{7.900}
+\PYG{n}{DKI234}\PYG{p}{;}\PYG{n}{Passat}\PYG{p}{;}\PYG{n}{B6}\PYG{p}{;}\PYG{l+m}{1996}\PYG{p}{;}\PYG{l+m}{5}\PYG{p}{;}\PYG{n}{SKUBIAI}\PYG{p}{;}\PYG{n}{benzinas}\PYG{p}{;}\PYG{l+m}{5.600}
+\end{Verbatim}
