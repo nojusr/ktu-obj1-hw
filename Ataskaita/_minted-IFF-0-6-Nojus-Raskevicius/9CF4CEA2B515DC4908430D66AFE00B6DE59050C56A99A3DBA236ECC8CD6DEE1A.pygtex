@@ -1,0 +1,19 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{Kaunas}
+\PYG{n}{Tytuvėų} \PYG{n}{g}\PYG{p}{.} \PYG{l+m}{45}
+\PYG{p}{+}\PYG{l+m}{37068989895}
+\PYG{n}{ABC123}\PYG{p}{;}\PYG{n}{BMW}\PYG{p}{;}\PYG{n}{X7}\PYG{p}{;}\PYG{l+m}{2020}\PYG{p}{;}\PYG{l+m}{05}\PYG{p}{;}\PYG{l+m}{2021}\PYG{p}{\PYGZhy{}}\PYG{l+m}{02}\PYG{p}{\PYGZhy{}}\PYG{l+m}{27}\PYG{p}{;}\PYG{n}{dyzelis}\PYG{p}{;}\PYG{l+m}{4.0}
+\PYG{n}{AKF435}\PYG{p}{;}\PYG{n}{Audi}\PYG{p}{;}\PYG{n}{A4}\PYG{p}{;}\PYG{l+m}{2005}\PYG{p}{;}\PYG{l+m}{04}\PYG{p}{;}\PYG{l+m}{2021}\PYG{p}{\PYGZhy{}}\PYG{l+m}{02}\PYG{p}{\PYGZhy{}}\PYG{l+m}{23}\PYG{p}{;}\PYG{n}{benzinas}\PYG{p}{;}\PYG{l+m}{5.3}
+\PYG{n}{ASD435}\PYG{p}{;}\PYG{n}{Audi}\PYG{p}{;}\PYG{n}{A6}\PYG{p}{;}\PYG{l+m}{2016}\PYG{p}{;}\PYG{l+m}{01}\PYG{p}{;}\PYG{l+m}{2019}\PYG{p}{\PYGZhy{}}\PYG{l+m}{02}\PYG{p}{\PYGZhy{}}\PYG{l+m}{23}\PYG{p}{;}\PYG{n}{benzinas}\PYG{p}{;}\PYG{l+m}{5.3}
+\PYG{n}{DSF342}\PYG{p}{;}\PYG{n}{BMW}\PYG{p}{;}\PYG{l+m}{3}\PYG{p}{;}\PYG{l+m}{1990}\PYG{p}{;}\PYG{l+m}{11}\PYG{p}{;}\PYG{l+m}{2021}\PYG{p}{\PYGZhy{}}\PYG{l+m}{02}\PYG{p}{\PYGZhy{}}\PYG{l+m}{24}\PYG{p}{;}\PYG{n}{elektrine}\PYG{p}{;}\PYG{l+m}{3.0}
+\PYG{n}{DDD999}\PYG{p}{;}\PYG{n}{BMW}\PYG{p}{;}\PYG{n}{V70}\PYG{p}{;}\PYG{l+m}{2009}\PYG{p}{;}\PYG{l+m}{09}\PYG{p}{;}\PYG{l+m}{2021}\PYG{p}{\PYGZhy{}}\PYG{l+m}{09}\PYG{p}{\PYGZhy{}}\PYG{l+m}{29}\PYG{p}{;}\PYG{n}{dyzelis}\PYG{p}{;}\PYG{l+m}{4.8}
+\PYG{n}{UIF805}\PYG{p}{;}\PYG{n}{Audi}\PYG{p}{;}\PYG{n}{A80}\PYG{p}{;}\PYG{l+m}{2000}\PYG{p}{;}\PYG{l+m}{12}\PYG{p}{;}\PYG{l+m}{2021}\PYG{p}{\PYGZhy{}}\PYG{l+m}{02}\PYG{p}{\PYGZhy{}}\PYG{l+m}{27}\PYG{p}{;}\PYG{n}{benzinas}\PYG{p}{;}\PYG{l+m}{9.3}
+\PYG{n}{DFD499}\PYG{p}{;}\PYG{n}{BMW}\PYG{p}{;}\PYG{n}{S60}\PYG{p}{;}\PYG{l+m}{2016}\PYG{p}{;}\PYG{l+m}{04}\PYG{p}{;}\PYG{l+m}{2021}\PYG{p}{\PYGZhy{}}\PYG{l+m}{09}\PYG{p}{\PYGZhy{}}\PYG{l+m}{19}\PYG{p}{;}\PYG{n}{dyzelis}\PYG{p}{;}\PYG{l+m}{8}
+\PYG{n}{DID234}\PYG{p}{;}\PYG{n}{BMW}\PYG{p}{;}\PYG{n}{B6}\PYG{p}{;}\PYG{l+m}{1996}\PYG{p}{;}\PYG{l+m}{05}\PYG{p}{;}\PYG{l+m}{2021}\PYG{p}{\PYGZhy{}}\PYG{l+m}{03}\PYG{p}{\PYGZhy{}}\PYG{l+m}{25}\PYG{p}{;}\PYG{n}{benzinas}\PYG{p}{;}\PYG{l+m}{5.6}
+\PYG{n}{FVW456}\PYG{p}{;}\PYG{n}{Ford}\PYG{p}{;}\PYG{n}{Focus}\PYG{p}{;}\PYG{l+m}{2016}\PYG{p}{;}\PYG{l+m}{04}\PYG{p}{;}\PYG{l+m}{2021}\PYG{p}{\PYGZhy{}}\PYG{l+m}{05}\PYG{p}{\PYGZhy{}}\PYG{l+m}{21}\PYG{p}{;}\PYG{n}{benzinas}\PYG{p}{;}\PYG{l+m}{7.9}
+\PYG{n}{ABC125}\PYG{p}{;}\PYG{n}{Volvo}\PYG{p}{;}\PYG{n}{S60}\PYG{p}{;}\PYG{l+m}{2020}\PYG{p}{;}\PYG{l+m}{05}\PYG{p}{;}\PYG{l+m}{2021}\PYG{p}{\PYGZhy{}}\PYG{l+m}{09}\PYG{p}{\PYGZhy{}}\PYG{l+m}{19}\PYG{p}{;}\PYG{n}{dyzelis}\PYG{p}{;}\PYG{l+m}{10.5}
+\PYG{n}{KHT367}\PYG{p}{;}\PYG{n}{Volvo}\PYG{p}{;}\PYG{n}{S60}\PYG{p}{;}\PYG{l+m}{2013}\PYG{p}{;}\PYG{l+m}{07}\PYG{p}{;}\PYG{l+m}{2021}\PYG{p}{\PYGZhy{}}\PYG{l+m}{10}\PYG{p}{\PYGZhy{}}\PYG{l+m}{19}\PYG{p}{;}\PYG{n}{benzinas}\PYG{p}{;}\PYG{l+m}{8}
+\PYG{n}{ABC124}\PYG{p}{;}\PYG{n}{Audi}\PYG{p}{;}\PYG{n}{A80}\PYG{p}{;}\PYG{l+m}{2020}\PYG{p}{;}\PYG{l+m}{05}\PYG{p}{;}\PYG{l+m}{2021}\PYG{p}{\PYGZhy{}}\PYG{l+m}{05}\PYG{p}{\PYGZhy{}}\PYG{l+m}{27}\PYG{p}{;}\PYG{n}{dujos}\PYG{p}{;}\PYG{l+m}{7.3}
+\PYG{n}{OLF279}\PYG{p}{;}\PYG{n}{Audi}\PYG{p}{;}\PYG{n}{A80}\PYG{p}{;}\PYG{l+m}{1998}\PYG{p}{;}\PYG{l+m}{06}\PYG{p}{;}\PYG{l+m}{2021}\PYG{p}{\PYGZhy{}}\PYG{l+m}{05}\PYG{p}{\PYGZhy{}}\PYG{l+m}{27}\PYG{p}{;}\PYG{n}{dujos}\PYG{p}{;}\PYG{l+m}{7.3}
+\PYG{n}{PPP875}\PYG{p}{;}\PYG{n}{Audi}\PYG{p}{;}\PYG{n}{A6}\PYG{p}{;}\PYG{l+m}{2018}\PYG{p}{;}\PYG{l+m}{05}\PYG{p}{;}\PYG{l+m}{2019}\PYG{p}{\PYGZhy{}}\PYG{l+m}{05}\PYG{p}{\PYGZhy{}}\PYG{l+m}{27}\PYG{p}{;}\PYG{n}{dyzelis}\PYG{p}{;}\PYG{l+m}{7.3}
+\end{Verbatim}

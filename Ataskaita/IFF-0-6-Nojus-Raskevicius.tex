@@ -454,6 +454,10 @@ Aukščiausi žaidėjai:
 
 \inputminted{csharp}{Assets/L3/test1-input2.txt}
 
+Šie duomenys yra skirti tikrinti bendrą programos veiklą ir įsitikinti, kad apžiūros (Apžiūra1.csv, Apžiūra2.csv)
+failai tinkamai sudėlioja visus automobilius pagal nurodytą eilės tvarką.
+Pirmas registras (filialas) turi senesnius automobilius.
+
 \textbf{Programos išvestis}
 
 \footnotesize
@@ -550,6 +554,119 @@ Naujausias(-i) automobilis(-iai):
 \textbf{Apžiūra2.csv:}
 \inputminted{csharp}{Assets/L3/apziura1-2.csv}
 
+\subsubsection{Antras tikrinimas:}
+\begin{changemargin}{0cm}{0cm}
+    \textbf{Kaunas.csv:}
+\end{changemargin}
+
+\inputminted{csharp}{Assets/L3/test2-input1.txt}
+
+\begin{changemargin}{0cm}{0cm}
+    \textbf{Siauliai.csv:}
+\end{changemargin}
+
+\inputminted{csharp}{Assets/L3/test2-input2.txt}
+
+Šie duomenys yra skirti tikrinti ar programa išveda kelias naujausias mašinas ir ar programa tinkamai išveda į Klaidos.csv.
+Į klaidas turėtų buti išvesti automobiliai PPP875, ASD435 ir UIF805.
+Naujausi automobiliai pirmame regsitre turėtų būti ABC123, ABC124, ABC125.
+Naujausias automobilis antrame registre turėtų būti PPP875.
+
+\textbf{Programos išvestis:}
+
+\footnotesize
+\begin{verbatim}
+Antrame Filiale (registre) yra senesni automobiliai.
+UAB „Žaibas Šiauliai“ priklausantys automobiliai:
+┌───────┬────────────┬────────┬─────┬────┬───────────────┬──────────┬────────────┐
+│Val. ID│Gamintojas  │Modelis │Metai│Mėn.│T.A. gal. data │Kuras     │Vid. sąnaud.│
+├───────┼────────────┼────────┼─────┼────┼───────────────┼──────────┼────────────┤
+│LYK465 │BMW         │X7      │2017 │3   │1/23/2019      │dyzelis   │4           │
+│ASD435 │Audi        │A6      │2016 │1   │2/23/2019      │benzinas  │5.3         │
+│LLL342 │Mazda       │3       │1990 │11  │2/24/2018      │elektrine │3           │
+│DYY999 │Volvo       │V70     │2009 │9   │9/29/2018      │dyzelis   │4.8         │
+│UPP805 │Audi        │A6      │2000 │12  │2/27/2019      │benzinas  │9.3         │
+│DOO499 │Volvo       │S80     │2012 │4   │9/19/2018      │dyzelis   │8           │
+│JYY875 │Audi        │A100    │1990 │2   │1/27/2019      │dyzelis   │6.3         │
+│DKI234 │Passat      │B6      │1996 │5   │3/25/2019      │benzinas  │5.6         │
+│FCX456 │Ford        │Focus   │2016 │4   │5/21/2019      │dyzelis   │7.9         │
+│DKL759 │Volvo       │S80     │2008 │1   │9/19/2018      │dyzelis   │10.5        │
+│OOO367 │Volvo       │S60     │2012 │7   │9/19/2019      │benzinas  │8           │
+│PPP875 │Audi        │A6      │2018 │5   │5/27/2019      │dyzelis   │7.3         │
+│LZM279 │Audi        │A7      │2006 │6   │5/27/2019      │dujos     │7.3         │
+│UIF805 │Audi        │A80     │2000 │12  │2/27/2021      │benzinas  │9.3         │
+│JXF875 │Audi        │A80     │1990 │2   │1/27/2021      │benzinas  │6.3         │
+└───────┴────────────┴────────┴─────┴────┴───────────────┴──────────┴────────────┘
+
+Pirmas registras:
+UAB „Žaibas Kaunas“ priklausantys automobiliai:
+┌───────┬────────────┬────────┬─────┬────┬───────────────┬──────────┬────────────┐
+│Val. ID│Gamintojas  │Modelis │Metai│Mėn.│T.A. gal. data │Kuras     │Vid. sąnaud.│
+├───────┼────────────┼────────┼─────┼────┼───────────────┼──────────┼────────────┤
+│ABC123 │BMW         │X7      │2020 │5   │2/27/2021      │dyzelis   │4           │
+│AKF435 │Audi        │A4      │2005 │4   │2/23/2021      │benzinas  │5.3         │
+│ASD435 │Audi        │A6      │2020 │1   │2/23/2019      │benzinas  │5.3         │
+│DSF342 │BMW         │3       │1990 │11  │2/24/2021      │elektrine │3           │
+│DDD999 │BMW         │V70     │2009 │9   │9/29/2021      │dyzelis   │4.8         │
+│UIF805 │Audi        │A80     │2000 │12  │2/27/2021      │benzinas  │9.3         │
+│DFD499 │BMW         │S60     │2016 │4   │9/19/2021      │dyzelis   │8           │
+│DID234 │BMW         │B6      │1996 │5   │3/25/2021      │benzinas  │5.6         │
+│FVW456 │Ford        │Focus   │2016 │4   │5/21/2021      │benzinas  │7.9         │
+│ABC125 │Volvo       │S60     │2020 │5   │9/19/2021      │dyzelis   │10.5        │
+│KHT367 │Volvo       │S60     │2013 │7   │10/19/2021     │benzinas  │8           │
+│ABC124 │Audi        │A80     │2020 │5   │5/27/2021      │dujos     │7.3         │
+│OLF279 │Audi        │A80     │1998 │6   │5/27/2021      │dujos     │7.3         │
+│PPP875 │Audi        │A6      │2018 │5   │5/27/2019      │dyzelis   │7.3         │
+└───────┴────────────┴────────┴─────┴────┴───────────────┴──────────┴────────────┘
+Naujausias(-i) automobilis(-iai):
+┌───────┬────────────┬────────┬─────┬────┬───────────────┬──────────┬────────────┐
+│Val. ID│Gamintojas  │Modelis │Metai│Mėn.│T.A. gal. data │Kuras     │Vid. sąnaud.│
+├───────┼────────────┼────────┼─────┼────┼───────────────┼──────────┼────────────┤
+│ABC123 │BMW         │X7      │2020 │5   │2/27/2021      │dyzelis   │4           │
+│ABC125 │Volvo       │S60     │2020 │5   │9/19/2021      │dyzelis   │10.5        │
+│ABC124 │Audi        │A80     │2020 │5   │5/27/2021      │dujos     │7.3         │
+└───────┴────────────┴────────┴─────┴────┴───────────────┴──────────┴────────────┘
+
+Antras registras:
+UAB „Žaibas Šiauliai“ priklausantys automobiliai:
+┌───────┬────────────┬────────┬─────┬────┬───────────────┬──────────┬────────────┐
+│Val. ID│Gamintojas  │Modelis │Metai│Mėn.│T.A. gal. data │Kuras     │Vid. sąnaud.│
+├───────┼────────────┼────────┼─────┼────┼───────────────┼──────────┼────────────┤
+│LYK465 │BMW         │X7      │2017 │3   │1/23/2019      │dyzelis   │4           │
+│ASD435 │Audi        │A6      │2016 │1   │2/23/2019      │benzinas  │5.3         │
+│LLL342 │Mazda       │3       │1990 │11  │2/24/2018      │elektrine │3           │
+│DYY999 │Volvo       │V70     │2009 │9   │9/29/2018      │dyzelis   │4.8         │
+│UPP805 │Audi        │A6      │2000 │12  │2/27/2019      │benzinas  │9.3         │
+│DOO499 │Volvo       │S80     │2012 │4   │9/19/2018      │dyzelis   │8           │
+│JYY875 │Audi        │A100    │1990 │2   │1/27/2019      │dyzelis   │6.3         │
+│DKI234 │Passat      │B6      │1996 │5   │3/25/2019      │benzinas  │5.6         │
+│FCX456 │Ford        │Focus   │2016 │4   │5/21/2019      │dyzelis   │7.9         │
+│DKL759 │Volvo       │S80     │2008 │1   │9/19/2018      │dyzelis   │10.5        │
+│OOO367 │Volvo       │S60     │2012 │7   │9/19/2019      │benzinas  │8           │
+│PPP875 │Audi        │A6      │2018 │5   │5/27/2019      │dyzelis   │7.3         │
+│LZM279 │Audi        │A7      │2006 │6   │5/27/2019      │dujos     │7.3         │
+│UIF805 │Audi        │A80     │2000 │12  │2/27/2021      │benzinas  │9.3         │
+│JXF875 │Audi        │A80     │1990 │2   │1/27/2021      │benzinas  │6.3         │
+└───────┴────────────┴────────┴─────┴────┴───────────────┴──────────┴────────────┘
+Naujausias(-i) automobilis(-iai):
+┌───────┬────────────┬────────┬─────┬────┬───────────────┬──────────┬────────────┐
+│Val. ID│Gamintojas  │Modelis │Metai│Mėn.│T.A. gal. data │Kuras     │Vid. sąnaud.│
+├───────┼────────────┼────────┼─────┼────┼───────────────┼──────────┼────────────┤
+│PPP875 │Audi        │A6      │2018 │5   │5/27/2019      │dyzelis   │7.3         │
+└───────┴────────────┴────────┴─────┴────┴───────────────┴──────────┴────────────┘
+\end{verbatim}
+\normalsize
+
+\pagebreak
+
+\textbf{Klaidos.csv:}
+\inputminted{csharp}{Assets/L3/klaidos2.csv}
+
+\textbf{Apžiūra1.csv:}
+\inputminted{csharp}{Assets/L3/apziura2-1.csv}
+
+\textbf{Apžiūra2.csv:}
+\inputminted{csharp}{Assets/L3/apziura2-2.csv}
 
 \subsection{Dėstytojo pastabos}
 \newpage

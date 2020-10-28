@@ -58,7 +58,7 @@
         \PYG{p}{\PYGZcb{}}
         \PYG{k}{public} \PYG{k}{static} \PYG{k+kt}{bool} \PYG{k}{operator} \PYG{p}{\PYGZgt{}(}\PYG{n}{Vehicle} \PYG{n}{vehicle1}\PYG{p}{,} \PYG{n}{Vehicle} \PYG{n}{vehicle2}\PYG{p}{)} \PYG{p}{\PYGZob{}}
             \PYG{k}{return} \PYG{n}{vehicle1}\PYG{p}{.}\PYG{n}{Age} \PYG{p}{\PYGZgt{}} \PYG{n}{vehicle2}\PYG{p}{.}\PYG{n}{Age}\PYG{p}{;}
-                \PYG{p}{\PYGZcb{}}
+        \PYG{p}{\PYGZcb{}}
         \PYG{k}{public} \PYG{k}{static} \PYG{k+kt}{bool} \PYG{k}{operator} \PYG{p}{\PYGZlt{}(}\PYG{n}{Vehicle} \PYG{n}{vehicle1}\PYG{p}{,} \PYG{n}{Vehicle} \PYG{n}{vehicle2}\PYG{p}{)} \PYG{p}{\PYGZob{}}
             \PYG{k}{return} \PYG{n}{vehicle1}\PYG{p}{.}\PYG{n}{Age} \PYG{p}{\PYGZlt{}} \PYG{n}{vehicle2}\PYG{p}{.}\PYG{n}{Age}\PYG{p}{;}
         \PYG{p}{\PYGZcb{}}
@@ -217,6 +217,18 @@
             \PYG{k}{return} \PYG{k}{false}\PYG{p}{;}
         \PYG{p}{\PYGZcb{}}
 
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// a method to clear the objects contained in this container}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{k}{public} \PYG{k}{void} \PYG{n+nf}{Clear}\PYG{p}{()}
+        \PYG{p}{\PYGZob{}}
+            \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{=} \PYG{l+m}{0}\PYG{p}{;} \PYG{n}{i} \PYG{p}{\PYGZlt{}} \PYG{k}{this}\PYG{p}{.}\PYG{n}{Count}\PYG{p}{;} \PYG{n}{i}\PYG{p}{++)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{k}{this}\PYG{p}{.}\PYG{n}{vehicles}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{p}{=} \PYG{k}{null}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{Count} \PYG{p}{=} \PYG{l+m}{0}\PYG{p}{;}
+
+        \PYG{p}{\PYGZcb{}}
 
         \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
         \PYG{c+c1}{/// A delegate method to specify how should the sorting in Sort be performed.}
@@ -803,10 +815,23 @@
 
             \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{=} \PYG{l+m}{0}\PYG{p}{;} \PYG{n}{i} \PYG{p}{\PYGZlt{}} \PYG{k}{this}\PYG{p}{.}\PYG{n}{AllVehicles}\PYG{p}{.}\PYG{n}{Count}\PYG{p}{;} \PYG{n}{i}\PYG{p}{++)}
             \PYG{p}{\PYGZob{}}
-                \PYG{n}{Vehicle} \PYG{n}{vehicle} \PYG{p}{=} \PYG{k}{this}\PYG{p}{.}\PYG{n}{AllVehicles}\PYG{p}{[}\PYG{n}{i}\PYG{p}{];}
-                \PYG{k}{if} \PYG{p}{(}\PYG{n}{vehicle}\PYG{p}{.}\PYG{n}{Age} \PYG{p}{==} \PYG{n}{NewestVehicleDate}\PYG{p}{().}\PYG{n}{Age}\PYG{p}{)}
+
+                \PYG{k}{if} \PYG{p}{(}\PYG{n}{NewestVehicles}\PYG{p}{.}\PYG{n}{Count} \PYG{p}{==} \PYG{l+m}{0}\PYG{p}{)}
                 \PYG{p}{\PYGZob{}}
-                    \PYG{n}{NewestVehicles}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{vehicle}\PYG{p}{);}
+                    \PYG{n}{NewestVehicles}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n}{AllVehicles}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]);}
+                    \PYG{k}{continue}\PYG{p}{;}
+                \PYG{p}{\PYGZcb{}}
+
+                \PYG{n}{Vehicle} \PYG{n}{vehicleToCompare} \PYG{p}{=} \PYG{n}{NewestVehicles}\PYG{p}{[}\PYG{l+m}{0}\PYG{p}{];}
+
+                \PYG{k}{if} \PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n}{AllVehicles}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{p}{\PYGZlt{}} \PYG{n}{vehicleToCompare}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{n}{NewestVehicles}\PYG{p}{.}\PYG{n}{Clear}\PYG{p}{();}
+                    \PYG{n}{NewestVehicles}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n}{AllVehicles}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]);}
+                \PYG{p}{\PYGZcb{}}
+                \PYG{k}{else} \PYG{n+nf}{if} \PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n}{AllVehicles}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{Age} \PYG{p}{==} \PYG{n}{vehicleToCompare}\PYG{p}{.}\PYG{n}{Age}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{n}{NewestVehicles}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n}{AllVehicles}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]);}
                 \PYG{p}{\PYGZcb{}}
             \PYG{p}{\PYGZcb{}}
             \PYG{k}{return} \PYG{n}{NewestVehicles}\PYG{p}{;}
@@ -830,25 +855,6 @@
             \PYG{n}{output} \PYG{p}{=} \PYG{n}{sum}\PYG{p}{/(}\PYG{k+kt}{double}\PYG{p}{)}\PYG{k}{this}\PYG{p}{.}\PYG{n}{AllVehicles}\PYG{p}{.}\PYG{n}{Count}\PYG{p}{;}
 
             \PYG{k}{return} \PYG{n}{output}\PYG{p}{;}
-        \PYG{p}{\PYGZcb{}}
-
-
-        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
-        \PYG{c+c1}{/// Method to find the newest vehicle}
-        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
-        \PYG{c+c1}{/// \PYGZlt{}returns\PYGZgt{}\PYGZlt{}/returns\PYGZgt{}}
-        \PYG{k}{private} \PYG{n}{Vehicle} \PYG{n+nf}{NewestVehicleDate}\PYG{p}{()}
-        \PYG{p}{\PYGZob{}}
-            \PYG{n}{Vehicle} \PYG{n}{NewestVehicle} \PYG{p}{=} \PYG{n}{AllVehicles}\PYG{p}{[}\PYG{l+m}{0}\PYG{p}{];}
-            \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{=} \PYG{l+m}{0}\PYG{p}{;} \PYG{n}{i} \PYG{p}{\PYGZlt{}} \PYG{k}{this}\PYG{p}{.}\PYG{n}{AllVehicles}\PYG{p}{.}\PYG{n}{Count}\PYG{p}{;} \PYG{n}{i}\PYG{p}{++)}
-            \PYG{p}{\PYGZob{}}
-                \PYG{n}{Vehicle} \PYG{n}{vehicle} \PYG{p}{=} \PYG{k}{this}\PYG{p}{.}\PYG{n}{AllVehicles}\PYG{p}{[}\PYG{n}{i}\PYG{p}{];}
-                \PYG{k}{if} \PYG{p}{(}\PYG{n}{vehicle} \PYG{p}{\PYGZlt{}} \PYG{n}{NewestVehicle}\PYG{p}{)}
-                \PYG{p}{\PYGZob{}}
-                    \PYG{n}{NewestVehicle} \PYG{p}{=} \PYG{n}{vehicle}\PYG{p}{;}
-                \PYG{p}{\PYGZcb{}}
-            \PYG{p}{\PYGZcb{}}
-            \PYG{k}{return} \PYG{n}{NewestVehicle}\PYG{p}{;}
         \PYG{p}{\PYGZcb{}}
 
 

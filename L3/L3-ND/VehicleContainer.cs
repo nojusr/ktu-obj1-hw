@@ -129,6 +129,18 @@ namespace L3
             return false;
         }
 
+        /// <summary>
+        /// a method to clear the objects contained in this container
+        /// </summary>
+        public void Clear()
+        {
+            for (int i = 0; i < this.Count; i++)
+            {
+                this.vehicles[i] = null;
+            }
+            this.Count = 0;
+
+        }
 
         /// <summary>
         /// A delegate method to specify how should the sorting in Sort be performed.

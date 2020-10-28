@@ -206,10 +206,23 @@ namespace L3
 
             for (int i = 0; i < this.AllVehicles.Count; i++)
             {
-                Vehicle vehicle = this.AllVehicles[i];
-                if (vehicle.Age == NewestVehicleDate().Age)
+
+                if (NewestVehicles.Count == 0)
                 {
-                    NewestVehicles.Add(vehicle);
+                    NewestVehicles.Add(this.AllVehicles[i]);
+                    continue;
+                }
+
+                Vehicle vehicleToCompare = NewestVehicles[0];
+
+                if (this.AllVehicles[i] < vehicleToCompare)
+                {
+                    NewestVehicles.Clear();
+                    NewestVehicles.Add(this.AllVehicles[i]);
+                }
+                else if (this.AllVehicles[i].Age == vehicleToCompare.Age)
+                {
+                    NewestVehicles.Add(this.AllVehicles[i]);
                 }
             }
             return NewestVehicles;
@@ -233,25 +246,6 @@ namespace L3
             output = sum/(double)this.AllVehicles.Count;
 
             return output;
-        }
-
-
-        /// <summary>
-        /// Method to find the newest vehicle
-        /// </summary>
-        /// <returns></returns>
-        private Vehicle NewestVehicleDate()
-        {
-            Vehicle NewestVehicle = AllVehicles[0];
-            for (int i = 0; i < this.AllVehicles.Count; i++)
-            {
-                Vehicle vehicle = this.AllVehicles[i];
-                if (vehicle < NewestVehicle)
-                {
-                    NewestVehicle = vehicle;
-                }
-            }
-            return NewestVehicle;
         }
 
 
