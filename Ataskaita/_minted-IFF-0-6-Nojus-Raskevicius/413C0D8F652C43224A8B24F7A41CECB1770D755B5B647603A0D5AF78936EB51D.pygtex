@@ -62,6 +62,37 @@
         \PYG{k}{public} \PYG{k}{static} \PYG{k+kt}{bool} \PYG{k}{operator} \PYG{p}{\PYGZlt{}(}\PYG{n}{Vehicle} \PYG{n}{vehicle1}\PYG{p}{,} \PYG{n}{Vehicle} \PYG{n}{vehicle2}\PYG{p}{)} \PYG{p}{\PYGZob{}}
             \PYG{k}{return} \PYG{n}{vehicle1}\PYG{p}{.}\PYG{n}{Age} \PYG{p}{\PYGZlt{}} \PYG{n}{vehicle2}\PYG{p}{.}\PYG{n}{Age}\PYG{p}{;}
         \PYG{p}{\PYGZcb{}}
+
+        \PYG{k}{public} \PYG{k+kt}{int} \PYG{n+nf}{CompareTo}\PYG{p}{(}\PYG{n}{Vehicle} \PYG{n}{other}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{k}{if} \PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n}{Producer}\PYG{p}{.}\PYG{n}{CompareTo}\PYG{p}{(}\PYG{n}{other}\PYG{p}{.}\PYG{n}{Producer}\PYG{p}{)} \PYG{p}{\PYGZgt{}} \PYG{l+m}{0}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{k}{return} \PYG{l+m}{1}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{k}{if} \PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n}{Producer}\PYG{p}{.}\PYG{n}{CompareTo}\PYG{p}{(}\PYG{n}{other}\PYG{p}{.}\PYG{n}{Producer}\PYG{p}{)} \PYG{p}{\PYGZlt{}} \PYG{l+m}{0}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{k}{return} \PYG{p}{\PYGZhy{}}\PYG{l+m}{1}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+
+            \PYG{c+c1}{// producer names are equal, sort by model next}
+            \PYG{k}{if} \PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n}{Model}\PYG{p}{.}\PYG{n}{CompareTo}\PYG{p}{(}\PYG{n}{other}\PYG{p}{.}\PYG{n}{Model}\PYG{p}{)} \PYG{p}{\PYGZgt{}} \PYG{l+m}{0}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{k}{return} \PYG{l+m}{1}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{k}{if} \PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n}{Model}\PYG{p}{.}\PYG{n}{CompareTo}\PYG{p}{(}\PYG{n}{other}\PYG{p}{.}\PYG{n}{Model}\PYG{p}{)} \PYG{p}{\PYGZlt{}} \PYG{l+m}{0}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{k}{return} \PYG{p}{\PYGZhy{}}\PYG{l+m}{1}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+
+            \PYG{c+c1}{// model names are equal, sort by ID}
+            \PYG{k}{if} \PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n}{LicensePlate}\PYG{p}{.}\PYG{n}{CompareTo}\PYG{p}{(}\PYG{n}{other}\PYG{p}{.}\PYG{n}{LicensePlate}\PYG{p}{)} \PYG{p}{\PYGZgt{}} \PYG{l+m}{0}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{k}{return} \PYG{l+m}{1}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{k}{if} \PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n}{LicensePlate}\PYG{p}{.}\PYG{n}{CompareTo}\PYG{p}{(}\PYG{n}{other}\PYG{p}{.}\PYG{n}{LicensePlate}\PYG{p}{)} \PYG{p}{\PYGZlt{}} \PYG{l+m}{0}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{k}{return} \PYG{p}{\PYGZhy{}}\PYG{l+m}{1}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+            
+            \PYG{k}{return} \PYG{l+m}{0}\PYG{p}{;} \PYG{c+c1}{// vehicles are identical}
+        \PYG{p}{\PYGZcb{}} 
     \PYG{p}{\PYGZcb{}}
 \PYG{p}{\PYGZcb{}}
 
@@ -231,7 +262,7 @@
         \PYG{p}{\PYGZcb{}}
 
         \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
-        \PYG{c+c1}{/// A delegate method to specify how should the sorting in Sort be performed.}
+        \PYG{c+c1}{/// A delegate method to specify how should the sorting in SortWithDelegate be performed.}
         \PYG{c+c1}{/// Using a delegate as part of the Sort function allows for arbitrary possibilities when sorting}
         \PYG{c+c1}{/// and does not force the programmer to overload the top level methods of their custom class to do only one specific function}
         \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
@@ -242,35 +273,57 @@
 
 
         \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
-        \PYG{c+c1}{/// the sorting function that uses a delegate}
+        \PYG{c+c1}{/// an insertion sort method that uses a delegate.}
         \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
         \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}sortingDel\PYGZdq{}\PYGZgt{}A delegate method by which to sort\PYGZlt{}/param\PYGZgt{}}
         \PYG{k}{public} \PYG{k}{void} \PYG{n+nf}{SortWithDelegate}\PYG{p}{(}\PYG{n}{SortingDelegate} \PYG{n}{sortingDel}\PYG{p}{)}
         \PYG{p}{\PYGZob{}}
-            \PYG{k+kt}{bool} \PYG{n}{flag} \PYG{p}{=} \PYG{k}{true}\PYG{p}{;}
 
-            \PYG{k}{while} \PYG{p}{(}\PYG{n}{flag}\PYG{p}{)}
+
+            \PYG{k+kt}{int} \PYG{n}{minIndex}\PYG{p}{;}
+
+            \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{=} \PYG{l+m}{0}\PYG{p}{;} \PYG{n}{i} \PYG{p}{\PYGZlt{}} \PYG{k}{this}\PYG{p}{.}\PYG{n}{Count}\PYG{p}{\PYGZhy{}}\PYG{l+m}{1}\PYG{p}{;} \PYG{n}{i}\PYG{p}{++)}
             \PYG{p}{\PYGZob{}}
+                \PYG{n}{minIndex} \PYG{p}{=} \PYG{n}{i}\PYG{p}{;}
 
-                \PYG{n}{flag} \PYG{p}{=} \PYG{k}{false}\PYG{p}{;}
-
-                \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{=} \PYG{l+m}{0}\PYG{p}{;} \PYG{n}{i} \PYG{p}{\PYGZlt{}} \PYG{k}{this}\PYG{p}{.}\PYG{n}{Count}\PYG{p}{\PYGZhy{}}\PYG{l+m}{1}\PYG{p}{;} \PYG{n}{i}\PYG{p}{++)}
+                \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{j} \PYG{p}{=} \PYG{n}{i}\PYG{p}{+}\PYG{l+m}{1}\PYG{p}{;} \PYG{n}{j} \PYG{p}{\PYGZlt{}} \PYG{k}{this}\PYG{p}{.}\PYG{n}{Count}\PYG{p}{;} \PYG{n}{j}\PYG{p}{++)}
                 \PYG{p}{\PYGZob{}}
-                    \PYG{n}{Vehicle} \PYG{n}{left} \PYG{p}{=} \PYG{k}{this}\PYG{p}{.}\PYG{n}{vehicles}\PYG{p}{[}\PYG{n}{i}\PYG{p}{];}
-                    \PYG{n}{Vehicle} \PYG{n}{right} \PYG{p}{=} \PYG{k}{this}\PYG{p}{.}\PYG{n}{vehicles}\PYG{p}{[}\PYG{n}{i}\PYG{p}{+}\PYG{l+m}{1}\PYG{p}{];}
-
-                    \PYG{k}{if} \PYG{p}{(}\PYG{n}{sortingDel}\PYG{p}{(}\PYG{n}{left}\PYG{p}{,}\PYG{n}{right}\PYG{p}{)} \PYG{p}{\PYGZgt{}} \PYG{l+m}{0}\PYG{p}{)} \PYG{p}{\PYGZob{}}
-                        \PYG{k}{this}\PYG{p}{.}\PYG{n}{vehicles}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{p}{=} \PYG{n}{right}\PYG{p}{;}
-                        \PYG{k}{this}\PYG{p}{.}\PYG{n}{vehicles}\PYG{p}{[}\PYG{n}{i}\PYG{p}{+}\PYG{l+m}{1}\PYG{p}{]} \PYG{p}{=} \PYG{n}{left}\PYG{p}{;}
-                        \PYG{n}{flag} \PYG{p}{=} \PYG{k}{true}\PYG{p}{;}
+                    \PYG{k}{if} \PYG{p}{(}\PYG{n}{sortingDel}\PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n}{vehicles}\PYG{p}{[}\PYG{n}{j}\PYG{p}{],} \PYG{k}{this}\PYG{p}{.}\PYG{n}{vehicles}\PYG{p}{[}\PYG{n}{minIndex}\PYG{p}{])} \PYG{p}{\PYGZlt{}} \PYG{l+m}{0}\PYG{p}{)}
+                    \PYG{p}{\PYGZob{}}
+                        \PYG{n}{minIndex} \PYG{p}{=} \PYG{n}{j}\PYG{p}{;}
                     \PYG{p}{\PYGZcb{}}
                 \PYG{p}{\PYGZcb{}}
+                \PYG{n}{Vehicle} \PYG{n}{tmp} \PYG{p}{=} \PYG{k}{this}\PYG{p}{.}\PYG{n}{vehicles}\PYG{p}{[}\PYG{n}{minIndex}\PYG{p}{];}
+                \PYG{k}{this}\PYG{p}{.}\PYG{n}{vehicles}\PYG{p}{[}\PYG{n}{minIndex}\PYG{p}{]} \PYG{p}{=} \PYG{k}{this}\PYG{p}{.}\PYG{n}{vehicles}\PYG{p}{[}\PYG{n}{i}\PYG{p}{];}
+                \PYG{k}{this}\PYG{p}{.}\PYG{n}{vehicles}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{p}{=} \PYG{n}{tmp}\PYG{p}{;}
             \PYG{p}{\PYGZcb{}}
         \PYG{p}{\PYGZcb{}}
 
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// an insertion sort for the container.}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{k}{public} \PYG{k}{void} \PYG{n+nf}{Sort}\PYG{p}{()}
+        \PYG{p}{\PYGZob{}}
+            \PYG{k+kt}{int} \PYG{n}{minIndex}\PYG{p}{;}
+
+            \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{=} \PYG{l+m}{0}\PYG{p}{;} \PYG{n}{i} \PYG{p}{\PYGZlt{}} \PYG{k}{this}\PYG{p}{.}\PYG{n}{Count}\PYG{p}{\PYGZhy{}}\PYG{l+m}{1}\PYG{p}{;} \PYG{n}{i}\PYG{p}{++)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{n}{minIndex} \PYG{p}{=} \PYG{n}{i}\PYG{p}{;}
+
+                \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{j} \PYG{p}{=} \PYG{n}{i}\PYG{p}{+}\PYG{l+m}{1}\PYG{p}{;} \PYG{n}{j} \PYG{p}{\PYGZlt{}} \PYG{k}{this}\PYG{p}{.}\PYG{n}{Count}\PYG{p}{;} \PYG{n}{j}\PYG{p}{++)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{k}{if} \PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n}{vehicles}\PYG{p}{[}\PYG{n}{minIndex}\PYG{p}{].}\PYG{n}{CompareTo}\PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n}{vehicles}\PYG{p}{[}\PYG{n}{j}\PYG{p}{])} \PYG{p}{\PYGZgt{}} \PYG{l+m}{0}\PYG{p}{)}
+                    \PYG{p}{\PYGZob{}}
+                        \PYG{n}{minIndex} \PYG{p}{=} \PYG{n}{j}\PYG{p}{;}
+                    \PYG{p}{\PYGZcb{}}
+                \PYG{p}{\PYGZcb{}}
+                \PYG{n}{Vehicle} \PYG{n}{tmp} \PYG{p}{=} \PYG{k}{this}\PYG{p}{.}\PYG{n}{vehicles}\PYG{p}{[}\PYG{n}{minIndex}\PYG{p}{];}
+                \PYG{k}{this}\PYG{p}{.}\PYG{n}{vehicles}\PYG{p}{[}\PYG{n}{minIndex}\PYG{p}{]} \PYG{p}{=} \PYG{k}{this}\PYG{p}{.}\PYG{n}{vehicles}\PYG{p}{[}\PYG{n}{i}\PYG{p}{];}
+                \PYG{k}{this}\PYG{p}{.}\PYG{n}{vehicles}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{p}{=} \PYG{n}{tmp}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+        \PYG{p}{\PYGZcb{}}
     \PYG{p}{\PYGZcb{}}
 \PYG{p}{\PYGZcb{}}
-
 
 \PYG{c+c1}{//InOutUtils.cs}
 \PYG{k}{using} \PYG{n+nn}{System}\PYG{p}{;}
@@ -882,6 +935,7 @@
                 \PYG{p}{\PYGZcb{}}
             \PYG{p}{\PYGZcb{}}
 
+
             \PYG{n}{VehiclesWithExpiredTI}\PYG{p}{.}\PYG{n}{SortWithDelegate}\PYG{p}{((}\PYG{n}{left}\PYG{p}{,} \PYG{n}{right}\PYG{p}{)} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
                 
                 \PYG{k}{if} \PYG{p}{(}\PYG{n}{left}\PYG{p}{.}\PYG{n}{Producer}\PYG{p}{.}\PYG{n}{CompareTo}\PYG{p}{(}\PYG{n}{right}\PYG{p}{.}\PYG{n}{Producer}\PYG{p}{)} \PYG{p}{\PYGZgt{}} \PYG{l+m}{0}\PYG{p}{)}
@@ -905,13 +959,16 @@
                 \PYG{k}{if} \PYG{p}{(}\PYG{n}{left}\PYG{p}{.}\PYG{n}{LicensePlate}\PYG{p}{.}\PYG{n}{CompareTo}\PYG{p}{(}\PYG{n}{right}\PYG{p}{.}\PYG{n}{LicensePlate}\PYG{p}{)} \PYG{p}{\PYGZgt{}} \PYG{l+m}{0}\PYG{p}{)}
                 \PYG{p}{\PYGZob{}}
                     \PYG{k}{return} \PYG{l+m}{1}\PYG{p}{;}
-                \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{k}{if} \PYG{p}{(}\PYG{n}{left}\PYG{p}{.}\PYG{n}{LicensePlate}\PYG{p}{.}\PYG{n}{CompareTo}\PYG{p}{(}\PYG{n}{right}\PYG{p}{.}\PYG{n}{LicensePlate}\PYG{p}{)} \PYG{p}{\PYGZgt{}} \PYG{l+m}{0}\PYG{p}{)}
+                \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{k}{if} \PYG{p}{(}\PYG{n}{left}\PYG{p}{.}\PYG{n}{LicensePlate}\PYG{p}{.}\PYG{n}{CompareTo}\PYG{p}{(}\PYG{n}{right}\PYG{p}{.}\PYG{n}{LicensePlate}\PYG{p}{)} \PYG{p}{\PYGZlt{}} \PYG{l+m}{0}\PYG{p}{)}
                 \PYG{p}{\PYGZob{}}
                     \PYG{k}{return} \PYG{p}{\PYGZhy{}}\PYG{l+m}{1}\PYG{p}{;}
                 \PYG{p}{\PYGZcb{}}
                 
                 \PYG{k}{return} \PYG{l+m}{0}\PYG{p}{;} \PYG{c+c1}{// vehicles are identical}
+
             \PYG{p}{\PYGZcb{});}
+
+            \PYG{c+c1}{//VehiclesWithExpiredTI.Sort();}
 
 
             \PYG{k}{return} \PYG{n}{VehiclesWithExpiredTI}\PYG{p}{;}

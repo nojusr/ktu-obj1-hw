@@ -273,6 +273,7 @@ namespace L3
                 }
             }
 
+
             VehiclesWithExpiredTI.SortWithDelegate((left, right) => {
                 
                 if (left.Producer.CompareTo(right.Producer) > 0)
@@ -296,13 +297,16 @@ namespace L3
                 if (left.LicensePlate.CompareTo(right.LicensePlate) > 0)
                 {
                     return 1;
-                } else if (left.LicensePlate.CompareTo(right.LicensePlate) > 0)
+                } else if (left.LicensePlate.CompareTo(right.LicensePlate) < 0)
                 {
                     return -1;
                 }
                 
                 return 0; // vehicles are identical
+
             });
+
+            //VehiclesWithExpiredTI.Sort();
 
 
             return VehiclesWithExpiredTI;

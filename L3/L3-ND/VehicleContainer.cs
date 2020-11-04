@@ -143,7 +143,7 @@ namespace L3
         }
 
         /// <summary>
-        /// A delegate method to specify how should the sorting in Sort be performed.
+        /// A delegate method to specify how should the sorting in SortWithDelegate be performed.
         /// Using a delegate as part of the Sort function allows for arbitrary possibilities when sorting
         /// and does not force the programmer to overload the top level methods of their custom class to do only one specific function
         /// </summary>
@@ -154,31 +154,54 @@ namespace L3
 
 
         /// <summary>
-        /// the sorting function that uses a delegate
+        /// an insertion sort method that uses a delegate.
         /// </summary>
         /// <param name="sortingDel">A delegate method by which to sort</param>
         public void SortWithDelegate(SortingDelegate sortingDel)
         {
-            bool flag = true;
 
-            while (flag)
+
+            int minIndex;
+
+            for (int i = 0; i < this.Count-1; i++)
             {
+                minIndex = i;
 
-                flag = false;
-
-                for (int i = 0; i < this.Count-1; i++)
+                for (int j = i+1; j < this.Count; j++)
                 {
-                    Vehicle left = this.vehicles[i];
-                    Vehicle right = this.vehicles[i+1];
-
-                    if (sortingDel(left,right) > 0) {
-                        this.vehicles[i] = right;
-                        this.vehicles[i+1] = left;
-                        flag = true;
+                    if (sortingDel(this.vehicles[j], this.vehicles[minIndex]) < 0)
+                    {
+                        minIndex = j;
                     }
                 }
+                Vehicle tmp = this.vehicles[minIndex];
+                this.vehicles[minIndex] = this.vehicles[i];
+                this.vehicles[i] = tmp;
             }
         }
 
+        /// <summary>
+        /// an insertion sort for the container.
+        /// </summary>
+        public void Sort()
+        {
+            int minIndex;
+
+            for (int i = 0; i < this.Count-1; i++)
+            {
+                minIndex = i;
+
+                for (int j = i+1; j < this.Count; j++)
+                {
+                    if (this.vehicles[minIndex].CompareTo(this.vehicles[j]) > 0)
+                    {
+                        minIndex = j;
+                    }
+                }
+                Vehicle tmp = this.vehicles[minIndex];
+                this.vehicles[minIndex] = this.vehicles[i];
+                this.vehicles[i] = tmp;
+            }
+        }
     }
 }

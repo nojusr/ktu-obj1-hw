@@ -61,6 +61,37 @@ namespace L3
         public static bool operator <(Vehicle vehicle1, Vehicle vehicle2) {
             return vehicle1.Age < vehicle2.Age;
         }
+
+        public int CompareTo(Vehicle other)
+        {
+            if (this.Producer.CompareTo(other.Producer) > 0)
+            {
+                return 1;
+            } else if (this.Producer.CompareTo(other.Producer) < 0)
+            {
+                return -1;
+            }
+
+            // producer names are equal, sort by model next
+            if (this.Model.CompareTo(other.Model) > 0)
+            {
+                return 1;
+            } else if (this.Model.CompareTo(other.Model) < 0)
+            {
+                return -1;
+            }
+
+            // model names are equal, sort by ID
+            if (this.LicensePlate.CompareTo(other.LicensePlate) > 0)
+            {
+                return 1;
+            } else if (this.LicensePlate.CompareTo(other.LicensePlate) < 0)
+            {
+                return -1;
+            }
+            
+            return 0; // vehicles are identical
+        } 
     }
 }
 
@@ -230,7 +261,7 @@ namespace L3
         }
 
         /// <summary>
-        /// A delegate method to specify how should the sorting in Sort be performed.
+        /// A delegate method to specify how should the sorting in SortWithDelegate be performed.
         /// Using a delegate as part of the Sort function allows for arbitrary possibilities when sorting
         /// and does not force the programmer to overload the top level methods of their custom class to do only one specific function
         /// </summary>
@@ -241,35 +272,57 @@ namespace L3
 
 
         /// <summary>
-        /// the sorting function that uses a delegate
+        /// an insertion sort method that uses a delegate.
         /// </summary>
         /// <param name="sortingDel">A delegate method by which to sort</param>
         public void SortWithDelegate(SortingDelegate sortingDel)
         {
-            bool flag = true;
 
-            while (flag)
+
+            int minIndex;
+
+            for (int i = 0; i < this.Count-1; i++)
             {
+                minIndex = i;
 
-                flag = false;
-
-                for (int i = 0; i < this.Count-1; i++)
+                for (int j = i+1; j < this.Count; j++)
                 {
-                    Vehicle left = this.vehicles[i];
-                    Vehicle right = this.vehicles[i+1];
-
-                    if (sortingDel(left,right) > 0) {
-                        this.vehicles[i] = right;
-                        this.vehicles[i+1] = left;
-                        flag = true;
+                    if (sortingDel(this.vehicles[j], this.vehicles[minIndex]) < 0)
+                    {
+                        minIndex = j;
                     }
                 }
+                Vehicle tmp = this.vehicles[minIndex];
+                this.vehicles[minIndex] = this.vehicles[i];
+                this.vehicles[i] = tmp;
             }
         }
 
+        /// <summary>
+        /// an insertion sort for the container.
+        /// </summary>
+        public void Sort()
+        {
+            int minIndex;
+
+            for (int i = 0; i < this.Count-1; i++)
+            {
+                minIndex = i;
+
+                for (int j = i+1; j < this.Count; j++)
+                {
+                    if (this.vehicles[minIndex].CompareTo(this.vehicles[j]) > 0)
+                    {
+                        minIndex = j;
+                    }
+                }
+                Vehicle tmp = this.vehicles[minIndex];
+                this.vehicles[minIndex] = this.vehicles[i];
+                this.vehicles[i] = tmp;
+            }
+        }
     }
 }
-
 
 //InOutUtils.cs
 using System;
@@ -881,6 +934,7 @@ namespace L3
                 }
             }
 
+
             VehiclesWithExpiredTI.SortWithDelegate((left, right) => {
                 
                 if (left.Producer.CompareTo(right.Producer) > 0)
@@ -904,13 +958,16 @@ namespace L3
                 if (left.LicensePlate.CompareTo(right.LicensePlate) > 0)
                 {
                     return 1;
-                } else if (left.LicensePlate.CompareTo(right.LicensePlate) > 0)
+                } else if (left.LicensePlate.CompareTo(right.LicensePlate) < 0)
                 {
                     return -1;
                 }
                 
                 return 0; // vehicles are identical
+
             });
+
+            //VehiclesWithExpiredTI.Sort();
 
 
             return VehiclesWithExpiredTI;

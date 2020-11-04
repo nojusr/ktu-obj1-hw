@@ -61,5 +61,36 @@ namespace L3
         public static bool operator <(Vehicle vehicle1, Vehicle vehicle2) {
             return vehicle1.Age < vehicle2.Age;
         }
+
+        public int CompareTo(Vehicle other)
+        {
+            if (this.Producer.CompareTo(other.Producer) > 0)
+            {
+                return 1;
+            } else if (this.Producer.CompareTo(other.Producer) < 0)
+            {
+                return -1;
+            }
+
+            // producer names are equal, sort by model next
+            if (this.Model.CompareTo(other.Model) > 0)
+            {
+                return 1;
+            } else if (this.Model.CompareTo(other.Model) < 0)
+            {
+                return -1;
+            }
+
+            // model names are equal, sort by ID
+            if (this.LicensePlate.CompareTo(other.LicensePlate) > 0)
+            {
+                return 1;
+            } else if (this.LicensePlate.CompareTo(other.LicensePlate) < 0)
+            {
+                return -1;
+            }
+            
+            return 0; // vehicles are identical
+        } 
     }
 }
