@@ -107,12 +107,13 @@ namespace L4_ND
 
 
         /// <summary>
-        /// does the hard part
+        /// copies and writes both files into a string, according to the specification in the 'hard' part of the
+        /// given task
         /// </summary>
         /// <param name="fileName1">the first file from which to read</param>
         /// <param name="fileName2">the second file from which to read</param>
         /// <returns>a long string</returns>
-        public static String DoTheHardPart(String fileName1, String fileName2, List<Char> delimiters)
+        public static String CopyAndCombineBothFiles(String fileName1, String fileName2, List<Char> delimiters)
         {
             String output = "";
 
@@ -130,54 +131,19 @@ namespace L4_ND
             int file1LastWordIndex = 0;
             int file2LastWordIndex = 0;
 
-            // true to copy from lines1
-            // false to copy from lines2
+            // true to copy from file1
+            // false to copy from file2
             bool readToggle = true;
 
             String cmpOut = "";
 
-            // i can only give you prayers if you are tasked with understanding and trying to decipher the code below.
-            // here is a visual metaphor of what's to come:
-/*
-                      ____                    
-                 ____ \__ \
-                 \__ \__/ / __
-                 __/ ____ \ \ \    ____
-                / __ \__ \ \/ / __ \__ \
-           ____ \ \ \__/ / __ \/ / __/ / __
-      ____ \__ \ \/ ____ \/ / __/ / __ \ \ \
-      \__ \__/ / __ \__ \__/ / __ \ \ \ \/
-      __/ ____ \ \ \__/ ____ \ \ \ \/ / __
-     / __ \__ \ \/ ____ \__ \ \/ / __ \/ /
-     \ \ \__/ / __ \__ \__/ / __ \ \ \__/
-      \/ ____ \/ / __/ ____ \ \ \ \/ ____
-         \__ \__/ / __ \__ \ \/ / __ \__ \
-         __/ ____ \ \ \__/ / __ \/ / __/ / __
-        / __ \__ \ \/ ____ \/ / __/ / __ \/ /
-        \/ / __/ / __ \__ \__/ / __ \/ / __/
-        __/ / __ \ \ \__/ ____ \ \ \__/ / __
-       / __ \ \ \ \/ ____ \__ \ \/ ____ \/ /
-       \ \ \ \/ / __ \__ \__/ / __ \__ \__/
-        \/ / __ \/ / __/ ____ \ \ \__/
-           \ \ \__/ / __ \__ \ \/
-            \/      \ \ \__/ / __
-                     \/ ____ \/ /
-                        \__ \__/
-                        __/
-*/
-
-
             while (true)
             {
-
-
-                //Console.WriteLine("flag");
 
                 if (readToggle)
                 {
                     while (file1ReadIndex < file1.Length)
                     {
-                        //Console.WriteLine("l1test");
 
 
                         if (delimiters.Contains(file1[file1ReadIndex]))
@@ -185,18 +151,14 @@ namespace L4_ND
 
 
                             String word = file1.Substring(file1LastWordIndex, file1ReadIndex-file1LastWordIndex);
-                            //Console.WriteLine("FoundWord! {0}", word);
 
                             if (word.Length <= 0)
                             {
                                 file1LastWordIndex++;
                                 file1ReadIndex++;
                             }
-                            
 
                             String strippedWord = word;
-
-                            
 
                             if (strippedWord.Length > 0 && delimiters.Contains(word[0]))
                             {
@@ -205,14 +167,10 @@ namespace L4_ND
 
                             strippedWord = strippedWord.Replace("\n", "").Replace("\r", "");
 
-                            //Console.WriteLine("Stripped: {0}", strippedWord);
-                            
-
                             String firstUncopiedWord = findFirstUncopiedWord(file2, file2ReadIndex, delimiters);
-
+                            //Console.WriteLine("str {0}; funcop {1}.", strippedWord);
                             if (strippedWord == firstUncopiedWord){
-                                //Console.WriteLine("OH SHIT WE SWITCHIN");
-
+                                Console.WriteLine("swissh");
                                 if (word.Length > 0 && delimiters.Contains(word[0]))
                                 {
                                     output += word[0];
@@ -226,7 +184,6 @@ namespace L4_ND
                             output += word;
 
                             file1LastWordIndex = file1ReadIndex;
-                            //Console.WriteLine("----------------------");
                         }
                         file1ReadIndex++;
                     }
@@ -235,15 +192,12 @@ namespace L4_ND
                 {
                     while (file2ReadIndex < file2.Length)
                     {
-                        //Console.WriteLine("l2test");
 
                         if (delimiters.Contains(file2[file2ReadIndex]))
                         {
 
-
                             String word = file2.Substring(file2LastWordIndex, file2ReadIndex-file2LastWordIndex);
-                            //Console.WriteLine("FoundWord! {0}", word);
-                            
+
                             if (word.Length <= 0)
                             {
                                 file2LastWordIndex++;
@@ -262,14 +216,11 @@ namespace L4_ND
 
                             strippedWord = strippedWord.Replace("\n", "").Replace("\r", "");
 
-                            //Console.WriteLine("Stripped: {0}", strippedWord);
-
                             String firstUncopiedWord = findFirstUncopiedWord(file1, file1ReadIndex, delimiters);
 
 
                             if (strippedWord == firstUncopiedWord){
-                                //Console.WriteLine("OH SHIT WE SWITCHIN");
-
+                                Console.WriteLine("swissh");
                                 if (word.Length > 0 && delimiters.Contains(word[0]))
                                 {
                                     output += word[0];
@@ -281,8 +232,6 @@ namespace L4_ND
                             }
 
                             output += word;
-
-                            //Console.WriteLine("----------------------");
                             file2LastWordIndex = file2ReadIndex;
                         }
                         file2ReadIndex++;
@@ -317,14 +266,10 @@ namespace L4_ND
 
             while (readIndex < file.Length)
             {
-                
-                //Console.WriteLine("readindex: {0}, filelen: {1}", readIndex.ToString(), file.Length.ToString());
 
                 if (delimiters.Contains(file[readIndex]))
                 {
                     String word = file.Substring(lastWordIndex, readIndex-lastWordIndex);
-
-                    //Console.WriteLine("FoundFirstUncopiedWord! {0}", word);
 
                     word = word.Trim();
                     word = word.Replace("\n", "").Replace("\r", "");
@@ -335,7 +280,6 @@ namespace L4_ND
                         word = word.Substring(1);
                     }
 
-                    ////Console.WriteLine("strippedFirstWord: {0}", word);
                     return word;
                 }
 

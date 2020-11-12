@@ -674,6 +674,16 @@ Naujausias(-i) automobilis(-iai):
 \inputminted{csharp}{Assets/L3/apziura2-2.csv}
 
 \subsection{Dėstytojo pastabos}
+\begin{itemize}
+    \item[•]Buvo naudojamas ne tas rikiavimo būdas.
+    \item[•]Be reikalo naudojami delegatai.
+\end{itemize}
+
+\changemargin{0cm}{0cm}\textbf{Testo rezultatai: 1/3}\newline
+\textbf{Savarankiško darbo rezultatai: 0/1}\newline
+\textbf{Laboratorinio darbo įvertinimas: 6/7}\newline
+\textbf{Galutinis įvertinimas: 7}\newline
+
 \newpage
 
 %-----------------------------------------------------------------------------------------------------------------
@@ -682,8 +692,147 @@ Naujausias(-i) automobilis(-iai):
 
 \section{Teksto analizė ir redagavimas}
 \subsection{Darbo užduotis}
+Dviejuose  tekstiniuose  failuose \texttt{Knyga1.txt} ir \texttt{Knyga2.txt} duotas tekstas sudarytas iš žodžių,
+atskirtų skyrikliais. Skyriklių aibė žinoma ir abejuose failuose yra ta pati. Analizuojant tekstus, didžiosios
+ir mažosios raidės nesvarbios.Raskite ir spausdinkite faile \texttt{Rodikliai.txt}:
+\begin{itemize}
+    \item[•]ilgiausių žodžių, surikiuotų ilgio mažėjimo tvarka, kurie yra abejuose failuose, sąrašą (ne daugiau nei 10 žodžių) ir jų pasikartojimo skaičių kiekviename iš failų;
+    \item[•]ilgiausių žodžių, surikiuotų ilgio mažėjimo tvarka, kurie yra tik faile \texttt{Knyga1.txt}, bet nėra faile \texttt{Knyga2.txt}, sąrašą (ne daugiau nei 10 žodžių) ir jų pasikartojimo skaičių;
+\end{itemize}
+Spausdinkite faile \texttt{ManoKnyga.txt} apjungtą tekstą, sudarytą pagal tokias taisykles:
+\begin{itemize}
+    \item[•]kopijuojamas  pirmojo  failo  tekstas  tol,  kol  sutinkamas pirmasis nenukopijuotas antrojo failo žodis arba pasiekiama failo pabaiga;
+    \item[•]kopijuojamas antrojo failo tekstas tol, kol sutinkamas pirmasis nenukopijuotas pirmojo failo žodis arba pasiekiama failo pabaiga;
+    \item[•]kartojama tol, kol pasiekiama abiejų failų pabaiga.
+\end{itemize}
+
 \subsection{Programos tekstas}
+
+\inputminted{csharp}{Assets/L4/L4-rawtext.txt}
+
 \subsection{Pradiniai duomenys ir rezultatai}
+
+\subsubsection{Pirmas tikrinimas}
+
+Šie pradiniai duomenys yra skirti bendrai programos veiklai tikrinti. \texttt{Knyga1.txt} turi įterpto lotyniško teksto,
+kuris nėra įterptas į \texttt{Knyga2.txt}, todėl programos antroje lentelėje turėtų būti išvedami tik lotyniški žodžiai.
+
+\begin{changemargin}{0cm}{0cm}
+    \textbf{Knyga1.txt:}
+\end{changemargin}
+
+\inputminted{text}{Assets/L4/t1-k1.txt}
+
+\vspace{0.5cm}
+
+\begin{changemargin}{0cm}{0cm}
+    \textbf{Knyga2.txt:}
+\end{changemargin}
+
+
+\inputminted{text}{Assets/L4/t1-k2.txt}
+
+\begin{changemargin}{0cm}{0cm}
+    \textbf{Programos išvestis:}
+\end{changemargin}
+
+\begin{verbatim}
+┌──────┬──────┬────────────────────┐
+│Knyga1│Knyga2│Žodis               │
+├──────┼──────┼────────────────────┤
+│1     │0     │reprehenderit       │
+│2     │1     │tekstiniuose        │
+│2     │1     │analizuojant        │
+│1     │0     │exercitation        │
+│2     │1     │skyrikliais         │
+│1     │0     │consectetur         │
+│1     │2     │sulygiuoti          │
+│1     │2     │kiekvienos          │
+│1     │2     │kiekvienas          │
+│1     │2     │fiksuotoje          │
+└──────┴──────┴────────────────────┘
+┌──────┬────────────────────┐
+│Knyga1│Žodis               │
+├──────┼────────────────────┤
+│1     │reprehenderit       │
+│1     │exercitation        │
+│1     │consectetur         │
+│1     │adipiscing          │
+│1     │incididunt          │
+│1     │consequat           │
+│1     │voluptate           │
+│1     │excepteur           │
+│1     │cupidatat           │
+│1     │pariatur            │
+└──────┴────────────────────┘
+    
+\end{verbatim}
+
+\begin{changemargin}{0cm}{0cm}
+    \textbf{ManoKnyga.txt:}
+\end{changemargin}
+
+\inputminted{text}{Assets/L4/t1-mk.txt}
+
+\subsubsection{Antras tikrinimas}
+
+Šie pradiniai duomenys yra skirti tikrinti \texttt{ManoKnyga.txt} išvestį. \texttt{Knyga1.txt} ir \texttt{Knyga2.txt} turi `Lorem ipsum` tekstą, su įterptais specifiniais
+žodžiais, kurie kartojasi per abu minėtus tekstinius failus. \texttt{ManoKnyga.txt} turėtų turėti tokia informacijos eigą:
+\begin{itemize}
+    \item [•] \texttt{Knyga1.txt} bus kopijuojama iki pirmos eilutės pabaigos
+    \item [•] toliau, bus kopijuojamos pirmos trys \texttt{Knyga2.txt} failo eilutės
+    \item [•] toliau, bus kopijuojama nuo antros iki trečios \texttt{Knyga1.txt} failo eilučių
+    \item [•] toliau, bus kopijuojama nuo ketvirtos \texttt{Knyga2.txt} eilutės iki \texttt{Knyga2.txt} pabaigos.
+    \item [•] toliau, bus kopijuojama nuo ketvirtos \texttt{Knyga1.txt} eilutės iki \texttt{Knyga1.txt} pabaigos.
+\end{itemize}
+
+\begin{changemargin}{0cm}{0cm}
+    \textbf{Knyga1.txt:}
+\end{changemargin}
+
+\inputminted{text}{Assets/L4/t2-k1.txt}
+
+\vspace{0.5cm}
+
+\begin{changemargin}{0cm}{0cm}
+    \textbf{Knyga2.txt:}
+\end{changemargin}
+
+
+\inputminted{text}{Assets/L4/t2-k2.txt}
+
+\begin{changemargin}{0cm}{0cm}
+    \textbf{Programos išvestis:}
+\end{changemargin}
+
+\begin{verbatim}
+┌──────┬──────┬────────────────────┐
+│Knyga1│Knyga2│Žodis               │
+├──────┼──────┼────────────────────┤
+│1     │1     │reprehenderit       │
+│1     │1     │exercitation        │
+│1     │1     │consectetur         │
+│1     │1     │adipiscing          │
+│1     │1     │incididunt          │
+│1     │1     │consequat           │
+│1     │1     │voluptate           │
+│1     │1     │excepteur           │
+│1     │1     │cupidatat           │
+│1     │1     │pariatur            │
+└──────┴──────┴────────────────────┘
+┌──────┬────────────────────┐
+│Knyga1│Žodis               │
+├──────┼────────────────────┤
+│1     │duisk1              │
+└──────┴────────────────────┘
+\end{verbatim}
+
+\begin{changemargin}{0cm}{0cm}
+    \textbf{ManoKnyga.txt:}
+\end{changemargin}
+
+\inputminted{text}{Assets/L4/t2-mk.txt}
+
 \subsection{Dėstytojo pastabos}
 \newpage
 

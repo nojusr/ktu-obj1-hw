@@ -1,0 +1,7 @@
+Modulis1;3;150;3
+Modulis5;6;180;5
+Modulis3;3;170;1
+Modulis2;6;160;15
+Modulis6;9;218;6
+Modulis7;6;190;2
+Modulis22;9;289;8

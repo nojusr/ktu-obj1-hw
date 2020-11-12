@@ -1,22 +1,19 @@
 ﻿┌──────┬──────┬────────────────────┐
 │Knyga1│Knyga2│Žodis               │
 ├──────┼──────┼────────────────────┤
-│3     │1     │tekstiniuose        │
-│3     │1     │analizuojant        │
-│3     │1     │skyrikliais         │
-│1     │2     │sulygiuoti          │
-│1     │2     │kiekvienos          │
-│1     │2     │kiekvienas          │
-│1     │2     │fiksuotoje          │
-│1     │2     │pozicijoje          │
-│1     │2     │skyriklius          │
-│3     │1     │didžiosios          │
+│1     │1     │reprehenderit       │
+│1     │1     │exercitation        │
+│1     │1     │consectetur         │
+│1     │1     │adipiscing          │
+│1     │1     │incididunt          │
+│1     │1     │consequat           │
+│1     │1     │voluptate           │
+│1     │1     │excepteur           │
+│1     │1     │cupidatat           │
+│1     │1     │pariatur            │
 └──────┴──────┴────────────────────┘
 ┌──────┬────────────────────┐
 │Knyga1│Žodis               │
 ├──────┼────────────────────┤
-│1     │bybiu               │
-│4     │bybys               │
-│1     │bybiai              │
-│1     │bybiene             │
+│1     │duisk1              │
 └──────┴────────────────────┘

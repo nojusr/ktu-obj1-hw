@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/Arch Linux) (preloaded format=xelatex 2020.10.14)  29 OCT 2020 16:44
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/Arch Linux) (preloaded format=xelatex 2020.10.14)  12 NOV 2020 09:38
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -909,23 +909,31 @@ Overfull \hbox (8.74307pt too wide) in paragraph at lines 816--816
 \TU/CourierNew(0)/m/n/9 CountingOfVehiclesByProducer(filteredProducers[i].ProducerName);|  
  []
 
-[41] [42] [43] [44]) (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/A1F700845FD8EB7BA04CD56E69AACD6BA7F56F0A60D1CB7E391DBE1D5A303301.pygtex [45]) (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/D66549997224C99E100A31E598D30CA381A666454B9F7103F59A317739886093.pygtex) [46] (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/B2B60B321E5B37136432189019D6C020CDF9037C37D77D37E79EE2484296BEE3.pygtex) (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/6142B9DD834E0483C6FAE1050E0D66DCDB90AD0A62A157885E83426C0D5317E1.pygtex) (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/ABCDC0AC96053B61BA637C65C77FBC206C2890EAAA2082107BCBC00F775138A2.pygtex) [47] (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/9CF4CEA2B515DC4908430D66AFE00B6DE59050C56A99A3DBA236ECC8CD6DEE1A.pygtex) (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/EE70F3416BF8AAA14C88E139AD92C10700B7ED1442D95365AA05EFADEEFCC6FF.pygtex) [48] [49] (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/F9A9A8CDD8D3164BF5F7592E57B2A78CD8A16A17980CDE5D26EB7443C200EB7C.pygtex) (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/157A1662251D816DC36D438E7A6D32BD442E228E6E4A98B5ABD111A239BC8F4E.pygtex) (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/B5CE28ADBF6B74D40A1F2A98A11CBF9EBDC343165077DEC355411C4291F17F4B.pygtex) [50] [51] [52]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 701.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 701.
+[41] [42] [43] [44]) (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/A1F700845FD8EB7BA04CD56E69AACD6BA7F56F0A60D1CB7E391DBE1D5A303301.pygtex [45]) (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/D66549997224C99E100A31E598D30CA381A666454B9F7103F59A317739886093.pygtex) [46] (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/B2B60B321E5B37136432189019D6C020CDF9037C37D77D37E79EE2484296BEE3.pygtex) (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/6142B9DD834E0483C6FAE1050E0D66DCDB90AD0A62A157885E83426C0D5317E1.pygtex) (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/ABCDC0AC96053B61BA637C65C77FBC206C2890EAAA2082107BCBC00F775138A2.pygtex) [47] (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/9CF4CEA2B515DC4908430D66AFE00B6DE59050C56A99A3DBA236ECC8CD6DEE1A.pygtex) (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/EE70F3416BF8AAA14C88E139AD92C10700B7ED1442D95365AA05EFADEEFCC6FF.pygtex) [48] [49] (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/F9A9A8CDD8D3164BF5F7592E57B2A78CD8A16A17980CDE5D26EB7443C200EB7C.pygtex) (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/157A1662251D816DC36D438E7A6D32BD442E228E6E4A98B5ABD111A239BC8F4E.pygtex) (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/B5CE28ADBF6B74D40A1F2A98A11CBF9EBDC343165077DEC355411C4291F17F4B.pygtex)
+Underfull \hbox (badness 10000) in paragraph at lines 682--686
+
+ []
+
+[50]
+LaTeX Font Info:    Font shape `TU/CourierNew(0)/m/n' will be
+(Font)              scaled to size 10.85449pt on input line 695.
+ (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/23D4DFF816226A4E7111DCB0D4FE4F1FFB643562DA78A310A64B76D351400E82.pygtex [51] [52] [53] [54] [55] [56] [57] [58] [59] [60] [61]) (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/E3DF9C4A753C721FB6377C7820DCD7086DB5383A2C664F4A67BB4B13676D1473.pygtex) (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/EABD9FF3A273B5CD1197510F70E2C26E940237DA7F23B25F2F58E07AD40ADD1A.pygtex [62]) (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/7851696C78D1B236D3E4460DE70E7341B477C420200C8607E007C4AB91492628.pygtex [63]) (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/ED6FC5D008405C82C47F473AADC27CA26F50BF633A973380AE23A1CD71F0BA4C.pygtex) (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/5F5ED10C897BBA536D36BEB0746AE3A9F67DF08F6A23AB05C413612A2217E4F0.pygtex) (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/132DB8D65E958BC4421FD645CD1556AB849086D0024C833FB071D4B8DBC13326.pygtex [64]) [65] [66]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 850.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 850.
  (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/IFF-0-6-Nojus-Raskevicius.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 701.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 701.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 850.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 850.
 Package rerunfilecheck Info: File `IFF-0-6-Nojus-Raskevicius.out' has not changed.
-(rerunfilecheck)             Checksum: AE6FE0AB9F99E7C9AA2DAFE71682DC23;4591.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 701.
+(rerunfilecheck)             Checksum: 889950D9440987B5A3514F6FEE701BE2;4903.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 850.
  ) 
 Here is how much of TeX's memory you used:
- 17718 strings out of 479284
- 343422 string characters out of 5886219
- 737002 words of memory out of 5000000
- 34987 multiletter control sequences out of 15000+600000
- 547002 words of font info for 74 fonts, out of 8000000 for 9000
+ 17760 strings out of 479284
+ 347626 string characters out of 5886219
+ 737840 words of memory out of 5000000
+ 35007 multiletter control sequences out of 15000+600000
+ 547010 words of font info for 75 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  48i,9n,119p,1033b,660s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on /home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/IFF-0-6-Nojus-Raskevicius.xdv (52 pages, 1104336 bytes).
+Output written on /home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/IFF-0-6-Nojus-Raskevicius.xdv (66 pages, 1372108 bytes).

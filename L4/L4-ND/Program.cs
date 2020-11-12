@@ -59,7 +59,7 @@ namespace L4_ND
 
             // get the longest words from the list above
             List<String> file1ULongWords = TaskUtils.FindLongestWords(file1UWords);
-            file1ULongWords.Reverse(); // reverse the longest words, since the task demands it
+            //file1ULongWords.Reverse(); // reverse the longest words, since the task demands it
 
             // get the word count 
             List<int> file1UCounts = TaskUtils.GetWordCountList(file1Words, file1ULongWords);
@@ -75,7 +75,7 @@ namespace L4_ND
             * ==================
             */
 
-            String hardPartOutput = TaskUtils.DoTheHardPart(inputFile1, inputFile2, delimiters);
+            String hardPartOutput = TaskUtils.CopyAndCombineBothFiles(inputFile1, inputFile2, delimiters);
             File.WriteAllLines(outputFile2, hardPartOutput.Split('\n'), Encoding.UTF8);
         }
     }

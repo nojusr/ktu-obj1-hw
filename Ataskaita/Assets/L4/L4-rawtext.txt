@@ -1,0 +1,647 @@
+//InOutUtils.cs
+using System;
+using System.IO;
+using System.Collections.Generic;
+using System.Text.RegularExpressions;
+
+namespace L4_ND
+{
+    /// <summary>
+    /// A class containing all of the required methods for completing the given task
+    /// </summary>
+    static class TaskUtils
+    {
+
+        /// <summary>
+        /// a method that finds the ten longest words from a given list of words
+        /// </summary>
+        /// <returns>a list strings</returns>
+        public static List<String> FindLongestWords(List<String> input)
+        {
+            List<String> output = new List<String>();
+
+            for (int i = 0; i < 10; i++)
+            {
+                String longest = "";
+
+                for (int j = 0; j < input.Count; j++)
+                {
+                    if (longest.Length < input[j].Length && output.Contains(input[j]) == false)
+                    {
+                        longest = input[j];
+                    }
+                }
+
+                // we've run out of words to add
+                if (longest == "")
+                {
+                    break;
+                }
+
+                output.Add(longest);
+            }
+
+            return output;
+        }
+
+        /// <summary>
+        /// gets all words that can only be found in the 'left' list of strings
+        /// </summary>
+        /// <param name="left">a list of strings</param>
+        /// <param name="right">a list of strings</param>
+        /// <returns>a list of strings</returns>
+        public static List<String> GetUniqueWords(List<String> left, List<String> right)
+        {
+            List<String> output = new List<String>();
+
+            foreach (String lWord in left)
+            {
+                if (right.Contains(lWord) == false)
+                {
+                    output.Add(lWord);
+                }
+            }
+
+            return output;
+        }
+
+
+        /// <summary>
+        /// get the count of a word when compared against a list of strings
+        /// </summary>
+        /// <param name="input">a list of strings to compare against</param>
+        /// <param name="wordToCount">the word to get the amount of</param>
+        /// <returns>an integer</returns>
+        public static int GetWordCount(List<String> input, String wordToCount)
+        {
+            int output = 0;
+
+            foreach(String s in input)
+            {
+                if (s == wordToCount)
+                {
+                    output++;
+                }
+            }
+
+            return output;
+        }
+
+        /// <summary>
+        /// get the count of a list of words when comparing against a list of inputs
+        /// </summary>
+        /// <param name="input">a list of strings to compare against</param>
+        /// <param name="wordsToCount">the words to get the amount of</param>
+        /// <returns>a list of integers</returns>
+        public static List<int> GetWordCountList(List<String> input, List<String> wordsToCount)
+        {
+            List<int> output = new List<int>();
+
+            foreach(String word in wordsToCount)
+            {
+                output.Add(GetWordCount(input, word));
+            }
+
+            return output;
+        }
+
+
+        /// <summary>
+        /// copies and writes both files into a string, according to the specification in the 'hard' part of the
+        /// given task
+        /// </summary>
+        /// <param name="fileName1">the first file from which to read</param>
+        /// <param name="fileName2">the second file from which to read</param>
+        /// <returns>a long string</returns>
+        public static String CopyAndCombineBothFiles(String fileName1, String fileName2, List<Char> delimiters)
+        {
+            String output = "";
+
+            // we can read both of the files again without worry since we've already ensured that they both exist in
+            // the easy part
+            
+            String file1 = String.Join("\n", File.ReadAllLines(fileName1));
+
+            String file2 = String.Join("\n", File.ReadAllLines(fileName2));
+
+
+            int file1ReadIndex = 0;
+            int file2ReadIndex = 0;
+
+            int file1LastWordIndex = 0;
+            int file2LastWordIndex = 0;
+
+            // true to copy from file1
+            // false to copy from file2
+            bool readToggle = true;
+
+            String cmpOut = "";
+
+            while (true)
+            {
+
+                if (readToggle)
+                {
+                    while (file1ReadIndex < file1.Length)
+                    {
+
+
+                        if (delimiters.Contains(file1[file1ReadIndex]))
+                        {
+
+
+                            String word = file1.Substring(file1LastWordIndex, file1ReadIndex-file1LastWordIndex);
+
+                            if (word.Length <= 0)
+                            {
+                                file1LastWordIndex++;
+                                file1ReadIndex++;
+                            }
+
+                            String strippedWord = word;
+
+                            if (strippedWord.Length > 0 && delimiters.Contains(word[0]))
+                            {
+                                strippedWord = word.Substring(1);
+                            }
+
+                            strippedWord = strippedWord.Replace("\n", "").Replace("\r", "");
+
+                            String firstUncopiedWord = findFirstUncopiedWord(file2, file2ReadIndex, delimiters);
+
+                            if (strippedWord == firstUncopiedWord){
+
+                                if (word.Length > 0 && delimiters.Contains(word[0]))
+                                {
+                                    output += word[0];
+                                }
+
+                                readToggle = !readToggle;
+                                file1LastWordIndex = file1ReadIndex;
+                                break;
+                            }
+
+                            output += word;
+
+                            file1LastWordIndex = file1ReadIndex;
+                        }
+                        file1ReadIndex++;
+                    }
+                }
+                else
+                {
+                    while (file2ReadIndex < file2.Length)
+                    {
+
+                        if (delimiters.Contains(file2[file2ReadIndex]))
+                        {
+
+                            String word = file2.Substring(file2LastWordIndex, file2ReadIndex-file2LastWordIndex);
+
+                            if (word.Length <= 0)
+                            {
+                                file2LastWordIndex++;
+                                file2ReadIndex++;
+                            }
+
+
+                            String strippedWord = word;
+
+                            
+
+                            if (strippedWord.Length > 0 && delimiters.Contains(word[0]))
+                            {
+                                strippedWord = word.Substring(1);
+                            }
+
+                            strippedWord = strippedWord.Replace("\n", "").Replace("\r", "");
+
+                            String firstUncopiedWord = findFirstUncopiedWord(file1, file1ReadIndex, delimiters);
+
+
+                            if (strippedWord == firstUncopiedWord){
+
+                                if (word.Length > 0 && delimiters.Contains(word[0]))
+                                {
+                                    output += word[0];
+                                }
+
+                                readToggle = !readToggle;
+                                file2LastWordIndex = file2ReadIndex;
+                                break;
+                            }
+
+                            output += word;
+                            file2LastWordIndex = file2ReadIndex;
+                        }
+                        file2ReadIndex++;
+                    }
+                }
+                
+                // a check to see if we're finished
+                if (output == cmpOut)
+                {
+                    break;
+                }
+                else
+                {
+                    cmpOut = output;
+                }
+
+            }
+
+            return output;
+
+        }
+
+        public static String findFirstUncopiedWord(String file, int readIndex, List<Char> delimiters)
+        {
+            String output = "";
+
+            int lastWordIndex = readIndex;
+
+            if (delimiters.Contains(file[readIndex])){
+                readIndex++;
+            }
+
+            while (readIndex < file.Length)
+            {
+
+                if (delimiters.Contains(file[readIndex]))
+                {
+                    String word = file.Substring(lastWordIndex, readIndex-lastWordIndex);
+
+                    word = word.Trim();
+                    word = word.Replace("\n", "").Replace("\r", "");
+
+
+                    if (word.Length > 0 && delimiters.Contains(word[0]))
+                    {
+                        word = word.Substring(1);
+                    }
+
+                    return word;
+                }
+
+                readIndex++;
+
+            }
+
+            return output;
+
+        }
+
+
+    }
+}
+
+
+//InOutUtils.cs
+using System;
+using System.IO;
+using System.Collections.Generic;
+using System.Text;
+
+namespace L4_ND
+{
+    /// <summary>
+    /// Class containing reading and priniting methods
+    /// </summary>
+    static class InOutUtils
+    {
+
+        /// <summary>
+        /// a method to read a given filename and return a list of strings
+        /// that are seperated by a given list of seperating characters
+        /// </summary>
+        /// <param name="fileName">the filename, from which to read</param>
+        /// <param name="seperators">a list of delimiter characters</param>
+        /// <returns>a list of strings</returns>
+        public static List<String> ReadWords(string fileName, List<Char> seperators){
+
+            List<String> output = new List<String>();
+
+            StreamReader file;
+            string line;
+
+            // file error handling
+            if (System.IO.File.Exists(fileName))
+            {
+                file = new StreamReader(fileName);
+            }
+            else
+            {
+                Console.WriteLine("Failas nerastas. Programa negali veikti.");
+                System.Environment.Exit(1); // exit code 1 means that the program did not run successfuly
+                return output; // an useless line of code to calm down the error highlighter, wihtout it, the 'while' statement below would be registered as an error
+            }
+
+            // for each line in a file
+            while ((line = file.ReadLine()) != null)
+            {
+
+                if (line.Length == 0)
+                {
+                    continue;
+                }
+
+                // convert the line to lowercase due to task requirements
+                line = line.ToLower();
+
+                // an index that indicates the last known position of a delimiting character
+                int wordStartIndex = 0;
+
+                for (int i = 0; i < line.Length; i++)
+                {
+                    if (seperators.Contains(line[i]))
+                    {
+
+                        String word;
+
+
+                        // if we're on the first word in the sequence
+                        if (wordStartIndex == 0)
+                        {
+                            // don't remove the first character from the substring
+                            word = line.Substring(wordStartIndex, i-wordStartIndex);
+                        } 
+                        else
+                        {
+                            // remove the first character from the substring
+                            word = line.Substring(wordStartIndex+1, i-wordStartIndex-1);
+                        }
+
+                        output.Add(word);
+
+                        wordStartIndex = i;
+                    }
+                }
+
+                // if the last character in a line is not a delimiter
+                if (seperators.Contains(line[line.Length-1]) == false)
+                {
+                    // add the remaining word that was undetected in the loop above
+                    String word;
+
+                    // if this is true, then the whole line doesn't have any delimiters
+                    if (wordStartIndex == 0)
+                    {
+                        word = line;
+                    } 
+                    else
+                    {
+                        // remove the first character from the substring
+                        word = line.Substring(wordStartIndex+1, line.Length-wordStartIndex-1);
+                    }
+
+                    output.Add(word);
+                }
+            }
+
+            return output;
+        }
+
+
+        /// <summary>
+        ///  a simple method to assist in creating text character based tables
+        /// </summary>
+        /// <param name="spacing">a list of ints which defines the amount of <paramref name="line"/> chars to put in between any of the other chars</param>
+        /// <param name="columnCount">the amount of columns in the</param>
+        /// <param name="leftEdge">the char used at the left edge of the table</param>
+        /// <param name="middleEdge">the char used inbetween lines</param>
+        /// <param name="rightEdge">the char used at the right edge or end of the line</param>
+        /// <param name="line">the char used inbetween any and all other chars</param>
+        private static string CreateIndexedTableLine(List<int> spacing, char leftEdge, char middleEdge, char rightEdge, char line)
+        {
+
+            int columnCount = spacing.Count;
+
+            string output = "";
+
+            output += leftEdge;
+
+            for (int i = 0; i < columnCount; i++) {
+
+                output += new string(line, spacing[i]);
+
+                if (i == columnCount - 1)
+                {
+                    output += rightEdge;
+                }
+                else
+                {
+                    output += middleEdge;
+                }
+            }
+
+            return output;
+        }
+
+
+        /// <summary>
+        /// outputs a table of the word count to a file
+        /// </summary>
+        public static void OutputWordCountToFile(String fileName, List<int> file1Count, List<int> file2Count, List<String> words)
+        {
+            List<String> output = CreateWordCountTable(file1Count, file2Count, words);
+            File.WriteAllLines(fileName, output.ToArray(), Encoding.UTF8);
+        }
+
+        /// <summary>
+        /// outputs a table of the word count to console
+        /// </summary>
+        public static void OutputWordCountToConsole(List<int> file1Count, List<int> file2Count, List<String> words)
+        {
+            List<String> output = CreateWordCountTable(file1Count, file2Count, words);
+            Console.WriteLine(String.Join("\n", output));
+
+        }
+
+
+        /// <summary>
+        /// creates a table to display the word count for the longest words from the input.
+        /// used both in console output and file output
+        /// </summary>
+        /// <param name="file1Count">a list of integers</param>
+        /// <param name="file2Count">a list of integers</param>
+        /// <param name="words">a list of strings</param>
+        /// <returns>the table as a list of strings</returns>
+        private static List<String> CreateWordCountTable(List<int> file1Count, List<int> file2Count, List<String> words)
+        {
+
+            List<String> output = new List<String>();
+
+
+            List<int> tableSpacing = new List<int> {6, 6, 20};
+
+            string topstr = CreateIndexedTableLine(tableSpacing, '┌', '┬', '┐', '─');
+            string midstr = CreateIndexedTableLine(tableSpacing, '├', '┼', '┤', '─');
+            string botstr = CreateIndexedTableLine(tableSpacing, '└', '┴', '┘', '─');
+
+            output.Add(topstr);
+            output.Add(String.Format(
+                "│{0,-6}│{1,-6}│{2, -20}│",
+                "Knyga1",
+                "Knyga2",
+                "Žodis"
+            ));
+            output.Add(midstr);
+
+
+            for (int i = 0; i < words.Count; i++)
+            {
+                output.Add(String.Format(
+                    "│{0,-6}│{1,-6}│{2, -20}│",
+                    file1Count[i].ToString(),
+                    file2Count[i].ToString(),
+                    words[i]
+                ));
+            }
+
+            output.Add(botstr);
+
+            return output;
+        }
+
+
+
+
+
+        public static void OutputSmallWordCountToFile(String fileName, List<int> file1Count, List<String> words)
+        {
+            List<String> output = CreateSmallWordCountTable(file1Count, words);
+            File.AppendAllLines(fileName, output.ToArray(), Encoding.UTF8);
+        }
+
+        /// <summary>
+        /// outputs a table of the word count to console
+        /// </summary>
+        public static void OutputSmallWordCountToConsole(List<int> file1Count, List<String> words)
+        {
+            List<String> output = CreateSmallWordCountTable(file1Count, words);
+            Console.WriteLine(String.Join("\n", output));
+
+        }
+
+
+
+        private static List<String> CreateSmallWordCountTable(List<int> file1Count, List<String> words)
+        {
+
+            List<String> output = new List<String>();
+
+
+            List<int> tableSpacing = new List<int> {6, 20};
+
+            string topstr = CreateIndexedTableLine(tableSpacing, '┌', '┬', '┐', '─');
+            string midstr = CreateIndexedTableLine(tableSpacing, '├', '┼', '┤', '─');
+            string botstr = CreateIndexedTableLine(tableSpacing, '└', '┴', '┘', '─');
+
+            output.Add(topstr);
+            output.Add(String.Format(
+                "│{0,-6}│{1, -20}│",
+                "Knyga1",
+                "Žodis"
+            ));
+            output.Add(midstr);
+
+
+            for (int i = 0; i < words.Count; i++)
+            {
+                output.Add(String.Format(
+                    "│{0,-6}│{1, -20}│",
+                    file1Count[i].ToString(),
+                    words[i]
+                ));
+            }
+
+            output.Add(botstr);
+
+            return output;
+        }
+    }
+}
+
+
+using System;
+using System.IO;
+using System.Collections.Generic;
+using System.Text;
+
+namespace L4_ND
+{
+    // an implementation of U4H-3
+    class Program
+    {
+        
+        static void Main(string[] args)
+        {
+
+            // the known list of delimiters
+            List<Char> delimiters = new List<Char>() {';', ',', ' ', '|', '.', '-'};
+
+
+            // IO filenames
+            String inputFile1 = "Knyga1.txt";
+            String inputFile2 = "Knyga2.txt";
+
+            String outputFile = "Rodikliai.txt";
+            String outputFile2 = "ManoKnyga.txt";
+
+
+            /*
+            * ==================
+            * the 'easy' part
+            * ==================
+            */
+
+            // a list that contains all the words
+            List<String> allWords = new List<String>();
+
+            // read in the words individually per file
+            List<String> file1Words = InOutUtils.ReadWords(inputFile1, delimiters);
+            List<String> file2Words = InOutUtils.ReadWords(inputFile2, delimiters);
+
+            // add both lists to a single list that contains all words
+            allWords.AddRange(file1Words);
+            allWords.AddRange(file2Words);
+
+
+            // get the longest words in 'allWords'
+            List<String> longestWords = TaskUtils.FindLongestWords(allWords);
+
+            // get the counts for each file of every longest word
+            List<int> file1Counts = TaskUtils.GetWordCountList(file1Words, longestWords);
+            List<int> flie2Counts = TaskUtils.GetWordCountList(file2Words, longestWords);
+
+            // output the above to both console and file
+            InOutUtils.OutputWordCountToConsole(file1Counts, flie2Counts, longestWords);
+            InOutUtils.OutputWordCountToFile(outputFile, file1Counts, flie2Counts, longestWords);
+
+
+            // get all of the words that can only be found in the first file
+            List<String> file1UWords = TaskUtils.GetUniqueWords(file1Words, file2Words);
+
+            // get the longest words from the list above
+            List<String> file1ULongWords = TaskUtils.FindLongestWords(file1UWords);
+            //file1ULongWords.Reverse(); // reverse the longest words, since the task demands it
+
+            // get the word count 
+            List<int> file1UCounts = TaskUtils.GetWordCountList(file1Words, file1ULongWords);
+
+            // output the above to both console and file
+            InOutUtils.OutputSmallWordCountToConsole(file1UCounts, file1ULongWords);
+            InOutUtils.OutputSmallWordCountToFile(outputFile, file1UCounts, file1ULongWords);
+
+
+            /*
+            * ==================
+            * the 'hard' part
+            * ==================
+            */
+
+            String hardPartOutput = TaskUtils.CopyAndCombineBothFiles(inputFile1, inputFile2, delimiters);
+            File.WriteAllLines(outputFile2, hardPartOutput.Split('\n'), Encoding.UTF8);
+        }
+    }
+}

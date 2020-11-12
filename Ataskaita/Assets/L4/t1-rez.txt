@@ -1,0 +1,28 @@
+┌──────┬──────┬────────────────────┐
+│Knyga1│Knyga2│Žodis               │
+├──────┼──────┼────────────────────┤
+│1     │0     │reprehenderit       │
+│2     │1     │tekstiniuose        │
+│2     │1     │analizuojant        │
+│1     │0     │exercitation        │
+│2     │1     │skyrikliais         │
+│1     │0     │consectetur         │
+│1     │2     │sulygiuoti          │
+│1     │2     │kiekvienos          │
+│1     │2     │kiekvienas          │
+│1     │2     │fiksuotoje          │
+└──────┴──────┴────────────────────┘
+┌──────┬────────────────────┐
+│Knyga1│Žodis               │
+├──────┼────────────────────┤
+│1     │reprehenderit       │
+│1     │exercitation        │
+│1     │consectetur         │
+│1     │adipiscing          │
+│1     │incididunt          │
+│1     │consequat           │
+│1     │voluptate           │
+│1     │excepteur           │
+│1     │cupidatat           │
+│1     │pariatur            │
+└──────┴────────────────────┘
