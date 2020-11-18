@@ -1,4 +1,4 @@
-//InOutUtils.cs
+//TaskUtils.cs
 using System;
 using System.IO;
 using System.Collections.Generic;
@@ -131,16 +131,35 @@ namespace L4_ND
             int file1LastWordIndex = 0;
             int file2LastWordIndex = 0;
 
+            bool file1Finished = false;
+            bool file2Finished = false;
+
             // true to copy from file1
             // false to copy from file2
             bool readToggle = true;
 
-            String cmpOut = "";
-
             while (true)
             {
 
-                if (readToggle)
+                if (file1Finished)
+                {
+                    output += file2.Substring(file2LastWordIndex);
+                    file2Finished = true;
+                }
+                if (file2Finished)
+                {
+                    output += file1.Substring(file1LastWordIndex);
+                    file1Finished = true;
+                }
+
+
+                if (file1Finished && file2Finished)
+                {
+                    break;
+                }
+
+
+                if (readToggle == true && file1Finished == false)
                 {
                     while (file1ReadIndex < file1.Length)
                     {
@@ -168,9 +187,8 @@ namespace L4_ND
                             strippedWord = strippedWord.Replace("\n", "").Replace("\r", "");
 
                             String firstUncopiedWord = findFirstUncopiedWord(file2, file2ReadIndex, delimiters);
-                            //Console.WriteLine("str {0}; funcop {1}.", strippedWord);
-                            if (strippedWord == firstUncopiedWord){
-                                Console.WriteLine("swissh");
+
+                            if (strippedWord == firstUncopiedWord && file2Finished == false){
                                 if (word.Length > 0 && delimiters.Contains(word[0]))
                                 {
                                     output += word[0];
@@ -187,8 +205,13 @@ namespace L4_ND
                         }
                         file1ReadIndex++;
                     }
+
+                    file1Finished = true;
+                    readToggle = false;
+
+
                 }
-                else
+                else if (readToggle == false && file2Finished == false)
                 {
                     while (file2ReadIndex < file2.Length)
                     {
@@ -219,8 +242,7 @@ namespace L4_ND
                             String firstUncopiedWord = findFirstUncopiedWord(file1, file1ReadIndex, delimiters);
 
 
-                            if (strippedWord == firstUncopiedWord){
-                                Console.WriteLine("swissh");
+                            if (strippedWord == firstUncopiedWord && file1Finished == false){
                                 if (word.Length > 0 && delimiters.Contains(word[0]))
                                 {
                                     output += word[0];
@@ -236,18 +258,10 @@ namespace L4_ND
                         }
                         file2ReadIndex++;
                     }
-                }
-                
-                // a check to see if we're finished
-                if (output == cmpOut)
-                {
-                    break;
-                }
-                else
-                {
-                    cmpOut = output;
-                }
 
+                    file2Finished = true;
+                    readToggle = true;
+                }
             }
 
             return output;

@@ -1,5 +1,5 @@
 \begin{Verbatim}[commandchars=\\\{\}]
-\PYG{c+c1}{//InOutUtils.cs}
+\PYG{c+c1}{//TaskUtils.cs}
 \PYG{k}{using} \PYG{n+nn}{System}\PYG{p}{;}
 \PYG{k}{using} \PYG{n+nn}{System.IO}\PYG{p}{;}
 \PYG{k}{using} \PYG{n+nn}{System.Collections.Generic}\PYG{p}{;}
@@ -132,16 +132,35 @@
             \PYG{k+kt}{int} \PYG{n}{file1LastWordIndex} \PYG{p}{=} \PYG{l+m}{0}\PYG{p}{;}
             \PYG{k+kt}{int} \PYG{n}{file2LastWordIndex} \PYG{p}{=} \PYG{l+m}{0}\PYG{p}{;}
 
+            \PYG{k+kt}{bool} \PYG{n}{file1Finished} \PYG{p}{=} \PYG{k}{false}\PYG{p}{;}
+            \PYG{k+kt}{bool} \PYG{n}{file2Finished} \PYG{p}{=} \PYG{k}{false}\PYG{p}{;}
+
             \PYG{c+c1}{// true to copy from file1}
             \PYG{c+c1}{// false to copy from file2}
             \PYG{k+kt}{bool} \PYG{n}{readToggle} \PYG{p}{=} \PYG{k}{true}\PYG{p}{;}
 
-            \PYG{n}{String} \PYG{n}{cmpOut} \PYG{p}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}
-
             \PYG{k}{while} \PYG{p}{(}\PYG{k}{true}\PYG{p}{)}
             \PYG{p}{\PYGZob{}}
 
-                \PYG{k}{if} \PYG{p}{(}\PYG{n}{readToggle}\PYG{p}{)}
+                \PYG{k}{if} \PYG{p}{(}\PYG{n}{file1Finished}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{n}{output} \PYG{p}{+=} \PYG{n}{file2}\PYG{p}{.}\PYG{n}{Substring}\PYG{p}{(}\PYG{n}{file2LastWordIndex}\PYG{p}{);}
+                    \PYG{n}{file2Finished} \PYG{p}{=} \PYG{k}{true}\PYG{p}{;}
+                \PYG{p}{\PYGZcb{}}
+                \PYG{k}{if} \PYG{p}{(}\PYG{n}{file2Finished}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{n}{output} \PYG{p}{+=} \PYG{n}{file1}\PYG{p}{.}\PYG{n}{Substring}\PYG{p}{(}\PYG{n}{file1LastWordIndex}\PYG{p}{);}
+                    \PYG{n}{file1Finished} \PYG{p}{=} \PYG{k}{true}\PYG{p}{;}
+                \PYG{p}{\PYGZcb{}}
+
+
+                \PYG{k}{if} \PYG{p}{(}\PYG{n}{file1Finished} \PYG{p}{\PYGZam{}\PYGZam{}} \PYG{n}{file2Finished}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{k}{break}\PYG{p}{;}
+                \PYG{p}{\PYGZcb{}}
+
+
+                \PYG{k}{if} \PYG{p}{(}\PYG{n}{readToggle} \PYG{p}{==} \PYG{k}{true} \PYG{p}{\PYGZam{}\PYGZam{}} \PYG{n}{file1Finished} \PYG{p}{==} \PYG{k}{false}\PYG{p}{)}
                 \PYG{p}{\PYGZob{}}
                     \PYG{k}{while} \PYG{p}{(}\PYG{n}{file1ReadIndex} \PYG{p}{\PYGZlt{}} \PYG{n}{file1}\PYG{p}{.}\PYG{n}{Length}\PYG{p}{)}
                     \PYG{p}{\PYGZob{}}
@@ -170,8 +189,7 @@
 
                             \PYG{n}{String} \PYG{n}{firstUncopiedWord} \PYG{p}{=} \PYG{n}{findFirstUncopiedWord}\PYG{p}{(}\PYG{n}{file2}\PYG{p}{,} \PYG{n}{file2ReadIndex}\PYG{p}{,} \PYG{n}{delimiters}\PYG{p}{);}
 
-                            \PYG{k}{if} \PYG{p}{(}\PYG{n}{strippedWord} \PYG{p}{==} \PYG{n}{firstUncopiedWord}\PYG{p}{)\PYGZob{}}
-
+                            \PYG{k}{if} \PYG{p}{(}\PYG{n}{strippedWord} \PYG{p}{==} \PYG{n}{firstUncopiedWord} \PYG{p}{\PYGZam{}\PYGZam{}} \PYG{n}{file2Finished} \PYG{p}{==} \PYG{k}{false}\PYG{p}{)\PYGZob{}}
                                 \PYG{k}{if} \PYG{p}{(}\PYG{n}{word}\PYG{p}{.}\PYG{n}{Length} \PYG{p}{\PYGZgt{}} \PYG{l+m}{0} \PYG{p}{\PYGZam{}\PYGZam{}} \PYG{n}{delimiters}\PYG{p}{.}\PYG{n}{Contains}\PYG{p}{(}\PYG{n}{word}\PYG{p}{[}\PYG{l+m}{0}\PYG{p}{]))}
                                 \PYG{p}{\PYGZob{}}
                                     \PYG{n}{output} \PYG{p}{+=} \PYG{n}{word}\PYG{p}{[}\PYG{l+m}{0}\PYG{p}{];}
@@ -188,8 +206,13 @@
                         \PYG{p}{\PYGZcb{}}
                         \PYG{n}{file1ReadIndex}\PYG{p}{++;}
                     \PYG{p}{\PYGZcb{}}
+
+                    \PYG{n}{file1Finished} \PYG{p}{=} \PYG{k}{true}\PYG{p}{;}
+                    \PYG{n}{readToggle} \PYG{p}{=} \PYG{k}{false}\PYG{p}{;}
+
+
                 \PYG{p}{\PYGZcb{}}
-                \PYG{k}{else}
+                \PYG{k}{else} \PYG{n+nf}{if} \PYG{p}{(}\PYG{n}{readToggle} \PYG{p}{==} \PYG{k}{false} \PYG{p}{\PYGZam{}\PYGZam{}} \PYG{n}{file2Finished} \PYG{p}{==} \PYG{k}{false}\PYG{p}{)}
                 \PYG{p}{\PYGZob{}}
                     \PYG{k}{while} \PYG{p}{(}\PYG{n}{file2ReadIndex} \PYG{p}{\PYGZlt{}} \PYG{n}{file2}\PYG{p}{.}\PYG{n}{Length}\PYG{p}{)}
                     \PYG{p}{\PYGZob{}}
@@ -220,8 +243,7 @@
                             \PYG{n}{String} \PYG{n}{firstUncopiedWord} \PYG{p}{=} \PYG{n}{findFirstUncopiedWord}\PYG{p}{(}\PYG{n}{file1}\PYG{p}{,} \PYG{n}{file1ReadIndex}\PYG{p}{,} \PYG{n}{delimiters}\PYG{p}{);}
 
 
-                            \PYG{k}{if} \PYG{p}{(}\PYG{n}{strippedWord} \PYG{p}{==} \PYG{n}{firstUncopiedWord}\PYG{p}{)\PYGZob{}}
-
+                            \PYG{k}{if} \PYG{p}{(}\PYG{n}{strippedWord} \PYG{p}{==} \PYG{n}{firstUncopiedWord} \PYG{p}{\PYGZam{}\PYGZam{}} \PYG{n}{file1Finished} \PYG{p}{==} \PYG{k}{false}\PYG{p}{)\PYGZob{}}
                                 \PYG{k}{if} \PYG{p}{(}\PYG{n}{word}\PYG{p}{.}\PYG{n}{Length} \PYG{p}{\PYGZgt{}} \PYG{l+m}{0} \PYG{p}{\PYGZam{}\PYGZam{}} \PYG{n}{delimiters}\PYG{p}{.}\PYG{n}{Contains}\PYG{p}{(}\PYG{n}{word}\PYG{p}{[}\PYG{l+m}{0}\PYG{p}{]))}
                                 \PYG{p}{\PYGZob{}}
                                     \PYG{n}{output} \PYG{p}{+=} \PYG{n}{word}\PYG{p}{[}\PYG{l+m}{0}\PYG{p}{];}
@@ -237,18 +259,10 @@
                         \PYG{p}{\PYGZcb{}}
                         \PYG{n}{file2ReadIndex}\PYG{p}{++;}
                     \PYG{p}{\PYGZcb{}}
-                \PYG{p}{\PYGZcb{}}
-                
-                \PYG{c+c1}{// a check to see if we\PYGZsq{}re finished}
-                \PYG{k}{if} \PYG{p}{(}\PYG{n}{output} \PYG{p}{==} \PYG{n}{cmpOut}\PYG{p}{)}
-                \PYG{p}{\PYGZob{}}
-                    \PYG{k}{break}\PYG{p}{;}
-                \PYG{p}{\PYGZcb{}}
-                \PYG{k}{else}
-                \PYG{p}{\PYGZob{}}
-                    \PYG{n}{cmpOut} \PYG{p}{=} \PYG{n}{output}\PYG{p}{;}
-                \PYG{p}{\PYGZcb{}}
 
+                    \PYG{n}{file2Finished} \PYG{p}{=} \PYG{k}{true}\PYG{p}{;}
+                    \PYG{n}{readToggle} \PYG{p}{=} \PYG{k}{true}\PYG{p}{;}
+                \PYG{p}{\PYGZcb{}}
             \PYG{p}{\PYGZcb{}}
 
             \PYG{k}{return} \PYG{n}{output}\PYG{p}{;}
@@ -295,6 +309,7 @@
 
     \PYG{p}{\PYGZcb{}}
 \PYG{p}{\PYGZcb{}}
+
 
 
 \PYG{c+c1}{//InOutUtils.cs}
@@ -563,7 +578,7 @@
     \PYG{p}{\PYGZcb{}}
 \PYG{p}{\PYGZcb{}}
 
-
+\PYG{c+c1}{// Program.cs}
 \PYG{k}{using} \PYG{n+nn}{System}\PYG{p}{;}
 \PYG{k}{using} \PYG{n+nn}{System.IO}\PYG{p}{;}
 \PYG{k}{using} \PYG{n+nn}{System.Collections.Generic}\PYG{p}{;}
