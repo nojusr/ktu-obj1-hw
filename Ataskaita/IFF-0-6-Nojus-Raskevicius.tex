@@ -13,7 +13,7 @@
 \usepackage{lmodern, newunicodechar}
 \usepackage{minted}
 \usepackage{fontspec}
-
+\usepackage{xcolor}
 % change subsection formatting
 \titleformat*{\subsection}{\large\bfseries}
 
@@ -53,8 +53,13 @@
 }
 
 
-
-
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+\urlstyle{same}
 %-------------------------------------
 %TITLE PAGE
 %-------------------------------------
@@ -692,9 +697,10 @@ Naujausias(-i) automobilis(-iai):
 
 \section{Teksto analizė ir redagavimas}
 \subsection{Darbo užduotis}
+\textbf{U4H-3. Ilgiausi žodžiai}\newline
 Dviejuose  tekstiniuose  failuose \texttt{Knyga1.txt} ir \texttt{Knyga2.txt} duotas tekstas sudarytas iš žodžių,
 atskirtų skyrikliais. Skyriklių aibė žinoma ir abejuose failuose yra ta pati. Analizuojant tekstus, didžiosios
-ir mažosios raidės nesvarbios.Raskite ir spausdinkite faile \texttt{Rodikliai.txt}:
+ir mažosios raidės nesvarbios.\vspace{0.25cm}\newline Raskite ir spausdinkite faile \texttt{Rodikliai.txt}:
 \begin{itemize}
     \item[•]ilgiausių žodžių, surikiuotų ilgio mažėjimo tvarka, kurie yra abejuose failuose, sąrašą (ne daugiau nei 10 žodžių) ir jų pasikartojimo skaičių kiekviename iš failų;
     \item[•]ilgiausių žodžių, surikiuotų ilgio mažėjimo tvarka, kurie yra tik faile \texttt{Knyga1.txt}, bet nėra faile \texttt{Knyga2.txt}, sąrašą (ne daugiau nei 10 žodžių) ir jų pasikartojimo skaičių;
@@ -834,6 +840,24 @@ kuris nėra įterptas į \texttt{Knyga2.txt}, todėl programos antroje lentelėj
 \inputminted{text}{Assets/L4/t2-mk.txt}
 
 \subsection{Dėstytojo pastabos}
+\begin{itemize}
+    \item[•]Nėra užduoties numerio.
+    \item[]\textit{Pataisyta.}
+    \item[•]Kodėl string didžioji pirma raidė metode public static List FindLongestWords(List input)?
+    \item[]\textit{Klaida, kilus iš dvejopos kombinacijos tarp įpročio rašyti 'string' kintamuosius iš didžiosios raidės (nuo kitų progravamivmo kalbų) ir fakto, kad C\# kalboje žodis 'string' yra interpretuojamas kaip System.String (tats pats kas rašyti 'String'), todėl, objektyvaus skirtumo nėra ir man IDE jokių problemų nerašo.} \color{blue}\href{https://stackoverflow.com/questions/7074/what-is-the-difference-between-string-and-string-in-c}{Šaltinis}\color{black}
+    \item[•]Kodėl yra sąlyga: output.Contains(input[j]) == false? Čia apie tą patį metodą?
+    \item[]\textit{Ši salyga yra skirta tikrinti ar žodžis jau nėra įkeltas į 'output' sąrašą. T.y. žodžiai 'output' saraše nesikartoja. Nesu tikras ar tai yra reikalaujama užduotyje.}
+    \item[•]Kodėl Char didžioji?
+    \item[]\textit{Seku tokia pačią logiką kaip ir su String. Sarašų tipų aprašymuose String yra rašomi iš didžiosios raidės. }
+\end{itemize}
+
+\changemargin{0cm}{0cm}\textbf{Testo rezultatai: ?/3}\newline
+\textbf{Savarankiško darbo rezultatai: 0/1}\newline
+\textbf{Laboratorinio darbo įvertinimas: ?/7}\newline
+\textbf{Galutinis įvertinimas: ?}\newline
+
+\newpage
+
 \newpage
 
 %-----------------------------------------------------------------------------------------------------------------

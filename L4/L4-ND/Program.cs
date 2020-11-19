@@ -18,11 +18,11 @@ namespace L4_ND
 
 
             // IO filenames
-            String inputFile1 = "Knyga1.txt";
-            String inputFile2 = "Knyga2.txt";
+            string inputFile1 = "Knyga1.txt";
+            string inputFile2 = "Knyga2.txt";
 
-            String outputFile = "Rodikliai.txt";
-            String outputFile2 = "ManoKnyga.txt";
+            string outputFile = "Rodikliai.txt";
+            string outputFile2 = "ManoKnyga.txt";
 
 
             /*
@@ -76,7 +76,7 @@ namespace L4_ND
             * ==================
             */
 
-            String hardPartOutput = TaskUtils.CopyAndCombineBothFiles(inputFile1, inputFile2, delimiters);
+            string hardPartOutput = TaskUtils.CopyAndCombineBothFiles(inputFile1, inputFile2, delimiters);
             File.WriteAllLines(outputFile2, hardPartOutput.Split('\n'), Encoding.UTF8);
         }
     }

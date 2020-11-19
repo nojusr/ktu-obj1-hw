@@ -23,7 +23,7 @@
 
             \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{=} \PYG{l+m}{0}\PYG{p}{;} \PYG{n}{i} \PYG{p}{\PYGZlt{}} \PYG{l+m}{10}\PYG{p}{;} \PYG{n}{i}\PYG{p}{++)}
             \PYG{p}{\PYGZob{}}
-                \PYG{n}{String} \PYG{n}{longest} \PYG{p}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}
+                \PYG{k+kt}{string} \PYG{n}{longest} \PYG{p}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}
 
                 \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{j} \PYG{p}{=} \PYG{l+m}{0}\PYG{p}{;} \PYG{n}{j} \PYG{p}{\PYGZlt{}} \PYG{n}{input}\PYG{p}{.}\PYG{n}{Count}\PYG{p}{;} \PYG{n}{j}\PYG{p}{++)}
                 \PYG{p}{\PYGZob{}}
@@ -55,7 +55,7 @@
         \PYG{p}{\PYGZob{}}
             \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{String}\PYG{p}{\PYGZgt{}} \PYG{n}{output} \PYG{p}{=} \PYG{k}{new} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{String}\PYG{p}{\PYGZgt{}();}
 
-            \PYG{k}{foreach} \PYG{p}{(}\PYG{n}{String} \PYG{n}{lWord} \PYG{k}{in} \PYG{n}{left}\PYG{p}{)}
+            \PYG{k}{foreach} \PYG{p}{(}\PYG{k+kt}{string} \PYG{n}{lWord} \PYG{k}{in} \PYG{n}{left}\PYG{p}{)}
             \PYG{p}{\PYGZob{}}
                 \PYG{k}{if} \PYG{p}{(}\PYG{n}{right}\PYG{p}{.}\PYG{n}{Contains}\PYG{p}{(}\PYG{n}{lWord}\PYG{p}{)} \PYG{p}{==} \PYG{k}{false}\PYG{p}{)}
                 \PYG{p}{\PYGZob{}}
@@ -73,11 +73,11 @@
         \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}input\PYGZdq{}\PYGZgt{}a list of strings to compare against\PYGZlt{}/param\PYGZgt{}}
         \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}wordToCount\PYGZdq{}\PYGZgt{}the word to get the amount of\PYGZlt{}/param\PYGZgt{}}
         \PYG{c+c1}{/// \PYGZlt{}returns\PYGZgt{}an integer\PYGZlt{}/returns\PYGZgt{}}
-        \PYG{k}{public} \PYG{k}{static} \PYG{k+kt}{int} \PYG{n+nf}{GetWordCount}\PYG{p}{(}\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{String}\PYG{p}{\PYGZgt{}} \PYG{n}{input}\PYG{p}{,} \PYG{n}{String} \PYG{n}{wordToCount}\PYG{p}{)}
+        \PYG{k}{public} \PYG{k}{static} \PYG{k+kt}{int} \PYG{n+nf}{GetWordCount}\PYG{p}{(}\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{String}\PYG{p}{\PYGZgt{}} \PYG{n}{input}\PYG{p}{,} \PYG{k+kt}{string} \PYG{n}{wordToCount}\PYG{p}{)}
         \PYG{p}{\PYGZob{}}
             \PYG{k+kt}{int} \PYG{n}{output} \PYG{p}{=} \PYG{l+m}{0}\PYG{p}{;}
 
-            \PYG{k}{foreach}\PYG{p}{(}\PYG{n}{String} \PYG{n}{s} \PYG{k}{in} \PYG{n}{input}\PYG{p}{)}
+            \PYG{k}{foreach}\PYG{p}{(}\PYG{k+kt}{string} \PYG{n}{s} \PYG{k}{in} \PYG{n}{input}\PYG{p}{)}
             \PYG{p}{\PYGZob{}}
                 \PYG{k}{if} \PYG{p}{(}\PYG{n}{s} \PYG{p}{==} \PYG{n}{wordToCount}\PYG{p}{)}
                 \PYG{p}{\PYGZob{}}
@@ -98,7 +98,7 @@
         \PYG{p}{\PYGZob{}}
             \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{k+kt}{int}\PYG{p}{\PYGZgt{}} \PYG{n}{output} \PYG{p}{=} \PYG{k}{new} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{k+kt}{int}\PYG{p}{\PYGZgt{}();}
 
-            \PYG{k}{foreach}\PYG{p}{(}\PYG{n}{String} \PYG{n}{word} \PYG{k}{in} \PYG{n}{wordsToCount}\PYG{p}{)}
+            \PYG{k}{foreach}\PYG{p}{(}\PYG{k+kt}{string} \PYG{n}{word} \PYG{k}{in} \PYG{n}{wordsToCount}\PYG{p}{)}
             \PYG{p}{\PYGZob{}}
                 \PYG{n}{output}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{GetWordCount}\PYG{p}{(}\PYG{n}{input}\PYG{p}{,} \PYG{n}{word}\PYG{p}{));}
             \PYG{p}{\PYGZcb{}}
@@ -114,16 +114,16 @@
         \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}fileName1\PYGZdq{}\PYGZgt{}the first file from which to read\PYGZlt{}/param\PYGZgt{}}
         \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}fileName2\PYGZdq{}\PYGZgt{}the second file from which to read\PYGZlt{}/param\PYGZgt{}}
         \PYG{c+c1}{/// \PYGZlt{}returns\PYGZgt{}a long string\PYGZlt{}/returns\PYGZgt{}}
-        \PYG{k}{public} \PYG{k}{static} \PYG{n}{String} \PYG{n+nf}{CopyAndCombineBothFiles}\PYG{p}{(}\PYG{n}{String} \PYG{n}{fileName1}\PYG{p}{,} \PYG{n}{String} \PYG{n}{fileName2}\PYG{p}{,} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Char}\PYG{p}{\PYGZgt{}} \PYG{n}{delimiters}\PYG{p}{)}
+        \PYG{k}{public} \PYG{k}{static} \PYG{k+kt}{string} \PYG{n+nf}{CopyAndCombineBothFiles}\PYG{p}{(}\PYG{k+kt}{string} \PYG{n}{fileName1}\PYG{p}{,} \PYG{k+kt}{string} \PYG{n}{fileName2}\PYG{p}{,} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Char}\PYG{p}{\PYGZgt{}} \PYG{n}{delimiters}\PYG{p}{)}
         \PYG{p}{\PYGZob{}}
-            \PYG{n}{String} \PYG{n}{output} \PYG{p}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}
+            \PYG{k+kt}{string} \PYG{n}{output} \PYG{p}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}
 
             \PYG{c+c1}{// we can read both of the files again without worry since we\PYGZsq{}ve already ensured that they both exist in}
             \PYG{c+c1}{// the easy part}
             
-            \PYG{n}{String} \PYG{n}{file1} \PYG{p}{=} \PYG{n}{String}\PYG{p}{.}\PYG{n}{Join}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}\PYGZbs{}n\PYGZdq{}}\PYG{p}{,} \PYG{n}{File}\PYG{p}{.}\PYG{n}{ReadAllLines}\PYG{p}{(}\PYG{n}{fileName1}\PYG{p}{));}
+            \PYG{k+kt}{string} \PYG{n}{file1} \PYG{p}{=} \PYG{n}{String}\PYG{p}{.}\PYG{n}{Join}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}\PYGZbs{}n\PYGZdq{}}\PYG{p}{,} \PYG{n}{File}\PYG{p}{.}\PYG{n}{ReadAllLines}\PYG{p}{(}\PYG{n}{fileName1}\PYG{p}{));}
 
-            \PYG{n}{String} \PYG{n}{file2} \PYG{p}{=} \PYG{n}{String}\PYG{p}{.}\PYG{n}{Join}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}\PYGZbs{}n\PYGZdq{}}\PYG{p}{,} \PYG{n}{File}\PYG{p}{.}\PYG{n}{ReadAllLines}\PYG{p}{(}\PYG{n}{fileName2}\PYG{p}{));}
+            \PYG{k+kt}{string} \PYG{n}{file2} \PYG{p}{=} \PYG{n}{String}\PYG{p}{.}\PYG{n}{Join}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}\PYGZbs{}n\PYGZdq{}}\PYG{p}{,} \PYG{n}{File}\PYG{p}{.}\PYG{n}{ReadAllLines}\PYG{p}{(}\PYG{n}{fileName2}\PYG{p}{));}
 
 
             \PYG{k+kt}{int} \PYG{n}{file1ReadIndex} \PYG{p}{=} \PYG{l+m}{0}\PYG{p}{;}
@@ -170,7 +170,7 @@
                         \PYG{p}{\PYGZob{}}
 
 
-                            \PYG{n}{String} \PYG{n}{word} \PYG{p}{=} \PYG{n}{file1}\PYG{p}{.}\PYG{n}{Substring}\PYG{p}{(}\PYG{n}{file1LastWordIndex}\PYG{p}{,} \PYG{n}{file1ReadIndex}\PYG{p}{\PYGZhy{}}\PYG{n}{file1LastWordIndex}\PYG{p}{);}
+                            \PYG{k+kt}{string} \PYG{n}{word} \PYG{p}{=} \PYG{n}{file1}\PYG{p}{.}\PYG{n}{Substring}\PYG{p}{(}\PYG{n}{file1LastWordIndex}\PYG{p}{,} \PYG{n}{file1ReadIndex}\PYG{p}{\PYGZhy{}}\PYG{n}{file1LastWordIndex}\PYG{p}{);}
 
                             \PYG{k}{if} \PYG{p}{(}\PYG{n}{word}\PYG{p}{.}\PYG{n}{Length} \PYG{p}{\PYGZlt{}=} \PYG{l+m}{0}\PYG{p}{)}
                             \PYG{p}{\PYGZob{}}
@@ -178,7 +178,7 @@
                                 \PYG{n}{file1ReadIndex}\PYG{p}{++;}
                             \PYG{p}{\PYGZcb{}}
 
-                            \PYG{n}{String} \PYG{n}{strippedWord} \PYG{p}{=} \PYG{n}{word}\PYG{p}{;}
+                            \PYG{k+kt}{string} \PYG{n}{strippedWord} \PYG{p}{=} \PYG{n}{word}\PYG{p}{;}
 
                             \PYG{k}{if} \PYG{p}{(}\PYG{n}{strippedWord}\PYG{p}{.}\PYG{n}{Length} \PYG{p}{\PYGZgt{}} \PYG{l+m}{0} \PYG{p}{\PYGZam{}\PYGZam{}} \PYG{n}{delimiters}\PYG{p}{.}\PYG{n}{Contains}\PYG{p}{(}\PYG{n}{word}\PYG{p}{[}\PYG{l+m}{0}\PYG{p}{]))}
                             \PYG{p}{\PYGZob{}}
@@ -187,7 +187,7 @@
 
                             \PYG{n}{strippedWord} \PYG{p}{=} \PYG{n}{strippedWord}\PYG{p}{.}\PYG{n}{Replace}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}\PYGZbs{}n\PYGZdq{}}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{).}\PYG{n}{Replace}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}\PYGZbs{}r\PYGZdq{}}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{);}
 
-                            \PYG{n}{String} \PYG{n}{firstUncopiedWord} \PYG{p}{=} \PYG{n}{findFirstUncopiedWord}\PYG{p}{(}\PYG{n}{file2}\PYG{p}{,} \PYG{n}{file2ReadIndex}\PYG{p}{,} \PYG{n}{delimiters}\PYG{p}{);}
+                            \PYG{k+kt}{string} \PYG{n}{firstUncopiedWord} \PYG{p}{=} \PYG{n}{findFirstUncopiedWord}\PYG{p}{(}\PYG{n}{file2}\PYG{p}{,} \PYG{n}{file2ReadIndex}\PYG{p}{,} \PYG{n}{delimiters}\PYG{p}{);}
 
                             \PYG{k}{if} \PYG{p}{(}\PYG{n}{strippedWord} \PYG{p}{==} \PYG{n}{firstUncopiedWord} \PYG{p}{\PYGZam{}\PYGZam{}} \PYG{n}{file2Finished} \PYG{p}{==} \PYG{k}{false}\PYG{p}{)\PYGZob{}}
                                 \PYG{k}{if} \PYG{p}{(}\PYG{n}{word}\PYG{p}{.}\PYG{n}{Length} \PYG{p}{\PYGZgt{}} \PYG{l+m}{0} \PYG{p}{\PYGZam{}\PYGZam{}} \PYG{n}{delimiters}\PYG{p}{.}\PYG{n}{Contains}\PYG{p}{(}\PYG{n}{word}\PYG{p}{[}\PYG{l+m}{0}\PYG{p}{]))}
@@ -220,7 +220,7 @@
                         \PYG{k}{if} \PYG{p}{(}\PYG{n}{delimiters}\PYG{p}{.}\PYG{n}{Contains}\PYG{p}{(}\PYG{n}{file2}\PYG{p}{[}\PYG{n}{file2ReadIndex}\PYG{p}{]))}
                         \PYG{p}{\PYGZob{}}
 
-                            \PYG{n}{String} \PYG{n}{word} \PYG{p}{=} \PYG{n}{file2}\PYG{p}{.}\PYG{n}{Substring}\PYG{p}{(}\PYG{n}{file2LastWordIndex}\PYG{p}{,} \PYG{n}{file2ReadIndex}\PYG{p}{\PYGZhy{}}\PYG{n}{file2LastWordIndex}\PYG{p}{);}
+                            \PYG{k+kt}{string} \PYG{n}{word} \PYG{p}{=} \PYG{n}{file2}\PYG{p}{.}\PYG{n}{Substring}\PYG{p}{(}\PYG{n}{file2LastWordIndex}\PYG{p}{,} \PYG{n}{file2ReadIndex}\PYG{p}{\PYGZhy{}}\PYG{n}{file2LastWordIndex}\PYG{p}{);}
 
                             \PYG{k}{if} \PYG{p}{(}\PYG{n}{word}\PYG{p}{.}\PYG{n}{Length} \PYG{p}{\PYGZlt{}=} \PYG{l+m}{0}\PYG{p}{)}
                             \PYG{p}{\PYGZob{}}
@@ -229,9 +229,7 @@
                             \PYG{p}{\PYGZcb{}}
 
 
-                            \PYG{n}{String} \PYG{n}{strippedWord} \PYG{p}{=} \PYG{n}{word}\PYG{p}{;}
-
-                            
+                            \PYG{k+kt}{string} \PYG{n}{strippedWord} \PYG{p}{=} \PYG{n}{word}\PYG{p}{;}
 
                             \PYG{k}{if} \PYG{p}{(}\PYG{n}{strippedWord}\PYG{p}{.}\PYG{n}{Length} \PYG{p}{\PYGZgt{}} \PYG{l+m}{0} \PYG{p}{\PYGZam{}\PYGZam{}} \PYG{n}{delimiters}\PYG{p}{.}\PYG{n}{Contains}\PYG{p}{(}\PYG{n}{word}\PYG{p}{[}\PYG{l+m}{0}\PYG{p}{]))}
                             \PYG{p}{\PYGZob{}}
@@ -240,7 +238,7 @@
 
                             \PYG{n}{strippedWord} \PYG{p}{=} \PYG{n}{strippedWord}\PYG{p}{.}\PYG{n}{Replace}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}\PYGZbs{}n\PYGZdq{}}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{).}\PYG{n}{Replace}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}\PYGZbs{}r\PYGZdq{}}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{);}
 
-                            \PYG{n}{String} \PYG{n}{firstUncopiedWord} \PYG{p}{=} \PYG{n}{findFirstUncopiedWord}\PYG{p}{(}\PYG{n}{file1}\PYG{p}{,} \PYG{n}{file1ReadIndex}\PYG{p}{,} \PYG{n}{delimiters}\PYG{p}{);}
+                            \PYG{k+kt}{string} \PYG{n}{firstUncopiedWord} \PYG{p}{=} \PYG{n}{findFirstUncopiedWord}\PYG{p}{(}\PYG{n}{file1}\PYG{p}{,} \PYG{n}{file1ReadIndex}\PYG{p}{,} \PYG{n}{delimiters}\PYG{p}{);}
 
 
                             \PYG{k}{if} \PYG{p}{(}\PYG{n}{strippedWord} \PYG{p}{==} \PYG{n}{firstUncopiedWord} \PYG{p}{\PYGZam{}\PYGZam{}} \PYG{n}{file1Finished} \PYG{p}{==} \PYG{k}{false}\PYG{p}{)\PYGZob{}}
@@ -269,9 +267,9 @@
 
         \PYG{p}{\PYGZcb{}}
 
-        \PYG{k}{public} \PYG{k}{static} \PYG{n}{String} \PYG{n+nf}{findFirstUncopiedWord}\PYG{p}{(}\PYG{n}{String} \PYG{n}{file}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{readIndex}\PYG{p}{,} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Char}\PYG{p}{\PYGZgt{}} \PYG{n}{delimiters}\PYG{p}{)}
+        \PYG{k}{public} \PYG{k}{static} \PYG{k+kt}{string} \PYG{n+nf}{findFirstUncopiedWord}\PYG{p}{(}\PYG{k+kt}{string} \PYG{n}{file}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{readIndex}\PYG{p}{,} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Char}\PYG{p}{\PYGZgt{}} \PYG{n}{delimiters}\PYG{p}{)}
         \PYG{p}{\PYGZob{}}
-            \PYG{n}{String} \PYG{n}{output} \PYG{p}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}
+            \PYG{k+kt}{string} \PYG{n}{output} \PYG{p}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}
 
             \PYG{k+kt}{int} \PYG{n}{lastWordIndex} \PYG{p}{=} \PYG{n}{readIndex}\PYG{p}{;}
 
@@ -284,7 +282,7 @@
 
                 \PYG{k}{if} \PYG{p}{(}\PYG{n}{delimiters}\PYG{p}{.}\PYG{n}{Contains}\PYG{p}{(}\PYG{n}{file}\PYG{p}{[}\PYG{n}{readIndex}\PYG{p}{]))}
                 \PYG{p}{\PYGZob{}}
-                    \PYG{n}{String} \PYG{n}{word} \PYG{p}{=} \PYG{n}{file}\PYG{p}{.}\PYG{n}{Substring}\PYG{p}{(}\PYG{n}{lastWordIndex}\PYG{p}{,} \PYG{n}{readIndex}\PYG{p}{\PYGZhy{}}\PYG{n}{lastWordIndex}\PYG{p}{);}
+                    \PYG{k+kt}{string} \PYG{n}{word} \PYG{p}{=} \PYG{n}{file}\PYG{p}{.}\PYG{n}{Substring}\PYG{p}{(}\PYG{n}{lastWordIndex}\PYG{p}{,} \PYG{n}{readIndex}\PYG{p}{\PYGZhy{}}\PYG{n}{lastWordIndex}\PYG{p}{);}
 
                     \PYG{n}{word} \PYG{p}{=} \PYG{n}{word}\PYG{p}{.}\PYG{n}{Trim}\PYG{p}{();}
                     \PYG{n}{word} \PYG{p}{=} \PYG{n}{word}\PYG{p}{.}\PYG{n}{Replace}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}\PYGZbs{}n\PYGZdq{}}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{).}\PYG{n}{Replace}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}\PYGZbs{}r\PYGZdq{}}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{);}
@@ -309,8 +307,6 @@
 
     \PYG{p}{\PYGZcb{}}
 \PYG{p}{\PYGZcb{}}
-
-
 
 \PYG{c+c1}{//InOutUtils.cs}
 \PYG{k}{using} \PYG{n+nn}{System}\PYG{p}{;}
@@ -372,7 +368,7 @@
                     \PYG{k}{if} \PYG{p}{(}\PYG{n}{seperators}\PYG{p}{.}\PYG{n}{Contains}\PYG{p}{(}\PYG{n}{line}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]))}
                     \PYG{p}{\PYGZob{}}
 
-                        \PYG{n}{String} \PYG{n}{word}\PYG{p}{;}
+                        \PYG{k+kt}{string} \PYG{n}{word}\PYG{p}{;}
 
 
                         \PYG{c+c1}{// if we\PYGZsq{}re on the first word in the sequence}
@@ -397,7 +393,7 @@
                 \PYG{k}{if} \PYG{p}{(}\PYG{n}{seperators}\PYG{p}{.}\PYG{n}{Contains}\PYG{p}{(}\PYG{n}{line}\PYG{p}{[}\PYG{n}{line}\PYG{p}{.}\PYG{n}{Length}\PYG{p}{\PYGZhy{}}\PYG{l+m}{1}\PYG{p}{])} \PYG{p}{==} \PYG{k}{false}\PYG{p}{)}
                 \PYG{p}{\PYGZob{}}
                     \PYG{c+c1}{// add the remaining word that was undetected in the loop above}
-                    \PYG{n}{String} \PYG{n}{word}\PYG{p}{;}
+                    \PYG{k+kt}{string} \PYG{n}{word}\PYG{p}{;}
 
                     \PYG{c+c1}{// if this is true, then the whole line doesn\PYGZsq{}t have any delimiters}
                     \PYG{k}{if} \PYG{p}{(}\PYG{n}{wordStartIndex} \PYG{p}{==} \PYG{l+m}{0}\PYG{p}{)}
@@ -575,6 +571,7 @@
 
             \PYG{k}{return} \PYG{n}{output}\PYG{p}{;}
         \PYG{p}{\PYGZcb{}}
+
     \PYG{p}{\PYGZcb{}}
 \PYG{p}{\PYGZcb{}}
 
@@ -598,11 +595,11 @@
 
 
             \PYG{c+c1}{// IO filenames}
-            \PYG{n}{String} \PYG{n}{inputFile1} \PYG{p}{=} \PYG{l+s}{\PYGZdq{}Knyga1.txt\PYGZdq{}}\PYG{p}{;}
-            \PYG{n}{String} \PYG{n}{inputFile2} \PYG{p}{=} \PYG{l+s}{\PYGZdq{}Knyga2.txt\PYGZdq{}}\PYG{p}{;}
+            \PYG{k+kt}{string} \PYG{n}{inputFile1} \PYG{p}{=} \PYG{l+s}{\PYGZdq{}Knyga1.txt\PYGZdq{}}\PYG{p}{;}
+            \PYG{k+kt}{string} \PYG{n}{inputFile2} \PYG{p}{=} \PYG{l+s}{\PYGZdq{}Knyga2.txt\PYGZdq{}}\PYG{p}{;}
 
-            \PYG{n}{String} \PYG{n}{outputFile} \PYG{p}{=} \PYG{l+s}{\PYGZdq{}Rodikliai.txt\PYGZdq{}}\PYG{p}{;}
-            \PYG{n}{String} \PYG{n}{outputFile2} \PYG{p}{=} \PYG{l+s}{\PYGZdq{}ManoKnyga.txt\PYGZdq{}}\PYG{p}{;}
+            \PYG{k+kt}{string} \PYG{n}{outputFile} \PYG{p}{=} \PYG{l+s}{\PYGZdq{}Rodikliai.txt\PYGZdq{}}\PYG{p}{;}
+            \PYG{k+kt}{string} \PYG{n}{outputFile2} \PYG{p}{=} \PYG{l+s}{\PYGZdq{}ManoKnyga.txt\PYGZdq{}}\PYG{p}{;}
 
 
             \PYG{c+cm}{/*}
@@ -656,7 +653,7 @@
 \PYG{c+cm}{            * ==================}
 \PYG{c+cm}{            */}
 
-            \PYG{n}{String} \PYG{n}{hardPartOutput} \PYG{p}{=} \PYG{n}{TaskUtils}\PYG{p}{.}\PYG{n}{CopyAndCombineBothFiles}\PYG{p}{(}\PYG{n}{inputFile1}\PYG{p}{,} \PYG{n}{inputFile2}\PYG{p}{,} \PYG{n}{delimiters}\PYG{p}{);}
+            \PYG{k+kt}{string} \PYG{n}{hardPartOutput} \PYG{p}{=} \PYG{n}{TaskUtils}\PYG{p}{.}\PYG{n}{CopyAndCombineBothFiles}\PYG{p}{(}\PYG{n}{inputFile1}\PYG{p}{,} \PYG{n}{inputFile2}\PYG{p}{,} \PYG{n}{delimiters}\PYG{p}{);}
             \PYG{n}{File}\PYG{p}{.}\PYG{n}{WriteAllLines}\PYG{p}{(}\PYG{n}{outputFile2}\PYG{p}{,} \PYG{n}{hardPartOutput}\PYG{p}{.}\PYG{n}{Split}\PYG{p}{(}\PYG{l+s+sc}{\PYGZsq{}\PYGZbs{}n\PYGZsq{}}\PYG{p}{),} \PYG{n}{Encoding}\PYG{p}{.}\PYG{n}{UTF8}\PYG{p}{);}
         \PYG{p}{\PYGZcb{}}
     \PYG{p}{\PYGZcb{}}

@@ -22,7 +22,7 @@ namespace L4_ND
 
             for (int i = 0; i < 10; i++)
             {
-                String longest = "";
+                string longest = "";
 
                 for (int j = 0; j < input.Count; j++)
                 {
@@ -54,7 +54,7 @@ namespace L4_ND
         {
             List<String> output = new List<String>();
 
-            foreach (String lWord in left)
+            foreach (string lWord in left)
             {
                 if (right.Contains(lWord) == false)
                 {
@@ -72,11 +72,11 @@ namespace L4_ND
         /// <param name="input">a list of strings to compare against</param>
         /// <param name="wordToCount">the word to get the amount of</param>
         /// <returns>an integer</returns>
-        public static int GetWordCount(List<String> input, String wordToCount)
+        public static int GetWordCount(List<String> input, string wordToCount)
         {
             int output = 0;
 
-            foreach(String s in input)
+            foreach(string s in input)
             {
                 if (s == wordToCount)
                 {
@@ -97,7 +97,7 @@ namespace L4_ND
         {
             List<int> output = new List<int>();
 
-            foreach(String word in wordsToCount)
+            foreach(string word in wordsToCount)
             {
                 output.Add(GetWordCount(input, word));
             }
@@ -113,16 +113,16 @@ namespace L4_ND
         /// <param name="fileName1">the first file from which to read</param>
         /// <param name="fileName2">the second file from which to read</param>
         /// <returns>a long string</returns>
-        public static String CopyAndCombineBothFiles(String fileName1, String fileName2, List<Char> delimiters)
+        public static string CopyAndCombineBothFiles(string fileName1, string fileName2, List<Char> delimiters)
         {
-            String output = "";
+            string output = "";
 
             // we can read both of the files again without worry since we've already ensured that they both exist in
             // the easy part
             
-            String file1 = String.Join("\n", File.ReadAllLines(fileName1));
+            string file1 = String.Join("\n", File.ReadAllLines(fileName1));
 
-            String file2 = String.Join("\n", File.ReadAllLines(fileName2));
+            string file2 = String.Join("\n", File.ReadAllLines(fileName2));
 
 
             int file1ReadIndex = 0;
@@ -169,7 +169,7 @@ namespace L4_ND
                         {
 
 
-                            String word = file1.Substring(file1LastWordIndex, file1ReadIndex-file1LastWordIndex);
+                            string word = file1.Substring(file1LastWordIndex, file1ReadIndex-file1LastWordIndex);
 
                             if (word.Length <= 0)
                             {
@@ -177,7 +177,7 @@ namespace L4_ND
                                 file1ReadIndex++;
                             }
 
-                            String strippedWord = word;
+                            string strippedWord = word;
 
                             if (strippedWord.Length > 0 && delimiters.Contains(word[0]))
                             {
@@ -186,7 +186,7 @@ namespace L4_ND
 
                             strippedWord = strippedWord.Replace("\n", "").Replace("\r", "");
 
-                            String firstUncopiedWord = findFirstUncopiedWord(file2, file2ReadIndex, delimiters);
+                            string firstUncopiedWord = findFirstUncopiedWord(file2, file2ReadIndex, delimiters);
 
                             if (strippedWord == firstUncopiedWord && file2Finished == false){
                                 if (word.Length > 0 && delimiters.Contains(word[0]))
@@ -219,7 +219,7 @@ namespace L4_ND
                         if (delimiters.Contains(file2[file2ReadIndex]))
                         {
 
-                            String word = file2.Substring(file2LastWordIndex, file2ReadIndex-file2LastWordIndex);
+                            string word = file2.Substring(file2LastWordIndex, file2ReadIndex-file2LastWordIndex);
 
                             if (word.Length <= 0)
                             {
@@ -228,9 +228,7 @@ namespace L4_ND
                             }
 
 
-                            String strippedWord = word;
-
-                            
+                            string strippedWord = word;
 
                             if (strippedWord.Length > 0 && delimiters.Contains(word[0]))
                             {
@@ -239,7 +237,7 @@ namespace L4_ND
 
                             strippedWord = strippedWord.Replace("\n", "").Replace("\r", "");
 
-                            String firstUncopiedWord = findFirstUncopiedWord(file1, file1ReadIndex, delimiters);
+                            string firstUncopiedWord = findFirstUncopiedWord(file1, file1ReadIndex, delimiters);
 
 
                             if (strippedWord == firstUncopiedWord && file1Finished == false){
@@ -268,9 +266,9 @@ namespace L4_ND
 
         }
 
-        public static String findFirstUncopiedWord(String file, int readIndex, List<Char> delimiters)
+        public static string findFirstUncopiedWord(string file, int readIndex, List<Char> delimiters)
         {
-            String output = "";
+            string output = "";
 
             int lastWordIndex = readIndex;
 
@@ -283,7 +281,7 @@ namespace L4_ND
 
                 if (delimiters.Contains(file[readIndex]))
                 {
-                    String word = file.Substring(lastWordIndex, readIndex-lastWordIndex);
+                    string word = file.Substring(lastWordIndex, readIndex-lastWordIndex);
 
                     word = word.Trim();
                     word = word.Replace("\n", "").Replace("\r", "");
@@ -308,8 +306,6 @@ namespace L4_ND
 
     }
 }
-
-
 
 //InOutUtils.cs
 using System;
@@ -371,7 +367,7 @@ namespace L4_ND
                     if (seperators.Contains(line[i]))
                     {
 
-                        String word;
+                        string word;
 
 
                         // if we're on the first word in the sequence
@@ -396,7 +392,7 @@ namespace L4_ND
                 if (seperators.Contains(line[line.Length-1]) == false)
                 {
                     // add the remaining word that was undetected in the loop above
-                    String word;
+                    string word;
 
                     // if this is true, then the whole line doesn't have any delimiters
                     if (wordStartIndex == 0)
@@ -574,6 +570,7 @@ namespace L4_ND
 
             return output;
         }
+
     }
 }
 
@@ -597,11 +594,11 @@ namespace L4_ND
 
 
             // IO filenames
-            String inputFile1 = "Knyga1.txt";
-            String inputFile2 = "Knyga2.txt";
+            string inputFile1 = "Knyga1.txt";
+            string inputFile2 = "Knyga2.txt";
 
-            String outputFile = "Rodikliai.txt";
-            String outputFile2 = "ManoKnyga.txt";
+            string outputFile = "Rodikliai.txt";
+            string outputFile2 = "ManoKnyga.txt";
 
 
             /*
@@ -655,7 +652,7 @@ namespace L4_ND
             * ==================
             */
 
-            String hardPartOutput = TaskUtils.CopyAndCombineBothFiles(inputFile1, inputFile2, delimiters);
+            string hardPartOutput = TaskUtils.CopyAndCombineBothFiles(inputFile1, inputFile2, delimiters);
             File.WriteAllLines(outputFile2, hardPartOutput.Split('\n'), Encoding.UTF8);
         }
     }

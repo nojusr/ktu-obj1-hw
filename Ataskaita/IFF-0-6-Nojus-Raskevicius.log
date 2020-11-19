@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/Arch Linux) (preloaded format=xelatex 2020.10.14)  18 NOV 2020 00:05
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/Arch Linux) (preloaded format=xelatex 2020.10.14)  19 NOV 2020 14:18
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -802,25 +802,29 @@ Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: dvipdfm (xetex) on input line 98.
 )
+
+Package hyperref Warning: Option `colorlinks' has already been used,
+(hyperref)                setting the option has no effect on input line 61.
+
 File: Assets/ktu-ikona.png Graphic file (type bmp)
 <Assets/ktu-ikona.png>
 LaTeX Font Info:    Font shape `TU/LiberationSerif(0)/m/n' will be
-(Font)              scaled to size 14.4pt on input line 71.
+(Font)              scaled to size 14.4pt on input line 76.
 LaTeX Font Info:    Font shape `TU/LiberationSerif(0)/b/n' will be
-(Font)              scaled to size 14.4pt on input line 71.
+(Font)              scaled to size 14.4pt on input line 76.
 LaTeX Font Info:    Font shape `TU/LiberationSerif(0)/m/n' will be
-(Font)              scaled to size 12.0pt on input line 77.
+(Font)              scaled to size 12.0pt on input line 82.
 LaTeX Font Info:    Font shape `TU/LiberationSerif(0)/m/n' will be
-(Font)              scaled to size 17.28pt on input line 83.
+(Font)              scaled to size 17.28pt on input line 88.
 LaTeX Font Info:    Font shape `TU/LiberationSerif(0)/b/n' will be
-(Font)              scaled to size 17.28pt on input line 83.
+(Font)              scaled to size 17.28pt on input line 88.
 LaTeX Font Info:    Font shape `TU/LiberationSerif(0)/b/n' will be
-(Font)              scaled to size 12.0pt on input line 99.
- [1
+(Font)              scaled to size 12.0pt on input line 104.
+[1
 
 ]
 LaTeX Font Info:    Font shape `TU/LiberationSerif(0)/b/n' will be
-(Font)              scaled to size 10.0pt on input line 127.
+(Font)              scaled to size 10.0pt on input line 132.
  (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/IFF-0-6-Nojus-Raskevicius.toc
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 3.
  (/usr/share/texmf-dist/tex/latex/lm/ot1lmr.fd
@@ -871,11 +875,11 @@ Overfull \hbox (49.77972pt too wide) in paragraph at lines 423--423
 
 [9]) (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/5E99834642852EC161DDED92BAD2AFA24189A00AE0BEA4E3D01B571D64C15074.pygtex)
 LaTeX Font Info:    Font shape `TU/LiberationSerif(0)/m/n' will be
-(Font)              scaled to size 8.0pt on input line 160.
+(Font)              scaled to size 8.0pt on input line 165.
 LaTeX Font Info:    Font shape `TU/CourierNew(0)/m/n' will be
-(Font)              scaled to size 8.6836pt on input line 161.
+(Font)              scaled to size 8.6836pt on input line 166.
  [10] (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/F59823B2918D260A10F5325FDC9EB4483888577629B25CE2CC3431B9F6A32B7B.pygtex)
-Underfull \hbox (badness 10000) in paragraph at lines 248--252
+Underfull \hbox (badness 10000) in paragraph at lines 253--257
 
  []
 
@@ -890,7 +894,7 @@ Overfull \hbox (43.91733pt too wide) in paragraph at lines 649--649
  []
 
 ) [23] (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/C9182CB4B3DF6828AF69AFF8F93BC2488100BD379CE0158C9AB58E57D2A2DBA4.pygtex) (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/72FA851D303CFC5DD7287172213105B8BC8F624D871D281BEB7A79583813BA51.pygtex) (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/88BF99DCEB1F96B077FDFCCC07265030F34673B6A6F3BE058EB4313ACD77A001.pygtex [24]) (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/EC4D9163A4F9284416847705C3E555617722E7934F4FBCEA3954C8C4F53227DA.pygtex) (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/6074DA5CE2E74E269A519F71508144B5C790098060E1CF40BB1DCBD5093E95A6.pygtex [25]) (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/38C1A377617368A2A51D154F2BD91899B2C880C3E2DF53F5E8D25D24383F73C7.pygtex [26])
-Underfull \hbox (badness 10000) in paragraph at lines 416--420
+Underfull \hbox (badness 10000) in paragraph at lines 421--425
 
  []
 
@@ -910,14 +914,14 @@ Overfull \hbox (8.74307pt too wide) in paragraph at lines 816--816
  []
 
 [41] [42] [43] [44]) (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/A1F700845FD8EB7BA04CD56E69AACD6BA7F56F0A60D1CB7E391DBE1D5A303301.pygtex [45]) (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/D66549997224C99E100A31E598D30CA381A666454B9F7103F59A317739886093.pygtex) [46] (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/B2B60B321E5B37136432189019D6C020CDF9037C37D77D37E79EE2484296BEE3.pygtex) (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/6142B9DD834E0483C6FAE1050E0D66DCDB90AD0A62A157885E83426C0D5317E1.pygtex) (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/ABCDC0AC96053B61BA637C65C77FBC206C2890EAAA2082107BCBC00F775138A2.pygtex) [47] (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/9CF4CEA2B515DC4908430D66AFE00B6DE59050C56A99A3DBA236ECC8CD6DEE1A.pygtex) (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/EE70F3416BF8AAA14C88E139AD92C10700B7ED1442D95365AA05EFADEEFCC6FF.pygtex) [48] [49] (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/F9A9A8CDD8D3164BF5F7592E57B2A78CD8A16A17980CDE5D26EB7443C200EB7C.pygtex) (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/157A1662251D816DC36D438E7A6D32BD442E228E6E4A98B5ABD111A239BC8F4E.pygtex) (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/B5CE28ADBF6B74D40A1F2A98A11CBF9EBDC343165077DEC355411C4291F17F4B.pygtex)
-Underfull \hbox (badness 10000) in paragraph at lines 682--686
+Underfull \hbox (badness 10000) in paragraph at lines 687--691
 
  []
 
 [50]
 LaTeX Font Info:    Font shape `TU/CourierNew(0)/m/n' will be
-(Font)              scaled to size 10.85449pt on input line 695.
- (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/AF2DFB2B66C310729DA5FB4F4EEA2147FB643562DA78A310A64B76D351400E82.pygtex [51] [52] [53] [54] [55] [56] [57] [58] [59] [60] [61]) (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/E3DF9C4A753C721FB6377C7820DCD7086DB5383A2C664F4A67BB4B13676D1473.pygtex) [62] (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/EABD9FF3A273B5CD1197510F70E2C26E940237DA7F23B25F2F58E07AD40ADD1A.pygtex) (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/45DE5B2803F493A7C53C1FA7E37329DCB477C420200C8607E007C4AB91492628.pygtex
+(Font)              scaled to size 10.85449pt on input line 701.
+ (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/157FF2239C8353EF5BA1E4E189E37D8FFB643562DA78A310A64B76D351400E82.pygtex [51] [52] [53] [54] [55] [56] [57] [58] [59] [60] [61]) (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/E3DF9C4A753C721FB6377C7820DCD7086DB5383A2C664F4A67BB4B13676D1473.pygtex) [62] (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/EABD9FF3A273B5CD1197510F70E2C26E940237DA7F23B25F2F58E07AD40ADD1A.pygtex) (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/45DE5B2803F493A7C53C1FA7E37329DCB477C420200C8607E007C4AB91492628.pygtex
 Overfull \hbox (67.36685pt too wide) in paragraph at lines 9--9
 | | | |\TU/CourierNew(0)/m/n/9 Pradinio-teksto-eilutės-ilgis-neviršija-80-simbolių.Dviejuose-tekstiniuose-failuose-Knyga1.txt|  
  []
@@ -927,23 +931,31 @@ Overfull \hbox (14.60541pt too wide) in paragraph at lines 30--30
 | | | |\TU/CourierNew(0)/m/n/9 Pradinio-teksto-eilutės-ilgis-neviršija-80-simbolių.-tekstiniuose-failuose-Knyga1.txt|  
  []
 
-) (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/ED6FC5D008405C82C47F473AADC27CA26F50BF633A973380AE23A1CD71F0BA4C.pygtex) (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/5F5ED10C897BBA536D36BEB0746AE3A9F67DF08F6A23AB05C413612A2217E4F0.pygtex [64]) (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/0F78A921B440C8857D8A74B3BA42B594849086D0024C833FB071D4B8DBC13326.pygtex) [65] [66]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 850.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 850.
+) (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/ED6FC5D008405C82C47F473AADC27CA26F50BF633A973380AE23A1CD71F0BA4C.pygtex) (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/5F5ED10C897BBA536D36BEB0746AE3A9F67DF08F6A23AB05C413612A2217E4F0.pygtex [64]) (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/0F78A921B440C8857D8A74B3BA42B594849086D0024C833FB071D4B8DBC13326.pygtex)
+LaTeX Font Info:    Font shape `TU/LiberationSerif(0)/m/it' will be
+(Font)              scaled to size 10.0pt on input line 845.
+
+Underfull \hbox (badness 10000) in paragraph at lines 854--858
+
+ []
+
+[65] [66] [67]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 874.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 874.
  (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/IFF-0-6-Nojus-Raskevicius.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 850.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 850.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 874.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 874.
 Package rerunfilecheck Info: File `IFF-0-6-Nojus-Raskevicius.out' has not changed.
 (rerunfilecheck)             Checksum: 889950D9440987B5A3514F6FEE701BE2;4903.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 850.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 874.
  ) 
 Here is how much of TeX's memory you used:
- 17760 strings out of 479284
- 347626 string characters out of 5886219
+ 17762 strings out of 479284
+ 347725 string characters out of 5886219
  737840 words of memory out of 5000000
- 35007 multiletter control sequences out of 15000+600000
- 547010 words of font info for 75 fonts, out of 8000000 for 9000
+ 35008 multiletter control sequences out of 15000+600000
+ 547018 words of font info for 76 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  48i,9n,119p,1033b,660s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on /home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/IFF-0-6-Nojus-Raskevicius.xdv (66 pages, 1390264 bytes).
+Output written on /home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/IFF-0-6-Nojus-Raskevicius.xdv (67 pages, 1402264 bytes).

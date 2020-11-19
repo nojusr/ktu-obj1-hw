@@ -58,7 +58,7 @@ namespace L4_ND
                     if (seperators.Contains(line[i]))
                     {
 
-                        String word;
+                        string word;
 
 
                         // if we're on the first word in the sequence
@@ -83,7 +83,7 @@ namespace L4_ND
                 if (seperators.Contains(line[line.Length-1]) == false)
                 {
                     // add the remaining word that was undetected in the loop above
-                    String word;
+                    string word;
 
                     // if this is true, then the whole line doesn't have any delimiters
                     if (wordStartIndex == 0)
@@ -261,12 +261,6 @@ namespace L4_ND
 
             return output;
         }
-
-
-
-
-
-
 
     }
 }
