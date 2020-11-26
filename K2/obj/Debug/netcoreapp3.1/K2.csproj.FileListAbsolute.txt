@@ -1,0 +1,11 @@
+/home/nojus/programming/ktu-stuff/ktu-obj1-hw/K2/bin/Debug/netcoreapp3.1/K2
+/home/nojus/programming/ktu-stuff/ktu-obj1-hw/K2/bin/Debug/netcoreapp3.1/K2.deps.json
+/home/nojus/programming/ktu-stuff/ktu-obj1-hw/K2/bin/Debug/netcoreapp3.1/K2.runtimeconfig.json
+/home/nojus/programming/ktu-stuff/ktu-obj1-hw/K2/bin/Debug/netcoreapp3.1/K2.runtimeconfig.dev.json
+/home/nojus/programming/ktu-stuff/ktu-obj1-hw/K2/bin/Debug/netcoreapp3.1/K2.dll
+/home/nojus/programming/ktu-stuff/ktu-obj1-hw/K2/bin/Debug/netcoreapp3.1/K2.pdb
+/home/nojus/programming/ktu-stuff/ktu-obj1-hw/K2/obj/Debug/netcoreapp3.1/K2.csprojAssemblyReference.cache
+/home/nojus/programming/ktu-stuff/ktu-obj1-hw/K2/obj/Debug/netcoreapp3.1/K2.AssemblyInfoInputs.cache
+/home/nojus/programming/ktu-stuff/ktu-obj1-hw/K2/obj/Debug/netcoreapp3.1/K2.AssemblyInfo.cs
+/home/nojus/programming/ktu-stuff/ktu-obj1-hw/K2/obj/Debug/netcoreapp3.1/K2.dll
+/home/nojus/programming/ktu-stuff/ktu-obj1-hw/K2/obj/Debug/netcoreapp3.1/K2.pdb

@@ -1,0 +1,13 @@
+Pradinė informacija
+,-^%!@$.
+Testas,testas,testas,123456t,abc153,Hello.
+Sveikas,labas,alio,testasvėl,yoy456789.
+---------------------------------
+Programos išvestis:
+Testas,testas,testas,abc153,Hello.
+Sveikas,labas,alio,testasvėl,
+---------------------------------
+Bendras skaitmenų kiekis: 15
+Rasti eilučių žodžiai:
+testas
+labas

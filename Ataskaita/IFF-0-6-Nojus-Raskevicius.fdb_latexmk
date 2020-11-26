@@ -1,12 +1,12 @@
 # Fdb version 3
-["xdvipdfmx"] 1605788338 "/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/IFF-0-6-Nojus-Raskevicius.xdv" "/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/IFF-0-6-Nojus-Raskevicius.pdf" "/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/IFF-0-6-Nojus-Raskevicius" 1605788339
-  "/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/IFF-0-6-Nojus-Raskevicius.xdv" 1605788338 1402264 fa934fd10e15622da7696f0b19ef1c4e "xelatex"
+["xdvipdfmx"] 1605795270 "/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/IFF-0-6-Nojus-Raskevicius.xdv" "/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/IFF-0-6-Nojus-Raskevicius.pdf" "/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/IFF-0-6-Nojus-Raskevicius" 1605795270
+  "/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/IFF-0-6-Nojus-Raskevicius.xdv" 1605795269 1402264 98cbc2d782b409274cc58b9b6cfa3030 "xelatex"
   (generated)
   "/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/IFF-0-6-Nojus-Raskevicius.pdf"
-["xelatex"] 1605788337 "/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/IFF-0-6-Nojus-Raskevicius.tex" "/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/IFF-0-6-Nojus-Raskevicius.xdv" "IFF-0-6-Nojus-Raskevicius" 1605788339
+["xelatex"] 1605795268 "/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/IFF-0-6-Nojus-Raskevicius.tex" "/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/IFF-0-6-Nojus-Raskevicius.xdv" "IFF-0-6-Nojus-Raskevicius" 1605795270
   "/dev/null" 1605776236 0 d41d8cd98f00b204e9800998ecf8427e ""
-  "/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/IFF-0-6-Nojus-Raskevicius.aux" 1605788338 6821 98c652e05d4fd013db1bba758d9626cd ""
-  "/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/IFF-0-6-Nojus-Raskevicius.tex" 1605788152 55683 54460d9b62a412ebd317c6db8415a529 ""
+  "/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/IFF-0-6-Nojus-Raskevicius.aux" 1605795269 6821 98c652e05d4fd013db1bba758d9626cd ""
+  "/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/IFF-0-6-Nojus-Raskevicius.tex" 1605795268 55683 b0f16f44f765f42b919107acd0272837 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1591545468 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1591545468 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "/usr/share/texmf-dist/fonts/tfm/public/lm/ec-lmr10.tfm" 1591545468 12056 7e13df7fe4cbce21b072ba7c4f4deb6e ""
@@ -143,10 +143,10 @@
   "Assets/L4/t2-k2.txt" 1605166654 468 5f5ed10c897bba536d36beb0746ae3a9 ""
   "Assets/L4/t2-mk.txt" 1605650659 925 0f78a921b440c8857d8a74b3ba42b594 ""
   "Assets/ktu-ikona.png" 1603024269 4674 8b51dd65626fa57ec5729f66a583c4cb ""
-  "IFF-0-6-Nojus-Raskevicius.aux" 1605788338 6821 98c652e05d4fd013db1bba758d9626cd "xelatex"
-  "IFF-0-6-Nojus-Raskevicius.out" 1605788338 4903 889950d9440987b5a3514f6fee701be2 "xelatex"
-  "IFF-0-6-Nojus-Raskevicius.tex" 1605788152 55683 54460d9b62a412ebd317c6db8415a529 ""
-  "IFF-0-6-Nojus-Raskevicius.toc" 1605788338 2717 a557067a8c2aab26a9a6f54afc7cc1d1 "xelatex"
+  "IFF-0-6-Nojus-Raskevicius.aux" 1605795269 6821 98c652e05d4fd013db1bba758d9626cd "xelatex"
+  "IFF-0-6-Nojus-Raskevicius.out" 1605795269 4903 889950d9440987b5a3514f6fee701be2 "xelatex"
+  "IFF-0-6-Nojus-Raskevicius.tex" 1605795268 55683 b0f16f44f765f42b919107acd0272837 ""
+  "IFF-0-6-Nojus-Raskevicius.toc" 1605795269 2717 a557067a8c2aab26a9a6f54afc7cc1d1 "xelatex"
   "_minted-IFF-0-6-Nojus-Raskevicius/0F78A921B440C8857D8A74B3BA42B594849086D0024C833FB071D4B8DBC13326.pygtex" 1605650751 978 54a53cf21ff2c1c396f537fb26099545 ""
   "_minted-IFF-0-6-Nojus-Raskevicius/157A1662251D816DC36D438E7A6D32BD442E228E6E4A98B5ABD111A239BC8F4E.pygtex" 1603917575 578 dee6e350294b87534bd670a36a11c262 ""
   "_minted-IFF-0-6-Nojus-Raskevicius/157FF2239C8353EF5BA1E4E189E37D8FFB643562DA78A310A64B76D351400E82.pygtex" 1605788337 48619 57131eb9ab0515905882a01f0de77227 ""
@@ -178,10 +178,10 @@
   "_minted-IFF-0-6-Nojus-Raskevicius/default-pyg-prefix.pygstyle" 1603024269 7889 3ce1fbc763e3e2c748310f4fe31722b6 ""
   "_minted-IFF-0-6-Nojus-Raskevicius/default.pygstyle" 1603024269 9275 f200be7fc0b7de2461cca28cb35b1427 ""
   (generated)
+  "IFF-0-6-Nojus-Raskevicius.log"
+  "IFF-0-6-Nojus-Raskevicius.toc"
+  "/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/IFF-0-6-Nojus-Raskevicius.log"
+  "/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/IFF-0-6-Nojus-Raskevicius.xdv"
+  "IFF-0-6-Nojus-Raskevicius.aux"
   "IFF-0-6-Nojus-Raskevicius.xdv"
   "IFF-0-6-Nojus-Raskevicius.out"
-  "IFF-0-6-Nojus-Raskevicius.log"
-  "IFF-0-6-Nojus-Raskevicius.aux"
-  "/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/IFF-0-6-Nojus-Raskevicius.xdv"
-  "/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/IFF-0-6-Nojus-Raskevicius.log"
-  "IFF-0-6-Nojus-Raskevicius.toc"
