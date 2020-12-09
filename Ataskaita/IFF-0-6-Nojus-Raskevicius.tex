@@ -858,7 +858,6 @@ kuris nėra įterptas į \texttt{Knyga2.txt}, todėl programos antroje lentelėj
 
 \newpage
 
-\newpage
 
 %-----------------------------------------------------------------------------------------------------------------
 %L5
@@ -866,9 +865,59 @@ kuris nėra įterptas į \texttt{Knyga2.txt}, todėl programos antroje lentelėj
 
 \section{Paveldėjimas}
 \subsection{Darbo užduotis}
+\textbf{U5-4. Biblioteka}\newline
+Turite trijų KTU bibliotekų duomenis. Pirmoje eilutėje–pavadinimas, antroje –adresas, trečioje –telefonas.  Bibliotekose galima rasti įvairių leidinių –knygų, žurnalų ir  laikraščių. Sukurkite klasę „Publication“ (savybės–tipas(knyga, žurnalas, laikraštis),pavadinimas, leidykla, išleidimo metai, puslapių skaičius, tiražas), kurią paveldės klasės „Book” (savybės–ISBN, autorius), “Journal” (savybės–ISBN, numeris) ir „Paper” (savybės–data, numeris).
+\begin{itemize}
+    \item[•]Raskite  didžiausiu  tiražu  išleistą  knygą,  žurnalą  ir  laikraštį  kiekvienojebibliotekoje,   ekrane kiekvienam jų atspausdinkite bibliotekospavadinimą, leidinio pavadinimą ir tiražą.
+    \item[•]Sudarykite visų leidinių, kuriuos  galima  rasti  tik  vienojebibliotekoje, sąrašą. Visus duomenis apie šiuos leidinius įrašykite į failą „RetiLeidiniai.csv“.
+    \item[•]Raskite visus leidinius, išleistus leidyklos „Technologija“, visus duomenis apie šiuos leidinius įrašykite į failą „Technologija.csv“. Išrikiuokite juos pagal tipą ir pavadinimą.
+    \item[•]Sudarykite visų leidinių, kuriuos galima rasti visosebibliotekose, sąrašą. Rezultatusįrašykite į failą „BendriLeidiniai.csv“.
+\end{itemize}
+
+
 \subsection{Programos tekstas}
+\inputminted{csharp}{Assets/L5/L5-rawtext.txt}
+
 \subsection{Pradiniai duomenys ir rezultatai}
+\subsubsection{Pirmas tikrinimas}
+
+Šie duoemnys tikrina visą programos veiklą. Didžiausio tiražo laikraštis turėtų turėti 20001 egzempliorių. Retuose leidiniuose turėtų būti
+Visi žurnalai kurių pavadinimas prasideda su 'nature' ir viena knyga: 'katekizmas'. 'Technologija.csv' faile turėtų būti visi žurnalai kurių pavadinimas prasideda su žodžiu 'science'.
+Bendruose leidiniuose turėti būti visos 'hario poterio' knygos ir visi 'kauno dienos' laikraščiai.
+
+\begin{changemargin}{0cm}{0cm}
+    \textbf{kaunas.txt:}
+\end{changemargin}
+\inputminted{text}{Assets/L5/t1-i1.txt}
+
+\begin{changemargin}{0cm}{0cm}
+    \textbf{kaunas2.txt:}
+\end{changemargin}
+\inputminted{text}{Assets/L5/t1-i2.txt}
+
+\begin{changemargin}{0cm}{0cm}
+    \textbf{vilnius.txt:}
+\end{changemargin}
+\inputminted{text}{Assets/L5/t1-i3.txt}
+
+\textbf{Programos išvestis:}
+\inputminted{text}{Assets/L5/t1-oCon.txt}
+
+\textbf{RetiLeidiniai.csv}
+\inputminted{text}{Assets/L5/t1-o1.txt}
+
+\textbf{Technologija.csv}
+\inputminted{text}{Assets/L5/t1-o2.txt}
+
+\textbf{BendriLeidiniai.csv}
+\inputminted{text}{Assets/L5/t1-o3.txt}
+
 \subsection{Dėstytojo pastabos}
+
+\changemargin{0cm}{0cm}\textbf{Testo rezultatai: ?/3}\newline
+\textbf{Savarankiško darbo rezultatai: 0/1}\newline
+\textbf{Laboratorinio darbo įvertinimas: ?/7}\newline
+\textbf{Galutinis įvertinimas: ?}\newline
 \newpage
 
 \end{document}

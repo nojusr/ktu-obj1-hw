@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+Bendri leidiniai tarp trijų bibliotekų:
+Knyga: harry potter, išleido: bookpub1, metai: 2001, puslapiai: 501, tiražas: 1500, ISBN: 156123, autorius: J.K.Rowling
+Knyga: harry potter2, išleido: bookpub1, metai: 2002, puslapiai: 451, tiražas: 2000, ISBN: 189151, autorius: J.K.Rowling
+Knyga: harry potter3, išleido: bookpub1, metai: 2002, puslapiai: 614, tiražas: 1500, ISBN: 189158, autorius: J.K.Rowling
+Laikraštis: kauno diena, išleido: paperpub2, data: 1/14/2020 12:00:00 AM, puslapiai: 20, tiražas: 750, numeris: 189191
+Laikraštis: kauno diena, išleido: paperpub2, data: 1/15/2020 12:00:00 AM, puslapiai: 20, tiražas: 500, numeris: 189192
+Laikraštis: kauno diena, išleido: paperpub2, data: 1/16/2020 12:00:00 AM, puslapiai: 20, tiražas: 250, numeris: 189193
+\end{Verbatim}

@@ -1,0 +1,681 @@
+// Publication.cs
+namespace L5_ND
+{
+    /// <summary>
+    /// a class to store basic information about a publication
+    /// </summary>
+    class Publication
+    {
+        public string Type {get; set;}
+        public string Title {get; set;}
+        public string Publisher {get; set;}
+        public int ReleaseYear {get; set;}
+        public int PageCount {get; set;}
+        public int ReleaseCount {get; set;}
+        
+        public static bool operator > (Publication a, Publication b)
+        {
+            if (a.Type.CompareTo(b.Type) > 0)
+            {
+                return true;
+            }
+            else if (a.Type.CompareTo(b.Type) < 0)
+            {
+                return false;
+            }
+            else 
+            {
+                if (a.Title.CompareTo(b.Title) > 0)
+                {
+                    return true;
+                }
+                else if (a.Title.CompareTo(b.Title) < 0)
+                {
+                    return false;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+
+
+        }
+
+        public static bool operator < (Publication a, Publication b)
+        {
+            if (a.Type.CompareTo(b.Type) > 0)
+            {
+                return false;
+            }
+            else if (a.Type.CompareTo(b.Type) < 0)
+            {
+                return true;
+            }
+            else 
+            {
+                if (a.Title.CompareTo(b.Title) > 0)
+                {
+                    return false;
+                }
+                else if (a.Title.CompareTo(b.Title) < 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+    }
+}
+
+//Book.cs
+using System;
+
+namespace L5_ND
+{
+    /// <summary>
+    /// a book class that contains specific information that cannot be found in the parent 'Publication' class
+    /// </summary>
+    class Book : Publication
+    {
+        public int ISBN {get; set;}
+        public string Author {get; set;}
+
+        public Book(string title, string publisher, int releaseYear, int pageCount, int releaseCount, int _ISBN, string author)
+        {
+            this.Type = "book";
+            this.Title = title;
+            this.Publisher = publisher;
+            this.ReleaseYear = releaseYear;
+            this.PageCount = pageCount;
+            this.ReleaseCount = releaseCount;
+
+            // book specific
+            this.ISBN = _ISBN;
+            this.Author = author;
+        }
+
+        public override string ToString()
+        {
+            return String.Format(
+                "Knyga: {0}, išleido: {1}, metai: {2}, puslapiai: {3}, tiražas: {4}, ISBN: {5}, autorius: {6}",
+                this.Title,
+                this.Publisher,
+                this.ReleaseYear,
+                this.PageCount,
+                this.ReleaseCount,
+                this.ISBN,
+                this.Author
+            );
+        }
+        
+    }
+}
+
+//Journal.cs
+using System;
+
+namespace L5_ND
+{
+    /// <summary>
+    /// a journal class that contains specific information that cannot be found in the parent 'Publication' class
+    /// </summary>
+    class Journal : Publication
+    {
+
+        public int ISBN {get; set;}
+        public int JournalNumber {get; set;}
+
+        public Journal(string title, string publisher, int releaseYear, int pageCount, int releaseCount, int _ISBN, int journalNumber)
+        {
+            this.Type = "journal";
+            this.Title = title;
+            this.Publisher = publisher;
+            this.ReleaseYear = releaseYear;
+            this.PageCount = pageCount;
+            this.ReleaseCount = releaseCount;
+
+            // journal specific
+            this.ISBN = _ISBN;
+            this.JournalNumber = journalNumber;
+        }
+
+        public override string ToString()
+        {
+            return String.Format(
+                "Žurnalas: {0}, išleido: {1}, metai: {2}, puslapiai: {3}, tiražas: {4}, ISBN: {5}, ž. numeris: {6}",
+                this.Title,
+                this.Publisher,
+                this.ReleaseYear,
+                this.PageCount,
+                this.ReleaseCount,
+                this.ISBN,
+                this.JournalNumber
+            );
+        }
+    }
+}
+
+
+//Paper.cs
+using System;
+
+namespace L5_ND
+{
+    /// <summary>
+    /// a newspaper class that contains specific information that cannot be found in the parent 'Publication' class
+    /// </summary>
+    class Paper : Publication
+    {
+
+        DateTime Date;
+        public int PaperNumber {get; set; }
+        public Paper(string title, string publisher, int releaseYear, int pageCount, int releaseCount, DateTime date, int paperNumber)
+        {
+            this.Type = "paper";
+            this.Title = title;
+            this.Publisher = publisher;
+            this.ReleaseYear = releaseYear;
+            this.PageCount = pageCount;
+            this.ReleaseCount = releaseCount;
+
+            // paper specific
+            this.Date = date;
+            this.PaperNumber = paperNumber;
+        }
+
+        public override string ToString()
+        {
+            return String.Format(
+                "Laikraštis: {0}, išleido: {1}, data: {2}, puslapiai: {3}, tiražas: {4}, numeris: {5}",
+                this.Title,
+                this.Publisher,
+                this.Date.ToString(),
+                this.PageCount,
+                this.ReleaseCount,
+                this.PaperNumber
+            );
+        }
+    }
+}
+
+//LibraryRegister.cs
+using System;
+using System.Collections.Generic;
+
+
+namespace L5_ND
+{
+    class LibraryRegister
+    {
+
+        public string LibraryName {get; set;}
+        public string LibraryAddr {get; set;}
+        public string LibraryPhone {get; set;}
+        public List<Publication> AllPublications;
+
+        public LibraryRegister(List<Publication> allPubs)
+        {
+            this.AllPublications = new List<Publication>();
+            this.AllPublications.AddRange(allPubs);
+        }
+
+        public LibraryRegister()
+        {
+            this.AllPublications = new List<Publication>();
+        }
+
+        public void AddPublication(Publication pub)
+        {
+            this.AllPublications.Add(pub);
+        }
+
+        public void AddPublications(List<Publication> pubs)
+        {
+            this.AllPublications.AddRange(pubs);
+        }
+
+        /// <summary>
+        /// gets a list of all books that can be found in the library
+        /// </summary>
+        /// <returns>a list of publications, all of whom are of the 'book' type</returns>
+        public List<Publication> GetAllBooks()
+        {
+            List<Publication> output = new List<Publication>();
+
+            foreach (Publication pub in this.AllPublications)
+            {
+                if (pub.Type == "book")
+                {
+                    output.Add(pub);
+                }
+            }
+
+            return output;
+        }
+
+        /// <summary>
+        /// gets a list of all journals that can be found in the library
+        /// </summary>
+        /// <returns>a list of publications all of whom have the 'journal' type</returns>
+        public List<Publication> GetAllJournals()
+        {
+            List<Publication> output = new List<Publication>();
+
+            foreach (Publication pub in this.AllPublications)
+            {
+                if (pub.Type == "journal")
+                {
+                    output.Add(pub);
+                }
+            }
+
+            return output;
+        }
+
+        /// <summary>
+        /// gets a list of all newspapers that can be found in the library
+        /// </summary>
+        /// <returns>a list of publications, all of whom have the 'paper' type</returns>
+        public List<Publication> GetAllPapers()
+        {
+            List<Publication> output = new List<Publication>();
+
+            foreach (Publication pub in this.AllPublications)
+            {
+                if (pub.Type == "paper")
+                {
+                    output.Add(pub);
+                }
+            }
+
+            return output;
+        }
+
+        /// <summary>
+        /// gets a list of publications that are published by a specific publisher
+        /// </summary>
+        /// <param name="PublisherName">the name of the publisher that is being searched for</param>
+        /// <returns>a list of publications</returns>
+        public List<Publication> GetPubsFromSpecificPublisher(string PublisherName)
+        {
+            List<Publication> output = new List<Publication>();
+
+            foreach (Publication pub in this.AllPublications)
+            {
+                if (pub.Publisher == PublisherName)
+                {
+                    output.Add(pub);
+                }
+            }
+            return output;
+        }
+
+        /// <summary>
+        /// gets the book that contains the most amount of copies in the library
+        /// </summary>
+        /// <returns>a publication of the 'book' type</returns>
+        public Publication GetMostReleasedBook()
+        {
+            List<Publication> allBooks = this.GetAllBooks();
+
+            return this.GetMostReleasedPub(allBooks);
+        }
+        /// <summary>
+        /// gets the journal that contains the most amount of copies in the library
+        /// </summary>
+        /// <returns>a publication of the 'journal' type</returns>
+        public Publication GetMostReleasedJournal()
+        {
+            List<Publication> allJournals = this.GetAllJournals();
+            return this.GetMostReleasedPub(allJournals);
+        }
+        /// <summary>
+        /// gets the newspaper that contains the most amount of copies in the library
+        /// </summary>
+        /// <returns>a publication of the 'paper' type</returns>
+        public Publication GetMostReleasedPaper()
+        {
+            List<Publication> allPapers = this.GetAllPapers();
+            return this.GetMostReleasedPub(allPapers);
+        }
+
+        /// <summary>
+        /// an internal method used to get the publication with the most amount of copies from a list of publications
+        /// </summary>
+        /// <param name="pubs">a list of publications</param>
+        /// <returns>the publication with the most amount of copies</returns>
+        private Publication GetMostReleasedPub(List<Publication> pubs)
+        {
+            Publication output = pubs[0];
+
+            foreach (Publication pub in pubs)
+            {
+                if (output.ReleaseCount < pub.ReleaseCount)
+                {
+                    output = pub;
+                }
+            }
+
+            return output;
+        }
+    }
+}
+
+//IOUtils.cs
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Text;
+
+namespace L5_ND
+{
+    class IOUtils
+    {
+        /// <summary>
+        /// creates a libraryRegister from an input file
+        /// </summary>
+        /// <param name="fileName">the input filename</param>
+        /// <returns>a libraryRegister</returns>
+        public static LibraryRegister readLibraryRegister(string fileName)
+        {
+            LibraryRegister output = new LibraryRegister();
+
+            if (File.Exists(fileName) == false)
+            {
+                throw new Exception(String.Format("Failas {0} neegzistuoja.", fileName));
+            }
+
+            int linecount = TotalLines(fileName);
+
+            if (linecount < 4)
+            {
+                throw new Exception(String.Format("Failas {0} nėra tinkamai formatuotas.", fileName));
+            }
+
+            StreamReader sr = new StreamReader(fileName);
+
+            output.LibraryName = sr.ReadLine();
+            output.LibraryAddr = sr.ReadLine();
+            output.LibraryPhone = sr.ReadLine();
+
+            string line;
+
+            while ((line = sr.ReadLine()) != null)
+            {
+                string[] split = line.Split(';');
+
+                if (split[0] == "book")
+                {
+                    output.AddPublication(new Book(
+                        split[1],
+                        split[2],
+                        int.Parse(split[3]),
+                        int.Parse(split[4]),
+                        int.Parse(split[5]),
+                        int.Parse(split[6]),
+                        split[7]
+                    ));
+                }
+                else if (split[0] == "journal")
+                {
+                    output.AddPublication(new Journal(
+                        split[1],
+                        split[2],
+                        int.Parse(split[3]),
+                        int.Parse(split[4]),
+                        int.Parse(split[5]),
+                        int.Parse(split[6]),
+                        int.Parse(split[7])
+                    ));
+                }
+                else if (split[0] == "paper")
+                {
+                    output.AddPublication(new Paper(
+                        split[1],
+                        split[2],
+                        int.Parse(split[3]),
+                        int.Parse(split[4]),
+                        int.Parse(split[5]),
+                        DateTime.Parse(split[6]),
+                        int.Parse(split[7])
+                    ));
+                }
+                else
+                {
+                    throw new Exception(String.Format("Nežinomas leidinio tipas \"{0}\"", split[0]));
+                }
+            }
+
+            return output;
+        }
+
+
+        /// <summary>
+        /// gets the total amount of lines in a text file
+        /// </summary>
+        /// <param name="filePath">the text file to test</param>
+        /// <returns>the line count</returns>
+        private static int TotalLines(string filePath)
+        {
+            using (StreamReader r = new StreamReader(filePath))
+            {
+                int i = 0;
+                while (r.ReadLine() != null) { i++; }
+                return i;
+            }
+        }
+
+        /// <summary>
+        /// outputs info about a libraryRegister and the most common publication in all three publication types
+        /// </summary>
+        /// <param name="reg">the libraryRegister as input</param>
+        public static void OutputCommonInfo(LibraryRegister reg)
+        {
+            Publication commonBook = reg.GetMostReleasedBook();
+            Publication commonJournal = reg.GetMostReleasedJournal();
+            Publication commonPaper = reg.GetMostReleasedPaper();
+
+            Console.WriteLine("{0} (-os) informacija:", reg.LibraryName);
+            Console.WriteLine("Numeris: {0}", reg.LibraryPhone);
+            Console.WriteLine("Adresas: {0}", reg.LibraryAddr);
+
+            Console.WriteLine("Didžiausio tiražo:");
+            Console.WriteLine(commonBook.ToString());
+            Console.WriteLine(commonJournal.ToString());
+            Console.WriteLine(commonPaper.ToString());
+            Console.WriteLine("-----------------------------");
+        }
+
+        /// <summary>
+        /// outputs a list of publications to a CSV file
+        /// </summary>
+        /// <param name="fileName">the file to which to output</param>
+        /// <param name="header">a string that is put before the list of publications</param>
+        /// <param name="pubs">a list of publications</param>
+        public static void OutputPublicationsToCSV(string fileName, string header, List<Publication> pubs)
+        {
+            List<string> lines = new List<string>();
+
+            lines.Add(header);
+
+            foreach (Publication p in pubs)
+            {
+                lines.Add(p.ToString());
+            }
+
+            File.WriteAllLines(fileName, lines);
+        }
+    }
+}
+
+
+//Program.cs
+// An implementation of U5_4 by Nojus Raškevičius
+using System;
+using System.Collections.Generic;
+
+namespace L5_ND
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            
+            // variables
+            string SpecificPubName = "Technologija";
+
+            LibraryRegister reg1 = IOUtils.readLibraryRegister("kaunas.txt");
+            LibraryRegister reg2 = IOUtils.readLibraryRegister("kaunas2.txt");
+            LibraryRegister reg3 = IOUtils.readLibraryRegister("vilnius.txt");
+
+            // output the most common book in each library
+            IOUtils.OutputCommonInfo(reg1);
+            IOUtils.OutputCommonInfo(reg2);
+            IOUtils.OutputCommonInfo(reg3);
+        
+            // output the rarest book from all libraries
+            List<Publication> GlobalPublications = new List<Publication>();
+            GlobalPublications.AddRange(reg1.AllPublications);
+            GlobalPublications.AddRange(reg2.AllPublications);
+            GlobalPublications.AddRange(reg3.AllPublications);
+
+            List<Publication> UniquePublications = new List<Publication>();
+
+            for (int i = 0; i < GlobalPublications.Count; i++)
+            {
+                bool IsUnique = true;
+                for (int j = 0; j < GlobalPublications.Count; j++)
+                {
+                    if (GlobalPublications[i].Title == GlobalPublications[j].Title && i != j)
+                    {
+                        IsUnique = false;
+                    }
+                }
+
+                if (IsUnique)
+                {
+                    UniquePublications.Add(GlobalPublications[i]);
+                }
+            }
+
+            IOUtils.OutputPublicationsToCSV("RetiLeidiniai.csv", "Reti leidiniai:", UniquePublications);
+
+
+            // output all books from a specific publisher, sort before outputting
+            List<Publication> SpecificPublisherPubs = new List<Publication>();
+            SpecificPublisherPubs.AddRange(reg1.GetPubsFromSpecificPublisher(SpecificPubName));
+            SpecificPublisherPubs.AddRange(reg2.GetPubsFromSpecificPublisher(SpecificPubName));
+            SpecificPublisherPubs.AddRange(reg3.GetPubsFromSpecificPublisher(SpecificPubName));
+
+
+            // bubble sort
+            for (int i = 0; i < SpecificPublisherPubs.Count; i++)
+            {
+                for (int j = 0; j < SpecificPublisherPubs.Count-i-1; j++)
+                {
+                    if (SpecificPublisherPubs[j] > SpecificPublisherPubs[j+1])
+                    {
+                        Publication buf = SpecificPublisherPubs[j];
+                        SpecificPublisherPubs[j] = SpecificPublisherPubs[j+1];
+                        SpecificPublisherPubs[j+1] = buf;
+                    }
+                }
+            }
+
+            IOUtils.OutputPublicationsToCSV(
+                "Technologija.csv",
+                "Visi leidiniai iš leidyklos \"Technologjia\":",
+                SpecificPublisherPubs
+            );
+
+
+            // get all publications that can be found in all three libraries, output them
+            List<Publication> CommonPublications = new List<Publication>();
+
+            for (int i = 0; i < GlobalPublications.Count; i++)
+            {
+                int count = 0;
+                for (int j = 0; j < GlobalPublications.Count; j++)
+                {
+                    if (GlobalPublications[i].Title == GlobalPublications[j].Title && i != j)
+                    {
+                        count++;
+                    }
+                }
+
+                if (count == 2)
+                {
+                    bool contains = false;
+                    Publication itemToTest = GlobalPublications[i];
+
+                    // testing is needed for all specific types ofpublication
+                    // which is why there is a lot of code below.
+                    if (itemToTest.Type == "book")
+                    {
+                        foreach (Publication t in CommonPublications)
+                        {
+                            if (t.Type == "book")
+                            {
+                                Book tBook = t as Book;
+                                Book itemBook = itemToTest as Book;
+
+                                if (tBook.ISBN == itemBook.ISBN)
+                                {
+                                    contains = true;
+                                }
+                            }
+                        }
+
+                    }
+                    else if (itemToTest.Type == "journal")
+                    {
+                        foreach (Publication t in CommonPublications)
+                        {
+                            if (t.Type == "journal")
+                            {
+                                Journal tJournal = t as Journal;
+                                Journal itemJournal = itemToTest as Journal;
+
+                                if (tJournal.JournalNumber == itemJournal.JournalNumber)
+                                {
+                                    contains = true;
+                                }
+                            }
+                        }
+                    }
+                    else if (itemToTest.Type == "paper")
+                    {
+                        foreach (Publication t in CommonPublications)
+                        {
+                            if (t.Type == "paper")
+                            {
+                                Paper tPaper = t as Paper;
+                                Paper itemPaper = itemToTest as Paper;
+
+                                if (tPaper.PaperNumber == itemPaper.PaperNumber)
+                                {
+                                    contains = true;
+                                }
+                            }
+                        }
+                    }
+                    if (!contains)
+                    {
+                        CommonPublications.Add(GlobalPublications[i]);
+                    }
+                }
+            }
+
+            IOUtils.OutputPublicationsToCSV(
+                "BendriLeidiniai.csv",
+                "Bendri leidiniai tarp trijų bibliotekų:",
+                CommonPublications
+            );
+
+        }
+    }
+}

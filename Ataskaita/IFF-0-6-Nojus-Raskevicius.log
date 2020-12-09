@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/Arch Linux) (preloaded format=xelatex 2020.10.14)  19 NOV 2020 16:14
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/Arch Linux) (preloaded format=xelatex 2020.10.14)  10 DEC 2020 00:55
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -939,23 +939,43 @@ Underfull \hbox (badness 10000) in paragraph at lines 854--858
 
  []
 
-[65] [66] [67]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 874.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 874.
+[65] [66] (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/76A1070980DF6DAC800A83CB18AFB8A58C8C1A757ADBDABE5BDE71356236FD4B.pygtex [67] [68] [69] [70] [71] [72] [73] [74] [75]
+Overfull \hbox (96.67874pt too wide) in paragraph at lines 571--571
+\TU/CourierNew(0)/m/n/9 SpecificPublisherPubs.AddRange(reg1.GetPubsFromSpecificPublisher(SpecificPubName));|  
+ []
+
+
+Overfull \hbox (96.67874pt too wide) in paragraph at lines 572--572
+\TU/CourierNew(0)/m/n/9 SpecificPublisherPubs.AddRange(reg2.GetPubsFromSpecificPublisher(SpecificPubName));|  
+ []
+
+
+Overfull \hbox (96.67874pt too wide) in paragraph at lines 573--573
+\TU/CourierNew(0)/m/n/9 SpecificPublisherPubs.AddRange(reg3.GetPubsFromSpecificPublisher(SpecificPubName));|  
+ []
+
+[76] [77]) (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/631A7BC5CA802A7A164471610C847F67F5DBF0BC9AC84377B5085F9907A1413E.pygtex) (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/F831540D5E6964170B3D59BB9B1D0BBBEA9241C98D329158DF1166183CCA1834.pygtex) (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/4125135A554BE57EA8C37997480BF1530A33E171EAAD839A933902133AAD61D8.pygtex [78]) (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/0B2C0CCA53A114CBBD118CBDB8ACC5785F82FF10B17737CE57EEF2EDA8AB2776.pygtex) (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/3912F5B41C8956DAE0BBAAF10FC098C8FBA7E91C40429C938B1E6F99CE9861F2.pygtex) (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/1E2593F00DD793ADC388F5AE9837B1D13E6CC91004EAEA7EE8D78726C151F40F.pygtex) (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/_minted-IFF-0-6-Nojus-Raskevicius/7B2E34523DB4F0BE885D4ED9D6AAA93EDA3474E15D83BA8FAF398A8F718E68C8.pygtex [79])
+Underfull \hbox (badness 10000) in paragraph at lines 917--921
+
+ []
+
+[80]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 923.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 923.
  (/home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/IFF-0-6-Nojus-Raskevicius.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 874.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 874.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 923.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 923.
 Package rerunfilecheck Info: File `IFF-0-6-Nojus-Raskevicius.out' has not changed.
-(rerunfilecheck)             Checksum: 889950D9440987B5A3514F6FEE701BE2;4903.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 874.
+(rerunfilecheck)             Checksum: 1A1800171784D4972C77D277050FEBB2;5059.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 923.
  ) 
 Here is how much of TeX's memory you used:
- 17762 strings out of 479284
- 347725 string characters out of 5886219
- 737840 words of memory out of 5000000
- 35008 multiletter control sequences out of 15000+600000
+ 17803 strings out of 479284
+ 352349 string characters out of 5886219
+ 739589 words of memory out of 5000000
+ 35025 multiletter control sequences out of 15000+600000
  547018 words of font info for 76 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  48i,9n,119p,1033b,660s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on /home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/IFF-0-6-Nojus-Raskevicius.xdv (67 pages, 1402264 bytes).
+Output written on /home/nojus/programming/ktu-stuff/ktu-obj1-hw/Ataskaita/IFF-0-6-Nojus-Raskevicius.xdv (80 pages, 1666404 bytes).

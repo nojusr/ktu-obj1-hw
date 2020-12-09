@@ -1,0 +1,683 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{// Publication.cs}
+\PYG{k}{namespace} \PYG{n+nn}{L5\PYGZus{}ND}
+\PYG{p}{\PYGZob{}}
+    \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+    \PYG{c+c1}{/// a class to store basic information about a publication}
+    \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+    \PYG{k}{class} \PYG{n+nc}{Publication}
+    \PYG{p}{\PYGZob{}}
+        \PYG{k}{public} \PYG{k+kt}{string} \PYG{n}{Type} \PYG{p}{\PYGZob{}}\PYG{k}{get}\PYG{p}{;} \PYG{k}{set}\PYG{p}{;\PYGZcb{}}
+        \PYG{k}{public} \PYG{k+kt}{string} \PYG{n}{Title} \PYG{p}{\PYGZob{}}\PYG{k}{get}\PYG{p}{;} \PYG{k}{set}\PYG{p}{;\PYGZcb{}}
+        \PYG{k}{public} \PYG{k+kt}{string} \PYG{n}{Publisher} \PYG{p}{\PYGZob{}}\PYG{k}{get}\PYG{p}{;} \PYG{k}{set}\PYG{p}{;\PYGZcb{}}
+        \PYG{k}{public} \PYG{k+kt}{int} \PYG{n}{ReleaseYear} \PYG{p}{\PYGZob{}}\PYG{k}{get}\PYG{p}{;} \PYG{k}{set}\PYG{p}{;\PYGZcb{}}
+        \PYG{k}{public} \PYG{k+kt}{int} \PYG{n}{PageCount} \PYG{p}{\PYGZob{}}\PYG{k}{get}\PYG{p}{;} \PYG{k}{set}\PYG{p}{;\PYGZcb{}}
+        \PYG{k}{public} \PYG{k+kt}{int} \PYG{n}{ReleaseCount} \PYG{p}{\PYGZob{}}\PYG{k}{get}\PYG{p}{;} \PYG{k}{set}\PYG{p}{;\PYGZcb{}}
+        
+        \PYG{k}{public} \PYG{k}{static} \PYG{k+kt}{bool} \PYG{k}{operator} \PYG{p}{\PYGZgt{}} \PYG{p}{(}\PYG{n}{Publication} \PYG{n}{a}\PYG{p}{,} \PYG{n}{Publication} \PYG{n}{b}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{k}{if} \PYG{p}{(}\PYG{n}{a}\PYG{p}{.}\PYG{n}{Type}\PYG{p}{.}\PYG{n}{CompareTo}\PYG{p}{(}\PYG{n}{b}\PYG{p}{.}\PYG{n}{Type}\PYG{p}{)} \PYG{p}{\PYGZgt{}} \PYG{l+m}{0}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{k}{return} \PYG{k}{true}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+            \PYG{k}{else} \PYG{n+nf}{if} \PYG{p}{(}\PYG{n}{a}\PYG{p}{.}\PYG{n}{Type}\PYG{p}{.}\PYG{n}{CompareTo}\PYG{p}{(}\PYG{n}{b}\PYG{p}{.}\PYG{n}{Type}\PYG{p}{)} \PYG{p}{\PYGZlt{}} \PYG{l+m}{0}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{k}{return} \PYG{k}{false}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+            \PYG{k}{else} 
+            \PYG{p}{\PYGZob{}}
+                \PYG{k}{if} \PYG{p}{(}\PYG{n}{a}\PYG{p}{.}\PYG{n}{Title}\PYG{p}{.}\PYG{n}{CompareTo}\PYG{p}{(}\PYG{n}{b}\PYG{p}{.}\PYG{n}{Title}\PYG{p}{)} \PYG{p}{\PYGZgt{}} \PYG{l+m}{0}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{k}{return} \PYG{k}{true}\PYG{p}{;}
+                \PYG{p}{\PYGZcb{}}
+                \PYG{k}{else} \PYG{n+nf}{if} \PYG{p}{(}\PYG{n}{a}\PYG{p}{.}\PYG{n}{Title}\PYG{p}{.}\PYG{n}{CompareTo}\PYG{p}{(}\PYG{n}{b}\PYG{p}{.}\PYG{n}{Title}\PYG{p}{)} \PYG{p}{\PYGZlt{}} \PYG{l+m}{0}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{k}{return} \PYG{k}{false}\PYG{p}{;}
+                \PYG{p}{\PYGZcb{}}
+                \PYG{k}{else}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{k}{return} \PYG{k}{false}\PYG{p}{;}
+                \PYG{p}{\PYGZcb{}}
+            \PYG{p}{\PYGZcb{}}
+
+
+        \PYG{p}{\PYGZcb{}}
+
+        \PYG{k}{public} \PYG{k}{static} \PYG{k+kt}{bool} \PYG{k}{operator} \PYG{p}{\PYGZlt{}} \PYG{p}{(}\PYG{n}{Publication} \PYG{n}{a}\PYG{p}{,} \PYG{n}{Publication} \PYG{n}{b}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{k}{if} \PYG{p}{(}\PYG{n}{a}\PYG{p}{.}\PYG{n}{Type}\PYG{p}{.}\PYG{n}{CompareTo}\PYG{p}{(}\PYG{n}{b}\PYG{p}{.}\PYG{n}{Type}\PYG{p}{)} \PYG{p}{\PYGZgt{}} \PYG{l+m}{0}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{k}{return} \PYG{k}{false}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+            \PYG{k}{else} \PYG{n+nf}{if} \PYG{p}{(}\PYG{n}{a}\PYG{p}{.}\PYG{n}{Type}\PYG{p}{.}\PYG{n}{CompareTo}\PYG{p}{(}\PYG{n}{b}\PYG{p}{.}\PYG{n}{Type}\PYG{p}{)} \PYG{p}{\PYGZlt{}} \PYG{l+m}{0}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{k}{return} \PYG{k}{true}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+            \PYG{k}{else} 
+            \PYG{p}{\PYGZob{}}
+                \PYG{k}{if} \PYG{p}{(}\PYG{n}{a}\PYG{p}{.}\PYG{n}{Title}\PYG{p}{.}\PYG{n}{CompareTo}\PYG{p}{(}\PYG{n}{b}\PYG{p}{.}\PYG{n}{Title}\PYG{p}{)} \PYG{p}{\PYGZgt{}} \PYG{l+m}{0}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{k}{return} \PYG{k}{false}\PYG{p}{;}
+                \PYG{p}{\PYGZcb{}}
+                \PYG{k}{else} \PYG{n+nf}{if} \PYG{p}{(}\PYG{n}{a}\PYG{p}{.}\PYG{n}{Title}\PYG{p}{.}\PYG{n}{CompareTo}\PYG{p}{(}\PYG{n}{b}\PYG{p}{.}\PYG{n}{Title}\PYG{p}{)} \PYG{p}{\PYGZlt{}} \PYG{l+m}{0}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{k}{return} \PYG{k}{true}\PYG{p}{;}
+                \PYG{p}{\PYGZcb{}}
+                \PYG{k}{else}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{k}{return} \PYG{k}{false}\PYG{p}{;}
+                \PYG{p}{\PYGZcb{}}
+            \PYG{p}{\PYGZcb{}}
+        \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{c+c1}{//Book.cs}
+\PYG{k}{using} \PYG{n+nn}{System}\PYG{p}{;}
+
+\PYG{k}{namespace} \PYG{n+nn}{L5\PYGZus{}ND}
+\PYG{p}{\PYGZob{}}
+    \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+    \PYG{c+c1}{/// a book class that contains specific information that cannot be found in the parent \PYGZsq{}Publication\PYGZsq{} class}
+    \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+    \PYG{k}{class} \PYG{n+nc}{Book} \PYG{p}{:} \PYG{n}{Publication}
+    \PYG{p}{\PYGZob{}}
+        \PYG{k}{public} \PYG{k+kt}{int} \PYG{n}{ISBN} \PYG{p}{\PYGZob{}}\PYG{k}{get}\PYG{p}{;} \PYG{k}{set}\PYG{p}{;\PYGZcb{}}
+        \PYG{k}{public} \PYG{k+kt}{string} \PYG{n}{Author} \PYG{p}{\PYGZob{}}\PYG{k}{get}\PYG{p}{;} \PYG{k}{set}\PYG{p}{;\PYGZcb{}}
+
+        \PYG{k}{public} \PYG{n+nf}{Book}\PYG{p}{(}\PYG{k+kt}{string} \PYG{n}{title}\PYG{p}{,} \PYG{k+kt}{string} \PYG{n}{publisher}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{releaseYear}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{pageCount}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{releaseCount}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}ISBN}\PYG{p}{,} \PYG{k+kt}{string} \PYG{n}{author}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{Type} \PYG{p}{=} \PYG{l+s}{\PYGZdq{}book\PYGZdq{}}\PYG{p}{;}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{Title} \PYG{p}{=} \PYG{n}{title}\PYG{p}{;}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{Publisher} \PYG{p}{=} \PYG{n}{publisher}\PYG{p}{;}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{ReleaseYear} \PYG{p}{=} \PYG{n}{releaseYear}\PYG{p}{;}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{PageCount} \PYG{p}{=} \PYG{n}{pageCount}\PYG{p}{;}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{ReleaseCount} \PYG{p}{=} \PYG{n}{releaseCount}\PYG{p}{;}
+
+            \PYG{c+c1}{// book specific}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{ISBN} \PYG{p}{=} \PYG{n}{\PYGZus{}ISBN}\PYG{p}{;}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{Author} \PYG{p}{=} \PYG{n}{author}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+
+        \PYG{k}{public} \PYG{k}{override} \PYG{k+kt}{string} \PYG{n+nf}{ToString}\PYG{p}{()}
+        \PYG{p}{\PYGZob{}}
+            \PYG{k}{return} \PYG{n}{String}\PYG{p}{.}\PYG{n}{Format}\PYG{p}{(}
+                \PYG{l+s}{\PYGZdq{}Knyga: \PYGZob{}0\PYGZcb{}, išleido: \PYGZob{}1\PYGZcb{}, metai: \PYGZob{}2\PYGZcb{}, puslapiai: \PYGZob{}3\PYGZcb{}, tiražas: \PYGZob{}4\PYGZcb{}, ISBN: \PYGZob{}5\PYGZcb{}, autorius: \PYGZob{}6\PYGZcb{}\PYGZdq{}}\PYG{p}{,}
+                \PYG{k}{this}\PYG{p}{.}\PYG{n}{Title}\PYG{p}{,}
+                \PYG{k}{this}\PYG{p}{.}\PYG{n}{Publisher}\PYG{p}{,}
+                \PYG{k}{this}\PYG{p}{.}\PYG{n}{ReleaseYear}\PYG{p}{,}
+                \PYG{k}{this}\PYG{p}{.}\PYG{n}{PageCount}\PYG{p}{,}
+                \PYG{k}{this}\PYG{p}{.}\PYG{n}{ReleaseCount}\PYG{p}{,}
+                \PYG{k}{this}\PYG{p}{.}\PYG{n}{ISBN}\PYG{p}{,}
+                \PYG{k}{this}\PYG{p}{.}\PYG{n}{Author}
+            \PYG{p}{);}
+        \PYG{p}{\PYGZcb{}}
+        
+    \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{c+c1}{//Journal.cs}
+\PYG{k}{using} \PYG{n+nn}{System}\PYG{p}{;}
+
+\PYG{k}{namespace} \PYG{n+nn}{L5\PYGZus{}ND}
+\PYG{p}{\PYGZob{}}
+    \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+    \PYG{c+c1}{/// a journal class that contains specific information that cannot be found in the parent \PYGZsq{}Publication\PYGZsq{} class}
+    \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+    \PYG{k}{class} \PYG{n+nc}{Journal} \PYG{p}{:} \PYG{n}{Publication}
+    \PYG{p}{\PYGZob{}}
+
+        \PYG{k}{public} \PYG{k+kt}{int} \PYG{n}{ISBN} \PYG{p}{\PYGZob{}}\PYG{k}{get}\PYG{p}{;} \PYG{k}{set}\PYG{p}{;\PYGZcb{}}
+        \PYG{k}{public} \PYG{k+kt}{int} \PYG{n}{JournalNumber} \PYG{p}{\PYGZob{}}\PYG{k}{get}\PYG{p}{;} \PYG{k}{set}\PYG{p}{;\PYGZcb{}}
+
+        \PYG{k}{public} \PYG{n+nf}{Journal}\PYG{p}{(}\PYG{k+kt}{string} \PYG{n}{title}\PYG{p}{,} \PYG{k+kt}{string} \PYG{n}{publisher}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{releaseYear}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{pageCount}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{releaseCount}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{\PYGZus{}ISBN}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{journalNumber}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{Type} \PYG{p}{=} \PYG{l+s}{\PYGZdq{}journal\PYGZdq{}}\PYG{p}{;}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{Title} \PYG{p}{=} \PYG{n}{title}\PYG{p}{;}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{Publisher} \PYG{p}{=} \PYG{n}{publisher}\PYG{p}{;}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{ReleaseYear} \PYG{p}{=} \PYG{n}{releaseYear}\PYG{p}{;}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{PageCount} \PYG{p}{=} \PYG{n}{pageCount}\PYG{p}{;}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{ReleaseCount} \PYG{p}{=} \PYG{n}{releaseCount}\PYG{p}{;}
+
+            \PYG{c+c1}{// journal specific}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{ISBN} \PYG{p}{=} \PYG{n}{\PYGZus{}ISBN}\PYG{p}{;}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{JournalNumber} \PYG{p}{=} \PYG{n}{journalNumber}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+
+        \PYG{k}{public} \PYG{k}{override} \PYG{k+kt}{string} \PYG{n+nf}{ToString}\PYG{p}{()}
+        \PYG{p}{\PYGZob{}}
+            \PYG{k}{return} \PYG{n}{String}\PYG{p}{.}\PYG{n}{Format}\PYG{p}{(}
+                \PYG{l+s}{\PYGZdq{}Žurnalas: \PYGZob{}0\PYGZcb{}, išleido: \PYGZob{}1\PYGZcb{}, metai: \PYGZob{}2\PYGZcb{}, puslapiai: \PYGZob{}3\PYGZcb{}, tiražas: \PYGZob{}4\PYGZcb{}, ISBN: \PYGZob{}5\PYGZcb{}, ž. numeris: \PYGZob{}6\PYGZcb{}\PYGZdq{}}\PYG{p}{,}
+                \PYG{k}{this}\PYG{p}{.}\PYG{n}{Title}\PYG{p}{,}
+                \PYG{k}{this}\PYG{p}{.}\PYG{n}{Publisher}\PYG{p}{,}
+                \PYG{k}{this}\PYG{p}{.}\PYG{n}{ReleaseYear}\PYG{p}{,}
+                \PYG{k}{this}\PYG{p}{.}\PYG{n}{PageCount}\PYG{p}{,}
+                \PYG{k}{this}\PYG{p}{.}\PYG{n}{ReleaseCount}\PYG{p}{,}
+                \PYG{k}{this}\PYG{p}{.}\PYG{n}{ISBN}\PYG{p}{,}
+                \PYG{k}{this}\PYG{p}{.}\PYG{n}{JournalNumber}
+            \PYG{p}{);}
+        \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+
+
+\PYG{c+c1}{//Paper.cs}
+\PYG{k}{using} \PYG{n+nn}{System}\PYG{p}{;}
+
+\PYG{k}{namespace} \PYG{n+nn}{L5\PYGZus{}ND}
+\PYG{p}{\PYGZob{}}
+    \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+    \PYG{c+c1}{/// a newspaper class that contains specific information that cannot be found in the parent \PYGZsq{}Publication\PYGZsq{} class}
+    \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+    \PYG{k}{class} \PYG{n+nc}{Paper} \PYG{p}{:} \PYG{n}{Publication}
+    \PYG{p}{\PYGZob{}}
+
+        \PYG{n}{DateTime} \PYG{n}{Date}\PYG{p}{;}
+        \PYG{k}{public} \PYG{k+kt}{int} \PYG{n}{PaperNumber} \PYG{p}{\PYGZob{}}\PYG{k}{get}\PYG{p}{;} \PYG{k}{set}\PYG{p}{;} \PYG{p}{\PYGZcb{}}
+        \PYG{k}{public} \PYG{n+nf}{Paper}\PYG{p}{(}\PYG{k+kt}{string} \PYG{n}{title}\PYG{p}{,} \PYG{k+kt}{string} \PYG{n}{publisher}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{releaseYear}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{pageCount}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{releaseCount}\PYG{p}{,} \PYG{n}{DateTime} \PYG{n}{date}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{paperNumber}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{Type} \PYG{p}{=} \PYG{l+s}{\PYGZdq{}paper\PYGZdq{}}\PYG{p}{;}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{Title} \PYG{p}{=} \PYG{n}{title}\PYG{p}{;}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{Publisher} \PYG{p}{=} \PYG{n}{publisher}\PYG{p}{;}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{ReleaseYear} \PYG{p}{=} \PYG{n}{releaseYear}\PYG{p}{;}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{PageCount} \PYG{p}{=} \PYG{n}{pageCount}\PYG{p}{;}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{ReleaseCount} \PYG{p}{=} \PYG{n}{releaseCount}\PYG{p}{;}
+
+            \PYG{c+c1}{// paper specific}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{Date} \PYG{p}{=} \PYG{n}{date}\PYG{p}{;}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{PaperNumber} \PYG{p}{=} \PYG{n}{paperNumber}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+
+        \PYG{k}{public} \PYG{k}{override} \PYG{k+kt}{string} \PYG{n+nf}{ToString}\PYG{p}{()}
+        \PYG{p}{\PYGZob{}}
+            \PYG{k}{return} \PYG{n}{String}\PYG{p}{.}\PYG{n}{Format}\PYG{p}{(}
+                \PYG{l+s}{\PYGZdq{}Laikraštis: \PYGZob{}0\PYGZcb{}, išleido: \PYGZob{}1\PYGZcb{}, data: \PYGZob{}2\PYGZcb{}, puslapiai: \PYGZob{}3\PYGZcb{}, tiražas: \PYGZob{}4\PYGZcb{}, numeris: \PYGZob{}5\PYGZcb{}\PYGZdq{}}\PYG{p}{,}
+                \PYG{k}{this}\PYG{p}{.}\PYG{n}{Title}\PYG{p}{,}
+                \PYG{k}{this}\PYG{p}{.}\PYG{n}{Publisher}\PYG{p}{,}
+                \PYG{k}{this}\PYG{p}{.}\PYG{n}{Date}\PYG{p}{.}\PYG{n}{ToString}\PYG{p}{(),}
+                \PYG{k}{this}\PYG{p}{.}\PYG{n}{PageCount}\PYG{p}{,}
+                \PYG{k}{this}\PYG{p}{.}\PYG{n}{ReleaseCount}\PYG{p}{,}
+                \PYG{k}{this}\PYG{p}{.}\PYG{n}{PaperNumber}
+            \PYG{p}{);}
+        \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{c+c1}{//LibraryRegister.cs}
+\PYG{k}{using} \PYG{n+nn}{System}\PYG{p}{;}
+\PYG{k}{using} \PYG{n+nn}{System.Collections.Generic}\PYG{p}{;}
+
+
+\PYG{k}{namespace} \PYG{n+nn}{L5\PYGZus{}ND}
+\PYG{p}{\PYGZob{}}
+    \PYG{k}{class} \PYG{n+nc}{LibraryRegister}
+    \PYG{p}{\PYGZob{}}
+
+        \PYG{k}{public} \PYG{k+kt}{string} \PYG{n}{LibraryName} \PYG{p}{\PYGZob{}}\PYG{k}{get}\PYG{p}{;} \PYG{k}{set}\PYG{p}{;\PYGZcb{}}
+        \PYG{k}{public} \PYG{k+kt}{string} \PYG{n}{LibraryAddr} \PYG{p}{\PYGZob{}}\PYG{k}{get}\PYG{p}{;} \PYG{k}{set}\PYG{p}{;\PYGZcb{}}
+        \PYG{k}{public} \PYG{k+kt}{string} \PYG{n}{LibraryPhone} \PYG{p}{\PYGZob{}}\PYG{k}{get}\PYG{p}{;} \PYG{k}{set}\PYG{p}{;\PYGZcb{}}
+        \PYG{k}{public} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Publication}\PYG{p}{\PYGZgt{}} \PYG{n}{AllPublications}\PYG{p}{;}
+
+        \PYG{k}{public} \PYG{n+nf}{LibraryRegister}\PYG{p}{(}\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Publication}\PYG{p}{\PYGZgt{}} \PYG{n}{allPubs}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{AllPublications} \PYG{p}{=} \PYG{k}{new} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Publication}\PYG{p}{\PYGZgt{}();}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{AllPublications}\PYG{p}{.}\PYG{n}{AddRange}\PYG{p}{(}\PYG{n}{allPubs}\PYG{p}{);}
+        \PYG{p}{\PYGZcb{}}
+
+        \PYG{k}{public} \PYG{n+nf}{LibraryRegister}\PYG{p}{()}
+        \PYG{p}{\PYGZob{}}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{AllPublications} \PYG{p}{=} \PYG{k}{new} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Publication}\PYG{p}{\PYGZgt{}();}
+        \PYG{p}{\PYGZcb{}}
+
+        \PYG{k}{public} \PYG{k}{void} \PYG{n+nf}{AddPublication}\PYG{p}{(}\PYG{n}{Publication} \PYG{n}{pub}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{AllPublications}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{pub}\PYG{p}{);}
+        \PYG{p}{\PYGZcb{}}
+
+        \PYG{k}{public} \PYG{k}{void} \PYG{n+nf}{AddPublications}\PYG{p}{(}\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Publication}\PYG{p}{\PYGZgt{}} \PYG{n}{pubs}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{k}{this}\PYG{p}{.}\PYG{n}{AllPublications}\PYG{p}{.}\PYG{n}{AddRange}\PYG{p}{(}\PYG{n}{pubs}\PYG{p}{);}
+        \PYG{p}{\PYGZcb{}}
+
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// gets a list of all books that can be found in the library}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}returns\PYGZgt{}a list of publications, all of whom are of the \PYGZsq{}book\PYGZsq{} type\PYGZlt{}/returns\PYGZgt{}}
+        \PYG{k}{public} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Publication}\PYG{p}{\PYGZgt{}} \PYG{n}{GetAllBooks}\PYG{p}{()}
+        \PYG{p}{\PYGZob{}}
+            \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Publication}\PYG{p}{\PYGZgt{}} \PYG{n}{output} \PYG{p}{=} \PYG{k}{new} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Publication}\PYG{p}{\PYGZgt{}();}
+
+            \PYG{k}{foreach} \PYG{p}{(}\PYG{n}{Publication} \PYG{n}{pub} \PYG{k}{in} \PYG{k}{this}\PYG{p}{.}\PYG{n}{AllPublications}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{k}{if} \PYG{p}{(}\PYG{n}{pub}\PYG{p}{.}\PYG{n}{Type} \PYG{p}{==} \PYG{l+s}{\PYGZdq{}book\PYGZdq{}}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{n}{output}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{pub}\PYG{p}{);}
+                \PYG{p}{\PYGZcb{}}
+            \PYG{p}{\PYGZcb{}}
+
+            \PYG{k}{return} \PYG{n}{output}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// gets a list of all journals that can be found in the library}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}returns\PYGZgt{}a list of publications all of whom have the \PYGZsq{}journal\PYGZsq{} type\PYGZlt{}/returns\PYGZgt{}}
+        \PYG{k}{public} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Publication}\PYG{p}{\PYGZgt{}} \PYG{n}{GetAllJournals}\PYG{p}{()}
+        \PYG{p}{\PYGZob{}}
+            \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Publication}\PYG{p}{\PYGZgt{}} \PYG{n}{output} \PYG{p}{=} \PYG{k}{new} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Publication}\PYG{p}{\PYGZgt{}();}
+
+            \PYG{k}{foreach} \PYG{p}{(}\PYG{n}{Publication} \PYG{n}{pub} \PYG{k}{in} \PYG{k}{this}\PYG{p}{.}\PYG{n}{AllPublications}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{k}{if} \PYG{p}{(}\PYG{n}{pub}\PYG{p}{.}\PYG{n}{Type} \PYG{p}{==} \PYG{l+s}{\PYGZdq{}journal\PYGZdq{}}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{n}{output}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{pub}\PYG{p}{);}
+                \PYG{p}{\PYGZcb{}}
+            \PYG{p}{\PYGZcb{}}
+
+            \PYG{k}{return} \PYG{n}{output}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// gets a list of all newspapers that can be found in the library}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}returns\PYGZgt{}a list of publications, all of whom have the \PYGZsq{}paper\PYGZsq{} type\PYGZlt{}/returns\PYGZgt{}}
+        \PYG{k}{public} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Publication}\PYG{p}{\PYGZgt{}} \PYG{n}{GetAllPapers}\PYG{p}{()}
+        \PYG{p}{\PYGZob{}}
+            \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Publication}\PYG{p}{\PYGZgt{}} \PYG{n}{output} \PYG{p}{=} \PYG{k}{new} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Publication}\PYG{p}{\PYGZgt{}();}
+
+            \PYG{k}{foreach} \PYG{p}{(}\PYG{n}{Publication} \PYG{n}{pub} \PYG{k}{in} \PYG{k}{this}\PYG{p}{.}\PYG{n}{AllPublications}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{k}{if} \PYG{p}{(}\PYG{n}{pub}\PYG{p}{.}\PYG{n}{Type} \PYG{p}{==} \PYG{l+s}{\PYGZdq{}paper\PYGZdq{}}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{n}{output}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{pub}\PYG{p}{);}
+                \PYG{p}{\PYGZcb{}}
+            \PYG{p}{\PYGZcb{}}
+
+            \PYG{k}{return} \PYG{n}{output}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// gets a list of publications that are published by a specific publisher}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}PublisherName\PYGZdq{}\PYGZgt{}the name of the publisher that is being searched for\PYGZlt{}/param\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}returns\PYGZgt{}a list of publications\PYGZlt{}/returns\PYGZgt{}}
+        \PYG{k}{public} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Publication}\PYG{p}{\PYGZgt{}} \PYG{n}{GetPubsFromSpecificPublisher}\PYG{p}{(}\PYG{k+kt}{string} \PYG{n}{PublisherName}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Publication}\PYG{p}{\PYGZgt{}} \PYG{n}{output} \PYG{p}{=} \PYG{k}{new} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Publication}\PYG{p}{\PYGZgt{}();}
+
+            \PYG{k}{foreach} \PYG{p}{(}\PYG{n}{Publication} \PYG{n}{pub} \PYG{k}{in} \PYG{k}{this}\PYG{p}{.}\PYG{n}{AllPublications}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{k}{if} \PYG{p}{(}\PYG{n}{pub}\PYG{p}{.}\PYG{n}{Publisher} \PYG{p}{==} \PYG{n}{PublisherName}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{n}{output}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{pub}\PYG{p}{);}
+                \PYG{p}{\PYGZcb{}}
+            \PYG{p}{\PYGZcb{}}
+            \PYG{k}{return} \PYG{n}{output}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// gets the book that contains the most amount of copies in the library}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}returns\PYGZgt{}a publication of the \PYGZsq{}book\PYGZsq{} type\PYGZlt{}/returns\PYGZgt{}}
+        \PYG{k}{public} \PYG{n}{Publication} \PYG{n+nf}{GetMostReleasedBook}\PYG{p}{()}
+        \PYG{p}{\PYGZob{}}
+            \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Publication}\PYG{p}{\PYGZgt{}} \PYG{n}{allBooks} \PYG{p}{=} \PYG{k}{this}\PYG{p}{.}\PYG{n}{GetAllBooks}\PYG{p}{();}
+
+            \PYG{k}{return} \PYG{k}{this}\PYG{p}{.}\PYG{n}{GetMostReleasedPub}\PYG{p}{(}\PYG{n}{allBooks}\PYG{p}{);}
+        \PYG{p}{\PYGZcb{}}
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// gets the journal that contains the most amount of copies in the library}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}returns\PYGZgt{}a publication of the \PYGZsq{}journal\PYGZsq{} type\PYGZlt{}/returns\PYGZgt{}}
+        \PYG{k}{public} \PYG{n}{Publication} \PYG{n+nf}{GetMostReleasedJournal}\PYG{p}{()}
+        \PYG{p}{\PYGZob{}}
+            \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Publication}\PYG{p}{\PYGZgt{}} \PYG{n}{allJournals} \PYG{p}{=} \PYG{k}{this}\PYG{p}{.}\PYG{n}{GetAllJournals}\PYG{p}{();}
+            \PYG{k}{return} \PYG{k}{this}\PYG{p}{.}\PYG{n}{GetMostReleasedPub}\PYG{p}{(}\PYG{n}{allJournals}\PYG{p}{);}
+        \PYG{p}{\PYGZcb{}}
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// gets the newspaper that contains the most amount of copies in the library}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}returns\PYGZgt{}a publication of the \PYGZsq{}paper\PYGZsq{} type\PYGZlt{}/returns\PYGZgt{}}
+        \PYG{k}{public} \PYG{n}{Publication} \PYG{n+nf}{GetMostReleasedPaper}\PYG{p}{()}
+        \PYG{p}{\PYGZob{}}
+            \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Publication}\PYG{p}{\PYGZgt{}} \PYG{n}{allPapers} \PYG{p}{=} \PYG{k}{this}\PYG{p}{.}\PYG{n}{GetAllPapers}\PYG{p}{();}
+            \PYG{k}{return} \PYG{k}{this}\PYG{p}{.}\PYG{n}{GetMostReleasedPub}\PYG{p}{(}\PYG{n}{allPapers}\PYG{p}{);}
+        \PYG{p}{\PYGZcb{}}
+
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// an internal method used to get the publication with the most amount of copies from a list of publications}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}pubs\PYGZdq{}\PYGZgt{}a list of publications\PYGZlt{}/param\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}returns\PYGZgt{}the publication with the most amount of copies\PYGZlt{}/returns\PYGZgt{}}
+        \PYG{k}{private} \PYG{n}{Publication} \PYG{n+nf}{GetMostReleasedPub}\PYG{p}{(}\PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Publication}\PYG{p}{\PYGZgt{}} \PYG{n}{pubs}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{n}{Publication} \PYG{n}{output} \PYG{p}{=} \PYG{n}{pubs}\PYG{p}{[}\PYG{l+m}{0}\PYG{p}{];}
+
+            \PYG{k}{foreach} \PYG{p}{(}\PYG{n}{Publication} \PYG{n}{pub} \PYG{k}{in} \PYG{n}{pubs}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{k}{if} \PYG{p}{(}\PYG{n}{output}\PYG{p}{.}\PYG{n}{ReleaseCount} \PYG{p}{\PYGZlt{}} \PYG{n}{pub}\PYG{p}{.}\PYG{n}{ReleaseCount}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{n}{output} \PYG{p}{=} \PYG{n}{pub}\PYG{p}{;}
+                \PYG{p}{\PYGZcb{}}
+            \PYG{p}{\PYGZcb{}}
+
+            \PYG{k}{return} \PYG{n}{output}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{c+c1}{//IOUtils.cs}
+\PYG{k}{using} \PYG{n+nn}{System}\PYG{p}{;}
+\PYG{k}{using} \PYG{n+nn}{System.Collections.Generic}\PYG{p}{;}
+\PYG{k}{using} \PYG{n+nn}{System.IO}\PYG{p}{;}
+\PYG{k}{using} \PYG{n+nn}{System.Text}\PYG{p}{;}
+
+\PYG{k}{namespace} \PYG{n+nn}{L5\PYGZus{}ND}
+\PYG{p}{\PYGZob{}}
+    \PYG{k}{class} \PYG{n+nc}{IOUtils}
+    \PYG{p}{\PYGZob{}}
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// creates a libraryRegister from an input file}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}fileName\PYGZdq{}\PYGZgt{}the input filename\PYGZlt{}/param\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}returns\PYGZgt{}a libraryRegister\PYGZlt{}/returns\PYGZgt{}}
+        \PYG{k}{public} \PYG{k}{static} \PYG{n}{LibraryRegister} \PYG{n+nf}{readLibraryRegister}\PYG{p}{(}\PYG{k+kt}{string} \PYG{n}{fileName}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{n}{LibraryRegister} \PYG{n}{output} \PYG{p}{=} \PYG{k}{new} \PYG{n}{LibraryRegister}\PYG{p}{();}
+
+            \PYG{k}{if} \PYG{p}{(}\PYG{n}{File}\PYG{p}{.}\PYG{n}{Exists}\PYG{p}{(}\PYG{n}{fileName}\PYG{p}{)} \PYG{p}{==} \PYG{k}{false}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{k}{throw} \PYG{k}{new} \PYG{n+nf}{Exception}\PYG{p}{(}\PYG{n}{String}\PYG{p}{.}\PYG{n}{Format}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Failas \PYGZob{}0\PYGZcb{} neegzistuoja.\PYGZdq{}}\PYG{p}{,} \PYG{n}{fileName}\PYG{p}{));}
+            \PYG{p}{\PYGZcb{}}
+
+            \PYG{k+kt}{int} \PYG{n}{linecount} \PYG{p}{=} \PYG{n}{TotalLines}\PYG{p}{(}\PYG{n}{fileName}\PYG{p}{);}
+
+            \PYG{k}{if} \PYG{p}{(}\PYG{n}{linecount} \PYG{p}{\PYGZlt{}} \PYG{l+m}{4}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{k}{throw} \PYG{k}{new} \PYG{n+nf}{Exception}\PYG{p}{(}\PYG{n}{String}\PYG{p}{.}\PYG{n}{Format}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Failas \PYGZob{}0\PYGZcb{} nėra tinkamai formatuotas.\PYGZdq{}}\PYG{p}{,} \PYG{n}{fileName}\PYG{p}{));}
+            \PYG{p}{\PYGZcb{}}
+
+            \PYG{n}{StreamReader} \PYG{n}{sr} \PYG{p}{=} \PYG{k}{new} \PYG{n}{StreamReader}\PYG{p}{(}\PYG{n}{fileName}\PYG{p}{);}
+
+            \PYG{n}{output}\PYG{p}{.}\PYG{n}{LibraryName} \PYG{p}{=} \PYG{n}{sr}\PYG{p}{.}\PYG{n}{ReadLine}\PYG{p}{();}
+            \PYG{n}{output}\PYG{p}{.}\PYG{n}{LibraryAddr} \PYG{p}{=} \PYG{n}{sr}\PYG{p}{.}\PYG{n}{ReadLine}\PYG{p}{();}
+            \PYG{n}{output}\PYG{p}{.}\PYG{n}{LibraryPhone} \PYG{p}{=} \PYG{n}{sr}\PYG{p}{.}\PYG{n}{ReadLine}\PYG{p}{();}
+
+            \PYG{k+kt}{string} \PYG{n}{line}\PYG{p}{;}
+
+            \PYG{k}{while} \PYG{p}{((}\PYG{n}{line} \PYG{p}{=} \PYG{n}{sr}\PYG{p}{.}\PYG{n}{ReadLine}\PYG{p}{())} \PYG{p}{!=} \PYG{k}{null}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{k+kt}{string}\PYG{p}{[]} \PYG{n}{split} \PYG{p}{=} \PYG{n}{line}\PYG{p}{.}\PYG{n}{Split}\PYG{p}{(}\PYG{l+s+sc}{\PYGZsq{};\PYGZsq{}}\PYG{p}{);}
+
+                \PYG{k}{if} \PYG{p}{(}\PYG{n}{split}\PYG{p}{[}\PYG{l+m}{0}\PYG{p}{]} \PYG{p}{==} \PYG{l+s}{\PYGZdq{}book\PYGZdq{}}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{n}{output}\PYG{p}{.}\PYG{n}{AddPublication}\PYG{p}{(}\PYG{k}{new} \PYG{n}{Book}\PYG{p}{(}
+                        \PYG{n}{split}\PYG{p}{[}\PYG{l+m}{1}\PYG{p}{],}
+                        \PYG{n}{split}\PYG{p}{[}\PYG{l+m}{2}\PYG{p}{],}
+                        \PYG{k+kt}{int}\PYG{p}{.}\PYG{n}{Parse}\PYG{p}{(}\PYG{n}{split}\PYG{p}{[}\PYG{l+m}{3}\PYG{p}{]),}
+                        \PYG{k+kt}{int}\PYG{p}{.}\PYG{n}{Parse}\PYG{p}{(}\PYG{n}{split}\PYG{p}{[}\PYG{l+m}{4}\PYG{p}{]),}
+                        \PYG{k+kt}{int}\PYG{p}{.}\PYG{n}{Parse}\PYG{p}{(}\PYG{n}{split}\PYG{p}{[}\PYG{l+m}{5}\PYG{p}{]),}
+                        \PYG{k+kt}{int}\PYG{p}{.}\PYG{n}{Parse}\PYG{p}{(}\PYG{n}{split}\PYG{p}{[}\PYG{l+m}{6}\PYG{p}{]),}
+                        \PYG{n}{split}\PYG{p}{[}\PYG{l+m}{7}\PYG{p}{]}
+                    \PYG{p}{));}
+                \PYG{p}{\PYGZcb{}}
+                \PYG{k}{else} \PYG{n+nf}{if} \PYG{p}{(}\PYG{n}{split}\PYG{p}{[}\PYG{l+m}{0}\PYG{p}{]} \PYG{p}{==} \PYG{l+s}{\PYGZdq{}journal\PYGZdq{}}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{n}{output}\PYG{p}{.}\PYG{n}{AddPublication}\PYG{p}{(}\PYG{k}{new} \PYG{n}{Journal}\PYG{p}{(}
+                        \PYG{n}{split}\PYG{p}{[}\PYG{l+m}{1}\PYG{p}{],}
+                        \PYG{n}{split}\PYG{p}{[}\PYG{l+m}{2}\PYG{p}{],}
+                        \PYG{k+kt}{int}\PYG{p}{.}\PYG{n}{Parse}\PYG{p}{(}\PYG{n}{split}\PYG{p}{[}\PYG{l+m}{3}\PYG{p}{]),}
+                        \PYG{k+kt}{int}\PYG{p}{.}\PYG{n}{Parse}\PYG{p}{(}\PYG{n}{split}\PYG{p}{[}\PYG{l+m}{4}\PYG{p}{]),}
+                        \PYG{k+kt}{int}\PYG{p}{.}\PYG{n}{Parse}\PYG{p}{(}\PYG{n}{split}\PYG{p}{[}\PYG{l+m}{5}\PYG{p}{]),}
+                        \PYG{k+kt}{int}\PYG{p}{.}\PYG{n}{Parse}\PYG{p}{(}\PYG{n}{split}\PYG{p}{[}\PYG{l+m}{6}\PYG{p}{]),}
+                        \PYG{k+kt}{int}\PYG{p}{.}\PYG{n}{Parse}\PYG{p}{(}\PYG{n}{split}\PYG{p}{[}\PYG{l+m}{7}\PYG{p}{])}
+                    \PYG{p}{));}
+                \PYG{p}{\PYGZcb{}}
+                \PYG{k}{else} \PYG{n+nf}{if} \PYG{p}{(}\PYG{n}{split}\PYG{p}{[}\PYG{l+m}{0}\PYG{p}{]} \PYG{p}{==} \PYG{l+s}{\PYGZdq{}paper\PYGZdq{}}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{n}{output}\PYG{p}{.}\PYG{n}{AddPublication}\PYG{p}{(}\PYG{k}{new} \PYG{n}{Paper}\PYG{p}{(}
+                        \PYG{n}{split}\PYG{p}{[}\PYG{l+m}{1}\PYG{p}{],}
+                        \PYG{n}{split}\PYG{p}{[}\PYG{l+m}{2}\PYG{p}{],}
+                        \PYG{k+kt}{int}\PYG{p}{.}\PYG{n}{Parse}\PYG{p}{(}\PYG{n}{split}\PYG{p}{[}\PYG{l+m}{3}\PYG{p}{]),}
+                        \PYG{k+kt}{int}\PYG{p}{.}\PYG{n}{Parse}\PYG{p}{(}\PYG{n}{split}\PYG{p}{[}\PYG{l+m}{4}\PYG{p}{]),}
+                        \PYG{k+kt}{int}\PYG{p}{.}\PYG{n}{Parse}\PYG{p}{(}\PYG{n}{split}\PYG{p}{[}\PYG{l+m}{5}\PYG{p}{]),}
+                        \PYG{n}{DateTime}\PYG{p}{.}\PYG{n}{Parse}\PYG{p}{(}\PYG{n}{split}\PYG{p}{[}\PYG{l+m}{6}\PYG{p}{]),}
+                        \PYG{k+kt}{int}\PYG{p}{.}\PYG{n}{Parse}\PYG{p}{(}\PYG{n}{split}\PYG{p}{[}\PYG{l+m}{7}\PYG{p}{])}
+                    \PYG{p}{));}
+                \PYG{p}{\PYGZcb{}}
+                \PYG{k}{else}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{k}{throw} \PYG{k}{new} \PYG{n+nf}{Exception}\PYG{p}{(}\PYG{n}{String}\PYG{p}{.}\PYG{n}{Format}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Nežinomas leidinio tipas \PYGZbs{}\PYGZdq{}\PYGZob{}0\PYGZcb{}\PYGZbs{}\PYGZdq{}\PYGZdq{}}\PYG{p}{,} \PYG{n}{split}\PYG{p}{[}\PYG{l+m}{0}\PYG{p}{]));}
+                \PYG{p}{\PYGZcb{}}
+            \PYG{p}{\PYGZcb{}}
+
+            \PYG{k}{return} \PYG{n}{output}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+
+
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// gets the total amount of lines in a text file}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}filePath\PYGZdq{}\PYGZgt{}the text file to test\PYGZlt{}/param\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}returns\PYGZgt{}the line count\PYGZlt{}/returns\PYGZgt{}}
+        \PYG{k}{private} \PYG{k}{static} \PYG{k+kt}{int} \PYG{n+nf}{TotalLines}\PYG{p}{(}\PYG{k+kt}{string} \PYG{n}{filePath}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{k}{using} \PYG{p}{(}\PYG{n}{StreamReader} \PYG{n}{r} \PYG{p}{=} \PYG{k}{new} \PYG{n}{StreamReader}\PYG{p}{(}\PYG{n}{filePath}\PYG{p}{))}
+            \PYG{p}{\PYGZob{}}
+                \PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{=} \PYG{l+m}{0}\PYG{p}{;}
+                \PYG{k}{while} \PYG{p}{(}\PYG{n}{r}\PYG{p}{.}\PYG{n}{ReadLine}\PYG{p}{()} \PYG{p}{!=} \PYG{k}{null}\PYG{p}{)} \PYG{p}{\PYGZob{}} \PYG{n}{i}\PYG{p}{++;} \PYG{p}{\PYGZcb{}}
+                \PYG{k}{return} \PYG{n}{i}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+        \PYG{p}{\PYGZcb{}}
+
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// outputs info about a libraryRegister and the most common publication in all three publication types}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}reg\PYGZdq{}\PYGZgt{}the libraryRegister as input\PYGZlt{}/param\PYGZgt{}}
+        \PYG{k}{public} \PYG{k}{static} \PYG{k}{void} \PYG{n+nf}{OutputCommonInfo}\PYG{p}{(}\PYG{n}{LibraryRegister} \PYG{n}{reg}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{n}{Publication} \PYG{n}{commonBook} \PYG{p}{=} \PYG{n}{reg}\PYG{p}{.}\PYG{n}{GetMostReleasedBook}\PYG{p}{();}
+            \PYG{n}{Publication} \PYG{n}{commonJournal} \PYG{p}{=} \PYG{n}{reg}\PYG{p}{.}\PYG{n}{GetMostReleasedJournal}\PYG{p}{();}
+            \PYG{n}{Publication} \PYG{n}{commonPaper} \PYG{p}{=} \PYG{n}{reg}\PYG{p}{.}\PYG{n}{GetMostReleasedPaper}\PYG{p}{();}
+
+            \PYG{n}{Console}\PYG{p}{.}\PYG{n}{WriteLine}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}\PYGZob{}0\PYGZcb{} (\PYGZhy{}os) informacija:\PYGZdq{}}\PYG{p}{,} \PYG{n}{reg}\PYG{p}{.}\PYG{n}{LibraryName}\PYG{p}{);}
+            \PYG{n}{Console}\PYG{p}{.}\PYG{n}{WriteLine}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Numeris: \PYGZob{}0\PYGZcb{}\PYGZdq{}}\PYG{p}{,} \PYG{n}{reg}\PYG{p}{.}\PYG{n}{LibraryPhone}\PYG{p}{);}
+            \PYG{n}{Console}\PYG{p}{.}\PYG{n}{WriteLine}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Adresas: \PYGZob{}0\PYGZcb{}\PYGZdq{}}\PYG{p}{,} \PYG{n}{reg}\PYG{p}{.}\PYG{n}{LibraryAddr}\PYG{p}{);}
+
+            \PYG{n}{Console}\PYG{p}{.}\PYG{n}{WriteLine}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Didžiausio tiražo:\PYGZdq{}}\PYG{p}{);}
+            \PYG{n}{Console}\PYG{p}{.}\PYG{n}{WriteLine}\PYG{p}{(}\PYG{n}{commonBook}\PYG{p}{.}\PYG{n}{ToString}\PYG{p}{());}
+            \PYG{n}{Console}\PYG{p}{.}\PYG{n}{WriteLine}\PYG{p}{(}\PYG{n}{commonJournal}\PYG{p}{.}\PYG{n}{ToString}\PYG{p}{());}
+            \PYG{n}{Console}\PYG{p}{.}\PYG{n}{WriteLine}\PYG{p}{(}\PYG{n}{commonPaper}\PYG{p}{.}\PYG{n}{ToString}\PYG{p}{());}
+            \PYG{n}{Console}\PYG{p}{.}\PYG{n}{WriteLine}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZdq{}}\PYG{p}{);}
+        \PYG{p}{\PYGZcb{}}
+
+        \PYG{c+c1}{/// \PYGZlt{}summary\PYGZgt{}}
+        \PYG{c+c1}{/// outputs a list of publications to a CSV file}
+        \PYG{c+c1}{/// \PYGZlt{}/summary\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}fileName\PYGZdq{}\PYGZgt{}the file to which to output\PYGZlt{}/param\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}header\PYGZdq{}\PYGZgt{}a string that is put before the list of publications\PYGZlt{}/param\PYGZgt{}}
+        \PYG{c+c1}{/// \PYGZlt{}param name=\PYGZdq{}pubs\PYGZdq{}\PYGZgt{}a list of publications\PYGZlt{}/param\PYGZgt{}}
+        \PYG{k}{public} \PYG{k}{static} \PYG{k}{void} \PYG{n+nf}{OutputPublicationsToCSV}\PYG{p}{(}\PYG{k+kt}{string} \PYG{n}{fileName}\PYG{p}{,} \PYG{k+kt}{string} \PYG{n}{header}\PYG{p}{,} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Publication}\PYG{p}{\PYGZgt{}} \PYG{n}{pubs}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{k+kt}{string}\PYG{p}{\PYGZgt{}} \PYG{n}{lines} \PYG{p}{=} \PYG{k}{new} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{k+kt}{string}\PYG{p}{\PYGZgt{}();}
+
+            \PYG{n}{lines}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{header}\PYG{p}{);}
+
+            \PYG{k}{foreach} \PYG{p}{(}\PYG{n}{Publication} \PYG{n}{p} \PYG{k}{in} \PYG{n}{pubs}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{n}{lines}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{p}\PYG{p}{.}\PYG{n}{ToString}\PYG{p}{());}
+            \PYG{p}{\PYGZcb{}}
+
+            \PYG{n}{File}\PYG{p}{.}\PYG{n}{WriteAllLines}\PYG{p}{(}\PYG{n}{fileName}\PYG{p}{,} \PYG{n}{lines}\PYG{p}{);}
+        \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+
+
+\PYG{c+c1}{//Program.cs}
+\PYG{c+c1}{// An implementation of U5\PYGZus{}4 by Nojus Raškevičius}
+\PYG{k}{using} \PYG{n+nn}{System}\PYG{p}{;}
+\PYG{k}{using} \PYG{n+nn}{System.Collections.Generic}\PYG{p}{;}
+
+\PYG{k}{namespace} \PYG{n+nn}{L5\PYGZus{}ND}
+\PYG{p}{\PYGZob{}}
+    \PYG{k}{class} \PYG{n+nc}{Program}
+    \PYG{p}{\PYGZob{}}
+        \PYG{k}{static} \PYG{k}{void} \PYG{n+nf}{Main}\PYG{p}{(}\PYG{k+kt}{string}\PYG{p}{[]} \PYG{n}{args}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            
+            \PYG{c+c1}{// variables}
+            \PYG{k+kt}{string} \PYG{n}{SpecificPubName} \PYG{p}{=} \PYG{l+s}{\PYGZdq{}Technologija\PYGZdq{}}\PYG{p}{;}
+
+            \PYG{n}{LibraryRegister} \PYG{n}{reg1} \PYG{p}{=} \PYG{n}{IOUtils}\PYG{p}{.}\PYG{n}{readLibraryRegister}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}kaunas.txt\PYGZdq{}}\PYG{p}{);}
+            \PYG{n}{LibraryRegister} \PYG{n}{reg2} \PYG{p}{=} \PYG{n}{IOUtils}\PYG{p}{.}\PYG{n}{readLibraryRegister}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}kaunas2.txt\PYGZdq{}}\PYG{p}{);}
+            \PYG{n}{LibraryRegister} \PYG{n}{reg3} \PYG{p}{=} \PYG{n}{IOUtils}\PYG{p}{.}\PYG{n}{readLibraryRegister}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}vilnius.txt\PYGZdq{}}\PYG{p}{);}
+
+            \PYG{c+c1}{// output the most common book in each library}
+            \PYG{n}{IOUtils}\PYG{p}{.}\PYG{n}{OutputCommonInfo}\PYG{p}{(}\PYG{n}{reg1}\PYG{p}{);}
+            \PYG{n}{IOUtils}\PYG{p}{.}\PYG{n}{OutputCommonInfo}\PYG{p}{(}\PYG{n}{reg2}\PYG{p}{);}
+            \PYG{n}{IOUtils}\PYG{p}{.}\PYG{n}{OutputCommonInfo}\PYG{p}{(}\PYG{n}{reg3}\PYG{p}{);}
+        
+            \PYG{c+c1}{// output the rarest book from all libraries}
+            \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Publication}\PYG{p}{\PYGZgt{}} \PYG{n}{GlobalPublications} \PYG{p}{=} \PYG{k}{new} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Publication}\PYG{p}{\PYGZgt{}();}
+            \PYG{n}{GlobalPublications}\PYG{p}{.}\PYG{n}{AddRange}\PYG{p}{(}\PYG{n}{reg1}\PYG{p}{.}\PYG{n}{AllPublications}\PYG{p}{);}
+            \PYG{n}{GlobalPublications}\PYG{p}{.}\PYG{n}{AddRange}\PYG{p}{(}\PYG{n}{reg2}\PYG{p}{.}\PYG{n}{AllPublications}\PYG{p}{);}
+            \PYG{n}{GlobalPublications}\PYG{p}{.}\PYG{n}{AddRange}\PYG{p}{(}\PYG{n}{reg3}\PYG{p}{.}\PYG{n}{AllPublications}\PYG{p}{);}
+
+            \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Publication}\PYG{p}{\PYGZgt{}} \PYG{n}{UniquePublications} \PYG{p}{=} \PYG{k}{new} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Publication}\PYG{p}{\PYGZgt{}();}
+
+            \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{=} \PYG{l+m}{0}\PYG{p}{;} \PYG{n}{i} \PYG{p}{\PYGZlt{}} \PYG{n}{GlobalPublications}\PYG{p}{.}\PYG{n}{Count}\PYG{p}{;} \PYG{n}{i}\PYG{p}{++)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{k+kt}{bool} \PYG{n}{IsUnique} \PYG{p}{=} \PYG{k}{true}\PYG{p}{;}
+                \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{j} \PYG{p}{=} \PYG{l+m}{0}\PYG{p}{;} \PYG{n}{j} \PYG{p}{\PYGZlt{}} \PYG{n}{GlobalPublications}\PYG{p}{.}\PYG{n}{Count}\PYG{p}{;} \PYG{n}{j}\PYG{p}{++)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{k}{if} \PYG{p}{(}\PYG{n}{GlobalPublications}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{Title} \PYG{p}{==} \PYG{n}{GlobalPublications}\PYG{p}{[}\PYG{n}{j}\PYG{p}{].}\PYG{n}{Title} \PYG{p}{\PYGZam{}\PYGZam{}} \PYG{n}{i} \PYG{p}{!=} \PYG{n}{j}\PYG{p}{)}
+                    \PYG{p}{\PYGZob{}}
+                        \PYG{n}{IsUnique} \PYG{p}{=} \PYG{k}{false}\PYG{p}{;}
+                    \PYG{p}{\PYGZcb{}}
+                \PYG{p}{\PYGZcb{}}
+
+                \PYG{k}{if} \PYG{p}{(}\PYG{n}{IsUnique}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{n}{UniquePublications}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{GlobalPublications}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]);}
+                \PYG{p}{\PYGZcb{}}
+            \PYG{p}{\PYGZcb{}}
+
+            \PYG{n}{IOUtils}\PYG{p}{.}\PYG{n}{OutputPublicationsToCSV}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}RetiLeidiniai.csv\PYGZdq{}}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}Reti leidiniai:\PYGZdq{}}\PYG{p}{,} \PYG{n}{UniquePublications}\PYG{p}{);}
+
+
+            \PYG{c+c1}{// output all books from a specific publisher, sort before outputting}
+            \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Publication}\PYG{p}{\PYGZgt{}} \PYG{n}{SpecificPublisherPubs} \PYG{p}{=} \PYG{k}{new} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Publication}\PYG{p}{\PYGZgt{}();}
+            \PYG{n}{SpecificPublisherPubs}\PYG{p}{.}\PYG{n}{AddRange}\PYG{p}{(}\PYG{n}{reg1}\PYG{p}{.}\PYG{n}{GetPubsFromSpecificPublisher}\PYG{p}{(}\PYG{n}{SpecificPubName}\PYG{p}{));}
+            \PYG{n}{SpecificPublisherPubs}\PYG{p}{.}\PYG{n}{AddRange}\PYG{p}{(}\PYG{n}{reg2}\PYG{p}{.}\PYG{n}{GetPubsFromSpecificPublisher}\PYG{p}{(}\PYG{n}{SpecificPubName}\PYG{p}{));}
+            \PYG{n}{SpecificPublisherPubs}\PYG{p}{.}\PYG{n}{AddRange}\PYG{p}{(}\PYG{n}{reg3}\PYG{p}{.}\PYG{n}{GetPubsFromSpecificPublisher}\PYG{p}{(}\PYG{n}{SpecificPubName}\PYG{p}{));}
+
+
+            \PYG{c+c1}{// bubble sort}
+            \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{=} \PYG{l+m}{0}\PYG{p}{;} \PYG{n}{i} \PYG{p}{\PYGZlt{}} \PYG{n}{SpecificPublisherPubs}\PYG{p}{.}\PYG{n}{Count}\PYG{p}{;} \PYG{n}{i}\PYG{p}{++)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{j} \PYG{p}{=} \PYG{l+m}{0}\PYG{p}{;} \PYG{n}{j} \PYG{p}{\PYGZlt{}} \PYG{n}{SpecificPublisherPubs}\PYG{p}{.}\PYG{n}{Count}\PYG{p}{\PYGZhy{}}\PYG{n}{i}\PYG{p}{\PYGZhy{}}\PYG{l+m}{1}\PYG{p}{;} \PYG{n}{j}\PYG{p}{++)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{k}{if} \PYG{p}{(}\PYG{n}{SpecificPublisherPubs}\PYG{p}{[}\PYG{n}{j}\PYG{p}{]} \PYG{p}{\PYGZgt{}} \PYG{n}{SpecificPublisherPubs}\PYG{p}{[}\PYG{n}{j}\PYG{p}{+}\PYG{l+m}{1}\PYG{p}{])}
+                    \PYG{p}{\PYGZob{}}
+                        \PYG{n}{Publication} \PYG{n}{buf} \PYG{p}{=} \PYG{n}{SpecificPublisherPubs}\PYG{p}{[}\PYG{n}{j}\PYG{p}{];}
+                        \PYG{n}{SpecificPublisherPubs}\PYG{p}{[}\PYG{n}{j}\PYG{p}{]} \PYG{p}{=} \PYG{n}{SpecificPublisherPubs}\PYG{p}{[}\PYG{n}{j}\PYG{p}{+}\PYG{l+m}{1}\PYG{p}{];}
+                        \PYG{n}{SpecificPublisherPubs}\PYG{p}{[}\PYG{n}{j}\PYG{p}{+}\PYG{l+m}{1}\PYG{p}{]} \PYG{p}{=} \PYG{n}{buf}\PYG{p}{;}
+                    \PYG{p}{\PYGZcb{}}
+                \PYG{p}{\PYGZcb{}}
+            \PYG{p}{\PYGZcb{}}
+
+            \PYG{n}{IOUtils}\PYG{p}{.}\PYG{n}{OutputPublicationsToCSV}\PYG{p}{(}
+                \PYG{l+s}{\PYGZdq{}Technologija.csv\PYGZdq{}}\PYG{p}{,}
+                \PYG{l+s}{\PYGZdq{}Visi leidiniai iš leidyklos \PYGZbs{}\PYGZdq{}Technologjia\PYGZbs{}\PYGZdq{}:\PYGZdq{}}\PYG{p}{,}
+                \PYG{n}{SpecificPublisherPubs}
+            \PYG{p}{);}
+
+
+            \PYG{c+c1}{// get all publications that can be found in all three libraries, output them}
+            \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Publication}\PYG{p}{\PYGZgt{}} \PYG{n}{CommonPublications} \PYG{p}{=} \PYG{k}{new} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Publication}\PYG{p}{\PYGZgt{}();}
+
+            \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{=} \PYG{l+m}{0}\PYG{p}{;} \PYG{n}{i} \PYG{p}{\PYGZlt{}} \PYG{n}{GlobalPublications}\PYG{p}{.}\PYG{n}{Count}\PYG{p}{;} \PYG{n}{i}\PYG{p}{++)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{k+kt}{int} \PYG{n}{count} \PYG{p}{=} \PYG{l+m}{0}\PYG{p}{;}
+                \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{j} \PYG{p}{=} \PYG{l+m}{0}\PYG{p}{;} \PYG{n}{j} \PYG{p}{\PYGZlt{}} \PYG{n}{GlobalPublications}\PYG{p}{.}\PYG{n}{Count}\PYG{p}{;} \PYG{n}{j}\PYG{p}{++)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{k}{if} \PYG{p}{(}\PYG{n}{GlobalPublications}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{Title} \PYG{p}{==} \PYG{n}{GlobalPublications}\PYG{p}{[}\PYG{n}{j}\PYG{p}{].}\PYG{n}{Title} \PYG{p}{\PYGZam{}\PYGZam{}} \PYG{n}{i} \PYG{p}{!=} \PYG{n}{j}\PYG{p}{)}
+                    \PYG{p}{\PYGZob{}}
+                        \PYG{n}{count}\PYG{p}{++;}
+                    \PYG{p}{\PYGZcb{}}
+                \PYG{p}{\PYGZcb{}}
+
+                \PYG{k}{if} \PYG{p}{(}\PYG{n}{count} \PYG{p}{==} \PYG{l+m}{2}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{k+kt}{bool} \PYG{n}{contains} \PYG{p}{=} \PYG{k}{false}\PYG{p}{;}
+                    \PYG{n}{Publication} \PYG{n}{itemToTest} \PYG{p}{=} \PYG{n}{GlobalPublications}\PYG{p}{[}\PYG{n}{i}\PYG{p}{];}
+
+                    \PYG{c+c1}{// testing is needed for all specific types ofpublication}
+                    \PYG{c+c1}{// which is why there is a lot of code below.}
+                    \PYG{k}{if} \PYG{p}{(}\PYG{n}{itemToTest}\PYG{p}{.}\PYG{n}{Type} \PYG{p}{==} \PYG{l+s}{\PYGZdq{}book\PYGZdq{}}\PYG{p}{)}
+                    \PYG{p}{\PYGZob{}}
+                        \PYG{k}{foreach} \PYG{p}{(}\PYG{n}{Publication} \PYG{n}{t} \PYG{k}{in} \PYG{n}{CommonPublications}\PYG{p}{)}
+                        \PYG{p}{\PYGZob{}}
+                            \PYG{k}{if} \PYG{p}{(}\PYG{n}{t}\PYG{p}{.}\PYG{n}{Type} \PYG{p}{==} \PYG{l+s}{\PYGZdq{}book\PYGZdq{}}\PYG{p}{)}
+                            \PYG{p}{\PYGZob{}}
+                                \PYG{n}{Book} \PYG{n}{tBook} \PYG{p}{=} \PYG{n}{t} \PYG{k}{as} \PYG{n}{Book}\PYG{p}{;}
+                                \PYG{n}{Book} \PYG{n}{itemBook} \PYG{p}{=} \PYG{n}{itemToTest} \PYG{k}{as} \PYG{n}{Book}\PYG{p}{;}
+
+                                \PYG{k}{if} \PYG{p}{(}\PYG{n}{tBook}\PYG{p}{.}\PYG{n}{ISBN} \PYG{p}{==} \PYG{n}{itemBook}\PYG{p}{.}\PYG{n}{ISBN}\PYG{p}{)}
+                                \PYG{p}{\PYGZob{}}
+                                    \PYG{n}{contains} \PYG{p}{=} \PYG{k}{true}\PYG{p}{;}
+                                \PYG{p}{\PYGZcb{}}
+                            \PYG{p}{\PYGZcb{}}
+                        \PYG{p}{\PYGZcb{}}
+
+                    \PYG{p}{\PYGZcb{}}
+                    \PYG{k}{else} \PYG{n+nf}{if} \PYG{p}{(}\PYG{n}{itemToTest}\PYG{p}{.}\PYG{n}{Type} \PYG{p}{==} \PYG{l+s}{\PYGZdq{}journal\PYGZdq{}}\PYG{p}{)}
+                    \PYG{p}{\PYGZob{}}
+                        \PYG{k}{foreach} \PYG{p}{(}\PYG{n}{Publication} \PYG{n}{t} \PYG{k}{in} \PYG{n}{CommonPublications}\PYG{p}{)}
+                        \PYG{p}{\PYGZob{}}
+                            \PYG{k}{if} \PYG{p}{(}\PYG{n}{t}\PYG{p}{.}\PYG{n}{Type} \PYG{p}{==} \PYG{l+s}{\PYGZdq{}journal\PYGZdq{}}\PYG{p}{)}
+                            \PYG{p}{\PYGZob{}}
+                                \PYG{n}{Journal} \PYG{n}{tJournal} \PYG{p}{=} \PYG{n}{t} \PYG{k}{as} \PYG{n}{Journal}\PYG{p}{;}
+                                \PYG{n}{Journal} \PYG{n}{itemJournal} \PYG{p}{=} \PYG{n}{itemToTest} \PYG{k}{as} \PYG{n}{Journal}\PYG{p}{;}
+
+                                \PYG{k}{if} \PYG{p}{(}\PYG{n}{tJournal}\PYG{p}{.}\PYG{n}{JournalNumber} \PYG{p}{==} \PYG{n}{itemJournal}\PYG{p}{.}\PYG{n}{JournalNumber}\PYG{p}{)}
+                                \PYG{p}{\PYGZob{}}
+                                    \PYG{n}{contains} \PYG{p}{=} \PYG{k}{true}\PYG{p}{;}
+                                \PYG{p}{\PYGZcb{}}
+                            \PYG{p}{\PYGZcb{}}
+                        \PYG{p}{\PYGZcb{}}
+                    \PYG{p}{\PYGZcb{}}
+                    \PYG{k}{else} \PYG{n+nf}{if} \PYG{p}{(}\PYG{n}{itemToTest}\PYG{p}{.}\PYG{n}{Type} \PYG{p}{==} \PYG{l+s}{\PYGZdq{}paper\PYGZdq{}}\PYG{p}{)}
+                    \PYG{p}{\PYGZob{}}
+                        \PYG{k}{foreach} \PYG{p}{(}\PYG{n}{Publication} \PYG{n}{t} \PYG{k}{in} \PYG{n}{CommonPublications}\PYG{p}{)}
+                        \PYG{p}{\PYGZob{}}
+                            \PYG{k}{if} \PYG{p}{(}\PYG{n}{t}\PYG{p}{.}\PYG{n}{Type} \PYG{p}{==} \PYG{l+s}{\PYGZdq{}paper\PYGZdq{}}\PYG{p}{)}
+                            \PYG{p}{\PYGZob{}}
+                                \PYG{n}{Paper} \PYG{n}{tPaper} \PYG{p}{=} \PYG{n}{t} \PYG{k}{as} \PYG{n}{Paper}\PYG{p}{;}
+                                \PYG{n}{Paper} \PYG{n}{itemPaper} \PYG{p}{=} \PYG{n}{itemToTest} \PYG{k}{as} \PYG{n}{Paper}\PYG{p}{;}
+
+                                \PYG{k}{if} \PYG{p}{(}\PYG{n}{tPaper}\PYG{p}{.}\PYG{n}{PaperNumber} \PYG{p}{==} \PYG{n}{itemPaper}\PYG{p}{.}\PYG{n}{PaperNumber}\PYG{p}{)}
+                                \PYG{p}{\PYGZob{}}
+                                    \PYG{n}{contains} \PYG{p}{=} \PYG{k}{true}\PYG{p}{;}
+                                \PYG{p}{\PYGZcb{}}
+                            \PYG{p}{\PYGZcb{}}
+                        \PYG{p}{\PYGZcb{}}
+                    \PYG{p}{\PYGZcb{}}
+                    \PYG{k}{if} \PYG{p}{(!}\PYG{n}{contains}\PYG{p}{)}
+                    \PYG{p}{\PYGZob{}}
+                        \PYG{n}{CommonPublications}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{GlobalPublications}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]);}
+                    \PYG{p}{\PYGZcb{}}
+                \PYG{p}{\PYGZcb{}}
+            \PYG{p}{\PYGZcb{}}
+
+            \PYG{n}{IOUtils}\PYG{p}{.}\PYG{n}{OutputPublicationsToCSV}\PYG{p}{(}
+                \PYG{l+s}{\PYGZdq{}BendriLeidiniai.csv\PYGZdq{}}\PYG{p}{,}
+                \PYG{l+s}{\PYGZdq{}Bendri leidiniai tarp trijų bibliotekų:\PYGZdq{}}\PYG{p}{,}
+                \PYG{n}{CommonPublications}
+            \PYG{p}{);}
+
+        \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

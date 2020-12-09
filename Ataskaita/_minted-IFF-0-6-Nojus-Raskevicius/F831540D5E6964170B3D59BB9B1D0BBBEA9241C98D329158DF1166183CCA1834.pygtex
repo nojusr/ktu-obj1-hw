@@ -1,0 +1,20 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+Kauno viešoji biblioteka
+Ryto g. 42
++3706815168
+book;harry potter;bookpub1;2001;501;1500;156123;J.K.Rowling
+book;harry potter2;bookpub1;2002;451;2000;189151;J.K.Rowling
+book;harry potter3;bookpub1;2002;614;1500;189158;J.K.Rowling
+journal;science1;jpub2;2010;150;500;156118;619121
+journal;science2;jpub2;2012;162;500;116185;189154
+journal;science3;jpub2;2014;149;500;131518;919878
+paper;kauno diena;paperpub2;2020;20;750;2020\PYGZhy{}01\PYGZhy{}14;189191
+paper;kauno diena;paperpub2;2020;20;500;2020\PYGZhy{}01\PYGZhy{}15;189192
+paper;kauno diena;paperpub2;2020;20;250;2020\PYGZhy{}01\PYGZhy{}16;189193
+paper;The New York Times;paperpub1;2020;20;20000;2020\PYGZhy{}01\PYGZhy{}21;18590
+paper;The New York Times;paperpub1;2020;20;20000;2020\PYGZhy{}01\PYGZhy{}22;18591
+paper;The New York Times;paperpub1;2020;20;20000;2020\PYGZhy{}01\PYGZhy{}23;18592
+paper;vilniaus diena;paperpub2;2020;20;750;2020\PYGZhy{}01\PYGZhy{}25;195152
+paper;vilniaus diena;paperpub2;2020;20;750;2020\PYGZhy{}01\PYGZhy{}26;195153
+paper;vilniaus diena;paperpub2;2020;20;750;2020\PYGZhy{}01\PYGZhy{}27;195154
+\end{Verbatim}
