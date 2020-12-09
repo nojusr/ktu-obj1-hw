@@ -1,0 +1,16 @@
+Vilniaus viešoji biblioteka
+Vakaro g. 18
++3706915613
+book;harry potter;bookpub1;2001;501;1500;156123;J.K.Rowling
+book;harry potter2;bookpub1;2002;451;2000;189151;J.K.Rowling
+book;harry potter3;bookpub1;2002;614;1500;189158;J.K.Rowling
+journal;science1;jpub2;2010;150;500;156118;619121
+journal;science2;jpub2;2012;162;500;116185;189154
+journal;science3;jpub2;2014;149;500;131518;919878
+paper;vilniaus diena;paperpub2;2020;20;750;2020-01-25;195154
+paper;vilniaus diena;paperpub2;2020;20;700;2020-01-26;195155
+paper;vilniaus diena;paperpub2;2020;20;750;2020-01-27;195156
+paper;The New York Times;paperpub1;2020;20;20000;2020-01-21;18596
+paper;The New York Times;paperpub1;2020;20;20001;2020-01-22;18597
+paper;The New York Times;paperpub1;2020;20;20000;2020-01-23;18598
+book;katekizmas;N/A;1547;80;3;1;Martynas Mažvydas

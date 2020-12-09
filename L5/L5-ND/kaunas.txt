@@ -1,0 +1,16 @@
+KTU kauno biblioteka
+Studentų g. 50
++3706812165
+book;harry potter;bookpub1;2001;501;1500;156123;J.K.Rowling
+book;harry potter2;bookpub1;2002;451;2000;189151;J.K.Rowling
+book;harry potter3;bookpub1;2002;614;1500;189158;J.K.Rowling
+paper;The New York Times;paperpub1;2020;20;20000;2020-01-20;18596
+journal;nature;jpub;2019;150;1500;156131;619185
+journal;nature2;jpub;2020;162;1500;161919;18915
+journal;nature3;jpub;2021;149;1500;191946;919878
+paper;The New York Times;paperpub1;2020;20;20000;2020-01-21;18596
+paper;The New York Times;paperpub1;2020;20;20000;2020-01-22;18597
+paper;The New York Times;paperpub1;2020;20;20000;2020-01-23;18598
+paper;vilniaus diena;paperpub2;2020;20;750;2020-01-25;195154
+paper;vilniaus diena;paperpub2;2020;20;750;2020-01-26;195155
+paper;vilniaus diena;paperpub2;2020;20;750;2020-01-27;195156
