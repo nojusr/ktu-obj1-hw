@@ -2,6 +2,9 @@ using System;
 
 namespace L5_ND
 {
+    /// <summary>
+    /// a book class that contains specific information that cannot be found in the parent 'Publication' class
+    /// </summary>
     class Book : Publication
     {
         public int ISBN {get; set;}

@@ -1,4 +1,3 @@
-// An implementation of U5_4 by Nojus Raškevičius
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -8,6 +7,11 @@ namespace L5_ND
 {
     class IOUtils
     {
+        /// <summary>
+        /// creates a libraryRegister from an input file
+        /// </summary>
+        /// <param name="fileName">the input filename</param>
+        /// <returns>a libraryRegister</returns>
         public static LibraryRegister readLibraryRegister(string fileName)
         {
             LibraryRegister output = new LibraryRegister();
@@ -78,11 +82,16 @@ namespace L5_ND
                 }
             }
 
-            Console.WriteLine("READ FILE: count:{0}",output.AllPublications.Count);
             return output;
         }
 
-        static int TotalLines(string filePath)
+
+        /// <summary>
+        /// gets the total amount of lines in a text file
+        /// </summary>
+        /// <param name="filePath">the text file to test</param>
+        /// <returns>the line count</returns>
+        private static int TotalLines(string filePath)
         {
             using (StreamReader r = new StreamReader(filePath))
             {
@@ -92,6 +101,10 @@ namespace L5_ND
             }
         }
 
+        /// <summary>
+        /// outputs info about a libraryRegister and the most common publication in all three publication types
+        /// </summary>
+        /// <param name="reg">the libraryRegister as input</param>
         public static void OutputCommonInfo(LibraryRegister reg)
         {
             Publication commonBook = reg.GetMostReleasedBook();
@@ -109,6 +122,12 @@ namespace L5_ND
             Console.WriteLine("-----------------------------");
         }
 
+        /// <summary>
+        /// outputs a list of publications to a CSV file
+        /// </summary>
+        /// <param name="fileName">the file to which to output</param>
+        /// <param name="header">a string that is put before the list of publications</param>
+        /// <param name="pubs">a list of publications</param>
         public static void OutputPublicationsToCSV(string fileName, string header, List<Publication> pubs)
         {
             List<string> lines = new List<string>();

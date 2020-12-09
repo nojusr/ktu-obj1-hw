@@ -2,6 +2,9 @@ using System;
 
 namespace L5_ND
 {
+    /// <summary>
+    /// a journal class that contains specific information that cannot be found in the parent 'Publication' class
+    /// </summary>
     class Journal : Publication
     {
 

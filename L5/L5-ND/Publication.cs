@@ -1,5 +1,8 @@
 namespace L5_ND
 {
+    /// <summary>
+    /// a class to store basic information about a publication
+    /// </summary>
     class Publication
     {
         public string Type {get; set;}

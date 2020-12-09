@@ -8,17 +8,20 @@ namespace L5_ND
     {
         static void Main(string[] args)
         {
-
-            string SpecificPubName = "paperpub2";
+            
+            // variables
+            string SpecificPubName = "Technologija";
 
             LibraryRegister reg1 = IOUtils.readLibraryRegister("kaunas.txt");
             LibraryRegister reg2 = IOUtils.readLibraryRegister("kaunas2.txt");
             LibraryRegister reg3 = IOUtils.readLibraryRegister("vilnius.txt");
 
+            // output the most common book in each library
             IOUtils.OutputCommonInfo(reg1);
             IOUtils.OutputCommonInfo(reg2);
             IOUtils.OutputCommonInfo(reg3);
         
+            // output the rarest book from all libraries
             List<Publication> GlobalPublications = new List<Publication>();
             GlobalPublications.AddRange(reg1.AllPublications);
             GlobalPublications.AddRange(reg2.AllPublications);
@@ -45,6 +48,8 @@ namespace L5_ND
 
             IOUtils.OutputPublicationsToCSV("RetiLeidiniai.csv", "Reti leidiniai:", UniquePublications);
 
+
+            // output all books from a specific publisher, sort before outputting
             List<Publication> SpecificPublisherPubs = new List<Publication>();
             SpecificPublisherPubs.AddRange(reg1.GetPubsFromSpecificPublisher(SpecificPubName));
             SpecificPublisherPubs.AddRange(reg2.GetPubsFromSpecificPublisher(SpecificPubName));
@@ -71,6 +76,8 @@ namespace L5_ND
                 SpecificPublisherPubs
             );
 
+
+            // get all publications that can be found in all three libraries, output them
             List<Publication> CommonPublications = new List<Publication>();
 
             for (int i = 0; i < GlobalPublications.Count; i++)
@@ -89,7 +96,8 @@ namespace L5_ND
                     bool contains = false;
                     Publication itemToTest = GlobalPublications[i];
 
-
+                    // testing is needed for all specific types ofpublication
+                    // which is why there is a lot of code below.
                     if (itemToTest.Type == "book")
                     {
                         foreach (Publication t in CommonPublications)
@@ -139,14 +147,10 @@ namespace L5_ND
                             }
                         }
                     }
-
-
                     if (!contains)
                     {
                         CommonPublications.Add(GlobalPublications[i]);
                     }
-
-                        
                 }
             }
 
